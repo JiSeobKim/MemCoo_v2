@@ -26,7 +26,7 @@
 		3E36B1741DF2046D00385315 /* AddEditCouponViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEditCouponViewController.swift; sourceTree = "<group>"; };
 		3E36B1761DF2048F00385315 /* CouponTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponTableViewCell.swift; sourceTree = "<group>"; };
 		3E36B1781DF2133000385315 /* GenerateBarcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenerateBarcode.swift; sourceTree = "<group>"; };
-		3E37D3551DF09E4A0054C4DA /* CouponUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CouponUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E37D3551DF09E4A0054C4DA /* MemebershipCoupon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemebershipCoupon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E37D3581DF09E4A0054C4DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E37D35A1DF09E4A0054C4DA /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		3E37D35C1DF09E4A0054C4DA /* MembershipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipViewController.swift; sourceTree = "<group>"; };
@@ -61,7 +61,7 @@
 		3E37D34C1DF09E490054C4DA = {
 			isa = PBXGroup;
 			children = (
-				3E37D3571DF09E4A0054C4DA /* CouponUI */,
+				3E37D3571DF09E4A0054C4DA /* MembershipCoupon */,
 				3E37D3561DF09E4A0054C4DA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -69,12 +69,12 @@
 		3E37D3561DF09E4A0054C4DA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3E37D3551DF09E4A0054C4DA /* CouponUI.app */,
+				3E37D3551DF09E4A0054C4DA /* MemebershipCoupon.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3E37D3571DF09E4A0054C4DA /* CouponUI */ = {
+		3E37D3571DF09E4A0054C4DA /* MembershipCoupon */ = {
 			isa = PBXGroup;
 			children = (
 				3E37D3581DF09E4A0054C4DA /* AppDelegate.swift */,
@@ -87,15 +87,16 @@
 				3E37D3631DF09E4A0054C4DA /* LaunchScreen.storyboard */,
 				3E37D3661DF09E4A0054C4DA /* Info.plist */,
 			);
+			name = MembershipCoupon;
 			path = CouponUI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3E37D3541DF09E4A0054C4DA /* CouponUI */ = {
+		3E37D3541DF09E4A0054C4DA /* MemebershipCoupon */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3E37D3691DF09E4A0054C4DA /* Build configuration list for PBXNativeTarget "CouponUI" */;
+			buildConfigurationList = 3E37D3691DF09E4A0054C4DA /* Build configuration list for PBXNativeTarget "MemebershipCoupon" */;
 			buildPhases = (
 				3E37D3511DF09E4A0054C4DA /* Sources */,
 				3E37D3521DF09E4A0054C4DA /* Frameworks */,
@@ -105,9 +106,9 @@
 			);
 			dependencies = (
 			);
-			name = CouponUI;
+			name = MemebershipCoupon;
 			productName = CouponUI;
-			productReference = 3E37D3551DF09E4A0054C4DA /* CouponUI.app */;
+			productReference = 3E37D3551DF09E4A0054C4DA /* MemebershipCoupon.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -127,7 +128,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3E37D3501DF09E490054C4DA /* Build configuration list for PBXProject "CouponUI" */;
+			buildConfigurationList = 3E37D3501DF09E490054C4DA /* Build configuration list for PBXProject "MemebershipCoupon" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -140,7 +141,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3E37D3541DF09E4A0054C4DA /* CouponUI */,
+				3E37D3541DF09E4A0054C4DA /* MemebershipCoupon */,
 			);
 		};
 /* End PBXProject section */
@@ -316,7 +317,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3E37D3501DF09E490054C4DA /* Build configuration list for PBXProject "CouponUI" */ = {
+		3E37D3501DF09E490054C4DA /* Build configuration list for PBXProject "MemebershipCoupon" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3E37D3671DF09E4A0054C4DA /* Debug */,
@@ -325,7 +326,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3E37D3691DF09E4A0054C4DA /* Build configuration list for PBXNativeTarget "CouponUI" */ = {
+		3E37D3691DF09E4A0054C4DA /* Build configuration list for PBXNativeTarget "MemebershipCoupon" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3E37D36A1DF09E4A0054C4DA /* Debug */,

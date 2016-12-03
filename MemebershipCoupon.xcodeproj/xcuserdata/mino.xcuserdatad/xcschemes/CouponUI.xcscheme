@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3E37D3541DF09E4A0054C4DA"
-               BuildableName = "CouponUI.app"
-               BlueprintName = "CouponUI"
-               ReferencedContainer = "container:CouponUI.xcodeproj">
+               BuildableName = "MemebershipCoupon.app"
+               BlueprintName = "MemebershipCoupon"
+               ReferencedContainer = "container:MemebershipCoupon.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3E37D3541DF09E4A0054C4DA"
-            BuildableName = "CouponUI.app"
-            BlueprintName = "CouponUI"
-            ReferencedContainer = "container:CouponUI.xcodeproj">
+            BuildableName = "MemebershipCoupon.app"
+            BlueprintName = "MemebershipCoupon"
+            ReferencedContainer = "container:MemebershipCoupon.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3E37D3541DF09E4A0054C4DA"
-            BuildableName = "CouponUI.app"
-            BlueprintName = "CouponUI"
-            ReferencedContainer = "container:CouponUI.xcodeproj">
+            BuildableName = "MemebershipCoupon.app"
+            BlueprintName = "MemebershipCoupon"
+            ReferencedContainer = "container:MemebershipCoupon.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3E37D3541DF09E4A0054C4DA"
-            BuildableName = "CouponUI.app"
-            BlueprintName = "CouponUI"
-            ReferencedContainer = "container:CouponUI.xcodeproj">
+            BuildableName = "MemebershipCoupon.app"
+            BlueprintName = "MemebershipCoupon"
+            ReferencedContainer = "container:MemebershipCoupon.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

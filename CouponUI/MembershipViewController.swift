@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class MembershipViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

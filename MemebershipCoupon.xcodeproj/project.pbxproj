@@ -18,6 +18,7 @@
 		3E37D3601DF09E4A0054C4DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E37D35E1DF09E4A0054C4DA /* Main.storyboard */; };
 		3E37D3621DF09E4A0054C4DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E37D3611DF09E4A0054C4DA /* Assets.xcassets */; };
 		3E37D3651DF09E4A0054C4DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E37D3631DF09E4A0054C4DA /* LaunchScreen.storyboard */; };
+		42976B9E1DF27D4900ADB0D7 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 42976B9C1DF27D4900ADB0D7 /* Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		3E37D3611DF09E4A0054C4DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E37D3641DF09E4A0054C4DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E37D3661DF09E4A0054C4DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42976B9D1DF27D4900ADB0D7 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,18 +79,51 @@
 		3E37D3571DF09E4A0054C4DA /* MembershipCoupon */ = {
 			isa = PBXGroup;
 			children = (
+				42976BA31DF27DFC00ADB0D7 /* Supporting Files */,
+				42976BA11DF27DC900ADB0D7 /* Favorite */,
+				42976BA01DF27DB000ADB0D7 /* Membership */,
+				42976B9F1DF27D9600ADB0D7 /* Util */,
 				3E37D3581DF09E4A0054C4DA /* AppDelegate.swift */,
-				3E36B1781DF2133000385315 /* GenerateBarcode.swift */,
-				3E37D35A1DF09E4A0054C4DA /* FavoriteViewController.swift */,
-				3E37D35C1DF09E4A0054C4DA /* MembershipViewController.swift */,
 				3E36B1711DF2036100385315 /* Coupon */,
 				3E37D35E1DF09E4A0054C4DA /* Main.storyboard */,
-				3E37D3611DF09E4A0054C4DA /* Assets.xcassets */,
-				3E37D3631DF09E4A0054C4DA /* LaunchScreen.storyboard */,
-				3E37D3661DF09E4A0054C4DA /* Info.plist */,
+				42976B9C1DF27D4900ADB0D7 /* Model.xcdatamodeld */,
 			);
 			name = MembershipCoupon;
 			path = CouponUI;
+			sourceTree = "<group>";
+		};
+		42976B9F1DF27D9600ADB0D7 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				3E36B1781DF2133000385315 /* GenerateBarcode.swift */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+		42976BA01DF27DB000ADB0D7 /* Membership */ = {
+			isa = PBXGroup;
+			children = (
+				3E37D35C1DF09E4A0054C4DA /* MembershipViewController.swift */,
+			);
+			name = Membership;
+			sourceTree = "<group>";
+		};
+		42976BA11DF27DC900ADB0D7 /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				3E37D35A1DF09E4A0054C4DA /* FavoriteViewController.swift */,
+			);
+			name = Favorite;
+			sourceTree = "<group>";
+		};
+		42976BA31DF27DFC00ADB0D7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3E37D3611DF09E4A0054C4DA /* Assets.xcassets */,
+				3E37D3661DF09E4A0054C4DA /* Info.plist */,
+				3E37D3631DF09E4A0054C4DA /* LaunchScreen.storyboard */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +204,7 @@
 				3E37D3591DF09E4A0054C4DA /* AppDelegate.swift in Sources */,
 				3E36B1791DF2133000385315 /* GenerateBarcode.swift in Sources */,
 				3E36B1731DF203FC00385315 /* DetailCouponViewController.swift in Sources */,
+				42976B9E1DF27D4900ADB0D7 /* Model.xcdatamodeld in Sources */,
 				3E37D35B1DF09E4A0054C4DA /* FavoriteViewController.swift in Sources */,
 				3E36B1771DF2048F00385315 /* CouponTableViewCell.swift in Sources */,
 				3E36B1701DF2033000385315 /* CouponTableViewController.swift in Sources */,
@@ -336,6 +372,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		42976B9C1DF27D4900ADB0D7 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				42976B9D1DF27D4900ADB0D7 /* Model.xcdatamodel */,
+			);
+			currentVersion = 42976B9D1DF27D4900ADB0D7 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3E37D34D1DF09E490054C4DA /* Project object */;
 }

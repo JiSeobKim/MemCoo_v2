@@ -19,10 +19,10 @@
 		3E37D3651DF09E4A0054C4DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E37D3631DF09E4A0054C4DA /* LaunchScreen.storyboard */; };
 		42976B9E1DF27D4900ADB0D7 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 42976B9C1DF27D4900ADB0D7 /* Model.xcdatamodeld */; };
 		A00C296A1DF31CFE0019FB8B /* MembershipClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00C29651DF31CFE0019FB8B /* MembershipClass.swift */; };
-		A00C296B1DF31CFE0019FB8B /* MembershipCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00C29661DF31CFE0019FB8B /* MembershipCollectionVC.swift */; };
 		A00C296C1DF31CFE0019FB8B /* MembershipCollectionVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00C29671DF31CFE0019FB8B /* MembershipCollectionVCell.swift */; };
 		A00C296D1DF31CFE0019FB8B /* ShowMembershipVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00C29681DF31CFE0019FB8B /* ShowMembershipVC.swift */; };
-		A00C296E1DF31CFE0019FB8B /* AddMemebershipVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00C29691DF31CFE0019FB8B /* AddMemebershipVC.swift */; };
+		A00C296E1DF31CFE0019FB8B /* AddEditMemebershipVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00C29691DF31CFE0019FB8B /* AddEditMemebershipVC.swift */; };
+		A00C29701DF3E29B0019FB8B /* MembershipCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00C296F1DF3E29B0019FB8B /* MembershipCollectionVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,10 +40,10 @@
 		3E37D3661DF09E4A0054C4DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42976B9D1DF27D4900ADB0D7 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		A00C29651DF31CFE0019FB8B /* MembershipClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembershipClass.swift; sourceTree = "<group>"; };
-		A00C29661DF31CFE0019FB8B /* MembershipCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembershipCollectionVC.swift; sourceTree = "<group>"; };
 		A00C29671DF31CFE0019FB8B /* MembershipCollectionVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembershipCollectionVCell.swift; sourceTree = "<group>"; };
 		A00C29681DF31CFE0019FB8B /* ShowMembershipVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowMembershipVC.swift; sourceTree = "<group>"; };
-		A00C29691DF31CFE0019FB8B /* AddMemebershipVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMemebershipVC.swift; sourceTree = "<group>"; };
+		A00C29691DF31CFE0019FB8B /* AddEditMemebershipVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEditMemebershipVC.swift; sourceTree = "<group>"; };
+		A00C296F1DF3E29B0019FB8B /* MembershipCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembershipCollectionVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,10 +112,10 @@
 			isa = PBXGroup;
 			children = (
 				A00C29651DF31CFE0019FB8B /* MembershipClass.swift */,
-				A00C29661DF31CFE0019FB8B /* MembershipCollectionVC.swift */,
+				A00C296F1DF3E29B0019FB8B /* MembershipCollectionVC.swift */,
 				A00C29671DF31CFE0019FB8B /* MembershipCollectionVCell.swift */,
 				A00C29681DF31CFE0019FB8B /* ShowMembershipVC.swift */,
-				A00C29691DF31CFE0019FB8B /* AddMemebershipVC.swift */,
+				A00C29691DF31CFE0019FB8B /* AddEditMemebershipVC.swift */,
 			);
 			name = Membership;
 			sourceTree = "<group>";
@@ -216,12 +216,12 @@
 				3E37D3591DF09E4A0054C4DA /* AppDelegate.swift in Sources */,
 				3E36B1791DF2133000385315 /* GenerateBarcode.swift in Sources */,
 				3E36B1731DF203FC00385315 /* DetailCouponViewController.swift in Sources */,
-				A00C296B1DF31CFE0019FB8B /* MembershipCollectionVC.swift in Sources */,
 				42976B9E1DF27D4900ADB0D7 /* Model.xcdatamodeld in Sources */,
+				A00C29701DF3E29B0019FB8B /* MembershipCollectionVC.swift in Sources */,
 				A00C296D1DF31CFE0019FB8B /* ShowMembershipVC.swift in Sources */,
 				3E37D35B1DF09E4A0054C4DA /* FavoriteViewController.swift in Sources */,
 				3E36B1771DF2048F00385315 /* CouponTableViewCell.swift in Sources */,
-				A00C296E1DF31CFE0019FB8B /* AddMemebershipVC.swift in Sources */,
+				A00C296E1DF31CFE0019FB8B /* AddEditMemebershipVC.swift in Sources */,
 				3E36B1701DF2033000385315 /* CouponTableViewController.swift in Sources */,
 				A00C296A1DF31CFE0019FB8B /* MembershipClass.swift in Sources */,
 			);

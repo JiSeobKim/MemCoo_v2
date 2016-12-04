@@ -37,7 +37,7 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
     override func viewWillAppear(_ animated: Bool) {
                 // 뷰2->뷰1는 viewDidLoad로 못함
         
-        ad?.modifyCheck = 0
+        ad?.modifyCheck = false
         //체크 변수 복구
         self.collectionView.reloadData()
         //컬렉션뷰 릴로드
@@ -47,19 +47,15 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
     
     
     
-    @IBOutlet weak var TestLabel: UILabel!
-    
-    var paramTest : String?
+   
     
     
     
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //컬렉션 뷰 셀 갯수 생성
-//구조체 통일 전
         return (ad?.membership.count)!
-//구조체 통일 후
-//        return (ad?.membershipName.count)!
+
         
     }
     
@@ -68,16 +64,13 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
         // 설정할 cell 선택(빨간 "cell"은 어트리뷰트인스펙터의 identifier)
         
         
-//구조체 통일 후
+
         cell.LogoShow.image = ad?.membership[indexPath.row].logo
         cell.LogoName.text = ad?.membership[indexPath.row].brand
+        //로고의 이미지/ 텍스트 값 대입
         
         
-//구조체 통일 전
-//        cell.LogoShow.image = ad?.membershipLogo[indexPath.row]
-//        cell.LogoName.text = ad?.membershipName[indexPath.row]
-//        //로고의 이미지/ 텍스트 값 대입
-        
+  
         return cell
         
     }
@@ -93,28 +86,9 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
             //선택된 셀
             ad?.showNow = indexPath.row
             //Appdelegate에 선택된 셀 번호 전달
-//구조체 통일에선 이것만 필요
-            
-            
-            
-            
-            
-            ////////////////////////////////////////////////
-//            let show = segue.destination as! ShowMembershipVC
-//            // 'CollectionShowController'내 변수 사용하기
-//            
-//            show.barcode = ad?.barcode[indexPath.row]
-//            show.image = (ad?.membershipLogo[indexPath.row]!)!
-//            show.title = ad?.membershipName[indexPath.row]
-//            
-            //선택된 셀의 바코드와 로고, 이름 전달
-            ////////////////////////////////////////////////
         }
     }
     
-    @IBAction func unwindToMainViewController(segue : UIStoryboardSegue){
-        //화면 되돌아오기 메소드
-    }
 
     
     

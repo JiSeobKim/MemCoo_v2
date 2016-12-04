@@ -14,21 +14,11 @@ class ShowMembershipVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//구조체 통일
+
         self.ShowBarcode.image = ad?.membership[(ad?.showNow)!].barcodeImage
         //imageView에 바코드 이미지 입력
-        self.ShowName.text = ad?.membership[(ad?.showNow)!].brand
+        self.navigationItem.title = ad?.membership[(ad?.showNow)!].brand
         //Label에 브랜드명 입력
-        //test
-        
-////구조체 통일 전
-//        self.ShowBarcode.image = ad?.fromString(string: String(describing: barcode))
-//        //바코드 이미지로 변환
-//        self.ShowName.text = self.title
-//        //전달받은 string 띄우기
-        
-        
-        
 
         // Do any additional setup after loading the view.
     }
@@ -41,14 +31,11 @@ class ShowMembershipVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         //수정시 값 되불러 오기
         //방식 차이( viewDidLoad:선택된 셀로부터 값 받기 / viewWillAppear: 앱델리게이트에 저장된 값 받기)
-        if ad?.modifyCheck == 1 {
-////구조체 통일 전
+        if ad?.modifyCheck == true {
             self.ShowBarcode.image = ad?.membership[(ad?.showNow)!].barcodeImage
-            self.ShowName.text = ad?.membership[(ad?.showNow)!].brand
+        
             
-////구조체 통일 후
-//            self.ShowBarcode.image = ad?.fromString(string: String(describing: ad?.barcode[(ad?.showNow)!]))
-//            self.ShowName.text = ad?.membershipName[(ad?.showNow)!]
+
 
         }
     }
@@ -58,12 +45,12 @@ class ShowMembershipVC: UIViewController {
     var ad = UIApplication.shared.delegate as? AppDelegate
     //AppDelegate 사용
     
-    @IBOutlet weak var ShowName: UILabel!
+    
     @IBOutlet weak var ShowBarcode: UIImageView!
     
     @IBAction func modify(_ sender: Any) {
         // 수정 버튼
-        ad?.modifyCheck = 1
+        ad?.modifyCheck = true
         // 수정 버튼으로 들어가는지 확인 할 변수
         if let uvc = self.storyboard?.instantiateViewController(withIdentifier: "AddTab")
             // 전환할 뷰 컨트롤러의 StoryBoard ID 정보를 객체화
@@ -80,9 +67,7 @@ class ShowMembershipVC: UIViewController {
     
     
     
-    
-    // 바코드 이미지로 변환 함수
-    
+ 
     /*
     // MARK: - Navigation
 

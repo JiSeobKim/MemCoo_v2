@@ -9,30 +9,29 @@
 import UIKit
 
 
-class AddMemebershipVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class AddEditMemebershipVC: UIViewController {
       // 멤버쉽 추가 페이지
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        pickerView.dataSource = self
-        pickerView.delegate = self
+       
         
-        if ad?.modifyCheck == 1 {
+        if ad?.modifyCheck == true {
             //수정 버튼을 통해 들어온 것 확인
             self.navigationItem.title = "멤버십 카드 수정"
             //네비게이션 타이틀 변경
             self.navigationItem.rightBarButtonItem?.title = "수정"
             //네비게이션 오른쪽 아이템 타이틀 변경
-//구조체 통일 후
+
             self.paramName.text = ad?.membership[(ad?.showNow)!].brand
+            //텍스트 필드에 브랜드 띄우기
             self.paramCode.text = ad?.membership[(ad?.showNow)!].barcode
-//구조체 통일 전
-//            self.paramName.text = ad?.membershipName[(ad?.showNow)!]
-//            //텍스트 필드에 이름 값 띄우기
-//            self.paramCode.text = String(describing: (ad?.barcode[(ad?.showNow)!])!)
-//            //텍스트 필드에 바코드 값 띄우기
+            //텍스트 필드에 바코드 값 띄우기
             
+        } else {
+            self.navigationItem.title = "멤버십 카드 추가"
+            self.navigationItem.rightBarButtonItem?.title = "추가"
         }
         
         
@@ -50,16 +49,11 @@ class AddMemebershipVC: UIViewController, UIPickerViewDelegate, UIPickerViewData
     
     @IBOutlet weak var paramName: UITextField!
     @IBOutlet weak var paramCode: UITextField!
-    @IBOutlet weak var pickerView: UIPickerView!
-    
-    var logo = ["default", "KT", "SKT","U+"]
-    
-    @IBOutlet weak var pickLogo: UILabel!
-    
+        
     let ad = UIApplication.shared.delegate as? AppDelegate
    
    
-    var AddInfo = MembershipStruct().self
+    var AddInfo = MembershipClass()
 
     
     @IBAction func Add(_ sender: AnyObject) {
@@ -78,27 +72,11 @@ class AddMemebershipVC: UIViewController, UIPickerViewDelegate, UIPickerViewData
             AddInfo.barcode = self.paramCode.text!
             AddInfo.barcodeImage = ad?.fromString(string: self.paramCode.text!)
             
-            if ad?.modifyCheck == 1 {
+            if ad?.modifyCheck == true {
                 ad?.membership[(ad?.showNow)!] = AddInfo
             } else{
                 ad?.membership.append(AddInfo)
             }
-        
-        
-        // 구조체 통일 전
-//        if ad?.modifyCheck == 1 {
-//            ad?.membershipName[(ad?.showNow)!] = self.paramName.text!
-//            ad?.barcode[(ad?.showNow)!] = Int(self.paramCode.text!)!
-//            // 배열 수정
-//            
-//        }
-//        else {
-//            ad?.membershipName.append(self.paramName.text!)
-//            ad?.barcode.append(Int(self.paramCode.text!)!)
-//            ad?.membershipLogo.append(UIImage(named: "default"))
-//            // 배열 내에 값 추가
-//            
-//        }
         
         
         
@@ -108,23 +86,6 @@ class AddMemebershipVC: UIViewController, UIPickerViewDelegate, UIPickerViewData
         }
     }
     
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return logo.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return logo[row]
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-    
-        pickLogo.text = logo[row]
-        AddInfo.logo = UIImage(named: logo[row])
-    }
     
 
 }

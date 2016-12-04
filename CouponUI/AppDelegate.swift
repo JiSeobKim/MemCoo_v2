@@ -9,10 +9,37 @@
 import UIKit
 import CoreData
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    
+    //using in membership
+    var showNow : Int?
+    //현재 보고 있는 컬렉션 셀 번호
+    var modifyCheck : Bool = false
+    //수정 mode On/Off
+    var membership : Array = [KT]
+    //예시 1 기본값 대입 & 저장소 역할
+    
+    //바코드 이미지 생성기
+    func fromString(string: String) -> UIImage? {
+        let data = string.data(using: String.Encoding.ascii)
+        if let filter = CIFilter(name: "CICode128BarcodeGenerator") {
+            filter.setValue(data, forKey: "inputMessage")
+            let transform = CGAffineTransform(scaleX: 3, y: 3)
+            
+            if let output = filter.outputImage?.applying(transform) {
+                return UIImage(ciImage: output)
+            }
+        }
+        
+        return nil
+    }
+
+    
     
     var product = [String?]()
     var barcode = [String?]()
@@ -21,6 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+
         // Override point for customization after application launch.
         return true
     }

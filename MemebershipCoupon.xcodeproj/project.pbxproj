@@ -83,9 +83,9 @@
 				42976BA11DF27DC900ADB0D7 /* Favorite */,
 				42976BA01DF27DB000ADB0D7 /* Membership */,
 				42976B9F1DF27D9600ADB0D7 /* Util */,
-				3E37D3581DF09E4A0054C4DA /* AppDelegate.swift */,
 				3E36B1711DF2036100385315 /* Coupon */,
 				3E37D35E1DF09E4A0054C4DA /* Main.storyboard */,
+				3E37D3581DF09E4A0054C4DA /* AppDelegate.swift */,
 				42976B9C1DF27D4900ADB0D7 /* Model.xcdatamodeld */,
 			);
 			name = MembershipCoupon;

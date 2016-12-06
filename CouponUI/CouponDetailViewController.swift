@@ -23,6 +23,7 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    //pushTest 입니다 Jiseob
     
 
     /*

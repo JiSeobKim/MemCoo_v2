@@ -1,4 +1,41 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16B2555" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+    <entity name="Brand" representedClassName="Brand" syncable="YES">
+        <attribute name="logo" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="toCoupon" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Coupon" inverseName="toBrand" inverseEntity="Coupon" syncable="YES"/>
+        <relationship name="toMembership" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Membership" inverseName="toBrand" inverseEntity="Membership" syncable="YES"/>
+    </entity>
+    <entity name="Category" representedClassName="Category" syncable="YES">
+        <attribute name="symbol" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="toCoupon" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Coupon" inverseName="toCategory" inverseEntity="Coupon" syncable="YES"/>
+        <relationship name="toMembership" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Membership" inverseName="toCategory" inverseEntity="Membership" syncable="YES"/>
+    </entity>
+    <entity name="Coupon" representedClassName="Coupon" syncable="YES">
+        <attribute name="barcode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="barcodeImg" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="expireDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="favorite" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="originalText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="toBrand" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Brand" inverseName="toCoupon" inverseEntity="Brand" syncable="YES"/>
+        <relationship name="toCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="toCoupon" inverseEntity="Category" syncable="YES"/>
+    </entity>
+    <entity name="Membership" representedClassName="Membership" syncable="YES">
+        <attribute name="barcode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="barcodeImg" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="favorite" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="toBrand" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Brand" inverseName="toMembership" inverseEntity="Brand" syncable="YES"/>
+        <relationship name="toCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="toMembership" inverseEntity="Category" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Coupon" positionX="-18" positionY="27" width="128" height="195"/>
+        <element name="Membership" positionX="36" positionY="81" width="128" height="135"/>
+        <element name="Brand" positionX="9" positionY="54" width="128" height="105"/>
+        <element name="Category" positionX="18" positionY="63" width="128" height="105"/>
+    </elements>
 </model>

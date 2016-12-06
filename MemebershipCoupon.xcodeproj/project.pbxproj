@@ -14,10 +14,28 @@
 		3E36B1791DF2133000385315 /* GenerateBarcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E36B1781DF2133000385315 /* GenerateBarcode.swift */; };
 		3E37D3591DF09E4A0054C4DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E37D3581DF09E4A0054C4DA /* AppDelegate.swift */; };
 		3E37D35B1DF09E4A0054C4DA /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E37D35A1DF09E4A0054C4DA /* FavoriteViewController.swift */; };
-		3E37D35D1DF09E4A0054C4DA /* MembershipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E37D35C1DF09E4A0054C4DA /* MembershipViewController.swift */; };
-		3E37D3601DF09E4A0054C4DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E37D35E1DF09E4A0054C4DA /* Main.storyboard */; };
 		3E37D3621DF09E4A0054C4DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E37D3611DF09E4A0054C4DA /* Assets.xcassets */; };
 		3E37D3651DF09E4A0054C4DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E37D3631DF09E4A0054C4DA /* LaunchScreen.storyboard */; };
+		42976BD81DF6B37300ADB0D7 /* CouponCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42976BD71DF6B37300ADB0D7 /* CouponCell.swift */; };
+		42976BDC1DF6B38100ADB0D7 /* CouponViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42976BD91DF6B38100ADB0D7 /* CouponViewController.swift */; };
+		42976BDD1DF6B38100ADB0D7 /* CouponDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42976BDA1DF6B38100ADB0D7 /* CouponDetailViewController.swift */; };
+		42976BDE1DF6B38100ADB0D7 /* CouponAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42976BDB1DF6B38100ADB0D7 /* CouponAddViewController.swift */; };
+		42976BE01DF6B39200ADB0D7 /* DBUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42976BDF1DF6B39200ADB0D7 /* DBUtil.swift */; };
+		42976BF71DF6B48100ADB0D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42976BF61DF6B48100ADB0D7 /* Main.storyboard */; };
+		42976C0A1DF6C23800ADB0D7 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 42976C081DF6C23800ADB0D7 /* Model.xcdatamodeld */; };
+		42976C131DF6C4B100ADB0D7 /* Membership+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42976C0B1DF6C4B100ADB0D7 /* Membership+CoreDataClass.swift */; };
+		42976C141DF6C4B100ADB0D7 /* Membership+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42976C0C1DF6C4B100ADB0D7 /* Membership+CoreDataProperties.swift */; };
+		42976C151DF6C4B100ADB0D7 /* Brand+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42976C0D1DF6C4B100ADB0D7 /* Brand+CoreDataClass.swift */; };
+		42976C161DF6C4B100ADB0D7 /* Brand+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42976C0E1DF6C4B100ADB0D7 /* Brand+CoreDataProperties.swift */; };
+		42976C171DF6C4B100ADB0D7 /* Coupon+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42976C0F1DF6C4B100ADB0D7 /* Coupon+CoreDataClass.swift */; };
+		42976C181DF6C4B100ADB0D7 /* Coupon+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42976C101DF6C4B100ADB0D7 /* Coupon+CoreDataProperties.swift */; };
+		42976C191DF6C4B100ADB0D7 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42976C111DF6C4B100ADB0D7 /* Category+CoreDataClass.swift */; };
+		42976C1A1DF6C4B100ADB0D7 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42976C121DF6C4B100ADB0D7 /* Category+CoreDataProperties.swift */; };
+		A00C296A1DF31CFE0019FB8B /* MembershipClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00C29651DF31CFE0019FB8B /* MembershipClass.swift */; };
+		A00C296C1DF31CFE0019FB8B /* MembershipCollectionVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00C29671DF31CFE0019FB8B /* MembershipCollectionVCell.swift */; };
+		A00C296D1DF31CFE0019FB8B /* ShowMembershipVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00C29681DF31CFE0019FB8B /* ShowMembershipVC.swift */; };
+		A00C296E1DF31CFE0019FB8B /* AddEditMemebershipVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00C29691DF31CFE0019FB8B /* AddEditMemebershipVC.swift */; };
+		A00C29701DF3E29B0019FB8B /* MembershipCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00C296F1DF3E29B0019FB8B /* MembershipCollectionVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,11 +47,29 @@
 		3E37D3551DF09E4A0054C4DA /* MemebershipCoupon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemebershipCoupon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E37D3581DF09E4A0054C4DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E37D35A1DF09E4A0054C4DA /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
-		3E37D35C1DF09E4A0054C4DA /* MembershipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipViewController.swift; sourceTree = "<group>"; };
-		3E37D35F1DF09E4A0054C4DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3E37D3611DF09E4A0054C4DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E37D3641DF09E4A0054C4DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E37D3661DF09E4A0054C4DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42976BD71DF6B37300ADB0D7 /* CouponCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponCell.swift; sourceTree = "<group>"; };
+		42976BD91DF6B38100ADB0D7 /* CouponViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponViewController.swift; sourceTree = "<group>"; };
+		42976BDA1DF6B38100ADB0D7 /* CouponDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponDetailViewController.swift; sourceTree = "<group>"; };
+		42976BDB1DF6B38100ADB0D7 /* CouponAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponAddViewController.swift; sourceTree = "<group>"; };
+		42976BDF1DF6B39200ADB0D7 /* DBUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBUtil.swift; sourceTree = "<group>"; };
+		42976BF61DF6B48100ADB0D7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		42976C091DF6C23800ADB0D7 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		42976C0B1DF6C4B100ADB0D7 /* Membership+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Membership+CoreDataClass.swift"; sourceTree = "<group>"; };
+		42976C0C1DF6C4B100ADB0D7 /* Membership+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Membership+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		42976C0D1DF6C4B100ADB0D7 /* Brand+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Brand+CoreDataClass.swift"; sourceTree = "<group>"; };
+		42976C0E1DF6C4B100ADB0D7 /* Brand+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Brand+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		42976C0F1DF6C4B100ADB0D7 /* Coupon+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Coupon+CoreDataClass.swift"; sourceTree = "<group>"; };
+		42976C101DF6C4B100ADB0D7 /* Coupon+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Coupon+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		42976C111DF6C4B100ADB0D7 /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
+		42976C121DF6C4B100ADB0D7 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A00C29651DF31CFE0019FB8B /* MembershipClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembershipClass.swift; sourceTree = "<group>"; };
+		A00C29671DF31CFE0019FB8B /* MembershipCollectionVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembershipCollectionVCell.swift; sourceTree = "<group>"; };
+		A00C29681DF31CFE0019FB8B /* ShowMembershipVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowMembershipVC.swift; sourceTree = "<group>"; };
+		A00C29691DF31CFE0019FB8B /* AddEditMemebershipVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEditMemebershipVC.swift; sourceTree = "<group>"; };
+		A00C296F1DF3E29B0019FB8B /* MembershipCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembershipCollectionVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,10 +86,11 @@
 		3E36B1711DF2036100385315 /* Coupon */ = {
 			isa = PBXGroup;
 			children = (
-				3E36B16F1DF2033000385315 /* CouponTableViewController.swift */,
-				3E36B1761DF2048F00385315 /* CouponTableViewCell.swift */,
-				3E36B1721DF203FC00385315 /* DetailCouponViewController.swift */,
-				3E36B1741DF2046D00385315 /* AddEditCouponViewController.swift */,
+				42976BD91DF6B38100ADB0D7 /* CouponViewController.swift */,
+				42976BDA1DF6B38100ADB0D7 /* CouponDetailViewController.swift */,
+				42976BDB1DF6B38100ADB0D7 /* CouponAddViewController.swift */,
+				42976BD71DF6B37300ADB0D7 /* CouponCell.swift */,
+				42976BD61DF6B30100ADB0D7 /* mino */,
 			);
 			name = Coupon;
 			sourceTree = "<group>";
@@ -77,18 +114,83 @@
 		3E37D3571DF09E4A0054C4DA /* MembershipCoupon */ = {
 			isa = PBXGroup;
 			children = (
+				42976C1B1DF6C4C400ADB0D7 /* DatabaseModel */,
+				42976BA31DF27DFC00ADB0D7 /* Supporting Files */,
+				42976BA11DF27DC900ADB0D7 /* Favorite */,
+				42976BA01DF27DB000ADB0D7 /* Membership */,
+				42976B9F1DF27D9600ADB0D7 /* Util */,
 				3E37D3581DF09E4A0054C4DA /* AppDelegate.swift */,
-				3E36B1781DF2133000385315 /* GenerateBarcode.swift */,
-				3E37D35A1DF09E4A0054C4DA /* FavoriteViewController.swift */,
-				3E37D35C1DF09E4A0054C4DA /* MembershipViewController.swift */,
 				3E36B1711DF2036100385315 /* Coupon */,
-				3E37D35E1DF09E4A0054C4DA /* Main.storyboard */,
-				3E37D3611DF09E4A0054C4DA /* Assets.xcassets */,
-				3E37D3631DF09E4A0054C4DA /* LaunchScreen.storyboard */,
-				3E37D3661DF09E4A0054C4DA /* Info.plist */,
+				42976C081DF6C23800ADB0D7 /* Model.xcdatamodeld */,
+				42976BF61DF6B48100ADB0D7 /* Main.storyboard */,
 			);
 			name = MembershipCoupon;
 			path = CouponUI;
+			sourceTree = "<group>";
+		};
+		42976B9F1DF27D9600ADB0D7 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				42976BDF1DF6B39200ADB0D7 /* DBUtil.swift */,
+				3E36B1781DF2133000385315 /* GenerateBarcode.swift */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+		42976BA01DF27DB000ADB0D7 /* Membership */ = {
+			isa = PBXGroup;
+			children = (
+				A00C29651DF31CFE0019FB8B /* MembershipClass.swift */,
+				A00C296F1DF3E29B0019FB8B /* MembershipCollectionVC.swift */,
+				A00C29671DF31CFE0019FB8B /* MembershipCollectionVCell.swift */,
+				A00C29681DF31CFE0019FB8B /* ShowMembershipVC.swift */,
+				A00C29691DF31CFE0019FB8B /* AddEditMemebershipVC.swift */,
+			);
+			name = Membership;
+			sourceTree = "<group>";
+		};
+		42976BA11DF27DC900ADB0D7 /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				3E37D35A1DF09E4A0054C4DA /* FavoriteViewController.swift */,
+			);
+			name = Favorite;
+			sourceTree = "<group>";
+		};
+		42976BA31DF27DFC00ADB0D7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3E37D3611DF09E4A0054C4DA /* Assets.xcassets */,
+				3E37D3661DF09E4A0054C4DA /* Info.plist */,
+				3E37D3631DF09E4A0054C4DA /* LaunchScreen.storyboard */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		42976BD61DF6B30100ADB0D7 /* mino */ = {
+			isa = PBXGroup;
+			children = (
+				3E36B16F1DF2033000385315 /* CouponTableViewController.swift */,
+				3E36B1761DF2048F00385315 /* CouponTableViewCell.swift */,
+				3E36B1721DF203FC00385315 /* DetailCouponViewController.swift */,
+				3E36B1741DF2046D00385315 /* AddEditCouponViewController.swift */,
+			);
+			name = mino;
+			sourceTree = "<group>";
+		};
+		42976C1B1DF6C4C400ADB0D7 /* DatabaseModel */ = {
+			isa = PBXGroup;
+			children = (
+				42976C0B1DF6C4B100ADB0D7 /* Membership+CoreDataClass.swift */,
+				42976C0C1DF6C4B100ADB0D7 /* Membership+CoreDataProperties.swift */,
+				42976C0D1DF6C4B100ADB0D7 /* Brand+CoreDataClass.swift */,
+				42976C0E1DF6C4B100ADB0D7 /* Brand+CoreDataProperties.swift */,
+				42976C0F1DF6C4B100ADB0D7 /* Coupon+CoreDataClass.swift */,
+				42976C101DF6C4B100ADB0D7 /* Coupon+CoreDataProperties.swift */,
+				42976C111DF6C4B100ADB0D7 /* Category+CoreDataClass.swift */,
+				42976C121DF6C4B100ADB0D7 /* Category+CoreDataProperties.swift */,
+			);
+			name = DatabaseModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,7 +255,7 @@
 			files = (
 				3E37D3651DF09E4A0054C4DA /* LaunchScreen.storyboard in Resources */,
 				3E37D3621DF09E4A0054C4DA /* Assets.xcassets in Resources */,
-				3E37D3601DF09E4A0054C4DA /* Main.storyboard in Resources */,
+				42976BF71DF6B48100ADB0D7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,28 +266,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42976C171DF6C4B100ADB0D7 /* Coupon+CoreDataClass.swift in Sources */,
+				42976C1A1DF6C4B100ADB0D7 /* Category+CoreDataProperties.swift in Sources */,
 				3E36B1751DF2046D00385315 /* AddEditCouponViewController.swift in Sources */,
-				3E37D35D1DF09E4A0054C4DA /* MembershipViewController.swift in Sources */,
+				A00C296C1DF31CFE0019FB8B /* MembershipCollectionVCell.swift in Sources */,
+				42976BDD1DF6B38100ADB0D7 /* CouponDetailViewController.swift in Sources */,
+				42976BDC1DF6B38100ADB0D7 /* CouponViewController.swift in Sources */,
+				42976C151DF6C4B100ADB0D7 /* Brand+CoreDataClass.swift in Sources */,
 				3E37D3591DF09E4A0054C4DA /* AppDelegate.swift in Sources */,
 				3E36B1791DF2133000385315 /* GenerateBarcode.swift in Sources */,
 				3E36B1731DF203FC00385315 /* DetailCouponViewController.swift in Sources */,
+				42976C181DF6C4B100ADB0D7 /* Coupon+CoreDataProperties.swift in Sources */,
+				42976C0A1DF6C23800ADB0D7 /* Model.xcdatamodeld in Sources */,
+				42976BE01DF6B39200ADB0D7 /* DBUtil.swift in Sources */,
+				42976C131DF6C4B100ADB0D7 /* Membership+CoreDataClass.swift in Sources */,
+				A00C29701DF3E29B0019FB8B /* MembershipCollectionVC.swift in Sources */,
+				A00C296D1DF31CFE0019FB8B /* ShowMembershipVC.swift in Sources */,
 				3E37D35B1DF09E4A0054C4DA /* FavoriteViewController.swift in Sources */,
+				42976BDE1DF6B38100ADB0D7 /* CouponAddViewController.swift in Sources */,
 				3E36B1771DF2048F00385315 /* CouponTableViewCell.swift in Sources */,
+				A00C296E1DF31CFE0019FB8B /* AddEditMemebershipVC.swift in Sources */,
+				42976C161DF6C4B100ADB0D7 /* Brand+CoreDataProperties.swift in Sources */,
+				42976BD81DF6B37300ADB0D7 /* CouponCell.swift in Sources */,
+				42976C141DF6C4B100ADB0D7 /* Membership+CoreDataProperties.swift in Sources */,
 				3E36B1701DF2033000385315 /* CouponTableViewController.swift in Sources */,
+				42976C191DF6C4B100ADB0D7 /* Category+CoreDataClass.swift in Sources */,
+				A00C296A1DF31CFE0019FB8B /* MembershipClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		3E37D35E1DF09E4A0054C4DA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3E37D35F1DF09E4A0054C4DA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3E37D3631DF09E4A0054C4DA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -336,6 +448,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		42976C081DF6C23800ADB0D7 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				42976C091DF6C23800ADB0D7 /* Model.xcdatamodel */,
+			);
+			currentVersion = 42976C091DF6C23800ADB0D7 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3E37D34D1DF09E490054C4DA /* Project object */;
 }

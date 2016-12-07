@@ -105,6 +105,14 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
         }
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        
+        if let sections = controller.sections {
+            return sections.count
+        }
+        return 0
+    }
+    
     //cell의 높이 정의
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         

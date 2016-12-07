@@ -8,9 +8,8 @@
 
 import UIKit
 
-class GenerateBarcode {
-    func fromString(string: String) -> UIImage? {
-        let data = string.data(using: String.Encoding.ascii)
+    func generateBarcodeFromString(string: String?) -> UIImage? {
+        let data = string?.data(using: String.Encoding.ascii)
         if let filter = CIFilter(name: "CICode128BarcodeGenerator") {
             filter.setValue(data, forKey: "inputMessage")
             let transform = CGAffineTransform(scaleX: 3, y: 3)
@@ -22,5 +21,4 @@ class GenerateBarcode {
         
         return nil
     }
-}
 

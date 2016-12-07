@@ -11,6 +11,8 @@ import UIKit
 class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var imagePicker: UIImagePickerController!
+    
+    //detail에서 넘어온 coupon 객체를 받기하기 위한 coupon 객체
     var couponToEdit: Coupon?
     
     @IBOutlet weak var logo: UIImageView!
@@ -23,7 +25,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
             
         }
         
-        _ = navigationController?.popViewController(animated: true)
+        _ = navigationController?.popToRootViewController(animated: true)
     }
    
     //로고를 선택하면 데이터베이스의 로고를 불러오기 위한 버튼액션(현재는 사진첩으로 가게해놓음)
@@ -46,8 +48,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
     //barcode 실시간으로 보여주기 위한 액션
     @IBAction func createdBarcodeImg(_ sender: UITextField) {
 
-        let generateBarcode = GenerateBarcode()
-        barcodeImg.image = generateBarcode.fromString(string: barcode.text!)
+        barcodeImg.image = generateBarcodeFromString(string: barcode.text!)
     }
 
     @IBOutlet weak var barcodeImg: UIImageView!
@@ -78,13 +79,13 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
     @IBAction func categoryFieldPressed(_ sender: UITextField) {
         
     }
+    @IBOutlet weak var originalText: UITextView!
     
     //모든 값을 코어데이터 테이블로 저장하기 위한 액션
     @IBAction func saveBtnPressed(_ sender: UIButton) {
         var coupon: Coupon!
-        let brand = Brand(context: context)
         
-        brand.logo = logo.image
+        let ImageContext = Image(context: context)
         
         //itemToEdit이 nil일 경우 새로운 객체를 전달해서 저장 아닐경우 그 itemToEdit으로 저장
         if couponToEdit == nil {
@@ -93,22 +94,29 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
             coupon = couponToEdit
         }
         
-        coupon.toBrand?.logo = brand.logo
+        //logo 담기!
+        
+        if let logoImg = logo.image {
+            
+            ImageContext.image = logoImg
+            coupon.toImage = ImageContext
+            
+        }
+        
+        //상품명 담기!
         
         if let title = product.text {
             coupon.title = title
         }
         
+        //바코드번호 담기!
         if let barcode = barcode.text {
             
             coupon.barcode = barcode
             
         }
         
-        if let barcodeImg = barcodeImg.image {
-            coupon.barcodeImg = barcodeImg
-        }
-        
+        //유효기간 담기
         if let expiredDate = expiredDate.text{
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy-MM-dd"
@@ -118,9 +126,17 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
             }
         }
         
+        //메모 담기
+        if let memo = originalText.text {
+            
+            coupon.originalText = memo
+        }
+        
         ad.saveContext()
         
+        
         _ = navigationController?.popViewController(animated: true)
+        
     }
     
     //Coupon 데이타를 로드하는 펑션
@@ -129,9 +145,10 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         if let coupon = couponToEdit {
             product.text = coupon.title
             barcode.text = coupon.barcode
-            barcodeImg.image = coupon.barcodeImg as! UIImage?
+            barcodeImg.image = generateBarcodeFromString(string: barcode.text)
             expiredDate.text = displayTheDate(theDate: coupon.expireDate as! Date)
-            logo.image = coupon.toBrand?.logo as? UIImage
+            logo.image = coupon.toImage?.image as? UIImage
+            originalText.text = coupon.originalText
         }
     }
     

@@ -11,11 +11,9 @@ import UIKit
 class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var imagePicker: UIImagePickerController!
-<<<<<<< HEAD
-=======
+
     
     //detail에서 넘어온 coupon 객체를 받기하기 위한 coupon 객체
->>>>>>> JoosungKim
     var couponToEdit: Coupon?
     
     @IBOutlet weak var logo: UIImageView!
@@ -28,11 +26,9 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
             
         }
         
-<<<<<<< HEAD
-        _ = navigationController?.popViewController(animated: true)
-=======
+
         _ = navigationController?.popToRootViewController(animated: true)
->>>>>>> JoosungKim
+
     }
    
     //로고를 선택하면 데이터베이스의 로고를 불러오기 위한 버튼액션(현재는 사진첩으로 가게해놓음)
@@ -55,12 +51,9 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
     //barcode 실시간으로 보여주기 위한 액션
     @IBAction func createdBarcodeImg(_ sender: UITextField) {
 
-<<<<<<< HEAD
-        let generateBarcode = GenerateBarcode()
-        barcodeImg.image = generateBarcode.fromString(string: barcode.text!)
-=======
+
         barcodeImg.image = generateBarcodeFromString(string: barcode.text!)
->>>>>>> JoosungKim
+
     }
 
     @IBOutlet weak var barcodeImg: UIImageView!
@@ -91,22 +84,16 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
     @IBAction func categoryFieldPressed(_ sender: UITextField) {
         
     }
-<<<<<<< HEAD
-=======
+
     @IBOutlet weak var originalText: UITextView!
->>>>>>> JoosungKim
+
     
     //모든 값을 코어데이터 테이블로 저장하기 위한 액션
     @IBAction func saveBtnPressed(_ sender: UIButton) {
         var coupon: Coupon!
-<<<<<<< HEAD
-        let brand = Brand(context: context)
-        
-        brand.logo = logo.image
-=======
+
         
         let ImageContext = Image(context: context)
->>>>>>> JoosungKim
         
         //itemToEdit이 nil일 경우 새로운 객체를 전달해서 저장 아닐경우 그 itemToEdit으로 저장
         if couponToEdit == nil {
@@ -115,9 +102,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
             coupon = couponToEdit
         }
         
-<<<<<<< HEAD
-        coupon.toBrand?.logo = brand.logo
-=======
+
         //logo 담기!
         
         if let logoImg = logo.image {
@@ -128,30 +113,24 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         }
         
         //상품명 담기!
->>>>>>> JoosungKim
+
         
         if let title = product.text {
             coupon.title = title
         }
         
-<<<<<<< HEAD
-=======
+
         //바코드번호 담기!
->>>>>>> JoosungKim
+
         if let barcode = barcode.text {
             
             coupon.barcode = barcode
             
         }
         
-<<<<<<< HEAD
-        if let barcodeImg = barcodeImg.image {
-            coupon.barcodeImg = barcodeImg
-        }
-        
-=======
+
         //유효기간 담기
->>>>>>> JoosungKim
+
         if let expiredDate = expiredDate.text{
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy-MM-dd"
@@ -161,11 +140,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
             }
         }
         
-<<<<<<< HEAD
-        ad.saveContext()
-        
-        _ = navigationController?.popViewController(animated: true)
-=======
+
         //메모 담기
         if let memo = originalText.text {
             
@@ -177,7 +152,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         
         _ = navigationController?.popViewController(animated: true)
         
->>>>>>> JoosungKim
+
     }
     
     //Coupon 데이타를 로드하는 펑션
@@ -186,16 +161,12 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         if let coupon = couponToEdit {
             product.text = coupon.title
             barcode.text = coupon.barcode
-<<<<<<< HEAD
-            barcodeImg.image = coupon.barcodeImg as! UIImage?
-            expiredDate.text = displayTheDate(theDate: coupon.expireDate as! Date)
-            logo.image = coupon.toBrand?.logo as? UIImage
-=======
+
             barcodeImg.image = generateBarcodeFromString(string: barcode.text)
             expiredDate.text = displayTheDate(theDate: coupon.expireDate as! Date)
             logo.image = coupon.toImage?.image as? UIImage
             originalText.text = coupon.originalText
->>>>>>> JoosungKim
+
         }
     }
     

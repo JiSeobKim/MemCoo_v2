@@ -10,10 +10,7 @@ import UIKit
 
 class CouponDetailViewController: UIViewController, UINavigationControllerDelegate {
     
-<<<<<<< HEAD
-    //쿠폰뷰콘트롤러에서 받는 couponToDetail과 쿠폰애드뷰콘트롤러에 전달해주는 couponToEdit이 있다.
-    var couponToDetail: Coupon?
-=======
+
     @IBOutlet weak var barcodeImg: UIImageView!
     @IBOutlet weak var barcode: UILabel!
     @IBOutlet weak var expireDate: UITextField!
@@ -24,38 +21,21 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
     //쿠폰뷰콘트롤러에서 받는 couponToDetail과 쿠폰애드뷰콘트롤러에 전달해주는 couponToEdit이 있다.
     var couponToDetail: Coupon?
     
->>>>>>> JoosungKim
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-<<<<<<< HEAD
-        // Do any additional setup after loading the view.
-=======
         if couponToDetail != nil {
             loadCouponData()
         }
->>>>>>> JoosungKim
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-<<<<<<< HEAD
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-=======
     //pushTest 입니다 Jiseob
     
     //아이템 데이타를 로드하는 펑션
@@ -92,5 +72,4 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
      // Pass the selected object to the new view controller.
      }
      */
->>>>>>> JoosungKim
 }

@@ -2,11 +2,7 @@
 //  Coupon+CoreDataProperties.swift
 //  MemebershipCoupon
 //
-<<<<<<< HEAD
-//  Created by Joosung Kim on 06/12/2016.
-=======
 //  Created by Joosung Kim on 07/12/2016.
->>>>>>> JoosungKim
 //  Copyright © 2016 mino. All rights reserved.
 //
 
@@ -21,10 +17,6 @@ extension Coupon {
     }
 
     @NSManaged public var barcode: String?
-<<<<<<< HEAD
-    @NSManaged public var barcodeImg: NSObject?
-=======
->>>>>>> JoosungKim
     @NSManaged public var created: NSDate?
     @NSManaged public var expireDate: NSDate?
     @NSManaged public var favorite: Bool
@@ -32,9 +24,6 @@ extension Coupon {
     @NSManaged public var originalText: String?
     @NSManaged public var title: String?
     @NSManaged public var toBrand: Brand?
-<<<<<<< HEAD
-    @NSManaged public var toCategory: Category?
-=======
     @NSManaged public var toCategory: NSSet?
     @NSManaged public var toImage: Image?
 
@@ -54,6 +43,5 @@ extension Coupon {
 
     @objc(removeToCategory:)
     @NSManaged public func removeFromToCategory(_ values: NSSet)
->>>>>>> JoosungKim
 
 }

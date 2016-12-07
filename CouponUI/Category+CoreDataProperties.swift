@@ -2,11 +2,7 @@
 //  Category+CoreDataProperties.swift
 //  MemebershipCoupon
 //
-<<<<<<< HEAD
-//  Created by Joosung Kim on 06/12/2016.
-=======
 //  Created by Joosung Kim on 07/12/2016.
->>>>>>> JoosungKim
 //  Copyright © 2016 mino. All rights reserved.
 //
 
@@ -19,13 +15,6 @@ extension Category {
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Category> {
         return NSFetchRequest<Category>(entityName: "Category");
     }
-
-<<<<<<< HEAD
-    @NSManaged public var symbol: NSObject?
-    @NSManaged public var title: String?
-    @NSManaged public var toCoupon: Coupon?
-    @NSManaged public var toMembership: Membership?
-=======
     @NSManaged public var title: String?
     @NSManaged public var toCoupon: NSSet?
     @NSManaged public var toMembership: NSSet?
@@ -64,6 +53,5 @@ extension Category {
 
     @objc(removeToMembership:)
     @NSManaged public func removeFromToMembership(_ values: NSSet)
->>>>>>> JoosungKim
 
 }

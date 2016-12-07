@@ -33,6 +33,7 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    //pushTest 입니다 Jiseob
     
     //아이템 데이타를 로드하는 펑션
     func loadCouponData() {

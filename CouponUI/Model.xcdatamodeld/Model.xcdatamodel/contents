@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16B2555" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Brand" representedClassName="Brand" syncable="YES">
+<<<<<<< HEAD
         <attribute name="logo" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="toCoupon" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Coupon" inverseName="toBrand" inverseEntity="Coupon" syncable="YES"/>
@@ -15,6 +16,21 @@
     <entity name="Coupon" representedClassName="Coupon" syncable="YES">
         <attribute name="barcode" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="barcodeImg" optional="YES" attributeType="Transformable" syncable="YES"/>
+=======
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="toCoupon" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Coupon" inverseName="toBrand" inverseEntity="Coupon" syncable="YES"/>
+        <relationship name="toImage" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Image" inverseName="toBrand" inverseEntity="Image" syncable="YES"/>
+        <relationship name="toMembership" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Membership" inverseName="toBrand" inverseEntity="Membership" syncable="YES"/>
+    </entity>
+    <entity name="Category" representedClassName="Category" syncable="YES">
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="toCoupon" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Coupon" inverseName="toCategory" inverseEntity="Coupon" syncable="YES"/>
+        <relationship name="toImage" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Image" inverseName="toCategory" inverseEntity="Image" syncable="YES"/>
+        <relationship name="toMembership" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Membership" inverseName="toCategory" inverseEntity="Membership" syncable="YES"/>
+    </entity>
+    <entity name="Coupon" representedClassName="Coupon" syncable="YES">
+        <attribute name="barcode" optional="YES" attributeType="String" syncable="YES"/>
+>>>>>>> JoosungKim
         <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="expireDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="favorite" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
@@ -22,6 +38,7 @@
         <attribute name="originalText" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="toBrand" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Brand" inverseName="toCoupon" inverseEntity="Brand" syncable="YES"/>
+<<<<<<< HEAD
         <relationship name="toCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="toCoupon" inverseEntity="Category" syncable="YES"/>
     </entity>
     <entity name="Membership" representedClassName="Membership" syncable="YES">
@@ -37,5 +54,31 @@
         <element name="Membership" positionX="36" positionY="81" width="128" height="135"/>
         <element name="Brand" positionX="9" positionY="54" width="128" height="105"/>
         <element name="Category" positionX="18" positionY="63" width="128" height="105"/>
+=======
+        <relationship name="toCategory" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Category" inverseName="toCoupon" inverseEntity="Category" syncable="YES"/>
+        <relationship name="toImage" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Image" inverseName="toCoupon" inverseEntity="Image" syncable="YES"/>
+    </entity>
+    <entity name="Image" representedClassName="Image" syncable="YES">
+        <attribute name="image" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <relationship name="toBrand" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Brand" inverseName="toImage" inverseEntity="Brand" syncable="YES"/>
+        <relationship name="toCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="toImage" inverseEntity="Category" syncable="YES"/>
+        <relationship name="toCoupon" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Coupon" inverseName="toImage" inverseEntity="Coupon" syncable="YES"/>
+        <relationship name="toMembership" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Membership" inverseName="toImage" inverseEntity="Membership" syncable="YES"/>
+    </entity>
+    <entity name="Membership" representedClassName="Membership" syncable="YES">
+        <attribute name="barcode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="favorite" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="toBrand" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Brand" inverseName="toMembership" inverseEntity="Brand" syncable="YES"/>
+        <relationship name="toCategory" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Category" inverseName="toMembership" inverseEntity="Category" syncable="YES"/>
+        <relationship name="toImage" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Image" inverseName="toMembership" inverseEntity="Image" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Brand" positionX="-126" positionY="-0" width="128" height="103"/>
+        <element name="Category" positionX="-126" positionY="446" width="128" height="103"/>
+        <element name="Coupon" positionX="-558" positionY="113" width="128" height="193"/>
+        <element name="Membership" positionX="277" positionY="198" width="128" height="133"/>
+        <element name="Image" positionX="-119" positionY="189" width="128" height="118"/>
+>>>>>>> JoosungKim
     </elements>
 </model>

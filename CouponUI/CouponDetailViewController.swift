@@ -20,7 +20,7 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
     
     //쿠폰뷰콘트롤러에서 받는 couponToDetail과 쿠폰애드뷰콘트롤러에 전달해주는 couponToEdit이 있다.
     var couponToDetail: Coupon?
-    
+    var titleName: String?
 
 
     override func viewDidLoad() {
@@ -28,15 +28,10 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
 
         if couponToDetail != nil {
             loadCouponData()
+            self.navigationItem.title = titleName
         }
 
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    //pushTest 입니다 Jiseob
     
     //아이템 데이타를 로드하는 펑션
     func loadCouponData() {
@@ -46,6 +41,7 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
             barcodeImg.image = generateBarcodeFromString(string: coupon.barcode)
             expireDate.text = displayTheDate(theDate: coupon.expireDate as! Date)
             originalText.text = coupon.originalText
+            titleName = coupon.title
             
         }
     }

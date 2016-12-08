@@ -34,6 +34,7 @@ class CouponCell: UITableViewCell {
         logo.image = item.toImage?.image as? UIImage
         barcodeImg.image = generateBarcodeFromString(string: item.barcode)
         
+        dday.text = daysBetweenDates(startDate: item.expireDate as! Date, endDate: Date())
 
     }
     

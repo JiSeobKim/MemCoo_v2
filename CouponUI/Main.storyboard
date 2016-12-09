@@ -958,25 +958,25 @@ http://sk.gifticon.com/g/iGNNe5MEdoqi
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EqS-Hg-cGi">
-                                    <size key="itemSize" width="80" height="100"/>
+                                    <size key="itemSize" width="90" height="120"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="choicecell" id="Xl6-5h-xUd" customClass="MembershipCollectionVCell" customModule="MemebershipCoupon" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="10" width="80" height="100"/>
+                                        <rect key="frame" x="10" y="10" width="90" height="120"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="80" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="47n-bt-e2N">
-                                                    <rect key="frame" x="8" y="8" width="64" height="52"/>
+                                                    <rect key="frame" x="13" y="13" width="64" height="52"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Brand" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kwc-Dz-nSc">
-                                                    <rect key="frame" x="19" y="71" width="46" height="21"/>
+                                                    <rect key="frame" x="0.0" y="78" width="90" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -1008,7 +1008,7 @@ http://sk.gifticon.com/g/iGNNe5MEdoqi
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SoE-YT-xyI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4154" y="-1354"/>
+            <point key="canvasLocation" x="4152.8000000000002" y="-1354.2728635682161"/>
         </scene>
         <!--브랜드-->
         <scene sceneID="Sgo-T9-DTR">

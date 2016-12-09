@@ -34,6 +34,7 @@ class ShowMembershipVC: UIViewController {
                 barcode = barcode.insert(string: "-", ind: 14)
             }
         barcodeLabel.text = barcode
+        ShowLogo.image = ad.membership[(ad.showNow)!].logo
         
        
        
@@ -53,7 +54,8 @@ class ShowMembershipVC: UIViewController {
         //방식 차이( viewDidLoad:선택된 셀로부터 값 받기 / viewWillAppear: 앱델리게이트에 저장된 값 받기)
         if ad.modifyCheck == true {
             self.ShowBarcode.image = ad.membership[(ad.showNow)!].barcodeImage
-        
+            self.ShowLogo.image = ad.membership[(ad.showNow)!].logo
+
             
 
 
@@ -66,6 +68,7 @@ class ShowMembershipVC: UIViewController {
 
     var image = UIImage()
     
+    @IBOutlet weak var ShowLogo: UIImageView!
     @IBOutlet weak var barcodeLabel: UILabel!
     @IBOutlet weak var ShowBarcode: UIImageView!
 

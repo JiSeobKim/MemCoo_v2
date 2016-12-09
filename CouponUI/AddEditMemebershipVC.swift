@@ -22,7 +22,7 @@ class AddEditMemebershipVC: UIViewController {
             //네비게이션 타이틀 변경
             self.navigationItem.rightBarButtonItem?.title = "수정"
             //네비게이션 오른쪽 아이템 타이틀 변경
-
+            
             self.paramBrand.text = ad.membership[(ad.showNow)!].brand
             //텍스트 필드에 브랜드 띄우기
             self.paramBarcode.text = ad.membership[(ad.showNow)!].barcode

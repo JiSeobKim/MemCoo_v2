@@ -924,6 +924,7 @@ http://sk.gifticon.com/g/iGNNe5MEdoqi
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="choiceButton" destination="CAm-2P-rCT" id="RSY-rb-cau"/>
                         <outlet property="paramBarcode" destination="Vi5-VV-Twg" id="DAO-kj-lqH"/>
                         <outlet property="paramBrand" destination="5Ff-Fx-89c" id="jbn-QY-o5Y"/>
                         <outlet property="paramImage" destination="zUP-7i-rYm" id="XRt-0w-rpx"/>
@@ -931,7 +932,7 @@ http://sk.gifticon.com/g/iGNNe5MEdoqi
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Acl-AP-bWO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3319" y="-1354"/>
+            <point key="canvasLocation" x="3317.5999999999999" y="-1354.2728635682161"/>
         </scene>
         <!--Brand 선택-->
         <scene sceneID="pmh-1k-jfH">

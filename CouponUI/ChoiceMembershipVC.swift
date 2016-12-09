@@ -11,7 +11,7 @@ import UIKit
 
 class ChoiceMembershipVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource  {
     
-    let ad = UIApplication.shared.delegate as? AppDelegate
+  
 
     override func viewDidLoad() {
         
@@ -22,15 +22,15 @@ class ChoiceMembershipVC: UIViewController, UICollectionViewDelegate, UICollecti
         
         
 
-        return ad!.logoImage.count
+        return ad.logoImage.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "choicecell", for: indexPath) as! MembershipCollectionVCell
         
-        cell.choiceLogoShow.image = ad!.logoImage[indexPath.row]
-        cell.choiceLogoName.text = ad!.logoName[indexPath.row]
+        cell.choiceLogoShow.image = ad.logoImage[indexPath.row]
+        cell.choiceLogoName.text = ad.logoName[indexPath.row]
         
         return cell
         
@@ -45,9 +45,9 @@ class ChoiceMembershipVC: UIViewController, UICollectionViewDelegate, UICollecti
         cell?.layer.borderColor = UIColor.red.cgColor
         
         //네비 타이틀 변경
-        self.navigationItem.title = ad!.logoName[indexPath.row]
+        self.navigationItem.title = ad.logoName[indexPath.row]
         //선택된 셀 번호 전달
-        ad?.showNow = indexPath.row
+        ad.logoChoice = indexPath.row
     }
     
 

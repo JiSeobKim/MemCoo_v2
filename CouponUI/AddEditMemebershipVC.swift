@@ -16,18 +16,18 @@ class AddEditMemebershipVC: UIViewController {
         super.viewDidLoad()
         
         
-        if ad?.modifyCheck == true {
+        if ad.modifyCheck == true {
             //수정 버튼을 통해 들어온 것 확인
             self.navigationItem.title = "멤버십 카드 수정"
             //네비게이션 타이틀 변경
             self.navigationItem.rightBarButtonItem?.title = "수정"
             //네비게이션 오른쪽 아이템 타이틀 변경
 
-            self.paramBrand.text = ad?.membership[(ad?.showNow)!].brand
+            self.paramBrand.text = ad.membership[(ad.showNow)!].brand
             //텍스트 필드에 브랜드 띄우기
-            self.paramBarcode.text = ad?.membership[(ad?.showNow)!].barcode
+            self.paramBarcode.text = ad.membership[(ad.showNow)!].barcode
             //텍스트 필드에 바코드 값 띄우기
-            self.paramImage.image = ad?.membership[(ad?.showNow)!].logo
+            self.paramImage.image = ad.membership[(ad.showNow)!].logo
             //이미지 뷰에 로고 띄우기
         } else {
             self.navigationItem.title = "멤버십 카드 추가"
@@ -40,8 +40,8 @@ class AddEditMemebershipVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if ad?.showNow != nil && ad?.modifyCheck == false {
-            paramImage.image = ad?.logoImage[(ad?.showNow)!]
+        if ad.logoChoice != nil  {
+            paramImage.image = ad.logoImage[(ad.logoChoice)!]
             // 로고 선택시 이미지 띄워줌 (수정 모드가 아닐 경우만)
         }
     }
@@ -55,12 +55,16 @@ class AddEditMemebershipVC: UIViewController {
     
     
     
+    @IBOutlet weak var LabelBrand: UILabel!
+    @IBOutlet weak var LabelBarcode: UILabel!
+    @IBOutlet weak var LabelLogo: UILabel!
+    
     @IBOutlet weak var paramBrand: UITextField!
     @IBOutlet weak var paramBarcode: UITextField!
     @IBOutlet weak var paramImage: UIImageView!
     
+    @IBOutlet weak var choiceButton: UIButton!
     
-    let ad = UIApplication.shared.delegate as? AppDelegate
    
    
     var AddInfo = MembershipClass()
@@ -88,23 +92,30 @@ class AddEditMemebershipVC: UIViewController {
             paramBarcode.placeholder = "입력해 주세요"
 
             
+        } else if ad.logoChoice == nil && ad.modifyCheck == false{
+            let color = UIColor.red
+            choiceButton.layer.borderWidth = 1
+            choiceButton.layer.cornerRadius = CGFloat(7)
+            choiceButton.layer.borderColor = color.cgColor
+            
         } else {
         // 구조체 통일
         
             AddInfo.brand = self.paramBrand.text!
             AddInfo.barcode = self.paramBarcode.text!
-            AddInfo.barcodeImage = ad?.fromString(string: self.paramBarcode.text!)
-            AddInfo.logo = ad?.logoImage[(ad?.showNow)!]
+            AddInfo.barcodeImage = ad.fromString(string: self.paramBarcode.text!)
+            if ad.logoChoice != nil {
+            AddInfo.logo = ad.logoImage[(ad.logoChoice)!]
+            }
             
-            if ad?.modifyCheck == true {
-                ad?.membership[(ad?.showNow!)!] = AddInfo
+            if ad.modifyCheck == true {
+                ad.membership[(ad.showNow!)] = AddInfo
             
             } else{
-                ad?.membership.append(AddInfo)
+                ad.membership.append(AddInfo)
             }
         
-        
-        
+       
         
             _ = self.navigationController?.popViewController(animated: true)
             // 화면 되돌아가기

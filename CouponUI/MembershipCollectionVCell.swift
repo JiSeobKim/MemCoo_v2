@@ -11,12 +11,14 @@ import UIKit
 class MembershipCollectionVCell : UICollectionViewCell {
 
  
-    //셀이 가지고 있는 값
-    
-    
-    @IBOutlet weak var LogoShow: UIImageView!
-    @IBOutlet weak var LogoName: UILabel!
+    //viewcell 이 가지고 있는 값
+    @IBOutlet weak var viewLogoShow: UIImageView!
+    @IBOutlet weak var viewLogoName: UILabel!
 
+    //choicecell 이 가지고 있는 값
+    @IBOutlet weak var choiceLogoShow: UIImageView!
+    @IBOutlet weak var choiceLogoName: UILabel!
+    
 
     
 }

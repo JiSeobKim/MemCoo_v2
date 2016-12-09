@@ -19,7 +19,27 @@ class ShowMembershipVC: UIViewController {
         //imageView에 바코드 이미지 입력
         self.navigationItem.title = ad?.membership[(ad?.showNow)!].brand
         //Label에 브랜드명 입력
-
+        
+        
+        // 바코드 자릿수에 따라 4자리마다 " - " 표시 해주기
+        var barcode = (ad?.membership[(ad?.showNow)!].barcode)!
+        let stringCount = barcode.characters.count
+        if stringCount > 5 {
+            barcode = barcode.insert(string: "-", ind: 4)
+        }
+            if stringCount > 9 {
+                barcode = barcode.insert(string: "-", ind: 9)
+            }
+            if stringCount > 14 {
+                barcode = barcode.insert(string: "-", ind: 14)
+            }
+        barcodeLabel.text = barcode
+        
+       
+       
+        
+       
+        
         // Do any additional setup after loading the view.
     }
 
@@ -41,12 +61,19 @@ class ShowMembershipVC: UIViewController {
     }
     
     
+    
 
     var ad = UIApplication.shared.delegate as? AppDelegate
     //AppDelegate 사용
+    var image = UIImage()
     
-    
+    @IBOutlet weak var barcodeLabel: UILabel!
     @IBOutlet weak var ShowBarcode: UIImageView!
+
+    
+    
+   
+    
     
     @IBAction func modify(_ sender: Any) {
         // 수정 버튼
@@ -58,10 +85,10 @@ class ShowMembershipVC: UIViewController {
             self.navigationController?.pushViewController(uvc, animated: true)
             //화면전환
         }
+        
+        
     }
     
-    var image = UIImage()
-    var barcode : Int?
 
     
     
@@ -79,3 +106,5 @@ class ShowMembershipVC: UIViewController {
     */
 
 }
+
+

@@ -10,7 +10,8 @@ import UIKit
 
 class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
-    
+    //test
+    //test2
     @IBOutlet weak var collectionView: UICollectionView!
     //CollectionView 이름 선언
     //45,71,88 라인에서 사용
@@ -41,7 +42,8 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
         //체크 변수 복구
         self.collectionView.reloadData()
         //컬렉션뷰 릴로드
-
+        ad?.showNow = nil
+        //선택된 번호 초기화 (컬렉션 뷰에서 선택된 셀 번호에 주로 사용)
         
     }
     
@@ -60,13 +62,12 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! MembershipCollectionVCell
-        // 설정할 cell 선택(빨간 "cell"은 어트리뷰트인스펙터의 identifier)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "viewcell", for: indexPath) as! MembershipCollectionVCell
+        // 설정할 cell 선택(빨간 "viewcell"은 어트리뷰트인스펙터의 identifier)
         
         
-
-        cell.LogoShow.image = ad?.membership[indexPath.row].logo
-        cell.LogoName.text = ad?.membership[indexPath.row].brand
+        cell.viewLogoShow.image = ad?.membership[indexPath.row].logo
+        cell.viewLogoName.text = ad?.membership[indexPath.row].brand
         //로고의 이미지/ 텍스트 값 대입
         
         

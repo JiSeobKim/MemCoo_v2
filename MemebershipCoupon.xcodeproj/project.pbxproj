@@ -154,6 +154,7 @@
 		42976B9F1DF27D9600ADB0D7 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				A07854481DFBA3D000CBF7C4 /* Function.swift */,
 				42976BDF1DF6B39200ADB0D7 /* DBUtil.swift */,
 				3E36B1781DF2133000385315 /* GenerateBarcode.swift */,
 			);
@@ -169,8 +170,6 @@
 				A07854451DFBA3D000CBF7C4 /* ShowMembershipVC.swift */,
 				A07854461DFBA3D000CBF7C4 /* AddEditMemebershipVC.swift */,
 				A07854471DFBA3D000CBF7C4 /* ChoiceMembershipVC.swift */,
-				A07854481DFBA3D000CBF7C4 /* Function.swift */,
-				3E37D35A1DF09E4A0054C4DA /* FavoriteViewController.swift */,
 			);
 			name = Membership;
 			sourceTree = "<group>";
@@ -178,6 +177,7 @@
 		42976BA11DF27DC900ADB0D7 /* Favorite */ = {
 			isa = PBXGroup;
 			children = (
+				3E37D35A1DF09E4A0054C4DA /* FavoriteViewController.swift */,
 			);
 			name = Favorite;
 			sourceTree = "<group>";

@@ -85,8 +85,14 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
             let indexPaths = self.collectionView.indexPathsForSelectedItems!
             let indexPath = indexPaths[0] as NSIndexPath
             //선택된 셀
-            ad.showNow = indexPath.row
+            
+            
+            //ad.showNow = indexPath.row
             //Appdelegate에 선택된 셀 번호 전달
+            
+            
+            let vc = segue.destination as? ShowMembershipVC
+            vc?.cellData = ad.membership[indexPath.row]
         }
     }
     

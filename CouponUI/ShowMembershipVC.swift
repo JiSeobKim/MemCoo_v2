@@ -10,19 +10,28 @@ import UIKit
 
 class ShowMembershipVC: UIViewController {
 
-   
+    var cellData : MembershipClass?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
 
-        self.ShowBarcode.image = ad.membership[(ad.showNow)!].barcodeImage
+        self.ShowBarcode.image = cellData?.barcodeImage
         //imageView에 바코드 이미지 입력
-        self.navigationItem.title = ad.membership[(ad.showNow)!].brand
+        self.navigationItem.title = cellData?.brand
         //Label에 브랜드명 입력
+        
+        self.ShowBarcode.image = cellData?.barcodeImage
+        
         
         
         // 바코드 자릿수에 따라 4자리마다 " - " 표시 해주기
-        var barcode = (ad.membership[(ad.showNow)!].barcode)!
+        //var barcode = (ad.membership[(ad.showNow)!].barcode)!
+        
+        var barcode = (cellData?.barcode)!
+        
+        
+        
         let stringCount = barcode.characters.count
         if stringCount > 5 {
             barcode = barcode.insert(string: "-", ind: 4)
@@ -34,7 +43,9 @@ class ShowMembershipVC: UIViewController {
                 barcode = barcode.insert(string: "-", ind: 14)
             }
         barcodeLabel.text = barcode
-        ShowLogo.image = ad.membership[(ad.showNow)!].logo
+        ShowLogo.image = cellData?.logo
+        //        barcodeLabel.text = barcode
+//        ShowLogo.image = ad.membership[(ad.showNow)!].logo
         
        
        

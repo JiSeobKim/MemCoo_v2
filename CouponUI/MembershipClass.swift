@@ -41,6 +41,7 @@ class MembershipClass {
     var logo : UIImage?
     var barcodeImage : UIImage?
     var favorite : Bool = false
+    var modify : Bool = false
     
     init(){
         self.brand = "Test"

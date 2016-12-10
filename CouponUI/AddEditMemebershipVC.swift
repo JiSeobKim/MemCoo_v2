@@ -12,6 +12,8 @@ import UIKit
 class AddEditMemebershipVC: UIViewController {
       // 멤버쉽 추가 페이지
     
+    var cellData : MembershipClass?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

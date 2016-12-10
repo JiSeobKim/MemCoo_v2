@@ -34,6 +34,10 @@
 		42976BF71DF6B48100ADB0D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42976BF61DF6B48100ADB0D7 /* Main.storyboard */; };
 		42976C0A1DF6C23800ADB0D7 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 42976C081DF6C23800ADB0D7 /* Model.xcdatamodeld */; };
 		A038310F1DFC1BE5002C0314 /* Favorite.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A038310E1DFC1BE5002C0314 /* Favorite.storyboard */; };
+		A03831111DFC1C74002C0314 /* Membership.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A03831101DFC1C74002C0314 /* Membership.storyboard */; };
+		A03831151DFC1CB8002C0314 /* Coupon.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A03831141DFC1CB8002C0314 /* Coupon.storyboard */; };
+		A03831171DFC1CDA002C0314 /* CouponMino.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A03831161DFC1CDA002C0314 /* CouponMino.storyboard */; };
+		A03831191DFC1CED002C0314 /* Edit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A03831181DFC1CED002C0314 /* Edit.storyboard */; };
 		A07854491DFBA3D000CBF7C4 /* MembershipClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07854421DFBA3D000CBF7C4 /* MembershipClass.swift */; };
 		A078544A1DFBA3D000CBF7C4 /* MembershipCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07854431DFBA3D000CBF7C4 /* MembershipCollectionVC.swift */; };
 		A078544B1DFBA3D000CBF7C4 /* MembershipCollectionVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07854441DFBA3D000CBF7C4 /* MembershipCollectionVCell.swift */; };
@@ -73,6 +77,10 @@
 		42976BF61DF6B48100ADB0D7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		42976C091DF6C23800ADB0D7 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		A038310E1DFC1BE5002C0314 /* Favorite.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Favorite.storyboard; sourceTree = "<group>"; };
+		A03831101DFC1C74002C0314 /* Membership.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Membership.storyboard; sourceTree = "<group>"; };
+		A03831141DFC1CB8002C0314 /* Coupon.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Coupon.storyboard; sourceTree = "<group>"; };
+		A03831161DFC1CDA002C0314 /* CouponMino.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CouponMino.storyboard; sourceTree = "<group>"; };
+		A03831181DFC1CED002C0314 /* Edit.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Edit.storyboard; sourceTree = "<group>"; };
 		A07854421DFBA3D000CBF7C4 /* MembershipClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembershipClass.swift; sourceTree = "<group>"; };
 		A07854431DFBA3D000CBF7C4 /* MembershipCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembershipCollectionVC.swift; sourceTree = "<group>"; };
 		A07854441DFBA3D000CBF7C4 /* MembershipCollectionVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembershipCollectionVCell.swift; sourceTree = "<group>"; };
@@ -133,6 +141,10 @@
 				3E36B1711DF2036100385315 /* Coupon */,
 				42976C081DF6C23800ADB0D7 /* Model.xcdatamodeld */,
 				42976BF61DF6B48100ADB0D7 /* Main.storyboard */,
+				A03831181DFC1CED002C0314 /* Edit.storyboard */,
+				A03831161DFC1CDA002C0314 /* CouponMino.storyboard */,
+				A03831141DFC1CB8002C0314 /* Coupon.storyboard */,
+				A03831101DFC1C74002C0314 /* Membership.storyboard */,
 				A038310E1DFC1BE5002C0314 /* Favorite.storyboard */,
 			);
 			name = MembershipCoupon;
@@ -269,8 +281,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E37D3651DF09E4A0054C4DA /* LaunchScreen.storyboard in Resources */,
+				A03831171DFC1CDA002C0314 /* CouponMino.storyboard in Resources */,
 				3E37D3621DF09E4A0054C4DA /* Assets.xcassets in Resources */,
 				A038310F1DFC1BE5002C0314 /* Favorite.storyboard in Resources */,
+				A03831191DFC1CED002C0314 /* Edit.storyboard in Resources */,
+				A03831111DFC1C74002C0314 /* Membership.storyboard in Resources */,
+				A03831151DFC1CB8002C0314 /* Coupon.storyboard in Resources */,
 				42976BF71DF6B48100ADB0D7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

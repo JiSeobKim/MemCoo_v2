@@ -139,6 +139,7 @@
 		42976B9F1DF27D9600ADB0D7 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				A0C90BBF1DFAA13100F58AB3 /* Function.swift */,
 				42976BDF1DF6B39200ADB0D7 /* DBUtil.swift */,
 				3E36B1781DF2133000385315 /* GenerateBarcode.swift */,
 			);
@@ -154,7 +155,6 @@
 				A0C90BC41DFAA14000F58AB3 /* ShowMembershipVC.swift */,
 				A0C90BC51DFAA14000F58AB3 /* AddEditMemebershipVC.swift */,
 				A0C90BC61DFAA14000F58AB3 /* ChoiceMembershipVC.swift */,
-				A0C90BBF1DFAA13100F58AB3 /* Function.swift */,
 			);
 			name = Membership;
 			sourceTree = "<group>";

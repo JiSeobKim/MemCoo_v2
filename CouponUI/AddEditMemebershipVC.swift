@@ -21,6 +21,7 @@ class AddEditMemebershipVC: UIViewController {
             self.navigationItem.title = "멤버십 카드 수정"
             //네비게이션 타이틀 변경
             self.navigationItem.rightBarButtonItem?.title = "수정"
+            
             //네비게이션 오른쪽 아이템 타이틀 변경
             
             self.paramBrand.text = ad.membership[(ad.showNow)!].brand

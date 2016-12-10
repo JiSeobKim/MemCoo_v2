@@ -62,7 +62,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eXy-61-Um0" id="gQF-BB-83x">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LMa-Rs-mwR">
@@ -174,7 +174,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AyA-73-Y6Z" id="NzJ-mZ-AFv">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="119"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="쿠폰 번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1XN-aG-3yC">
@@ -238,7 +238,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ihd-Cm-oeB" id="mVW-cq-60a">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -726,35 +726,6 @@ http://sk.gifticon.com/g/iGNNe5MEdoqi
             <point key="canvasLocation" x="4764" y="558"/>
         </scene>
         <!--즐겨찾기-->
-        <scene sceneID="E3h-Mk-u21">
-            <objects>
-                <tableViewController id="N2a-fE-9r6" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Fna-gS-Hon">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Qr5-GV-Yb4">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qr5-GV-Yb4" id="NRs-Da-RpN">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="N2a-fE-9r6" id="Kyb-ve-2by"/>
-                            <outlet property="delegate" destination="N2a-fE-9r6" id="FMe-tE-TXk"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="즐겨찾기" id="67l-fp-m2C"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3Ya-bm-5jL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3266" y="-2075"/>
-        </scene>
-        <!--즐겨찾기-->
         <scene sceneID="eA4-MF-RaY">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZkG-7U-JPn" sceneMemberID="viewController">
@@ -766,7 +737,7 @@ http://sk.gifticon.com/g/iGNNe5MEdoqi
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="N2a-fE-9r6" kind="relationship" relationship="rootViewController" id="T5I-Qj-qDN"/>
+                        <segue destination="nhg-Jg-xHi" kind="relationship" relationship="rootViewController" id="T5I-Qj-qDN"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xco-Dj-0F6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1133,6 +1104,16 @@ http://sk.gifticon.com/g/iGNNe5MEdoqi
                 <placeholder placeholderIdentifier="IBFirstResponder" id="you-A8-sXM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2105" y="-1200"/>
+        </scene>
+        <!--Favorite-->
+        <scene sceneID="J9s-kS-3TV">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Favorite" id="nhg-Jg-xHi" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="IQl-CC-m99"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aCU-YG-qae" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3266" y="-2075"/>
         </scene>
     </scenes>
     <resources>

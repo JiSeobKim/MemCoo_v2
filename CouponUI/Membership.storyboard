@@ -13,7 +13,7 @@
         <!--수정/추가-->
         <scene sceneID="zPP-O2-DnM">
             <objects>
-                <viewController storyboardIdentifier="AddTab" id="V9i-4b-dZ9" customClass="AddEditMemebershipVC" customModule="MemebershipCoupon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MembershipAddEditTab" id="V9i-4b-dZ9" customClass="AddEditMemebershipVC" customModule="MemebershipCoupon" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="imm-eD-pAr"/>
                         <viewControllerLayoutGuide type="bottom" id="HWN-aU-qOq"/>
@@ -202,7 +202,7 @@
                     <navigationItem key="navigationItem" title="브랜드" id="unU-OI-ChH">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="RZl-ME-hcH">
                             <connections>
-                                <action selector="modify:" destination="FvN-Ct-G1V" id="XWG-q0-Tb5"/>
+                                <segue destination="V9i-4b-dZ9" kind="show" identifier="MembershipEdit" id="yGb-mq-bpU"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -296,4 +296,7 @@
             <point key="canvasLocation" x="2105" y="-1200"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="yGb-mq-bpU"/>
+    </inferredMetricsTieBreakers>
 </document>

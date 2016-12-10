@@ -87,7 +87,7 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
             //선택된 셀
             
             
-            //ad.showNow = indexPath.row
+            ad.showNow = indexPath.row
             //Appdelegate에 선택된 셀 번호 전달
             
             

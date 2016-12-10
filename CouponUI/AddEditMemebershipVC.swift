@@ -10,7 +10,7 @@ import UIKit
 
 
 class AddEditMemebershipVC: UIViewController {
-      // 멤버쉽 추가 페이지
+    // 멤버쉽 추가 페이지
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,6 @@ class AddEditMemebershipVC: UIViewController {
             self.navigationItem.title = "멤버십 카드 수정"
             //네비게이션 타이틀 변경
             self.navigationItem.rightBarButtonItem?.title = "수정"
-            
             //네비게이션 오른쪽 아이템 타이틀 변경
             
             self.paramBrand.text = ad.membership[(ad.showNow)!].brand
@@ -36,7 +35,7 @@ class AddEditMemebershipVC: UIViewController {
         }
         
         
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -66,14 +65,14 @@ class AddEditMemebershipVC: UIViewController {
     
     @IBOutlet weak var choiceButton: UIButton!
     
-   
-   
+    
+    
     var AddInfo = MembershipClass()
-
+    
     
     @IBAction func Add(_ sender: AnyObject) {
         // 추가or수정 버튼 누를시
-       
+        
         //예외 처리
         if self.paramBrand.text == ""
         { //브랜드 미입력시
@@ -83,7 +82,7 @@ class AddEditMemebershipVC: UIViewController {
             paramBrand.layer.borderColor = color.cgColor
             paramBrand.placeholder = "입력해 주세요"
             
-     
+            
         } else if self.paramBarcode.text == ""{
             //바코드 미입력시
             let color = UIColor.red
@@ -91,7 +90,7 @@ class AddEditMemebershipVC: UIViewController {
             paramBarcode.layer.cornerRadius = CGFloat(7)
             paramBarcode.layer.borderColor = color.cgColor
             paramBarcode.placeholder = "입력해 주세요"
-
+            
             
         } else if ad.logoChoice == nil && ad.modifyCheck == false{
             let color = UIColor.red
@@ -100,29 +99,29 @@ class AddEditMemebershipVC: UIViewController {
             choiceButton.layer.borderColor = color.cgColor
             
         } else {
-        // 구조체 통일
-        
+            // 구조체 통일
+            
             AddInfo.brand = self.paramBrand.text!
             AddInfo.barcode = self.paramBarcode.text!
             AddInfo.barcodeImage = ad.fromString(string: self.paramBarcode.text!)
             if ad.logoChoice != nil {
-            AddInfo.logo = ad.logoImage[(ad.logoChoice)!]
+                AddInfo.logo = ad.logoImage[(ad.logoChoice)!]
             }
             
             if ad.modifyCheck == true {
                 ad.membership[(ad.showNow!)] = AddInfo
-            
+                
             } else{
                 ad.membership.append(AddInfo)
             }
-        
-       
-        
+            
+            
+            
             _ = self.navigationController?.popViewController(animated: true)
             // 화면 되돌아가기
         }
     }
     
     
-
+    
 }

@@ -35,12 +35,13 @@ class AddEditMemebershipVC: UIViewController {
             //이미지 뷰에 로고 띄우기
         } else {
             self.navigationItem.title = "멤버십 카드 추가"
-            self.navigationItem.rightBarButtonItem?.title = "추가"
+            self.navigationItem.rightBarButtonItem = nil
             
         }
         
         
         
+    
 
         // Do any additional setup after loading the view.
     }
@@ -65,7 +66,7 @@ class AddEditMemebershipVC: UIViewController {
     
     @IBOutlet weak var LabelBrand: UILabel!
     @IBOutlet weak var LabelBarcode: UILabel!
-    @IBOutlet weak var LabelLogo: UILabel!
+    
     
     @IBOutlet weak var paramBrand: UITextField!
     @IBOutlet weak var paramBarcode: UITextField!
@@ -80,11 +81,18 @@ class AddEditMemebershipVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "MembershipLogoCollection" {
             (segue.destination as? ChoiceMembershipVC)?.delegate = self
+        } else if segue.identifier == "unwindMembershipMain" {
+            ad.membership.remove(at: ad.showNow!)
         }
+        
     }
+    
+    
+    
 
     
-    @IBAction func Add(_ sender: AnyObject) {
+    
+    @IBAction func addItem(_ sender: AnyObject) {
         // 추가or수정 버튼 누를시
        
         //예외 처리
@@ -129,7 +137,7 @@ class AddEditMemebershipVC: UIViewController {
             } else{
                 ad.membership.append(cellData)
             }
-        
+            
        
         
             _ = self.navigationController?.popViewController(animated: true)
@@ -138,17 +146,16 @@ class AddEditMemebershipVC: UIViewController {
     }
     
     
+    
 
 }
 
 extension AddEditMemebershipVC : logoData {
     
     func updataData(data: UIImage) {
-        if data == UIImage(named: "KT") {
-            print("KT")
-        }
+        
         cellData.logo = data
-        print("call")
+        
     }
     
 }

@@ -28,21 +28,8 @@ class ShowMembershipVC: UIViewController {
         // 바코드 자릿수에 따라 4자리마다 " - " 표시 해주기
         //var barcode = (ad.membership[(ad.showNow)!].barcode)!
         
-        var barcode = (cellData?.barcode)!
         
-        
-        
-        let stringCount = barcode.characters.count
-        if stringCount > 5 {
-            barcode = barcode.insert(string: "-", ind: 4)
-        }
-            if stringCount > 9 {
-                barcode = barcode.insert(string: "-", ind: 9)
-            }
-            if stringCount > 14 {
-                barcode = barcode.insert(string: "-", ind: 14)
-            }
-        barcodeLabel.text = barcode
+        barcodeLabel.text = addHyphen(data: (cellData?.barcode)!)
         ShowLogo.image = cellData?.logo
         // Do any additional setup after loading the view.
     }
@@ -58,7 +45,7 @@ class ShowMembershipVC: UIViewController {
         if cellData?.modify == true {
             self.ShowBarcode.image = cellData?.barcodeImage
             self.ShowLogo.image = cellData?.logo
-
+            self.barcodeLabel.text = addHyphen(data: (cellData?.barcode)!)
             
 
 

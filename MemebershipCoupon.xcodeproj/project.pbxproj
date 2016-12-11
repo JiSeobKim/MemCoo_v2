@@ -44,7 +44,7 @@
 		A078544C1DFBA3D000CBF7C4 /* ShowMembershipVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07854451DFBA3D000CBF7C4 /* ShowMembershipVC.swift */; };
 		A078544D1DFBA3D000CBF7C4 /* AddEditMemebershipVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07854461DFBA3D000CBF7C4 /* AddEditMemebershipVC.swift */; };
 		A078544E1DFBA3D000CBF7C4 /* ChoiceMembershipVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07854471DFBA3D000CBF7C4 /* ChoiceMembershipVC.swift */; };
-		A078544F1DFBA3D000CBF7C4 /* Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07854481DFBA3D000CBF7C4 /* Function.swift */; };
+		A078544F1DFBA3D000CBF7C4 /* MembershipFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07854481DFBA3D000CBF7C4 /* MembershipFunction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,7 +87,7 @@
 		A07854451DFBA3D000CBF7C4 /* ShowMembershipVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowMembershipVC.swift; sourceTree = "<group>"; };
 		A07854461DFBA3D000CBF7C4 /* AddEditMemebershipVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEditMemebershipVC.swift; sourceTree = "<group>"; };
 		A07854471DFBA3D000CBF7C4 /* ChoiceMembershipVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoiceMembershipVC.swift; sourceTree = "<group>"; };
-		A07854481DFBA3D000CBF7C4 /* Function.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Function.swift; sourceTree = "<group>"; };
+		A07854481DFBA3D000CBF7C4 /* MembershipFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembershipFunction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,7 +154,6 @@
 		42976B9F1DF27D9600ADB0D7 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				A07854481DFBA3D000CBF7C4 /* Function.swift */,
 				42976BDF1DF6B39200ADB0D7 /* DBUtil.swift */,
 				3E36B1781DF2133000385315 /* GenerateBarcode.swift */,
 			);
@@ -170,6 +169,7 @@
 				A07854451DFBA3D000CBF7C4 /* ShowMembershipVC.swift */,
 				A07854461DFBA3D000CBF7C4 /* AddEditMemebershipVC.swift */,
 				A07854471DFBA3D000CBF7C4 /* ChoiceMembershipVC.swift */,
+				A07854481DFBA3D000CBF7C4 /* MembershipFunction.swift */,
 			);
 			name = Membership;
 			sourceTree = "<group>";
@@ -307,7 +307,7 @@
 				42140E3F1DF7CDD9003B287B /* Membership+CoreDataClass.swift in Sources */,
 				3E37D3591DF09E4A0054C4DA /* AppDelegate.swift in Sources */,
 				3E36B1791DF2133000385315 /* GenerateBarcode.swift in Sources */,
-				A078544F1DFBA3D000CBF7C4 /* Function.swift in Sources */,
+				A078544F1DFBA3D000CBF7C4 /* MembershipFunction.swift in Sources */,
 				3E36B1731DF203FC00385315 /* DetailCouponViewController.swift in Sources */,
 				42976C0A1DF6C23800ADB0D7 /* Model.xcdatamodeld in Sources */,
 				42976BE01DF6B39200ADB0D7 /* DBUtil.swift in Sources */,

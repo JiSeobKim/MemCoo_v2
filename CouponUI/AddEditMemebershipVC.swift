@@ -15,7 +15,7 @@ class AddEditMemebershipVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
        
         
         if cellData.modify == true {

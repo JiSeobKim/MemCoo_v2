@@ -11,7 +11,12 @@ import UIKit
 
 class ChoiceMembershipVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource  {
     
-  
+    var delegate : logoData?
+    var logoNumber : Int?
+    
+    var logoImage = [UIImage(named:"CafeLogo"),UIImage(named:"CallLogo"),UIImage(named:"ClothesLogo"),UIImage(named:"CosmeticLogo"),UIImage(named:"PointLogo"),UIImage(named:"KT"),UIImage(named:"SKT"),UIImage(named:"U+")]
+    
+    var logoName = ["카페","통신사","옷가게","화장품","포인트","KT","SKT","U+"]
 
     override func viewDidLoad() {
         
@@ -22,15 +27,15 @@ class ChoiceMembershipVC: UIViewController, UICollectionViewDelegate, UICollecti
         
         
 
-        return ad.logoImage.count
+        return logoImage.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "choicecell", for: indexPath) as! MembershipCollectionVCell
         
-        cell.choiceLogoShow.image = ad.logoImage[indexPath.row]
-        cell.choiceLogoName.text = ad.logoName[indexPath.row]
+        cell.choiceLogoShow.image = logoImage[indexPath.row]
+        cell.choiceLogoName.text = logoName[indexPath.row]
         
         return cell
         
@@ -45,9 +50,9 @@ class ChoiceMembershipVC: UIViewController, UICollectionViewDelegate, UICollecti
         cell?.layer.borderColor = UIColor.red.cgColor
         
         //네비 타이틀 변경
-        self.navigationItem.title = ad.logoName[indexPath.row]
+        self.navigationItem.title = logoName[indexPath.row]
         //선택된 셀 번호 전달
-        ad.logoChoice = indexPath.row
+        logoNumber = indexPath.row
     }
     
 
@@ -59,7 +64,13 @@ class ChoiceMembershipVC: UIViewController, UICollectionViewDelegate, UICollecti
     
     @IBAction func Choice(_ sender: Any) {
         //Done 버튼
+        self.delegate?.updataData(data: logoImage[logoNumber!]!)
+        
         _ = self.navigationController?.popViewController(animated: true)
     }
     
+}
+
+protocol logoData {
+    func updataData(data: UIImage)
 }

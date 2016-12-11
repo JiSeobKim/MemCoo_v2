@@ -12,28 +12,6 @@ import UIKit
 
 
 
-//struct MembershipStruct {
-//    var brand : String?
-//    var user : String?
-//    var barcode : String?
-//    var logo : UIImage?
-//    var barcodeImage : UIImage?
-//    var favorite : Bool = false
-//    
-//    init(){
-//        self.brand = "Test"
-//        self.user = "Jiseob"
-//        self.barcode = "1323"
-//        self.logo = UIImage(named: "default")
-//        self.barcodeImage = UIImage(named: "barcode")
-//        self.favorite = false
-//        
-//    }
-//    
-//
-//    
-//}
-
 class MembershipClass {
     var brand : String?
     var user : String?
@@ -49,7 +27,7 @@ class MembershipClass {
         self.barcode = "1323"
         self.logo = UIImage(named: "defaultLogo")
         self.barcodeImage = UIImage(named: "defalutBarcode")
-        self.favorite = false
+        
         
     }
 

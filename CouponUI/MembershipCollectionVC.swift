@@ -11,8 +11,7 @@ import UIKit
 class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
  
-    @IBOutlet weak var LabelBrand: UILabel!
-    @IBOutlet weak var ImageLogo: UIImageView!
+    
     @IBOutlet weak var collectionView: UICollectionView!
     //CollectionView 이름 선언
     //45,71,88 라인에서 사용
@@ -37,13 +36,11 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
     override func viewWillAppear(_ animated: Bool) {
                 // 뷰2->뷰1는 viewDidLoad로 못함
         
-        ad.modifyCheck = false
-        //체크 변수 복구
+       
         self.collectionView.reloadData()
         //컬렉션뷰 릴로드
         ad.showNow = nil
-        //선택된 번호 초기화 (컬렉션 뷰에서 선택된 셀 번호에 주로 사용)
-        ad.logoChoice = nil
+       
         
     }
     
@@ -93,6 +90,7 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
             
             let vc = segue.destination as? ShowMembershipVC
             vc?.cellData = ad.membership[indexPath.row]
+            vc?.cellData?.modify = true
         }
     }
     

@@ -93,7 +93,7 @@
                         <outlet property="choiceButton" destination="CAm-2P-rCT" id="RSY-rb-cau"/>
                         <outlet property="paramBarcode" destination="Vi5-VV-Twg" id="DAO-kj-lqH"/>
                         <outlet property="paramBrand" destination="5Ff-Fx-89c" id="jbn-QY-o5Y"/>
-                        <outlet property="paramImage" destination="zUP-7i-rYm" id="XRt-0w-rpx"/>
+                        <outlet property="paramImage" destination="zUP-7i-rYm" id="r9G-aD-6Me"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Acl-AP-bWO" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -10,19 +10,28 @@ import UIKit
 
 class ShowMembershipVC: UIViewController {
 
-   
+    var cellData : MembershipClass?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
 
-        self.ShowBarcode.image = ad.membership[(ad.showNow)!].barcodeImage
+        self.ShowBarcode.image = cellData?.barcodeImage
         //imageView에 바코드 이미지 입력
-        self.navigationItem.title = ad.membership[(ad.showNow)!].brand
+        self.navigationItem.title = cellData?.brand
         //Label에 브랜드명 입력
+        
+        self.ShowBarcode.image = cellData?.barcodeImage
+        
         
         
         // 바코드 자릿수에 따라 4자리마다 " - " 표시 해주기
-        var barcode = (ad.membership[(ad.showNow)!].barcode)!
+        //var barcode = (ad.membership[(ad.showNow)!].barcode)!
+        
+        var barcode = (cellData?.barcode)!
+        
+        
+        
         let stringCount = barcode.characters.count
         if stringCount > 5 {
             barcode = barcode.insert(string: "-", ind: 4)
@@ -34,13 +43,7 @@ class ShowMembershipVC: UIViewController {
                 barcode = barcode.insert(string: "-", ind: 14)
             }
         barcodeLabel.text = barcode
-        ShowLogo.image = ad.membership[(ad.showNow)!].logo
-        
-       
-       
-        
-       
-        
+        ShowLogo.image = cellData?.logo
         // Do any additional setup after loading the view.
     }
 
@@ -52,9 +55,9 @@ class ShowMembershipVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         //수정시 값 되불러 오기
         //방식 차이( viewDidLoad:선택된 셀로부터 값 받기 / viewWillAppear: 앱델리게이트에 저장된 값 받기)
-        if ad.modifyCheck == true {
-            self.ShowBarcode.image = ad.membership[(ad.showNow)!].barcodeImage
-            self.ShowLogo.image = ad.membership[(ad.showNow)!].logo
+        if cellData?.modify == true {
+            self.ShowBarcode.image = cellData?.barcodeImage
+            self.ShowLogo.image = cellData?.logo
 
             
 
@@ -74,23 +77,14 @@ class ShowMembershipVC: UIViewController {
 
     
     
-   
-    
-    
-    @IBAction func modify(_ sender: Any) {
-        // 수정 버튼
-        ad.modifyCheck = true
-        // 수정 버튼으로 들어가는지 확인 할 변수
-        if let uvc = self.storyboard?.instantiateViewController(withIdentifier: "AddTab")
-            // 전환할 뷰 컨트롤러의 StoryBoard ID 정보를 객체화
-        {
-            self.navigationController?.pushViewController(uvc, animated: true)
-            //화면전환
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "MembershipEdit" {
+            let vc = segue.destination as? AddEditMemebershipVC
+            vc?.cellData = self.cellData!
+            vc?.cellData.modify = true
+            
         }
-        
-        
     }
-    
 
     
     

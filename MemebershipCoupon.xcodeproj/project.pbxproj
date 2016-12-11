@@ -33,13 +33,18 @@
 		42976BE01DF6B39200ADB0D7 /* DBUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42976BDF1DF6B39200ADB0D7 /* DBUtil.swift */; };
 		42976BF71DF6B48100ADB0D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42976BF61DF6B48100ADB0D7 /* Main.storyboard */; };
 		42976C0A1DF6C23800ADB0D7 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 42976C081DF6C23800ADB0D7 /* Model.xcdatamodeld */; };
-		A0C90BC01DFAA13100F58AB3 /* Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C90BBF1DFAA13100F58AB3 /* Function.swift */; };
-		A0C90BC71DFAA14000F58AB3 /* MembershipClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C90BC11DFAA14000F58AB3 /* MembershipClass.swift */; };
-		A0C90BC81DFAA14000F58AB3 /* MembershipCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C90BC21DFAA14000F58AB3 /* MembershipCollectionVC.swift */; };
-		A0C90BC91DFAA14000F58AB3 /* MembershipCollectionVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C90BC31DFAA14000F58AB3 /* MembershipCollectionVCell.swift */; };
-		A0C90BCA1DFAA14000F58AB3 /* ShowMembershipVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C90BC41DFAA14000F58AB3 /* ShowMembershipVC.swift */; };
-		A0C90BCB1DFAA14000F58AB3 /* AddEditMemebershipVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C90BC51DFAA14000F58AB3 /* AddEditMemebershipVC.swift */; };
-		A0C90BCC1DFAA14000F58AB3 /* ChoiceMembershipVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C90BC61DFAA14000F58AB3 /* ChoiceMembershipVC.swift */; };
+		A038310F1DFC1BE5002C0314 /* Favorite.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A038310E1DFC1BE5002C0314 /* Favorite.storyboard */; };
+		A03831111DFC1C74002C0314 /* Membership.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A03831101DFC1C74002C0314 /* Membership.storyboard */; };
+		A03831151DFC1CB8002C0314 /* Coupon.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A03831141DFC1CB8002C0314 /* Coupon.storyboard */; };
+		A03831171DFC1CDA002C0314 /* CouponMino.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A03831161DFC1CDA002C0314 /* CouponMino.storyboard */; };
+		A03831191DFC1CED002C0314 /* Edit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A03831181DFC1CED002C0314 /* Edit.storyboard */; };
+		A07854491DFBA3D000CBF7C4 /* MembershipClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07854421DFBA3D000CBF7C4 /* MembershipClass.swift */; };
+		A078544A1DFBA3D000CBF7C4 /* MembershipCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07854431DFBA3D000CBF7C4 /* MembershipCollectionVC.swift */; };
+		A078544B1DFBA3D000CBF7C4 /* MembershipCollectionVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07854441DFBA3D000CBF7C4 /* MembershipCollectionVCell.swift */; };
+		A078544C1DFBA3D000CBF7C4 /* ShowMembershipVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07854451DFBA3D000CBF7C4 /* ShowMembershipVC.swift */; };
+		A078544D1DFBA3D000CBF7C4 /* AddEditMemebershipVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07854461DFBA3D000CBF7C4 /* AddEditMemebershipVC.swift */; };
+		A078544E1DFBA3D000CBF7C4 /* ChoiceMembershipVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07854471DFBA3D000CBF7C4 /* ChoiceMembershipVC.swift */; };
+		A078544F1DFBA3D000CBF7C4 /* Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07854481DFBA3D000CBF7C4 /* Function.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,13 +76,18 @@
 		42976BDF1DF6B39200ADB0D7 /* DBUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBUtil.swift; sourceTree = "<group>"; };
 		42976BF61DF6B48100ADB0D7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		42976C091DF6C23800ADB0D7 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		A0C90BBF1DFAA13100F58AB3 /* Function.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Function.swift; sourceTree = "<group>"; };
-		A0C90BC11DFAA14000F58AB3 /* MembershipClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembershipClass.swift; sourceTree = "<group>"; };
-		A0C90BC21DFAA14000F58AB3 /* MembershipCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembershipCollectionVC.swift; sourceTree = "<group>"; };
-		A0C90BC31DFAA14000F58AB3 /* MembershipCollectionVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembershipCollectionVCell.swift; sourceTree = "<group>"; };
-		A0C90BC41DFAA14000F58AB3 /* ShowMembershipVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowMembershipVC.swift; sourceTree = "<group>"; };
-		A0C90BC51DFAA14000F58AB3 /* AddEditMemebershipVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEditMemebershipVC.swift; sourceTree = "<group>"; };
-		A0C90BC61DFAA14000F58AB3 /* ChoiceMembershipVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoiceMembershipVC.swift; sourceTree = "<group>"; };
+		A038310E1DFC1BE5002C0314 /* Favorite.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Favorite.storyboard; sourceTree = "<group>"; };
+		A03831101DFC1C74002C0314 /* Membership.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Membership.storyboard; sourceTree = "<group>"; };
+		A03831141DFC1CB8002C0314 /* Coupon.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Coupon.storyboard; sourceTree = "<group>"; };
+		A03831161DFC1CDA002C0314 /* CouponMino.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CouponMino.storyboard; sourceTree = "<group>"; };
+		A03831181DFC1CED002C0314 /* Edit.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Edit.storyboard; sourceTree = "<group>"; };
+		A07854421DFBA3D000CBF7C4 /* MembershipClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembershipClass.swift; sourceTree = "<group>"; };
+		A07854431DFBA3D000CBF7C4 /* MembershipCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembershipCollectionVC.swift; sourceTree = "<group>"; };
+		A07854441DFBA3D000CBF7C4 /* MembershipCollectionVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembershipCollectionVCell.swift; sourceTree = "<group>"; };
+		A07854451DFBA3D000CBF7C4 /* ShowMembershipVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowMembershipVC.swift; sourceTree = "<group>"; };
+		A07854461DFBA3D000CBF7C4 /* AddEditMemebershipVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEditMemebershipVC.swift; sourceTree = "<group>"; };
+		A07854471DFBA3D000CBF7C4 /* ChoiceMembershipVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoiceMembershipVC.swift; sourceTree = "<group>"; };
+		A07854481DFBA3D000CBF7C4 /* Function.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Function.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +141,11 @@
 				3E36B1711DF2036100385315 /* Coupon */,
 				42976C081DF6C23800ADB0D7 /* Model.xcdatamodeld */,
 				42976BF61DF6B48100ADB0D7 /* Main.storyboard */,
+				A03831181DFC1CED002C0314 /* Edit.storyboard */,
+				A03831161DFC1CDA002C0314 /* CouponMino.storyboard */,
+				A03831141DFC1CB8002C0314 /* Coupon.storyboard */,
+				A03831101DFC1C74002C0314 /* Membership.storyboard */,
+				A038310E1DFC1BE5002C0314 /* Favorite.storyboard */,
 			);
 			name = MembershipCoupon;
 			path = CouponUI;
@@ -139,6 +154,7 @@
 		42976B9F1DF27D9600ADB0D7 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				A07854481DFBA3D000CBF7C4 /* Function.swift */,
 				42976BDF1DF6B39200ADB0D7 /* DBUtil.swift */,
 				3E36B1781DF2133000385315 /* GenerateBarcode.swift */,
 			);
@@ -148,13 +164,12 @@
 		42976BA01DF27DB000ADB0D7 /* Membership */ = {
 			isa = PBXGroup;
 			children = (
-				A0C90BC11DFAA14000F58AB3 /* MembershipClass.swift */,
-				A0C90BC21DFAA14000F58AB3 /* MembershipCollectionVC.swift */,
-				A0C90BC31DFAA14000F58AB3 /* MembershipCollectionVCell.swift */,
-				A0C90BC41DFAA14000F58AB3 /* ShowMembershipVC.swift */,
-				A0C90BC51DFAA14000F58AB3 /* AddEditMemebershipVC.swift */,
-				A0C90BC61DFAA14000F58AB3 /* ChoiceMembershipVC.swift */,
-				A0C90BBF1DFAA13100F58AB3 /* Function.swift */,
+				A07854421DFBA3D000CBF7C4 /* MembershipClass.swift */,
+				A07854431DFBA3D000CBF7C4 /* MembershipCollectionVC.swift */,
+				A07854441DFBA3D000CBF7C4 /* MembershipCollectionVCell.swift */,
+				A07854451DFBA3D000CBF7C4 /* ShowMembershipVC.swift */,
+				A07854461DFBA3D000CBF7C4 /* AddEditMemebershipVC.swift */,
+				A07854471DFBA3D000CBF7C4 /* ChoiceMembershipVC.swift */,
 			);
 			name = Membership;
 			sourceTree = "<group>";
@@ -266,7 +281,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E37D3651DF09E4A0054C4DA /* LaunchScreen.storyboard in Resources */,
+				A03831171DFC1CDA002C0314 /* CouponMino.storyboard in Resources */,
 				3E37D3621DF09E4A0054C4DA /* Assets.xcassets in Resources */,
+				A038310F1DFC1BE5002C0314 /* Favorite.storyboard in Resources */,
+				A03831191DFC1CED002C0314 /* Edit.storyboard in Resources */,
+				A03831111DFC1C74002C0314 /* Membership.storyboard in Resources */,
+				A03831151DFC1CB8002C0314 /* Coupon.storyboard in Resources */,
 				42976BF71DF6B48100ADB0D7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,31 +299,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				42140E3B1DF7CDD9003B287B /* Brand+CoreDataClass.swift in Sources */,
-				A0C90BC91DFAA14000F58AB3 /* MembershipCollectionVCell.swift in Sources */,
 				3E36B1751DF2046D00385315 /* AddEditCouponViewController.swift in Sources */,
-				A0C90BCC1DFAA14000F58AB3 /* ChoiceMembershipVC.swift in Sources */,
+				A07854491DFBA3D000CBF7C4 /* MembershipClass.swift in Sources */,
 				42140E421DF7CDD9003B287B /* Coupon+CoreDataProperties.swift in Sources */,
 				42976BDD1DF6B38100ADB0D7 /* CouponDetailViewController.swift in Sources */,
 				42976BDC1DF6B38100ADB0D7 /* CouponViewController.swift in Sources */,
 				42140E3F1DF7CDD9003B287B /* Membership+CoreDataClass.swift in Sources */,
-				A0C90BC81DFAA14000F58AB3 /* MembershipCollectionVC.swift in Sources */,
 				3E37D3591DF09E4A0054C4DA /* AppDelegate.swift in Sources */,
 				3E36B1791DF2133000385315 /* GenerateBarcode.swift in Sources */,
-				A0C90BCB1DFAA14000F58AB3 /* AddEditMemebershipVC.swift in Sources */,
+				A078544F1DFBA3D000CBF7C4 /* Function.swift in Sources */,
 				3E36B1731DF203FC00385315 /* DetailCouponViewController.swift in Sources */,
 				42976C0A1DF6C23800ADB0D7 /* Model.xcdatamodeld in Sources */,
 				42976BE01DF6B39200ADB0D7 /* DBUtil.swift in Sources */,
+				A078544E1DFBA3D000CBF7C4 /* ChoiceMembershipVC.swift in Sources */,
 				3E37D35B1DF09E4A0054C4DA /* FavoriteViewController.swift in Sources */,
 				42976BDE1DF6B38100ADB0D7 /* CouponAddViewController.swift in Sources */,
-				A0C90BCA1DFAA14000F58AB3 /* ShowMembershipVC.swift in Sources */,
 				3E36B1771DF2048F00385315 /* CouponTableViewCell.swift in Sources */,
 				42140E431DF7CDD9003B287B /* Image+CoreDataClass.swift in Sources */,
+				A078544C1DFBA3D000CBF7C4 /* ShowMembershipVC.swift in Sources */,
 				42140E3D1DF7CDD9003B287B /* Category+CoreDataClass.swift in Sources */,
-				A0C90BC01DFAA13100F58AB3 /* Function.swift in Sources */,
+				A078544D1DFBA3D000CBF7C4 /* AddEditMemebershipVC.swift in Sources */,
 				42140E3E1DF7CDD9003B287B /* Category+CoreDataProperties.swift in Sources */,
 				42976BD81DF6B37300ADB0D7 /* CouponCell.swift in Sources */,
+				A078544A1DFBA3D000CBF7C4 /* MembershipCollectionVC.swift in Sources */,
+				A078544B1DFBA3D000CBF7C4 /* MembershipCollectionVCell.swift in Sources */,
 				3E36B1701DF2033000385315 /* CouponTableViewController.swift in Sources */,
-				A0C90BC71DFAA14000F58AB3 /* MembershipClass.swift in Sources */,
 				42140E401DF7CDD9003B287B /* Membership+CoreDataProperties.swift in Sources */,
 				42140E3C1DF7CDD9003B287B /* Brand+CoreDataProperties.swift in Sources */,
 				42140E411DF7CDD9003B287B /* Coupon+CoreDataClass.swift in Sources */,

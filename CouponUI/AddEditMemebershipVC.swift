@@ -11,28 +11,34 @@ import UIKit
 
 class AddEditMemebershipVC: UIViewController {
       // 멤버쉽 추가 페이지
+    var cellData = MembershipClass()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+       
         
-        if ad.modifyCheck == true {
+        if cellData.modify == true {
+            
             //수정 버튼을 통해 들어온 것 확인
             self.navigationItem.title = "멤버십 카드 수정"
             //네비게이션 타이틀 변경
             self.navigationItem.rightBarButtonItem?.title = "수정"
+            
             //네비게이션 오른쪽 아이템 타이틀 변경
             
-            self.paramBrand.text = ad.membership[(ad.showNow)!].brand
+            self.paramBrand.text = cellData.brand
             //텍스트 필드에 브랜드 띄우기
-            self.paramBarcode.text = ad.membership[(ad.showNow)!].barcode
+            self.paramBarcode.text = cellData.barcode
             //텍스트 필드에 바코드 값 띄우기
-            self.paramImage.image = ad.membership[(ad.showNow)!].logo
+            self.paramImage.image = cellData.logo
             //이미지 뷰에 로고 띄우기
         } else {
             self.navigationItem.title = "멤버십 카드 추가"
             self.navigationItem.rightBarButtonItem?.title = "추가"
+            
         }
+        
         
         
 
@@ -40,12 +46,14 @@ class AddEditMemebershipVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if ad.logoChoice != nil  {
-            paramImage.image = ad.logoImage[(ad.logoChoice)!]
-            // 로고 선택시 이미지 띄워줌 (수정 모드가 아닐 경우만)
+        if cellData.logo != nil {
+            //로고 업데이트
+            paramImage.image = cellData.logo
+            
         }
+        
+        
     }
-    //test
     
     
     override func didReceiveMemoryWarning() {
@@ -67,7 +75,13 @@ class AddEditMemebershipVC: UIViewController {
     
    
    
-    var AddInfo = MembershipClass()
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "MembershipLogoCollection" {
+            (segue.destination as? ChoiceMembershipVC)?.delegate = self
+        }
+    }
 
     
     @IBAction func Add(_ sender: AnyObject) {
@@ -91,28 +105,29 @@ class AddEditMemebershipVC: UIViewController {
             paramBarcode.layer.borderColor = color.cgColor
             paramBarcode.placeholder = "입력해 주세요"
 
-            
-        } else if ad.logoChoice == nil && ad.modifyCheck == false{
+        
+        } else if cellData.logo == nil && cellData.modify == false{
             let color = UIColor.red
             choiceButton.layer.borderWidth = 1
             choiceButton.layer.cornerRadius = CGFloat(7)
             choiceButton.layer.borderColor = color.cgColor
             
-        } else {
+        } 
+        else {
         // 구조체 통일
         
-            AddInfo.brand = self.paramBrand.text!
-            AddInfo.barcode = self.paramBarcode.text!
-            AddInfo.barcodeImage = ad.fromString(string: self.paramBarcode.text!)
-            if ad.logoChoice != nil {
-            AddInfo.logo = ad.logoImage[(ad.logoChoice)!]
-            }
+            cellData.brand = self.paramBrand.text!
+            cellData.barcode = self.paramBarcode.text!
+            cellData.barcodeImage = generateBarcodeFromString(string: paramBrand.text!)
             
-            if ad.modifyCheck == true {
-                ad.membership[(ad.showNow!)] = AddInfo
+            
+            
+            
+            if cellData.modify == true {
+                ad.membership[(ad.showNow!)] = cellData
             
             } else{
-                ad.membership.append(AddInfo)
+                ad.membership.append(cellData)
             }
         
        
@@ -124,4 +139,16 @@ class AddEditMemebershipVC: UIViewController {
     
     
 
+}
+
+extension AddEditMemebershipVC : logoData {
+    
+    func updataData(data: UIImage) {
+        if data == UIImage(named: "KT") {
+            print("KT")
+        }
+        cellData.logo = data
+        print("call")
+    }
+    
 }

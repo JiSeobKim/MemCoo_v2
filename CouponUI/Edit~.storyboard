@@ -31,6 +31,35 @@
             </objects>
             <point key="canvasLocation" x="137" y="879"/>
         </scene>
+        <!--설정-->
+        <scene sceneID="Pq8-yS-N2i">
+            <objects>
+                <tableViewController storyboardIdentifier="Edit" id="WCV-oN-cdp" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="iL0-HB-YiP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ihd-Cm-oeB">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ihd-Cm-oeB" id="mVW-cq-60a">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="WCV-oN-cdp" id="q6A-Va-2g2"/>
+                            <outlet property="delegate" destination="WCV-oN-cdp" id="4yT-Dl-1jL"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="설정" id="wSA-rC-roJ"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UhI-7l-FIz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1706" y="3454"/>
+        </scene>
         <!--즐겨찾기-->
         <scene sceneID="eA4-MF-RaY">
             <objects>
@@ -48,7 +77,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xco-Dj-0F6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1540" y="-734"/>
+            <point key="canvasLocation" x="1156" y="-2075"/>
         </scene>
         <!--멤버십 카드-->
         <scene sceneID="ReK-QO-g05">
@@ -67,7 +96,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e1a-9r-Ygk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1540" y="143"/>
+            <point key="canvasLocation" x="1156" y="-1199"/>
         </scene>
         <!--쿠폰-->
         <scene sceneID="JWg-7b-QX4">
@@ -86,7 +115,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PIq-Zh-WyV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1540" y="1724"/>
+            <point key="canvasLocation" x="1156" y="2302"/>
         </scene>
         <!--설정-->
         <scene sceneID="uXQ-Vc-ARB">
@@ -100,12 +129,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="936-6i-52g" kind="relationship" relationship="rootViewController" id="ddS-05-GEW"/>
+                        <segue destination="WCV-oN-cdp" kind="relationship" relationship="rootViewController" id="ddS-05-GEW"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VLq-Ln-PWX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1540" y="2557"/>
+            <point key="canvasLocation" x="137" y="3454"/>
         </scene>
         <!--Coupon-->
         <scene sceneID="dk6-bc-VCf">
@@ -138,7 +167,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aCU-YG-qae" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2510" y="-734"/>
+            <point key="canvasLocation" x="3266" y="-2075"/>
         </scene>
         <!--MembershipMain-->
         <scene sceneID="QuN-it-xtN">
@@ -148,7 +177,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r3P-ga-J0e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2489" y="142"/>
+            <point key="canvasLocation" x="2105" y="-1200"/>
         </scene>
         <!--CouponMain-->
         <scene sceneID="TsQ-TN-pcj">
@@ -168,17 +197,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HcR-ql-5Mw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2488" y="1724"/>
-        </scene>
-        <!--Edit-->
-        <scene sceneID="b6J-bK-ZcZ">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="Edit" storyboardName="Edit" referencedIdentifier="Edit" id="936-6i-52g" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="3bT-NG-4hY"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LNd-TG-ndF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3109" y="2557"/>
+            <point key="canvasLocation" x="2105" y="2302"/>
         </scene>
     </scenes>
     <resources>

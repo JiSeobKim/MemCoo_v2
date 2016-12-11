@@ -19,17 +19,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ///////////////////////////////using in membership
     var showNow : Int?
     //현재 보고 있는 컬렉션 셀 번호
-    var modifyCheck : Bool = false
-    //수정 mode On/Off
+    
     var membership : Array = [KT]
     //예시 1 기본값 대입 & 저장소 역할
-    var logoChoice : Int?
-    //로고 선택을 어떤걸 했나 확인하기 위한 변수
     
-    //멤버십 로고들
-    var logoImage = [UIImage(named:"CafeLogo"),UIImage(named:"CallLogo"),UIImage(named:"ClothesLogo"),UIImage(named:"CosmeticLogo"),UIImage(named:"PointLogo"),UIImage(named:"KT"),UIImage(named:"SKT"),UIImage(named:"U+")]
+
     
-    var logoName = ["카페","통신사","옷가게","화장품","포인트","KT","SKT","U+"]
     
     
     //////////////////////////////

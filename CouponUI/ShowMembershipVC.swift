@@ -10,66 +10,41 @@ import UIKit
 
 class ShowMembershipVC: UIViewController {
 
-    var cellData : MembershipClass?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-
-        self.ShowBarcode.image = cellData?.barcodeImage
-        //imageView에 바코드 이미지 입력
-        self.navigationItem.title = cellData?.brand
-        //Label에 브랜드명 입력
-        
-        self.ShowBarcode.image = cellData?.barcodeImage
-        
-        
-        
-        // 바코드 자릿수에 따라 4자리마다 " - " 표시 해주기
-        //var barcode = (ad.membership[(ad.showNow)!].barcode)!
-        
-        
-        barcodeLabel.text = addHyphen(data: (cellData?.barcode)!)
-        ShowLogo.image = cellData?.logo
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        //수정시 값 되불러 오기
-        //방식 차이( viewDidLoad:선택된 셀로부터 값 받기 / viewWillAppear: 앱델리게이트에 저장된 값 받기)
-        if cellData?.modify == true {
-            self.ShowBarcode.image = cellData?.barcodeImage
-            self.ShowLogo.image = cellData?.logo
-            self.barcodeLabel.text = addHyphen(data: (cellData?.barcode)!)
-            
-
-
-        }
-    }
-    
-    
-    
-
-
+    var cellData : Membership?
     var image = UIImage()
     
     @IBOutlet weak var ShowLogo: UIImageView!
     @IBOutlet weak var barcodeLabel: UILabel!
     @IBOutlet weak var ShowBarcode: UIImageView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        if cellData != nil {
+            loadMembershipData()
+        }
+    }
 
+    override func viewWillAppear(_ animated: Bool) {
+        if cellData != nil {
+            loadMembershipData()
+        }
+    }
+    
+    func loadMembershipData() {
+        if let membership = cellData {
+            ShowLogo.image = membership.toImage?.image as? UIImage
+            ShowBarcode.image = generateBarcodeFromString(string: membership.barcode)
+            barcodeLabel.text = addHyphen(data: membership.barcode!)
+        }
+    }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "MembershipEdit" {
-            let vc = segue.destination as? AddEditMemebershipVC
-            vc?.cellData = self.cellData!
-            vc?.cellData.modify = true
-            
+            if let vc = segue.destination as? AddEditMemebershipVC {
+                vc.membershipToEdit = cellData
+            }
         }
     }
 

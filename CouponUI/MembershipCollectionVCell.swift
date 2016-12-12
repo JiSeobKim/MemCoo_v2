@@ -19,7 +19,12 @@ class MembershipCollectionVCell : UICollectionViewCell {
     @IBOutlet weak var choiceLogoShow: UIImageView!
     @IBOutlet weak var choiceLogoName: UILabel!
     
-
+    func configureCell(item: Membership) {
+        
+        viewLogoName.text = item.toBrand?.title
+        viewLogoShow.image = item.toImage?.image as? UIImage
+        
+    }
     
 }
 

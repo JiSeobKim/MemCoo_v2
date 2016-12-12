@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -85,7 +85,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="6qt-8n-Irs">
                             <color key="tintColor" red="0.5692052245" green="0.54980164769999995" blue="0.49957269430000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <segue destination="b8A-si-96I" kind="unwind" identifier="unwindMembershipMain" unwindAction="unwindMembershipMainWithSender:" id="BfG-jD-dp3"/>
+                                <action selector="deletePressed:" destination="V9i-4b-dZ9" id="y6e-ad-rMb"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -101,7 +101,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Acl-AP-bWO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="b8A-si-96I" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3317.5999999999999" y="-1354.2728635682161"/>
         </scene>
@@ -271,9 +270,6 @@
                                         <connections>
                                             <outlet property="viewLogoName" destination="7el-a9-znx" id="GW1-4B-ojW"/>
                                             <outlet property="viewLogoShow" destination="ET7-wg-u97" id="SEa-Jw-CKb"/>
-                                            <segue destination="FvN-Ct-G1V" kind="show" identifier="showCollection" id="vmZ-DB-3J7">
-                                                <nil key="action"/>
-                                            </segue>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -299,6 +295,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="1vx-Sd-Cba" id="Y0s-gS-DCg"/>
+                        <segue destination="FvN-Ct-G1V" kind="show" identifier="showCollection" id="IdC-Ab-RLD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="you-A8-sXM" userLabel="First Responder" sceneMemberID="firstResponder"/>

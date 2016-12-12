@@ -35,6 +35,7 @@
         <attribute name="barcode" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="favorite" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="toBrand" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Brand" inverseName="toMembership" inverseEntity="Brand" syncable="YES"/>
         <relationship name="toCategory" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Category" inverseName="toMembership" inverseEntity="Category" syncable="YES"/>
         <relationship name="toImage" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Image" inverseName="toMembership" inverseEntity="Image" syncable="YES"/>
@@ -43,7 +44,7 @@
         <element name="Brand" positionX="-126" positionY="-0" width="128" height="103"/>
         <element name="Category" positionX="-126" positionY="446" width="128" height="103"/>
         <element name="Coupon" positionX="-558" positionY="113" width="128" height="193"/>
-        <element name="Membership" positionX="277" positionY="198" width="128" height="133"/>
         <element name="Image" positionX="-119" positionY="189" width="128" height="118"/>
+        <element name="Membership" positionX="277" positionY="198" width="128" height="148"/>
     </elements>
 </model>

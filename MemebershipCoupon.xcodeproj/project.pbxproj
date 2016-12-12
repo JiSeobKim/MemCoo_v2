@@ -38,7 +38,6 @@
 		A03831151DFC1CB8002C0314 /* Coupon.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A03831141DFC1CB8002C0314 /* Coupon.storyboard */; };
 		A03831171DFC1CDA002C0314 /* CouponMino.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A03831161DFC1CDA002C0314 /* CouponMino.storyboard */; };
 		A03831191DFC1CED002C0314 /* Edit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A03831181DFC1CED002C0314 /* Edit.storyboard */; };
-		A07854491DFBA3D000CBF7C4 /* MembershipClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07854421DFBA3D000CBF7C4 /* MembershipClass.swift */; };
 		A078544A1DFBA3D000CBF7C4 /* MembershipCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07854431DFBA3D000CBF7C4 /* MembershipCollectionVC.swift */; };
 		A078544B1DFBA3D000CBF7C4 /* MembershipCollectionVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07854441DFBA3D000CBF7C4 /* MembershipCollectionVCell.swift */; };
 		A078544C1DFBA3D000CBF7C4 /* ShowMembershipVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07854451DFBA3D000CBF7C4 /* ShowMembershipVC.swift */; };
@@ -81,7 +80,6 @@
 		A03831141DFC1CB8002C0314 /* Coupon.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Coupon.storyboard; sourceTree = "<group>"; };
 		A03831161DFC1CDA002C0314 /* CouponMino.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CouponMino.storyboard; sourceTree = "<group>"; };
 		A03831181DFC1CED002C0314 /* Edit.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Edit.storyboard; sourceTree = "<group>"; };
-		A07854421DFBA3D000CBF7C4 /* MembershipClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembershipClass.swift; sourceTree = "<group>"; };
 		A07854431DFBA3D000CBF7C4 /* MembershipCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembershipCollectionVC.swift; sourceTree = "<group>"; };
 		A07854441DFBA3D000CBF7C4 /* MembershipCollectionVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembershipCollectionVCell.swift; sourceTree = "<group>"; };
 		A07854451DFBA3D000CBF7C4 /* ShowMembershipVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowMembershipVC.swift; sourceTree = "<group>"; };
@@ -163,7 +161,6 @@
 		42976BA01DF27DB000ADB0D7 /* Membership */ = {
 			isa = PBXGroup;
 			children = (
-				A07854421DFBA3D000CBF7C4 /* MembershipClass.swift */,
 				A07854431DFBA3D000CBF7C4 /* MembershipCollectionVC.swift */,
 				A07854441DFBA3D000CBF7C4 /* MembershipCollectionVCell.swift */,
 				A07854451DFBA3D000CBF7C4 /* ShowMembershipVC.swift */,
@@ -300,7 +297,6 @@
 			files = (
 				42140E3B1DF7CDD9003B287B /* Brand+CoreDataClass.swift in Sources */,
 				3E36B1751DF2046D00385315 /* AddEditCouponViewController.swift in Sources */,
-				A07854491DFBA3D000CBF7C4 /* MembershipClass.swift in Sources */,
 				42140E421DF7CDD9003B287B /* Coupon+CoreDataProperties.swift in Sources */,
 				42976BDD1DF6B38100ADB0D7 /* CouponDetailViewController.swift in Sources */,
 				42976BDC1DF6B38100ADB0D7 /* CouponViewController.swift in Sources */,

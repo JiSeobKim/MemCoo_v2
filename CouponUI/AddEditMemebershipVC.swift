@@ -10,7 +10,12 @@ import UIKit
 
 
 class AddEditMemebershipVC: UIViewController {
-      // 멤버쉽 추가 페이지
+    
+    //
+    //model
+    //
+    
+    //showMembershipVC에서 넘어온 membership객체를 받기 위한 membership객체
     var membershipToEdit: Membership?
     
     @IBOutlet weak var LabelBrand: UILabel!
@@ -19,6 +24,8 @@ class AddEditMemebershipVC: UIViewController {
     @IBOutlet weak var paramBarcode: UITextField!
     @IBOutlet weak var paramImage: UIImageView!
     @IBOutlet weak var choiceButton: UIButton!
+    
+    //saveitem버튼을 눌렀을시 데이터베이스로 저장
     @IBAction func addItem(_ sender: AnyObject) {
         // 추가or수정 버튼 누를시
         
@@ -104,6 +111,7 @@ class AddEditMemebershipVC: UIViewController {
 //        }
     }
 
+    //휴지통버튼을 눌렀을시 데이터베이스에서 삭제
     @IBAction func deletePressed(_ sender: UIBarButtonItem) {
         if membershipToEdit != nil {
             context.delete(membershipToEdit!)
@@ -114,6 +122,9 @@ class AddEditMemebershipVC: UIViewController {
     }
     
     
+    //
+    //viewLoad
+    //
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -143,7 +154,13 @@ class AddEditMemebershipVC: UIViewController {
 //            self.navigationItem.rightBarButtonItem = nil
         
         }
-        
+    
+    
+    //
+    //controller
+    //
+    
+    //membership data를 부르기 위한 펑션
     func loadMembershipData() {
         if let membership = membershipToEdit {
             paramImage.image = membership.toImage?.image as? UIImage
@@ -152,6 +169,7 @@ class AddEditMemebershipVC: UIViewController {
         }
     }
     
+    //이건 지섭님이 쓴거라서 이해불가
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "MembershipLogoCollection" {
             (segue.destination as? ChoiceMembershipVC)?.delegate = self
@@ -159,6 +177,8 @@ class AddEditMemebershipVC: UIViewController {
     }
     
 }
+
+//extension 부분
 
     extension AddEditMemebershipVC : logoData {
         

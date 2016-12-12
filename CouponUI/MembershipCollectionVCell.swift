@@ -19,6 +19,7 @@ class MembershipCollectionVCell : UICollectionViewCell {
     @IBOutlet weak var choiceLogoShow: UIImageView!
     @IBOutlet weak var choiceLogoName: UILabel!
     
+    //cell 생성 cell viewcontroll에서의 정의(실질적인 셀생성정의)
     func configureCell(item: Membership) {
         
         viewLogoName.text = item.toBrand?.title

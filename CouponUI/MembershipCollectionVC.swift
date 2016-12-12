@@ -11,14 +11,18 @@ import CoreData
 
 class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, NSFetchedResultsControllerDelegate {
 
- 
     
+//
+//model
+//
     @IBOutlet weak var collectionView: UICollectionView!
     var controller: NSFetchedResultsController<Membership>!
     //CollectionView 이름 선언
     //45,71,88 라인에서 사용
     
-    
+//
+//viewLoad
+//
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,15 +32,6 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
         attemptFetch()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    
-    
-    
     override func viewWillAppear(_ animated: Bool) {
                 // 뷰2->뷰1는 viewDidLoad로 못함
         
@@ -50,13 +45,13 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
     
     
     
-   
+//
+//controller
+//
     
-    
-    
-
+//컬렉션 뷰 셀 갯수 생성
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //컬렉션 뷰 셀 갯수 생성
+       
         if let sections = controller.sections {
             let sectionInfo = sections[section]
             
@@ -67,6 +62,7 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
         
     }
     
+//셀 재사용을 위한 정의
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "viewcell", for: indexPath) as! MembershipCollectionVCell
         // 설정할 cell 선택(빨간 "viewcell"은 어트리뷰트인스펙터의 identifier)
@@ -81,6 +77,7 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
         
     }
     
+//셀 생성 정의
     func configureCell(cell: MembershipCollectionVCell, indexPath: NSIndexPath) {
         
         //update cell
@@ -89,6 +86,7 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
         cell.configureCell(item: item)
     }
     
+//선택된 셀을 사용하기위한 정의
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let objs = controller.fetchedObjects, objs.count > 0 {
             let item = objs[indexPath.item]
@@ -96,8 +94,7 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
         }
     }
 
-
-    
+//화면전환시 데이터 넘기기 위한 준비
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showCollection" {
             if let destination = segue.destination as? ShowMembershipVC {
@@ -108,14 +105,13 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
         }
     }
     
-//    @IBAction func unwindMembershipMain(sender: UIStoryboardSegue){
-//        
-//    }
     
-    //coreData 부분
+//
+//coreData 부분
+//
     
-    //패치해오는 펑션
     
+//패치해오는 펑션
     func attemptFetch() {
         
         let fetchRequest: NSFetchRequest<Membership> = Membership.fetchRequest()
@@ -139,19 +135,7 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
         
     }
     
-    //컨트롤러가 바뀔때마다 테이블뷰 업데이트
-//    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-//        
-//        collectionView.up
-//        
-//    }
-//    
-//    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-//        
-//        collectionView.endUpdates()
-//        
-//    }
-    
+//콘트롤러 정의
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         
         switch (type) {
@@ -184,26 +168,6 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
             }
             break
         }
-        
     }
-    
-    func generateTestData() {
-        let item = Coupon(context: context)
-        
-        item.title = "문화상품권"
-        item.expireDate = Date() as NSDate
-        
-        let item2 = Coupon(context: context)
-        
-        item2.title = "독서상품권"
-        item2.expireDate = Date() as NSDate
-        
-        
-        ad.saveContext()
-    }
-
-
-    
-
 }
 

@@ -14,32 +14,7 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    
 
-    
-    //바코드 이미지 생성기
-    func fromString(string: String) -> UIImage? {
-        let data = string.data(using: String.Encoding.ascii)
-        if let filter = CIFilter(name: "CICode128BarcodeGenerator") {
-            filter.setValue(data, forKey: "inputMessage")
-            let transform = CGAffineTransform(scaleX: 3, y: 3)
-            
-            if let output = filter.outputImage?.applying(transform) {
-                return UIImage(ciImage: output)
-            }
-        }
-        
-        return nil
-    }
-
-    
-    
-    //    var product = [String?]()
-    //    var barcode = [String?]()
-    //    var expired = [String?]()
-    //    var row: Int?
-    
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         // Override point for customization after application launch.

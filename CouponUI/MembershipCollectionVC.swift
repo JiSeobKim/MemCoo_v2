@@ -38,9 +38,6 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
        
         attemptFetch()
         self.collectionView.reloadData()
-        //컬렉션뷰 릴로드
-        ad.showNow = nil
-       
         
     }
     

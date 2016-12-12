@@ -36,6 +36,7 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
                 // 뷰2->뷰1는 viewDidLoad로 못함
         
        
+        attemptFetch()
         self.collectionView.reloadData()
         //컬렉션뷰 릴로드
         ad.showNow = nil
@@ -136,38 +137,38 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
     }
     
 //콘트롤러 정의
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-        
-        switch (type) {
-        case .insert:
-            if let indexPath = newIndexPath {
-                collectionView.insertItems(at: [indexPath])
-            }
-            break
-        case .delete:
-            if let indexPath = indexPath {
-                collectionView.deleteItems(at: [indexPath])
-            }
-            break
-        case .update:
-            if let indexPath = indexPath {
-                let cell = collectionView.cellForItem(at: indexPath) as! MembershipCollectionVCell
-                // update the cell data.
-                
-                configureCell(cell: cell, indexPath: indexPath as NSIndexPath)
-            }
-            break
-        case .move:
-            if let indexPath = indexPath {
-                collectionView.deleteItems(at: [indexPath])
-                
-            }
-            if let indexPath = newIndexPath {
-                collectionView.insertItems(at: [indexPath])
-                
-            }
-            break
-        }
-    }
+//    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+//        
+//        switch (type) {
+//        case .insert:
+//            if let indexPath = newIndexPath {
+//                collectionView.insertItems(at: [indexPath])
+//            }
+//            break
+//        case .delete:
+//            if let indexPath = indexPath {
+//                collectionView.deleteItems(at: [indexPath])
+//            }
+//            break
+//        case .update:
+//            if let indexPath = indexPath {
+//                let cell = collectionView.cellForItem(at: indexPath) as! MembershipCollectionVCell
+//                // update the cell data.
+//                
+//                configureCell(cell: cell, indexPath: indexPath as NSIndexPath)
+//            }
+//            break
+//        case .move:
+//            if let indexPath = indexPath {
+//                collectionView.deleteItems(at: [indexPath])
+//                
+//            }
+//            if let indexPath = newIndexPath {
+//                collectionView.insertItems(at: [indexPath])
+//                
+//            }
+//            break
+//        }
+//    }
 }
 

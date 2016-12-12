@@ -131,27 +131,17 @@ class AddEditMemebershipVC: UIViewController {
         
         if membershipToEdit != nil {
             loadMembershipData()
+            //수정 버튼을 통해 들어온 것 확인
+            self.navigationItem.title = "멤버십 카드 수정"
+            //네비게이션 타이틀 변경
+            self.navigationItem.rightBarButtonItem?.title = "수정"
+        } else {
+            self.navigationItem.title = "멤버십 카드 추가"
+            self.navigationItem.rightBarButtonItem = nil
         }
        
         
-//        if cellData.modify == true {
-//            
-//            //수정 버튼을 통해 들어온 것 확인
-//            self.navigationItem.title = "멤버십 카드 수정"
-//            //네비게이션 타이틀 변경
-//            self.navigationItem.rightBarButtonItem?.title = "수정"
-//            
-//            //네비게이션 오른쪽 아이템 타이틀 변경
-//            
-//            self.paramBrand.text = cellData.brand
-//            //텍스트 필드에 브랜드 띄우기
-//            self.paramBarcode.text = cellData.barcode
-//            //텍스트 필드에 바코드 값 띄우기
-//            self.paramImage.image = cellData.logo
-//            //이미지 뷰에 로고 띄우기
-//        } else {
-//            self.navigationItem.title = "멤버십 카드 추가"
-//            self.navigationItem.rightBarButtonItem = nil
+
         
         }
     

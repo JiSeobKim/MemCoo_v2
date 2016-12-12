@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var showNow : Int?
     //현재 보고 있는 컬렉션 셀 번호
     
-    var membership : Array = [KT]
+    
     //예시 1 기본값 대입 & 저장소 역할
     
 

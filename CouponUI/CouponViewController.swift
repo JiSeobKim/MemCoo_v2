@@ -19,12 +19,34 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
     @IBAction func add(_ sender: Any) {
         let alert = UIAlertController(title: "쿠폰 추가", message: "쿠폰을 추가할 방식을 선택해주세요.", preferredStyle: .actionSheet)
         
-        let clipboard = UIAlertAction(title: "클립보드 내용 자동 추가", style: .default)
-        let ocr = UIAlertAction(title: "사진에서 바코드만 읽어오기", style: .default)
+        let clipboard = UIAlertAction(title: "클립보드 내용 자동 추가", style: .default) {
+            (_) in
+            //액션시트의 첫 번째 버튼이 눌렸음을 다음 뷰에 전달하기 위해 앱델리게이트의 selectActionSheet 변수에 1을 저장.
+            ad.selectActionSheet = 1
+            
+            //다음 뷰컨트롤러로 push.
+            if let addVC = self.storyboard?.instantiateViewController(withIdentifier: "AddEdit") {
+                self.navigationController?.pushViewController(addVC, animated: true)
+            }
+        }
+        
+        let ocr = UIAlertAction(title: "사진에서 바코드만 읽어오기", style: .default) {
+            (_) in
+            
+            ad.selectActionSheet = 2
+            
+            if let addVC = self.storyboard?.instantiateViewController(withIdentifier: "AddEdit") {
+                self.navigationController?.pushViewController(addVC, animated: true)
+            }
+        }
+        
         let custom = UIAlertAction(title: "사용자 직접 입력", style: .default) {
             (_) in
-            if let editVC = self.storyboard?.instantiateViewController(withIdentifier: "AddEdit") {
-                self.navigationController?.pushViewController(editVC, animated: true)
+            
+            ad.selectActionSheet = 3
+            
+            if let addVC = self.storyboard?.instantiateViewController(withIdentifier: "AddEdit") {
+                self.navigationController?.pushViewController(addVC, animated: true)
             }
         }
         
@@ -34,6 +56,9 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
         alert.addAction(ocr)
         alert.addAction(custom)
         alert.addAction(cancel)
+        
+        //add 버튼이 눌렸음을 다음 뷰에 전달하기 위해 isAddButton 변수에 true를 저장.
+        ad.isAddButton = true
         
         self.present(alert, animated: true)
     }

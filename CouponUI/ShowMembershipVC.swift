@@ -31,6 +31,10 @@ class ShowMembershipVC: UIViewController {
         if cellData != nil {
             loadMembershipData()
         }
+        
+        if let topItem = self.navigationController?.navigationBar.topItem {
+            topItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {

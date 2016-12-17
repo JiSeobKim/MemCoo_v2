@@ -158,6 +158,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         
         //상품명 텍스트 필드를 최초 응답자로 지정(스토리보드 내에서 dock을 이용해도 가능).
         self.product.becomeFirstResponder()
+        //화면 전환시 입력창 바로 반응
         
         imagePicker = UIImagePickerController()
         imagePicker.delegate = self

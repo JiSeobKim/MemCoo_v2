@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,9 +22,8 @@
                     <connections>
                         <segue destination="ZkG-7U-JPn" kind="relationship" relationship="viewControllers" id="LIv-EY-Qxw"/>
                         <segue destination="KZY-G8-lUU" kind="relationship" relationship="viewControllers" id="iqO-TX-4HQ"/>
-                        <segue destination="Bk5-7S-zaF" kind="relationship" relationship="viewControllers" id="OCM-hg-DWo"/>
-                        <segue destination="jfW-1F-J1l" kind="relationship" relationship="viewControllers" id="tmX-Da-Q5Y"/>
                         <segue destination="6P1-eX-TLA" kind="relationship" relationship="viewControllers" id="kWP-fD-5Xw"/>
+                        <segue destination="jfW-1F-J1l" kind="relationship" relationship="viewControllers" id="tmX-Da-Q5Y"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -69,25 +68,6 @@
             </objects>
             <point key="canvasLocation" x="1540" y="143"/>
         </scene>
-        <!--쿠폰-->
-        <scene sceneID="JWg-7b-QX4">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Bk5-7S-zaF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="쿠폰" image="first" id="TWS-mk-yv4"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ntI-9v-f9b">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="w9p-8O-9AW" kind="relationship" relationship="rootViewController" id="Y4Q-nC-yTf"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PIq-Zh-WyV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1540" y="1724"/>
-        </scene>
         <!--설정-->
         <scene sceneID="uXQ-Vc-ARB">
             <objects>
@@ -105,7 +85,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VLq-Ln-PWX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1540" y="2557"/>
+            <point key="canvasLocation" x="1540" y="1746"/>
         </scene>
         <!--Coupon-->
         <scene sceneID="dk6-bc-VCf">
@@ -160,16 +140,6 @@
             </objects>
             <point key="canvasLocation" x="2664.8000000000002" y="876.61169415292363"/>
         </scene>
-        <!--CouponMainMino-->
-        <scene sceneID="a1r-LS-fYr">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="CouponMainMino" storyboardName="CouponMino" referencedIdentifier="CouponMainMino" id="w9p-8O-9AW" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="48g-E1-yY7"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HcR-ql-5Mw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2488" y="1724"/>
-        </scene>
         <!--Edit-->
         <scene sceneID="b6J-bK-ZcZ">
             <objects>
@@ -178,7 +148,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LNd-TG-ndF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3109" y="2557"/>
+            <point key="canvasLocation" x="3109" y="1745"/>
         </scene>
     </scenes>
     <resources>

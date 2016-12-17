@@ -8,8 +8,9 @@
 
 import UIKit
 import CoreData
+import TesseractOCR
 
-class CouponViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate {
+class CouponViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate, G8TesseractDelegate {
     
     //model
     @IBOutlet weak var tableView: UITableView!
@@ -32,6 +33,15 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
         
         let ocr = UIAlertAction(title: "사진에서 바코드만 읽어오기", style: .default) {
             (_) in
+            //파싱 퍼센트 표시 알림창.
+//            func progressImageRecognition(for tesseract: G8Tesseract!) {
+//                let progress = UIAlertController(title: "알림", message: "Recognition Progress: \(tesseract.progress)%", preferredStyle: UIAlertControllerStyle.alert)
+//                self.present(progress, animated: true)
+//                
+//                if tesseract.progress >= 90 {
+//                    self.dismiss(animated: true)
+//                }
+//            }
             
             ad.selectActionSheet = 2
             
@@ -62,9 +72,6 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
         
         self.present(alert, animated: true)
     }
-    
-
-    
     
     var controller: NSFetchedResultsController<Coupon>!
     

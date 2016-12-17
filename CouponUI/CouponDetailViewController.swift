@@ -50,6 +50,7 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
         if segue.identifier == "CouponEditVC" {
             if let destination = segue.destination as? CouponAddViewController{
                 destination.couponToEdit = couponToDetail
+                ad.isAddButton = false
             }
         }
             

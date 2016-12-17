@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import TesseractOCR
 
-class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, G8TesseractDelegate {
     
     var imagePicker: UIImagePickerController!
 
@@ -178,6 +179,59 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         if couponToEdit != nil {
             loadCouponData()
         }
+        
+        //add 버튼을 눌렀을 때 타이틀과 버튼 이름 변경.
+        if ad.isAddButton == true {
+            self.navigationItem.title = "쿠폰 추가"
+            //self.navigationItem.rightBarButtonItem?.title = "추가"
+            
+            //클립보드 파싱 버튼을 눌렀을 때 자동으로 텍스트필드 입력.
+            if ad.selectActionSheet == 1 {
+                product.text = "test"
+                expiredDate.text = "2017.01.01"
+                barcode.text = "1234 5678 9012 3456"
+            }
+                //OCR 버튼을 눌렀을 때 이미지 OCR 후 바코드만 입력.
+            else if ad.selectActionSheet == 2 {
+                if let tesseract = G8Tesseract(language: "eng") {
+                    tesseract.delegate = self
+                    //tesseract.charWhitelist = "0123456789"
+                    tesseract.image = UIImage(named: "kakao")?.g8_grayScale()    //.g8_blackAndWhite()
+                    tesseract.recognize()
+                    
+                    //현재는 originalText에 OCR을 표시하도록 함.
+                    originalText.text = tesseract.recognizedText
+                }
+            }
+            func progressImageRecognition(for tesseract: G8Tesseract!) {
+                print("Recognition Progress \(tesseract.progress)%")
+            }
+            //        //사용자 입력 버튼을 눌렀을 때 빈칸(또는 이벤트 처리 안함).
+            //        else {
+            //
+            //        }
+        }
+            //수정 버튼을 눌렀을 때 타이틀과 버튼 이름 변경.
+        else {
+            self.navigationItem.title = "쿠폰 수정"
+            //self.navigationItem.rightBarButtonItem?.title = "확인"
+            loadCouponData()
+        }
+        
+        //로고 탭했을 때 로고 뷰 보여주기.
+        //        var imageView = logoImage
+        //        let tapGestureRecoginzer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(img:)))
+        //        imageView?.isUserInteractionEnabled = true
+        //        imageView?.addGestureRecognizer(tapGestureRecoginzer)
+        //
+        //        func imageTapped(img: AnyObject) {
+        //            //
+        //        }
+        
+        //클립보드 표시.
+//        if let copiedString = UIPasteboard.general.string {
+//            originalText.text = copiedString
+//        }
     }
 
     override func didReceiveMemoryWarning() {

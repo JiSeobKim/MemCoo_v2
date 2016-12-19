@@ -18,12 +18,23 @@ class AddEditMemebershipVC: UIViewController {
     //showMembershipVC에서 넘어온 membership객체를 받기 위한 membership객체
     var membershipToEdit: Membership?
     
+    
+
     @IBOutlet weak var LabelBrand: UILabel!
     @IBOutlet weak var LabelBarcode: UILabel!
     @IBOutlet weak var paramBrand: UITextField!
     @IBOutlet weak var paramBarcode: UITextField!
     @IBOutlet weak var paramImage: UIImageView!
     @IBOutlet weak var choiceButton: UIButton!
+    @IBOutlet weak var realTimeBarcode: UIImageView!
+    
+    @IBAction func paramBarcodeButton(_ sender: UITextField) {
+        
+        
+        realTimeBarcode.image = generateBarcodeFromString(string: paramBarcode.text!)
+
+    }
+    
     
     //saveitem버튼을 눌렀을시 데이터베이스로 저장
     @IBAction func addItem(_ sender: AnyObject) {
@@ -164,6 +175,12 @@ class AddEditMemebershipVC: UIViewController {
         if segue.identifier == "MembershipLogoCollection" {
             (segue.destination as? ChoiceMembershipVC)?.delegate = self
         }
+    }
+    
+    //텍스트 필드가 아닌 곳을 터치했을 때 키보드 닫기.
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        paramBrand.resignFirstResponder()
+        paramBarcode.resignFirstResponder()
     }
     
 }

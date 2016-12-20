@@ -15,6 +15,9 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
     //detail에서 넘어온 coupon 객체를 받기하기 위한 coupon 객체
     var couponToEdit: Coupon?
     
+    //밝기 조절용
+    var bright : CGFloat?
+    
     @IBOutlet weak var logo: UIImageView!
     
     //데이터베이스에서 삭제
@@ -155,6 +158,11 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //화면 밝기 되돌리기
+        if bright != nil {
+            UIScreen.main.brightness = self.bright!
+        }
         
         //상품명 텍스트 필드를 최초 응답자로 지정(스토리보드 내에서 dock을 이용해도 가능).
         self.product.becomeFirstResponder()

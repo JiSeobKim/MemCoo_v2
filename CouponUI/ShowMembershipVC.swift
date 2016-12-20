@@ -15,6 +15,7 @@ class ShowMembershipVC: UIViewController {
     //
 
     var cellData : Membership?
+    var bright : CGFloat?
 
     @IBOutlet weak var ShowLogo: UIImageView!
     @IBOutlet weak var barcodeLabel: UILabel!
@@ -50,6 +51,10 @@ class ShowMembershipVC: UIViewController {
         if cellData != nil {
             loadMembershipData()
         }
+        
+        
+        UIScreen.main.brightness = 1.0
+        
     }
     
     //
@@ -71,11 +76,15 @@ class ShowMembershipVC: UIViewController {
         }
     }
     
-    //수정시 membership의 객체를 넘기기위한 준비
+    //수정시 membership의 객체를 넘기기위한 준비 && 밝기 값 전달
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "MembershipEdit" {
             if let vc = segue.destination as? AddEditMemebershipVC {
                 vc.membershipToEdit = cellData
+                
+                if self.bright != nil {
+                 vc.bright = self.bright!
+                }
             }
         }
     }

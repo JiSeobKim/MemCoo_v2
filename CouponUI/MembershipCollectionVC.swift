@@ -17,7 +17,7 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
 //
     @IBOutlet weak var collectionView: UICollectionView!
     var controller: NSFetchedResultsController<Membership>!
-    
+    var bright : CGFloat?
     
     
 //
@@ -38,6 +38,9 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
        
         attemptFetch()
         self.collectionView.reloadData()
+        if bright != nil {
+            UIScreen.main.brightness = bright!
+        }
         
     }
     
@@ -98,6 +101,10 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
             if let destination = segue.destination as? ShowMembershipVC {
                 if let membership = sender as? Membership {
                     destination.cellData = membership
+                    
+                    // 밝기 값 저장 
+                    destination.bright = UIScreen.main.brightness
+                    self.bright = UIScreen.main.brightness
                 }
             }
         }

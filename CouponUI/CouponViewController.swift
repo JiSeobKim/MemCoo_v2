@@ -16,6 +16,8 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var segment: UISegmentedControl!
     
+    var bright : CGFloat?
+    
     //+버튼 눌렀을때의 액션
     @IBAction func add(_ sender: Any) {
         let alert = UIAlertController(title: "쿠폰 추가", message: "쿠폰을 추가할 방식을 선택해주세요.", preferredStyle: .actionSheet)
@@ -87,6 +89,13 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
         attemptFetch()
 
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //화면 밝기 되돌리기
+        if bright != nil {
+            UIScreen.main.brightness = bright!
+        }
+    }
 
     
     //tableView를 위한 function
@@ -132,6 +141,9 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
             if let destination = segue.destination as? CouponDetailViewController {
                 if let coupon = sender as? Coupon {
                     destination.couponToDetail = coupon
+                    
+                    self.bright = UIScreen.main.brightness
+                    destination.bright = self.bright
                 }
             }
         }

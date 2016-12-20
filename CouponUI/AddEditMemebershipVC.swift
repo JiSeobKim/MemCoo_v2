@@ -11,13 +11,16 @@ import UIKit
 
 class AddEditMemebershipVC: UIViewController {
     
+    
+    
     //
     //model
     //
     
     //showMembershipVC에서 넘어온 membership객체를 받기 위한 membership객체
     var membershipToEdit: Membership?
-    
+    var membership: Membership!
+    var bright : CGFloat?
     
 
     @IBOutlet weak var LabelBrand: UILabel!
@@ -28,25 +31,45 @@ class AddEditMemebershipVC: UIViewController {
     @IBOutlet weak var choiceButton: UIButton!
     @IBOutlet weak var realTimeBarcode: UIImageView!
     
-    @IBAction func paramBarcodeButton(_ sender: UITextField) {
-        
-        
-        realTimeBarcode.image = generateBarcodeFromString(string: paramBarcode.text!)
+    
+    
+    
+    
+    //
+    //viewLoad
+    //
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        if membershipToEdit != nil {
+            loadMembershipData()
+            //수정 버튼을 통해 들어온 것 확인
+            self.navigationItem.title = "멤버십 카드 수정"
+            //네비게이션 타이틀 변경
+            self.navigationItem.rightBarButtonItem?.title = "수정"
+        } else {
+            self.navigationItem.title = "멤버십 카드 추가"
+            self.navigationItem.rightBarButtonItem = nil
+        }
 
     }
     
-    
-    var membership: Membership!
-    
-    let imageContext = Image(context: context)
-    let brandContext = Brand(context: context)
+    override func viewWillAppear(_ animated: Bool) {
+        //수정으로 들어왔을 시 밝기 되돌리기
+        if bright != nil {
+            UIScreen.main.brightness = bright!
+        }
+    }
+
     
     
     //saveitem버튼을 눌렀을시 데이터베이스로 저장
     @IBAction func addItem(_ sender: AnyObject) {
         // 추가or수정 버튼 누를시
 
-        
+        let imageContext = Image(context: context)
+        let brandContext = Brand(context: context)
         
         var inputCheck1 = false
         var inputCheck2 = false
@@ -121,29 +144,6 @@ class AddEditMemebershipVC: UIViewController {
     }
     
     
-    //
-    //viewLoad
-    //
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        
-        if membershipToEdit != nil {
-            loadMembershipData()
-            //수정 버튼을 통해 들어온 것 확인
-            self.navigationItem.title = "멤버십 카드 수정"
-            //네비게이션 타이틀 변경
-            self.navigationItem.rightBarButtonItem?.title = "수정"
-        } else {
-            self.navigationItem.title = "멤버십 카드 추가"
-            self.navigationItem.rightBarButtonItem = nil
-        }
-       
-        
-
-        
-        }
     
     
     //
@@ -171,6 +171,12 @@ class AddEditMemebershipVC: UIViewController {
         paramBrand.resignFirstResponder()
         paramBarcode.resignFirstResponder()
     }
+    
+    //실시간 바코드 생성
+    @IBAction func paramBarcodeButton(_ sender: UITextField) {
+        realTimeBarcode.image = generateBarcodeFromString(string: paramBarcode.text!)
+    }
+    
     
 }
 

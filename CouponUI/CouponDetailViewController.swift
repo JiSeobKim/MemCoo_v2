@@ -18,9 +18,13 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
     @IBOutlet weak var originalText: UITextView!
     
     
+    
     //쿠폰뷰콘트롤러에서 받는 couponToDetail과 쿠폰애드뷰콘트롤러에 전달해주는 couponToEdit이 있다.
     var couponToDetail: Coupon?
     var titleName: String?
+    
+    //밝기 조절용
+    var bright : CGFloat?
 
 
     override func viewDidLoad() {
@@ -34,6 +38,9 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
         if let topItem = self.navigationController?.navigationBar.topItem {
             topItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
         }
+        
+        //밝기 최대
+        UIScreen.main.brightness = 1.0
 
     }
     
@@ -55,6 +62,10 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
             if let destination = segue.destination as? CouponAddViewController{
                 destination.couponToEdit = couponToDetail
                 ad.isAddButton = false
+                
+                if bright != nil {
+                    destination.bright = self.bright
+                }
             }
         }
             

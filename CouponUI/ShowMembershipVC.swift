@@ -22,8 +22,9 @@ class ShowMembershipVC: UIViewController {
     
     @IBOutlet weak var ShowBarcodeRotate: UIImageView!
     @IBOutlet weak var BarcodeLabelRotate: UILabel!
-    
     //180도 회전
+    
+    
     //
     //viewLoad
     //

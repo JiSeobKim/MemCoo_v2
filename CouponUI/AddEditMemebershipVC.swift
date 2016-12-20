@@ -36,90 +36,78 @@ class AddEditMemebershipVC: UIViewController {
     }
     
     
+    var membership: Membership!
+    
+    let imageContext = Image(context: context)
+    let brandContext = Brand(context: context)
+    
+    
     //saveitem버튼을 눌렀을시 데이터베이스로 저장
     @IBAction func addItem(_ sender: AnyObject) {
         // 추가or수정 버튼 누를시
+
         
-        var membership: Membership!
         
-        let imageContext = Image(context: context)
-        let brandContext = Brand(context: context)
+        var inputCheck1 = false
+        var inputCheck2 = false
+        //입력 확인 변수
         
-        if membershipToEdit == nil {
-            membership = Membership(context: context)
+        //예외 처리
+        if self.paramBrand.text == ""
+        { //브랜드 미입력시
+            let color = UIColor.red
+            paramBrand.layer.borderWidth = 1
+            paramBrand.layer.cornerRadius = CGFloat(7)
+            paramBrand.layer.borderColor = color.cgColor
+            paramBrand.placeholder = "입력해 주세요"
+            
+            
         } else {
-            membership = membershipToEdit
+            paramBrand.layer.borderWidth = 0
+            inputCheck1 = true
         }
-        
-        //logo 담기
-        if let logoImg = paramImage.image {
-            imageContext.image = logoImg
-            membership.toImage = imageContext
+            
+        if self.paramBarcode.text == ""{
+            //바코드 미입력시
+            let color = UIColor.red
+            paramBarcode.layer.borderWidth = 1
+            paramBarcode.layer.cornerRadius = CGFloat(7)
+            paramBarcode.layer.borderColor = color.cgColor
+            paramBarcode.placeholder = "입력해 주세요"
+        } else {
+            paramBarcode.layer.borderWidth = 0
+            inputCheck2 = true
         }
-        
-        //상품명 담기
-        if let title = paramBrand.text {
-            brandContext.title = title
-            membership.toBrand = brandContext
+
+        if inputCheck1 == true && inputCheck2 == true {
+            
+            if membershipToEdit == nil {
+                membership = Membership(context: context)
+            } else {
+                membership = membershipToEdit
+            }
+            //logo 담기
+            if let logoImg = paramImage.image {
+                imageContext.image = logoImg
+                membership.toImage = imageContext
+            }
+            
+            //상품명 담기
+            if let title = paramBrand.text {
+                brandContext.title = title
+                membership.toBrand = brandContext
+            }
+            
+            //바코드번호 담기
+            if let barcode = paramBarcode.text {
+                membership.barcode = barcode
+            }
+            
+            ad.saveContext()
+            
+            _ = navigationController?.popViewController(animated: true)
         }
-        
-        //바코드번호 담기
-        if let barcode = paramBarcode.text {
-            membership.barcode = barcode
-        }
-        
-        ad.saveContext()
-        
-        _ = navigationController?.popViewController(animated: true)
-        
-//        //예외 처리
-//        if self.paramBrand.text == ""
-//        { //브랜드 미입력시
-//            let color = UIColor.red
-//            paramBrand.layer.borderWidth = 1
-//            paramBrand.layer.cornerRadius = CGFloat(7)
-//            paramBrand.layer.borderColor = color.cgColor
-//            paramBrand.placeholder = "입력해 주세요"
-//            
-//            
-//        } else if self.paramBarcode.text == ""{
-//            //바코드 미입력시
-//            let color = UIColor.red
-//            paramBarcode.layer.borderWidth = 1
-//            paramBarcode.layer.cornerRadius = CGFloat(7)
-//            paramBarcode.layer.borderColor = color.cgColor
-//            paramBarcode.placeholder = "입력해 주세요"
-//            
-//            
-//        } else if paramImage.image == nil && cellData.modify == false{
-//            let color = UIColor.red
-//            choiceButton.layer.borderWidth = 1
-//            choiceButton.layer.cornerRadius = CGFloat(7)
-//            choiceButton.layer.borderColor = color.cgColor
-//            
-//        }
-//        else {
-//            // 구조체 통일
-//            
-//            cellData.brand = self.paramBrand.text!
-//            cellData.barcode = self.paramBarcode.text!
-//            cellData.barcodeImage = generateBarcodeFromString(string: paramBrand.text!)
-//            
-//            
-//            
-//            
-//            if cellData.modify == true {
-//                ad.membership[(ad.showNow!)] = cellData
-//                
-//            } else{
-//                ad.membership.append(cellData)
-//            }
-//            
-//            
-//            
-//            _ = self.navigationController?.popViewController(animated: true)
-//            // 화면 되돌아가기
-//        }
+
     }
 
     //휴지통버튼을 눌렀을시 데이터베이스에서 삭제
@@ -139,6 +127,7 @@ class AddEditMemebershipVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         if membershipToEdit != nil {
             loadMembershipData()
@@ -170,7 +159,7 @@ class AddEditMemebershipVC: UIViewController {
         }
     }
     
-    //이건 지섭님이 쓴거라서 이해불가
+    //extension 부분 정상 작동을 위한 작업
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "MembershipLogoCollection" {
             (segue.destination as? ChoiceMembershipVC)?.delegate = self

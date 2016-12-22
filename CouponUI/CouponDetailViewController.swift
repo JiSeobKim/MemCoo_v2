@@ -15,7 +15,7 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
     @IBOutlet weak var barcode: UILabel!
     @IBOutlet weak var expireDate: UITextField!
     @IBOutlet weak var category: UITextField!
-    @IBOutlet weak var originalText: UITextView!
+    //@IBOutlet weak var originalText: UITextView!
     
     
     
@@ -51,7 +51,7 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
             barcode.text = coupon.barcode
             barcodeImg.image = generateBarcodeFromString(string: coupon.barcode)
             expireDate.text = displayTheDate(theDate: coupon.expireDate as! Date)
-            originalText.text = coupon.originalText
+            //originalText.text = coupon.originalText
             titleName = coupon.title
             
         }

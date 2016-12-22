@@ -21,7 +21,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var logo: UIImageView!
     
     //데이터베이스에서 삭제
-    @IBAction func deletePressed(_ sender: UIBarButtonItem) {
+    @IBAction func deletePressed(_ sender: UIButton) {
         if couponToEdit != nil {
             context.delete(couponToEdit!)
             ad.saveContext()
@@ -76,7 +76,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var originalText: UITextView!
     
     //모든 값을 코어데이터 테이블로 저장하기 위한 액션
-    @IBAction func saveBtnPressed(_ sender: UIButton) {
+    @IBAction func saveBtnPressed(_ sender: UIBarButtonItem) {
         var coupon: Coupon!
         let ImageContext = Image(context: context)
         

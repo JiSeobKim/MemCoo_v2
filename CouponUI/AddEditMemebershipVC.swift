@@ -161,8 +161,8 @@ class AddEditMemebershipVC: UIViewController {
     
     //extension 부분 정상 작동을 위한 작업
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "MembershipLogoCollection" {
-            (segue.destination as? ChoiceMembershipVC)?.delegate = self
+        if segue.identifier == "logoSelect" {
+            (segue.destination as? logoSelect)?.delegate = self
         }
     }
     

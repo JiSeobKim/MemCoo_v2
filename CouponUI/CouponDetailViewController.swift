@@ -13,9 +13,8 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
 
     @IBOutlet weak var barcodeImg: UIImageView!
     @IBOutlet weak var barcode: UILabel!
-    @IBOutlet weak var expireDate: UITextField!
-    @IBOutlet weak var category: UITextField!
-    //@IBOutlet weak var originalText: UITextView!
+    @IBOutlet weak var expireDate: UILabel!
+    @IBOutlet weak var category: UILabel!
     
     
     
@@ -25,7 +24,6 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
     
     //밝기 조절용
     var bright : CGFloat?
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,10 +48,9 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
         if let coupon = couponToDetail {
             barcode.text = coupon.barcode
             barcodeImg.image = generateBarcodeFromString(string: coupon.barcode)
-            expireDate.text = displayTheDate(theDate: coupon.expireDate as! Date)
+            expireDate.text = displayTheDate(theDate: coupon.expireDate as! Date) + " 까지"
             //originalText.text = coupon.originalText
             titleName = coupon.title
-            
         }
     }
     

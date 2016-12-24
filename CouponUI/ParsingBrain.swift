@@ -126,8 +126,7 @@ class ParsingBrain {
               
             }
         }
-        
-        return coupon!
+            return coupon!
     }
 }
 //

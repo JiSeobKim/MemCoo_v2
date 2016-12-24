@@ -203,13 +203,13 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
 //                barcode.text = "1234567890123456"
                 
                 parsingBrain = ParsingBrain()
-                if let copiedString = UIPasteboard.general.string {
-                    clipboardToArray[0] = copiedString
-                    couponInfo = parsingBrain.parsing(textFromClipboard: clipboardToArray)
+                if let copiedString = UIPasteboard.general.strings {
+                    //clipboardToArray[0] = copiedString
+                    couponInfo = parsingBrain.parsing(textFromClipboard: copiedString)
                     product.text = couponInfo.title
                     expiredDate.text = couponInfo.expireDate
                     barcode.text = couponInfo.barcode
-                    originalText.text = copiedString
+                    //originalText.text = copiedString
                 }
             }
             //OCR 버튼을 눌렀을 때 이미지 OCR 후 바코드만 입력.

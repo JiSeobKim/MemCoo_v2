@@ -10,18 +10,23 @@ import Foundation
 import UIKit
 
 class ParsingBrain {
+
     //쿠폰정보를 담는 컨테이너
     struct CouponInfo {
         var title: String?
         var barcode: String?
         var expireDate: String?
-        var URL: String?
         var originalText: [String]
     }
     
     func parsing(textFromClipboard: [String]) -> CouponInfo {
+        
+        var title: String?
+        var barcode: String?
+        var expireDate: String?
         var originalText: [String]
-        var coupon: CouponInfo? = nil
+        originalText = textFromClipboard
+        
         
         // 메세지 원본을 줄바꿈 구분자를 기준으로 나누어서 배열에 담는다 \r과 \n모두 각각 적용
         var seperateByLine: [String]
@@ -50,7 +55,7 @@ class ParsingBrain {
                         let content = seperatedByColon[1]
                             let refineContent1 = content.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
                             let refineContent2 = refineContent1.trimmingCharacters(in: CharacterSet.symbols)
-                        coupon?.title = refineContent2
+                        title = refineContent2
                         
                     }
                         
@@ -62,7 +67,7 @@ class ParsingBrain {
                         let content = seperatedByColon[1]
                         let refineContent1 = content.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
                         let refineContent2 = refineContent1.trimmingCharacters(in: CharacterSet.symbols)
-                        coupon?.expireDate = refineContent2
+                        expireDate = refineContent2
 
                         //date 객체 처리는 따로 function을 놓도록 합시다.
 ////                            let dateFormatter = DateFormatter()
@@ -100,7 +105,7 @@ class ParsingBrain {
                             }
                             
                             
-                            coupon?.barcode = refineContent2
+                            barcode = refineContent2
                         }
                     }
                     //URL 찾기: 키워드 "http"
@@ -127,7 +132,9 @@ class ParsingBrain {
             }
         }
         
-        return coupon!
+        let coupon = CouponInfo(title: title, barcode: barcode, expireDate: expireDate, originalText: originalText)
+        
+        return coupon
     }
 }
 //

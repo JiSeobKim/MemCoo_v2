@@ -172,7 +172,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         
         var parsingBrain: ParsingBrain
         var couponInfo: ParsingBrain.CouponInfo
-        var clipboardToArray = [String]()
+        var clipboardToArray: String
         
         //화면 밝기 되돌리기
         if bright != nil {
@@ -203,13 +203,13 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
 //                barcode.text = "1234567890123456"
                 
                 parsingBrain = ParsingBrain()
-                if let copiedString = UIPasteboard.general.string {
-                    clipboardToArray[0] = copiedString
-                    couponInfo = parsingBrain.parsing(textFromClipboard: clipboardToArray)
+                if let copiedString = UIPasteboard.general.strings {
+                    //clipboardToArray = copiedString[0]
+                    couponInfo = parsingBrain.parsing(textFromClipboard: copiedString)
                     product.text = couponInfo.title
                     expiredDate.text = couponInfo.expireDate
                     barcode.text = couponInfo.barcode
-                    originalText.text = copiedString
+                    originalText.text = copiedString[0]
                 }
             }
             //OCR 버튼을 눌렀을 때 이미지 OCR 후 바코드만 입력.

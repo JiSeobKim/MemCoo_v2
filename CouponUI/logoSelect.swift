@@ -29,13 +29,7 @@
     var convenienceLogo : [UIImage] = []
     
    
-    @IBAction func saveLogo(_ sender: Any) {
-        if selectedImgInfo != nil {
-            let logoArray = allcategory(selectedTagInfo!)[selectedImgInfo!] as! UIImage
-            self.delegate?.updataData(data: logoArray )
-            _ = self.navigationController?.popViewController(animated: true)
-        }
-    }
+ 
     
     func addLogoAtArray()->(){
         //for 문을 통한 로고들 추가
@@ -153,21 +147,19 @@
         selectedTagInfo = collectionView.tag
         selectedImgInfo = indexPath.row
         
-        
+        if selectedImgInfo != nil {
+            let logoArray = allcategory(selectedTagInfo!)[selectedImgInfo!] as! UIImage
+            self.delegate?.updataData(data: logoArray )
+            _ = self.navigationController?.popViewController(animated: true)
+        }
+
         
         
         
         
     }
     
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        //다른 셀 선택시 기존 셀 하이라이트 제거
-        let cell = collectionView.cellForItem(at: indexPath)
-        cell?.layer.borderColor = nil
-        cell?.layer.borderWidth = 0.0
-    }
-    
-    
+   
     
     
  }

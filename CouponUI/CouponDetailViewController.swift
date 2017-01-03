@@ -9,14 +9,13 @@
 import UIKit
 
 class CouponDetailViewController: UIViewController, UINavigationControllerDelegate {
-    
-
     @IBOutlet weak var barcodeImg: UIImageView!
     @IBOutlet weak var barcode: UILabel!
     @IBOutlet weak var expireDate: UILabel!
     @IBOutlet weak var category: UILabel!
-    
-    
+    @IBAction func finishButton(_ sender: Any) {
+        //self.navigationItem.rightBarButtonItem
+    }
     
     //쿠폰뷰콘트롤러에서 받는 couponToDetail과 쿠폰애드뷰콘트롤러에 전달해주는 couponToEdit이 있다.
     var couponToDetail: Coupon?

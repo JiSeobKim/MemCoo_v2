@@ -134,15 +134,15 @@ class AddEditMemebershipVC: UIViewController {
     }
 
     //휴지통버튼을 눌렀을시 데이터베이스에서 삭제
-    @IBAction func deletePressed(_ sender: UIBarButtonItem) {
+   
+    
+    @IBAction func deletePressed(_ sender: Any) {
         if membershipToEdit != nil {
             context.delete(membershipToEdit!)
             ad.saveContext()
         }
         _ = navigationController?.popToRootViewController(animated: true)
-
     }
-    
     
     
     

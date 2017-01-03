@@ -147,7 +147,7 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
         return 100
     }
     
-    //swipe 시 delete 버튼 나타나게 하는 메소드.
+    //swipe 시 edit 기능 가능하게 하는 메소드.
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }

@@ -130,7 +130,6 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
             coupon.title = title
         }
         
-
         //바코드번호 담기!
         if let barcode = barcode.text {
             coupon.barcode = barcode
@@ -173,7 +172,6 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         
         var parsingBrain: ParsingBrain
         var couponInfo: ParsingBrain.CouponInfo
-        var clipboardToArray: String
         
         //화면 밝기 되돌리기
         if bright != nil {
@@ -181,7 +179,9 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         }
         
         //상품명 텍스트 필드를 최초 응답자로 지정(스토리보드 내에서 dock을 이용해도 가능).
-        self.product.becomeFirstResponder()
+        if ad.isAddButton == true {
+            self.product.becomeFirstResponder()
+        }
         //화면 전환시 입력창 바로 반응
         
         imagePicker = UIImagePickerController()
@@ -193,19 +193,13 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         //add 버튼을 눌렀을 때 타이틀과 버튼 이름 변경.
         if ad.isAddButton == true {
             self.navigationItem.title = "쿠폰 추가"
-            //self.navigationItem.rightBarButtonItem?.title = "추가"
             //추가 상태일 때에는 삭제 버튼 숨김.
             deleteButton.isHidden = true
             
             //클립보드 파싱 버튼을 눌렀을 때 자동으로 텍스트필드 입력.
             if ad.selectActionSheet == 1 {
-//                product.text = "test"
-//                expiredDate.text = "2017-01-01"
-//                barcode.text = "1234567890123456"
-                
                 parsingBrain = ParsingBrain()
                 if let copiedString = UIPasteboard.general.strings {
-                    //clipboardToArray = copiedString[0]
                     couponInfo = parsingBrain.parsing(textFromClipboard: copiedString)
                     product.text = couponInfo.title
                     expiredDate.text = couponInfo.expireDate

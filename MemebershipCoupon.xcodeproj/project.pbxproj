@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E146F4D1E1B51320091C767 /* ParsingOCR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E146F4C1E1B51320091C767 /* ParsingOCR.swift */; };
 		3E36B1791DF2133000385315 /* GenerateBarcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E36B1781DF2133000385315 /* GenerateBarcode.swift */; };
 		3E37D3591DF09E4A0054C4DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E37D3581DF09E4A0054C4DA /* AppDelegate.swift */; };
 		3E37D35B1DF09E4A0054C4DA /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E37D35A1DF09E4A0054C4DA /* FavoriteViewController.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E146F4C1E1B51320091C767 /* ParsingOCR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsingOCR.swift; sourceTree = "<group>"; };
 		3E36B1781DF2133000385315 /* GenerateBarcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenerateBarcode.swift; sourceTree = "<group>"; };
 		3E37D3551DF09E4A0054C4DA /* MemebershipCoupon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemebershipCoupon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E37D3581DF09E4A0054C4DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				42976BDB1DF6B38100ADB0D7 /* CouponAddViewController.swift */,
 				42976BD71DF6B37300ADB0D7 /* CouponCell.swift */,
 				42FAB62A1E04E18E00671E32 /* ParsingBrain.swift */,
+				3E146F4C1E1B51320091C767 /* ParsingOCR.swift */,
 			);
 			name = Coupon;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 				42140E421DF7CDD9003B287B /* Coupon+CoreDataProperties.swift in Sources */,
 				42976BDD1DF6B38100ADB0D7 /* CouponDetailViewController.swift in Sources */,
 				42976BDC1DF6B38100ADB0D7 /* CouponViewController.swift in Sources */,
+				3E146F4D1E1B51320091C767 /* ParsingOCR.swift in Sources */,
 				42140E3F1DF7CDD9003B287B /* Membership+CoreDataClass.swift in Sources */,
 				3E37D3591DF09E4A0054C4DA /* AppDelegate.swift in Sources */,
 				A0FB04761E0BCFBF007FEA21 /* logoTableCell.swift in Sources */,

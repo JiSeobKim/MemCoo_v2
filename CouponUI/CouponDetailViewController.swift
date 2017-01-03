@@ -65,8 +65,8 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
                 }
             }
         }
-            
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         if couponToDetail != nil {
             loadCouponData()

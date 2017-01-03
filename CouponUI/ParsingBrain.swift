@@ -20,13 +20,10 @@ class ParsingBrain {
     }
     
     func parsing(textFromClipboard: [String]) -> CouponInfo {
-        
         var title: String?
         var barcode: String?
         var expireDate: String?
         var originalText: [String]
-        originalText = textFromClipboard
-        
         
         // 메세지 원본을 줄바꿈 구분자를 기준으로 나누어서 배열에 담는다 \r과 \n모두 각각 적용
         var seperateByLine: [String]
@@ -127,8 +124,6 @@ class ParsingBrain {
                 //:가 없으면 그 배열의 스트링 길이값 조사 7정도?
                 //7보다 작으면 다음 배열값에 정보가 있는거임
                 //그후 각각의 정보가 어떤 값인지 검사
-                
-              
             }
         }
         
@@ -137,22 +132,3 @@ class ParsingBrain {
         return coupon
     }
 }
-//
-//    //Barcode generator
-//    
-//    func barcodeGenerator(string: String) -> UIImage? {
-//        let data = string.data(using: String.Encoding.ascii)
-//        if let filter = CIFilter(name: "CICode128BarcodeGenerator") {
-//            filter.setValue(data, forKey: "inputMessage")
-//            let transform = CGAffineTransform(scaleX: 3, y: 3)
-//            
-//            if let output = filter.outputImage?.applying(transform) {
-//                return UIImage(ciImage: output)
-//            }
-//        }
-//        
-//        return nil
-//    }
-//}
-//
-//

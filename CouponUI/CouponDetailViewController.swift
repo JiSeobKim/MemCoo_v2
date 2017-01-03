@@ -100,6 +100,9 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
                 finishButtonOutlet.isHidden = true
             }
         }
+        
+        //밝기 최대
+        UIScreen.main.brightness = 1.0
     }
     /*
      // MARK: - Navigation

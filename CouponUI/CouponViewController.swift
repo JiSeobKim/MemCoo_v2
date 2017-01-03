@@ -18,7 +18,7 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
     var bright : CGFloat?
     
     //detail에서 넘어온 coupon 객체를 받기하기 위한 coupon 객체
-    var couponToEdit: Coupon?
+    var couponToDelete: Coupon?
     
     //+버튼 눌렀을때의 액션
     @IBAction func add(_ sender: Any) {
@@ -155,8 +155,8 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
     //swipe 시 delete 버튼 나타나게 하는 메소드.
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
-            if couponToEdit != nil {
-                context.delete(couponToEdit!)
+            if couponToDelete != nil {
+                context.delete(couponToDelete!)
                 ad.saveContext()
                 tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
             }

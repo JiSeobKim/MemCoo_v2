@@ -269,6 +269,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
     @IBAction func favorite(_ sender: UIButton) {
         if let coupon = couponToEdit{
             coupon.favorite = true
+            ad.saveContext()
         }
         
     }

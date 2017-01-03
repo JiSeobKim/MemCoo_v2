@@ -20,6 +20,7 @@ extension Coupon {
     @NSManaged public var created: NSDate?
     @NSManaged public var expireDate: NSDate?
     @NSManaged public var favorite: Bool
+    @NSManaged public var isUsed: Bool
     @NSManaged public var image: NSObject?
     @NSManaged public var originalText: String?
     @NSManaged public var title: String?

@@ -114,6 +114,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         //itemToEdit이 nil일 경우 새로운 객체를 전달해서 저장 아닐경우 그 itemToEdit으로 저장
         if couponToEdit == nil {
             coupon = Coupon(context: context)
+            coupon.isUsed = false
         } else {
             coupon = couponToEdit
         }

@@ -17,6 +17,7 @@ class CouponCell: UITableViewCell {
     @IBOutlet weak var barcodeImg: UIImageView!
     func configureCell(item: Coupon) {
         title.text = item.title
+        
         //category는 to many관계이므로 처리하기 어렵다.
         category.text = "카테고리"
         let dateFormatter = DateFormatter()

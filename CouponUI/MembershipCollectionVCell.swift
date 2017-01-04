@@ -28,7 +28,7 @@ class MembershipCollectionVCell : UICollectionViewCell {
         if item.favorite == true {
             favorite.text = "T"
         } else {
-            favorite.text = ""
+            favorite.text = "F"
         }
         
     }

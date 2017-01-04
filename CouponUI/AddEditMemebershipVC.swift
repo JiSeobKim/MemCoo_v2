@@ -21,6 +21,7 @@ class AddEditMemebershipVC: UIViewController {
     var membershipToEdit: Membership?
     var membership: Membership!
     var bright : CGFloat?
+    var checkFavorite : Bool?
     
 
     @IBOutlet weak var LabelBrand: UILabel!
@@ -71,6 +72,7 @@ class AddEditMemebershipVC: UIViewController {
 
         let imageContext = Image(context: context)
         let brandContext = Brand(context: context)
+        
         
         var inputCheck1 = false
         var inputCheck2 = false
@@ -125,6 +127,9 @@ class AddEditMemebershipVC: UIViewController {
             //바코드번호 담기
             if let barcode = paramBarcode.text {
                 membership.barcode = barcode
+            }
+            if checkFavorite != nil {
+                membership.favorite = true
             }
             
             ad.saveContext()
@@ -181,15 +186,7 @@ class AddEditMemebershipVC: UIViewController {
     @IBOutlet weak var favoriteLabel: UIButton!
     
     @IBAction func favorite(_ sender: Any) {
-        
-       
-        
-        if let membershipt = membershipToEdit {
-            membershipt.favorite = true
-            ad.saveContext()
-            
-        }
-        
+        checkFavorite = true
     }
     
     

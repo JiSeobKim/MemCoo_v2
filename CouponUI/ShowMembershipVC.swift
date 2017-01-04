@@ -21,9 +21,7 @@ class ShowMembershipVC: UIViewController {
     @IBOutlet weak var barcodeLabel: UILabel!
     @IBOutlet weak var ShowBarcode: UIImageView!
     
-    @IBOutlet weak var ShowBarcodeRotate: UIImageView!
-    @IBOutlet weak var BarcodeLabelRotate: UILabel!
-    //180도 회전
+    
     
     
     //
@@ -32,11 +30,6 @@ class ShowMembershipVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let angle:CGFloat = CGFloat((180.0*M_PI)/180.0)
-        
-        ShowBarcodeRotate.transform = CGAffineTransform(rotationAngle: angle)
-        BarcodeLabelRotate.transform = CGAffineTransform(rotationAngle: angle)
         
         if cellData != nil {
             loadMembershipData()
@@ -69,8 +62,7 @@ class ShowMembershipVC: UIViewController {
             barcodeLabel.text = addHyphen(data: membership.barcode!)
             
             
-            ShowBarcodeRotate.image = generateBarcodeFromString(string: membership.barcode)
-            BarcodeLabelRotate.text = addHyphen(data: membership.barcode!)
+          
             
 
         }

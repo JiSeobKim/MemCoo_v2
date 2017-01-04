@@ -84,6 +84,14 @@
                                     <action selector="deletePressed:" destination="V9i-4b-dZ9" eventType="touchUpInside" id="Ulg-rJ-eQY"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ENd-hX-yfZ">
+                                <rect key="frame" x="156" y="494" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="True"/>
+                                <connections>
+                                    <action selector="favorite:" destination="V9i-4b-dZ9" eventType="touchUpInside" id="yUq-mM-5bh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -102,6 +110,8 @@
                         <outlet property="LabelBarcode" destination="N6m-ZW-jML" id="LwQ-Ep-fCe"/>
                         <outlet property="LabelBrand" destination="hqo-yb-SCQ" id="CFM-AX-vEk"/>
                         <outlet property="choiceButton" destination="CAm-2P-rCT" id="RSY-rb-cau"/>
+                        <outlet property="deleteButton" destination="pIN-gg-oYk" id="tA2-ae-gy0"/>
+                        <outlet property="favoriteLabel" destination="ENd-hX-yfZ" id="X7A-Qj-guP"/>
                         <outlet property="paramBarcode" destination="Vi5-VV-Twg" id="DAO-kj-lqH"/>
                         <outlet property="paramBrand" destination="5Ff-Fx-89c" id="jbn-QY-o5Y"/>
                         <outlet property="paramImage" destination="zUP-7i-rYm" id="r9G-aD-6Me"/>
@@ -141,13 +151,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iRG-7M-Mrg">
-                                <rect key="frame" x="16" y="153" width="343" height="97"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="97" id="XoG-Pm-6ZZ"/>
-                                    <constraint firstAttribute="width" constant="343" id="h7d-mH-RUH"/>
-                                </constraints>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qv3-Se-9Tt">
                                 <rect key="frame" x="124" y="270" width="126" height="126"/>
                                 <constraints>
@@ -155,28 +158,14 @@
                                     <constraint firstAttribute="height" constant="126" id="Z8S-y2-XWi"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SPL-3N-EDr">
-                                <rect key="frame" x="58" y="97" width="258" height="36"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="nDE-q7-Vq0"/>
-                                    <constraint firstAttribute="width" constant="258" id="oTe-ad-snt"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="iRG-7M-Mrg" firstAttribute="leading" secondItem="XZE-Cu-GHo" secondAttribute="leadingMargin" id="1nl-f5-Ufj"/>
                             <constraint firstItem="Re2-UO-qWb" firstAttribute="leading" secondItem="XZE-Cu-GHo" secondAttribute="leadingMargin" constant="42" id="2eR-Cy-kF0"/>
-                            <constraint firstItem="iRG-7M-Mrg" firstAttribute="top" secondItem="SPL-3N-EDr" secondAttribute="bottom" constant="20" id="2of-OU-oQE"/>
-                            <constraint firstItem="SPL-3N-EDr" firstAttribute="leading" secondItem="XZE-Cu-GHo" secondAttribute="leadingMargin" constant="42" id="8Gg-FD-6eH"/>
                             <constraint firstItem="4Mw-6g-QVg" firstAttribute="leading" secondItem="XZE-Cu-GHo" secondAttribute="leadingMargin" id="Aii-CY-Q5l"/>
                             <constraint firstItem="qv3-Se-9Tt" firstAttribute="top" secondItem="Glq-JL-GPa" secondAttribute="bottom" constant="206" id="Ctj-pz-Pte"/>
                             <constraint firstItem="qv3-Se-9Tt" firstAttribute="leading" secondItem="XZE-Cu-GHo" secondAttribute="leadingMargin" constant="108" id="g4E-uu-nzy"/>
                             <constraint firstItem="Re2-UO-qWb" firstAttribute="top" secondItem="4Mw-6g-QVg" secondAttribute="bottom" constant="20" id="ucA-XI-zAp"/>
-                            <constraint firstItem="qv3-Se-9Tt" firstAttribute="top" secondItem="iRG-7M-Mrg" secondAttribute="bottom" constant="20" id="wax-7d-kOJ"/>
                             <constraint firstItem="4Mw-6g-QVg" firstAttribute="top" secondItem="qv3-Se-9Tt" secondAttribute="bottom" constant="20" id="zVG-91-5iw"/>
                         </constraints>
                     </view>
@@ -190,9 +179,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="BarcodeLabelRotate" destination="SPL-3N-EDr" id="jR8-r1-QxK"/>
                         <outlet property="ShowBarcode" destination="4Mw-6g-QVg" id="zLY-bu-aJv"/>
-                        <outlet property="ShowBarcodeRotate" destination="iRG-7M-Mrg" id="ExI-ON-tDU"/>
                         <outlet property="ShowLogo" destination="qv3-Se-9Tt" id="RFM-38-41O"/>
                         <outlet property="barcodeLabel" destination="Re2-UO-qWb" id="UR1-zn-l6T"/>
                     </connections>
@@ -242,9 +229,17 @@
                                                     <rect key="frame" x="15" y="25" width="90" height="88"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7aI-S5-sDG">
+                                                    <rect key="frame" x="91" y="117" width="29" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </view>
                                         <connections>
+                                            <outlet property="favorite" destination="7aI-S5-sDG" id="MVc-fa-Yh4"/>
                                             <outlet property="viewLogoName" destination="7el-a9-znx" id="GW1-4B-ojW"/>
                                             <outlet property="viewLogoShow" destination="ET7-wg-u97" id="SEa-Jw-CKb"/>
                                         </connections>
@@ -292,6 +287,6 @@
         <image name="default" width="440" height="433"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="axa-gl-xNh"/>
+        <segue reference="yGb-mq-bpU"/>
     </inferredMetricsTieBreakers>
 </document>

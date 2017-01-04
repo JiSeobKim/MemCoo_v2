@@ -15,7 +15,7 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var segment: UISegmentedControl!
     
     //밝기 조절하는 변수.
-    var bright : CGFloat?
+    
     
     //detail에서 넘어온 coupon 객체를 받기하기 위한 coupon 객체
     var couponToDelete: Coupon?
@@ -86,8 +86,8 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewWillAppear(_ animated: Bool) {
         //화면 밝기 되돌리기
-        if bright != nil {
-            UIScreen.main.brightness = bright!
+        if ap.bright != nil {
+            UIScreen.main.brightness = ap.bright!
         }
     }
 
@@ -128,8 +128,8 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
             if let destination = segue.destination as? CouponDetailViewController {
                 if let coupon = sender as? Coupon {
                     destination.couponToDetail = coupon
-                    self.bright = UIScreen.main.brightness
-                    destination.bright = self.bright
+                    ap.bright = UIScreen.main.brightness
+                    destination.bright = UIScreen.main.brightness
                 }
             }
         }

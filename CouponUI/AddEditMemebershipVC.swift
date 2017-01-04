@@ -31,6 +31,7 @@ class AddEditMemebershipVC: UIViewController {
     @IBOutlet weak var choiceButton: UIButton!
     @IBOutlet weak var realTimeBarcode: UIImageView!
     
+    @IBOutlet weak var deleteButton: UIButton!
     
     
     
@@ -50,7 +51,7 @@ class AddEditMemebershipVC: UIViewController {
             self.navigationItem.rightBarButtonItem?.title = "수정"
         } else {
             self.navigationItem.title = "멤버십 카드 추가"
-            self.navigationItem.rightBarButtonItem = nil
+            self.deleteButton.isHidden = true
         }
 
     }
@@ -176,6 +177,21 @@ class AddEditMemebershipVC: UIViewController {
     @IBAction func paramBarcodeButton(_ sender: UITextField) {
         realTimeBarcode.image = generateBarcodeFromString(string: paramBarcode.text!)
     }
+    
+    @IBOutlet weak var favoriteLabel: UIButton!
+    
+    @IBAction func favorite(_ sender: Any) {
+        
+       
+        
+        if let membershipt = membershipToEdit {
+            membershipt.favorite = true
+            ad.saveContext()
+            
+        }
+        
+    }
+    
     
     
 }

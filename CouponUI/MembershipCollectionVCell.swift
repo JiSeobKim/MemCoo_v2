@@ -15,6 +15,7 @@ class MembershipCollectionVCell : UICollectionViewCell {
     @IBOutlet weak var viewLogoShow: UIImageView!
     @IBOutlet weak var viewLogoName: UILabel!
 
+    @IBOutlet weak var favorite: UILabel!
     //choicecell 이 가지고 있는 값
     @IBOutlet weak var choiceLogoShow: UIImageView!
     @IBOutlet weak var choiceLogoName: UILabel!
@@ -24,6 +25,11 @@ class MembershipCollectionVCell : UICollectionViewCell {
         
         viewLogoName.text = item.toBrand?.title
         viewLogoShow.image = item.toImage?.image as? UIImage
+        if item.favorite == true {
+            favorite.text = "T"
+        } else {
+            favorite.text = ""
+        }
         
     }
     

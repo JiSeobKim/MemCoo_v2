@@ -115,6 +115,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         if couponToEdit == nil {
             coupon = Coupon(context: context)
             coupon.isUsed = false
+            coupon.favorite = false
         } else {
             coupon = couponToEdit
         }
@@ -264,6 +265,13 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    @IBAction func favorite(_ sender: UIButton) {
+        if let coupon = couponToEdit{
+            coupon.favorite = true
+            ad.saveContext()
+        }
+        
     }
     
     /*

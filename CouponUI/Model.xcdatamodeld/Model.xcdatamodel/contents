@@ -43,9 +43,9 @@
     </entity>
     <elements>
         <element name="Brand" positionX="-126" positionY="-0" width="128" height="103"/>
-        <element name="Category" positionX="-126" positionY="446" width="128" height="103"/>
+        <element name="Category" positionX="-180" positionY="648" width="128" height="103"/>
         <element name="Coupon" positionX="-558" positionY="113" width="128" height="208"/>
-        <element name="Image" positionX="-119" positionY="189" width="128" height="120"/>
-        <element name="Membership" positionX="277" positionY="198" width="128" height="148"/>
+        <element name="Image" positionX="160" positionY="315" width="128" height="120"/>
+        <element name="Membership" positionX="-560" positionY="401" width="128" height="148"/>
     </elements>
 </model>

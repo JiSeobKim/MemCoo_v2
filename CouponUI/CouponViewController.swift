@@ -84,12 +84,7 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
         attemptFetch()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        //화면 밝기 되돌리기
-        if ap.bright != nil {
-            UIScreen.main.brightness = ap.bright!
-        }
-    }
+ 
 
     
     //tableView를 위한 function

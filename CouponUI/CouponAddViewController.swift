@@ -174,10 +174,6 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         var parsingBrain: ParsingBrain
         var couponInfo: ParsingBrain.CouponInfo
         
-        //화면 밝기 되돌리기
-        if bright != nil {
-            UIScreen.main.brightness = self.bright!
-        }
         
         //상품명 텍스트 필드를 최초 응답자로 지정(스토리보드 내에서 dock을 이용해도 가능).
         if ad.isAddButton == true {

@@ -39,6 +39,11 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
         self.present(alert, animated: true)
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        UIScreen.main.brightness = ap.bright!
+        //화면이 사라질때 밝기 수정 off
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -61,6 +66,8 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
         
         //밝기 최대
         UIScreen.main.brightness = 1.0
+        ap.brightSwitch = true
+        //현재 페이지에선 밝기 수정 on
 
     }
     

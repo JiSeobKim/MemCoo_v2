@@ -57,12 +57,6 @@ class AddEditMemebershipVC: UIViewController {
 
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        //수정으로 들어왔을 시 밝기 되돌리기
-        if bright != nil {
-            UIScreen.main.brightness = bright!
-        }
-    }
 
     
     

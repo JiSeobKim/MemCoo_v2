@@ -37,9 +37,7 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
        
         attemptFetch()
         self.collectionView.reloadData()
-        if ap.bright != nil {
-            UIScreen.main.brightness = ap.bright!
-        }
+
         
     }
     

@@ -27,10 +27,12 @@ class ShowMembershipVC: UIViewController {
     //
     //viewLoad
     //
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        ap.brightSwitch = false
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        ap.brightSwitch = true
         if cellData != nil {
             loadMembershipData()
         }

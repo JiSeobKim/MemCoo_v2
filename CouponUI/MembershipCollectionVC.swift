@@ -78,6 +78,11 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
         
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = UIScreen.main.bounds.width
+        return CGSize(width: (width - 10)/100, height: (width - 10)/100) // width & height are the same to make a square cell
+    }
+    
 //셀 생성 정의
     func configureCell(cell: MembershipCollectionVCell, indexPath: NSIndexPath) {
         

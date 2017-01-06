@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     var bright : CGFloat?
+    var brightSwitch : Bool?
     
     
     //CouponViewController의 ActionSheet에서 눌린 버튼을 CouponAddViewController에 전달하기 위한 변수.
@@ -44,6 +45,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {
+        if brightSwitch == true {
+            UIScreen.main.brightness = 1.0
+        }
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
     }
     

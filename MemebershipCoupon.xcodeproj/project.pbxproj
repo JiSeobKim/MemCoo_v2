@@ -295,7 +295,7 @@
 				TargetAttributes = {
 					3E37D3541DF09E4A0054C4DA = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = HWY63NUUS4;
+						DevelopmentTeam = VHBSR3XVN2;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -541,10 +541,10 @@
 			baseConfigurationReference = 3E8B136C7DF5B1B29AF5A828 /* Pods-MemebershipCoupon.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = HWY63NUUS4;
+				DEVELOPMENT_TEAM = VHBSR3XVN2;
 				INFOPLIST_FILE = CouponUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jiseob.Test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.minos.MembershipCoupon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -555,10 +555,10 @@
 			baseConfigurationReference = AAAC10A62EA3E05F85630D72 /* Pods-MemebershipCoupon.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = HWY63NUUS4;
+				DEVELOPMENT_TEAM = VHBSR3XVN2;
 				INFOPLIST_FILE = CouponUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jiseob.Test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.minos.MembershipCoupon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

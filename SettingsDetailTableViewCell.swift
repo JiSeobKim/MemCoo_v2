@@ -1,5 +1,5 @@
 //
-//  SettingsTableViewCell.swift
+//  SettingsDetailTableViewCell.swift
 //  MemebershipCoupon
 //
 //  Created by mino on 2017. 1. 7..
@@ -8,8 +8,9 @@
 
 import UIKit
 
-class SettingsTableViewCell: UITableViewCell {
+class SettingsDetailTableViewCell: UITableViewCell {
     @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var onOffSwitch: UISwitch!
 
     override func awakeFromNib() {
         super.awakeFromNib()

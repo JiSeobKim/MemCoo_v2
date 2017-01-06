@@ -140,10 +140,10 @@
             </objects>
             <point key="canvasLocation" x="2312" y="877"/>
         </scene>
-        <!--Settings-->
+        <!--SettingsMain-->
         <scene sceneID="b6J-bK-ZcZ">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="Settings" storyboardName="Settings" referencedIdentifier="Settings" id="936-6i-52g" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="SettingsMain" storyboardName="Settings" referencedIdentifier="SettingsMain" id="936-6i-52g" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="3bT-NG-4hY"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LNd-TG-ndF" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3E09AEF51E2009DC00D4276F /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E09AEF41E2009DC00D4276F /* SettingsTableViewCell.swift */; };
 		3E09AEF71E200AB200D4276F /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E09AEF61E200AB100D4276F /* SettingsTableViewController.swift */; };
+		3E09AEF91E201E5700D4276F /* SettingsDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E09AEF81E201E5700D4276F /* SettingsDetailTableViewController.swift */; };
+		3E09AEFB1E201E7700D4276F /* SettingsDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E09AEFA1E201E7700D4276F /* SettingsDetailTableViewCell.swift */; };
 		3E146F4D1E1B51320091C767 /* ParsingOCR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E146F4C1E1B51320091C767 /* ParsingOCR.swift */; };
 		3E36B1791DF2133000385315 /* GenerateBarcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E36B1781DF2133000385315 /* GenerateBarcode.swift */; };
 		3E37D3591DF09E4A0054C4DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E37D3581DF09E4A0054C4DA /* AppDelegate.swift */; };
@@ -56,6 +58,8 @@
 /* Begin PBXFileReference section */
 		3E09AEF41E2009DC00D4276F /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		3E09AEF61E200AB100D4276F /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		3E09AEF81E201E5700D4276F /* SettingsDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsDetailTableViewController.swift; sourceTree = "<group>"; };
+		3E09AEFA1E201E7700D4276F /* SettingsDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsDetailTableViewCell.swift; sourceTree = "<group>"; };
 		3E146F4C1E1B51320091C767 /* ParsingOCR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsingOCR.swift; sourceTree = "<group>"; };
 		3E36B1781DF2133000385315 /* GenerateBarcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenerateBarcode.swift; sourceTree = "<group>"; };
 		3E37D3551DF09E4A0054C4DA /* MemebershipCoupon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemebershipCoupon.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +125,8 @@
 			children = (
 				3E09AEF61E200AB100D4276F /* SettingsTableViewController.swift */,
 				3E09AEF41E2009DC00D4276F /* SettingsTableViewCell.swift */,
+				3E09AEF81E201E5700D4276F /* SettingsDetailTableViewController.swift */,
+				3E09AEFA1E201E7700D4276F /* SettingsDetailTableViewCell.swift */,
 			);
 			name = Settings;
 			path = ..;
@@ -130,9 +136,9 @@
 			isa = PBXGroup;
 			children = (
 				42976BD91DF6B38100ADB0D7 /* CouponViewController.swift */,
+				42976BD71DF6B37300ADB0D7 /* CouponCell.swift */,
 				42976BDA1DF6B38100ADB0D7 /* CouponDetailViewController.swift */,
 				42976BDB1DF6B38100ADB0D7 /* CouponAddViewController.swift */,
-				42976BD71DF6B37300ADB0D7 /* CouponCell.swift */,
 				42FAB62A1E04E18E00671E32 /* ParsingBrain.swift */,
 				3E146F4C1E1B51320091C767 /* ParsingOCR.swift */,
 			);
@@ -398,6 +404,8 @@
 				3E146F4D1E1B51320091C767 /* ParsingOCR.swift in Sources */,
 				3E09AEF71E200AB200D4276F /* SettingsTableViewController.swift in Sources */,
 				42140E3F1DF7CDD9003B287B /* Membership+CoreDataClass.swift in Sources */,
+				3E09AEF91E201E5700D4276F /* SettingsDetailTableViewController.swift in Sources */,
+				3E09AEFB1E201E7700D4276F /* SettingsDetailTableViewCell.swift in Sources */,
 				3E37D3591DF09E4A0054C4DA /* AppDelegate.swift in Sources */,
 				A0FB04761E0BCFBF007FEA21 /* logoTableCell.swift in Sources */,
 				42FAB62B1E04E18E00671E32 /* ParsingBrain.swift in Sources */,

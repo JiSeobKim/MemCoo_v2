@@ -87,11 +87,11 @@
             </objects>
             <point key="canvasLocation" x="1540" y="1746"/>
         </scene>
-        <!--Coupon-->
+        <!--쿠폰-->
         <scene sceneID="dk6-bc-VCf">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6P1-eX-TLA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Coupon" image="first" id="QXT-XA-9H0"/>
+                    <tabBarItem key="tabBarItem" title="쿠폰" image="first" id="QXT-XA-9H0"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Edq-7L-Rxa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -140,10 +140,10 @@
             </objects>
             <point key="canvasLocation" x="2312" y="877"/>
         </scene>
-        <!--Edit-->
+        <!--Settings-->
         <scene sceneID="b6J-bK-ZcZ">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="Edit" storyboardName="Edit" referencedIdentifier="Edit" id="936-6i-52g" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="Settings" storyboardName="Settings" referencedIdentifier="Settings" id="936-6i-52g" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="3bT-NG-4hY"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LNd-TG-ndF" userLabel="First Responder" sceneMemberID="firstResponder"/>

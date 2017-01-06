@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E09AEF51E2009DC00D4276F /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E09AEF41E2009DC00D4276F /* SettingsTableViewCell.swift */; };
+		3E09AEF71E200AB200D4276F /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E09AEF61E200AB100D4276F /* SettingsTableViewController.swift */; };
 		3E146F4D1E1B51320091C767 /* ParsingOCR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E146F4C1E1B51320091C767 /* ParsingOCR.swift */; };
 		3E36B1791DF2133000385315 /* GenerateBarcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E36B1781DF2133000385315 /* GenerateBarcode.swift */; };
 		3E37D3591DF09E4A0054C4DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E37D3581DF09E4A0054C4DA /* AppDelegate.swift */; };
@@ -35,7 +37,7 @@
 		887E07EA7384948C6E757A75 /* Pods_MemebershipCoupon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF6C7AE377C9282F67BD1A11 /* Pods_MemebershipCoupon.framework */; };
 		A038310F1DFC1BE5002C0314 /* Favorite.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A038310E1DFC1BE5002C0314 /* Favorite.storyboard */; };
 		A03831151DFC1CB8002C0314 /* Coupon.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A03831141DFC1CB8002C0314 /* Coupon.storyboard */; };
-		A03831191DFC1CED002C0314 /* Edit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A03831181DFC1CED002C0314 /* Edit.storyboard */; };
+		A03831191DFC1CED002C0314 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A03831181DFC1CED002C0314 /* Settings.storyboard */; };
 		A078544A1DFBA3D000CBF7C4 /* MembershipCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07854431DFBA3D000CBF7C4 /* MembershipCollectionVC.swift */; };
 		A078544B1DFBA3D000CBF7C4 /* MembershipCollectionVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07854441DFBA3D000CBF7C4 /* MembershipCollectionVCell.swift */; };
 		A078544C1DFBA3D000CBF7C4 /* ShowMembershipVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07854451DFBA3D000CBF7C4 /* ShowMembershipVC.swift */; };
@@ -52,6 +54,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E09AEF41E2009DC00D4276F /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		3E09AEF61E200AB100D4276F /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		3E146F4C1E1B51320091C767 /* ParsingOCR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsingOCR.swift; sourceTree = "<group>"; };
 		3E36B1781DF2133000385315 /* GenerateBarcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenerateBarcode.swift; sourceTree = "<group>"; };
 		3E37D3551DF09E4A0054C4DA /* MemebershipCoupon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemebershipCoupon.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,7 +86,7 @@
 		42FAB62A1E04E18E00671E32 /* ParsingBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsingBrain.swift; sourceTree = "<group>"; };
 		A038310E1DFC1BE5002C0314 /* Favorite.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Favorite.storyboard; sourceTree = "<group>"; };
 		A03831141DFC1CB8002C0314 /* Coupon.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Coupon.storyboard; sourceTree = "<group>"; };
-		A03831181DFC1CED002C0314 /* Edit.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Edit.storyboard; sourceTree = "<group>"; };
+		A03831181DFC1CED002C0314 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		A07854431DFBA3D000CBF7C4 /* MembershipCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembershipCollectionVC.swift; sourceTree = "<group>"; };
 		A07854441DFBA3D000CBF7C4 /* MembershipCollectionVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembershipCollectionVCell.swift; sourceTree = "<group>"; };
 		A07854451DFBA3D000CBF7C4 /* ShowMembershipVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowMembershipVC.swift; sourceTree = "<group>"; };
@@ -112,6 +116,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E09AEF31E20091B00D4276F /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				3E09AEF61E200AB100D4276F /* SettingsTableViewController.swift */,
+				3E09AEF41E2009DC00D4276F /* SettingsTableViewCell.swift */,
+			);
+			name = Settings;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		3E36B1711DF2036100385315 /* Coupon */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,13 +168,14 @@
 				3E37D3581DF09E4A0054C4DA /* AppDelegate.swift */,
 				A0F1BD7A1E1CF29D00AFB964 /* Function.swift */,
 				3E36B1711DF2036100385315 /* Coupon */,
-				42976C081DF6C23800ADB0D7 /* Model.xcdatamodeld */,
+				3E09AEF31E20091B00D4276F /* Settings */,
 				42976BF61DF6B48100ADB0D7 /* Main.storyboard */,
 				A0FB047E1E0BED85007FEA21 /* Membership.storyboard */,
 				A0FB04801E0BEE0D007FEA21 /* SelectLogo.storyboard */,
-				A03831181DFC1CED002C0314 /* Edit.storyboard */,
+				A03831181DFC1CED002C0314 /* Settings.storyboard */,
 				A03831141DFC1CB8002C0314 /* Coupon.storyboard */,
 				A038310E1DFC1BE5002C0314 /* Favorite.storyboard */,
+				42976C081DF6C23800ADB0D7 /* Model.xcdatamodeld */,
 			);
 			name = MembershipCoupon;
 			path = CouponUI;
@@ -311,7 +326,7 @@
 				3E37D3651DF09E4A0054C4DA /* LaunchScreen.storyboard in Resources */,
 				3ECCE3A31E041CF400AE739B /* tessdata in Resources */,
 				A038310F1DFC1BE5002C0314 /* Favorite.storyboard in Resources */,
-				A03831191DFC1CED002C0314 /* Edit.storyboard in Resources */,
+				A03831191DFC1CED002C0314 /* Settings.storyboard in Resources */,
 				A0FB047F1E0BED85007FEA21 /* Membership.storyboard in Resources */,
 				A0FB04811E0BEE0D007FEA21 /* SelectLogo.storyboard in Resources */,
 				A03831151DFC1CB8002C0314 /* Coupon.storyboard in Resources */,
@@ -381,6 +396,7 @@
 				42976BDD1DF6B38100ADB0D7 /* CouponDetailViewController.swift in Sources */,
 				42976BDC1DF6B38100ADB0D7 /* CouponViewController.swift in Sources */,
 				3E146F4D1E1B51320091C767 /* ParsingOCR.swift in Sources */,
+				3E09AEF71E200AB200D4276F /* SettingsTableViewController.swift in Sources */,
 				42140E3F1DF7CDD9003B287B /* Membership+CoreDataClass.swift in Sources */,
 				3E37D3591DF09E4A0054C4DA /* AppDelegate.swift in Sources */,
 				A0FB04761E0BCFBF007FEA21 /* logoTableCell.swift in Sources */,
@@ -392,6 +408,7 @@
 				A0F1BD7B1E1CF29D00AFB964 /* Function.swift in Sources */,
 				42976C0A1DF6C23800ADB0D7 /* Model.xcdatamodeld in Sources */,
 				42976BE01DF6B39200ADB0D7 /* DBUtil.swift in Sources */,
+				3E09AEF51E2009DC00D4276F /* SettingsTableViewCell.swift in Sources */,
 				A078544E1DFBA3D000CBF7C4 /* ChoiceMembershipVC.swift in Sources */,
 				3E37D35B1DF09E4A0054C4DA /* FavoriteViewController.swift in Sources */,
 				42976BDE1DF6B38100ADB0D7 /* CouponAddViewController.swift in Sources */,

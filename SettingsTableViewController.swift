@@ -9,6 +9,8 @@
 import UIKit
 
 class SettingsTableViewController: UITableViewController {
+    
+    var titleList = ["쿠폰 알림", "기부하기", "만든이", "오류 제보/제안", "리뷰 남기기"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,25 +29,24 @@ class SettingsTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    /* override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 0
-    }
+    } */
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.titleList.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
+        let row = self.titleList[indexPath.row]
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsCell", for: indexPath) as! SettingsTableViewCell
+        cell.title.text = row
         // Configure the cell...
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

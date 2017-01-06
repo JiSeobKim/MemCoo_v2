@@ -176,11 +176,11 @@
 				3E36B1711DF2036100385315 /* Coupon */,
 				3E09AEF31E20091B00D4276F /* Settings */,
 				42976BF61DF6B48100ADB0D7 /* Main.storyboard */,
+				A038310E1DFC1BE5002C0314 /* Favorite.storyboard */,
 				A0FB047E1E0BED85007FEA21 /* Membership.storyboard */,
 				A0FB04801E0BEE0D007FEA21 /* SelectLogo.storyboard */,
-				A03831181DFC1CED002C0314 /* Settings.storyboard */,
 				A03831141DFC1CB8002C0314 /* Coupon.storyboard */,
-				A038310E1DFC1BE5002C0314 /* Favorite.storyboard */,
+				A03831181DFC1CED002C0314 /* Settings.storyboard */,
 				42976C081DF6C23800ADB0D7 /* Model.xcdatamodeld */,
 			);
 			name = MembershipCoupon;

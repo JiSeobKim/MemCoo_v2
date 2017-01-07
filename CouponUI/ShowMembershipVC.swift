@@ -15,18 +15,26 @@ class ShowMembershipVC: UIViewController {
     //
 
     var cellData : Membership?
+    var bright : CGFloat?
 
     @IBOutlet weak var ShowLogo: UIImageView!
     @IBOutlet weak var barcodeLabel: UILabel!
     @IBOutlet weak var ShowBarcode: UIImageView!
     
     
+    
+    
     //
     //viewLoad
     //
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        ap.brightSwitch = false
+        //화면이 사라질때 밝기 수정 off
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        ap.brightSwitch = true
+        //현재 페이지에선 밝기 수정 on
         
         if cellData != nil {
             loadMembershipData()
@@ -41,6 +49,13 @@ class ShowMembershipVC: UIViewController {
         if cellData != nil {
             loadMembershipData()
         }
+        
+        UIScreen.main.brightness = 1.0
+        
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        UIScreen.main.brightness = ap.bright!
     }
     
     //
@@ -53,14 +68,23 @@ class ShowMembershipVC: UIViewController {
             ShowLogo.image = membership.toImage?.image as? UIImage
             ShowBarcode.image = generateBarcodeFromString(string: membership.barcode)
             barcodeLabel.text = addHyphen(data: membership.barcode!)
+            
+            
+          
+            
+
         }
     }
     
-    //수정시 membership의 객체를 넘기기위한 준비
+    //수정시 membership의 객체를 넘기기위한 준비 && 밝기 값 전달
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "MembershipEdit" {
             if let vc = segue.destination as? AddEditMemebershipVC {
                 vc.membershipToEdit = cellData
+                
+                if self.bright != nil {
+                 vc.bright = self.bright!
+                }
             }
         }
     }

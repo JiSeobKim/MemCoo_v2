@@ -15,16 +15,30 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
     //detail에서 넘어온 coupon 객체를 받기하기 위한 coupon 객체
     var couponToEdit: Coupon?
     
+    //밝기 조절용
+    var bright : CGFloat?
+    
     @IBOutlet weak var logo: UIImageView!
     
     //데이터베이스에서 삭제
-    @IBAction func deletePressed(_ sender: UIBarButtonItem) {
-        if couponToEdit != nil {
-            context.delete(couponToEdit!)
-            ad.saveContext()
+    @IBAction func deletePressed(_ sender: UIButton) {
+        let alert = UIAlertController(title: "삭제하시겠습니까?", message: "한 번 삭제한 쿠폰은 복구할 수 없습니다!", preferredStyle: .alert)
+        let delete = UIAlertAction(title: "삭제", style: .destructive) {
+            (_) in
+            if self.couponToEdit != nil {
+                context.delete(self.couponToEdit!)
+                ad.saveContext()
+            }
+            _ = self.navigationController?.popToRootViewController(animated: true)
         }
-        _ = navigationController?.popToRootViewController(animated: true)
+        let cancel = UIAlertAction(title: "취소", style: .cancel)
+        alert.addAction(delete)
+        alert.addAction(cancel)
+        self.present(alert, animated: true)
     }
+    
+    //버튼 숨김 기능을 위한 버튼 아울렛.
+    @IBOutlet weak var deleteButton: UIButton!
    
     //로고를 선택하면 데이터베이스의 로고를 불러오기 위한 버튼액션(현재는 사진첩으로 가게해놓음)
     @IBAction func picturePickerPressed(_ sender: UIButton) {
@@ -37,7 +51,6 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         }
         imagePicker.dismiss(animated: true, completion: nil)
     }
-    
     
     @IBOutlet weak var product: UITextField!
     @IBOutlet weak var barcode: UITextField!
@@ -59,6 +72,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         sender.inputView = datePicker
         datePicker.addTarget(self, action: #selector(CouponAddViewController.datePickerValueChanged), for: UIControlEvents.valueChanged)
     }
+    
     //타겟시 데이트피커의 값을 텍스트 필드에 넣어주기 위한 펑션
     func datePickerValueChanged(sender: UIDatePicker) {
         let dateFormatter = DateFormatter()
@@ -73,7 +87,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var originalText: UITextView!
     
     //모든 값을 코어데이터 테이블로 저장하기 위한 액션
-    @IBAction func saveBtnPressed(_ sender: UIButton) {
+    @IBAction func saveBtnPressed(_ sender: UIBarButtonItem) {
         var coupon: Coupon!
         let ImageContext = Image(context: context)
         
@@ -100,6 +114,8 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         //itemToEdit이 nil일 경우 새로운 객체를 전달해서 저장 아닐경우 그 itemToEdit으로 저장
         if couponToEdit == nil {
             coupon = Coupon(context: context)
+            coupon.isUsed = false
+            coupon.favorite = false
         } else {
             coupon = couponToEdit
         }
@@ -115,7 +131,6 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
             coupon.title = title
         }
         
-
         //바코드번호 담기!
         if let barcode = barcode.text {
             coupon.barcode = barcode
@@ -156,8 +171,14 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        var parsingBrain: ParsingBrain
+        var couponInfo: ParsingBrain.CouponInfo
+        
+        
         //상품명 텍스트 필드를 최초 응답자로 지정(스토리보드 내에서 dock을 이용해도 가능).
-        self.product.becomeFirstResponder()
+        if ad.isAddButton == true {
+            self.product.becomeFirstResponder()
+        }
         //화면 전환시 입력창 바로 반응
         
         imagePicker = UIImagePickerController()
@@ -169,13 +190,19 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         //add 버튼을 눌렀을 때 타이틀과 버튼 이름 변경.
         if ad.isAddButton == true {
             self.navigationItem.title = "쿠폰 추가"
-            //self.navigationItem.rightBarButtonItem?.title = "추가"
+            //추가 상태일 때에는 삭제 버튼 숨김.
+            deleteButton.isHidden = true
             
             //클립보드 파싱 버튼을 눌렀을 때 자동으로 텍스트필드 입력.
             if ad.selectActionSheet == 1 {
-                product.text = "test"
-                expiredDate.text = "2017.01.01"
-                barcode.text = "1234 5678 9012 3456"
+                parsingBrain = ParsingBrain()
+                if let copiedString = UIPasteboard.general.strings {
+                    couponInfo = parsingBrain.parsing(textFromClipboard: copiedString)
+                    product.text = couponInfo.title
+                    expiredDate.text = couponInfo.expireDate
+                    barcode.text = couponInfo.barcode
+                    originalText.text = copiedString[0]
+                }
             }
             //OCR 버튼을 눌렀을 때 이미지 OCR 후 바코드만 입력.
             else if ad.selectActionSheet == 2 {
@@ -195,7 +222,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
             //
             //        }
         }
-            //수정 버튼을 눌렀을 때 타이틀과 버튼 이름 변경.
+        //수정 버튼을 눌렀을 때 타이틀과 버튼 이름 변경.
         else {
             self.navigationItem.title = "쿠폰 수정"
             //self.navigationItem.rightBarButtonItem?.title = "확인"
@@ -216,6 +243,46 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
 //        if let copiedString = UIPasteboard.general.string {
 //            originalText.text = copiedString
 //        }
+        
+        //키보드 위에 버튼 표시.
+        let keyboardToolbar = UIToolbar()
+        keyboardToolbar.sizeToFit()
+        
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        let doneBarButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: self, action: #selector(self.doneClicked))
+        keyboardToolbar.setItems([flexibleSpace, doneBarButton], animated: true)
+        
+        product.inputAccessoryView = keyboardToolbar
+        barcode.inputAccessoryView = keyboardToolbar
+        expiredDate.inputAccessoryView = keyboardToolbar
+        originalText.inputAccessoryView = keyboardToolbar
+        
+        //키보드 크기만큼 뷰를 위로 이동.
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
+    }
+    
+    
+    //키보드 위에 버튼 표시.
+    func doneClicked() {
+        view.endEditing(true)
+    }
+    
+    //키보드 크기만큼 뷰를 위로 이동.
+    func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y != 0 {
+                self.view.frame.origin.y += keyboardSize.height
+            }
+        }
     }
     
     //파싱 퍼센트 표시.
@@ -234,6 +301,13 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    @IBAction func favorite(_ sender: UIButton) {
+        if let coupon = couponToEdit{
+            coupon.favorite = true
+            ad.saveContext()
+        }
+        
     }
     
     /*

@@ -9,24 +9,17 @@
 import UIKit
 
 class CouponCell: UITableViewCell {
-    
     @IBOutlet weak var title: UILabel!
-    
     @IBOutlet weak var category: UILabel!
-
     @IBOutlet weak var expireDate: UILabel!
-    
     @IBOutlet weak var dday: UILabel!
-    
     @IBOutlet weak var logo: UIImageView!
-    
     @IBOutlet weak var barcodeImg: UIImageView!
-    
     func configureCell(item: Coupon) {
-        
         title.text = item.title
+        
         //category는 to many관계이므로 처리하기 어렵다.
-        category.text = "보류다."
+        category.text = "\(item.favorite)"
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         expireDate.text = dateFormatter.string(from: item.expireDate as! Date)
@@ -35,7 +28,6 @@ class CouponCell: UITableViewCell {
         barcodeImg.image = generateBarcodeFromString(string: item.barcode)
         
         dday.text = daysBetweenDates(startDate: Date(), endDate: item.expireDate as! Date)
-
     }
     
     override func awakeFromNib() {
@@ -45,8 +37,6 @@ class CouponCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
-
 }

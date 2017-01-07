@@ -17,8 +17,7 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
 //
     @IBOutlet weak var collectionView: UICollectionView!
     var controller: NSFetchedResultsController<Membership>!
-    //CollectionView 이름 선언
-    //45,71,88 라인에서 사용
+    
     
 //
 //viewLoad
@@ -38,6 +37,7 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
        
         attemptFetch()
         self.collectionView.reloadData()
+
         
     }
     
@@ -56,6 +56,7 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
             return sectionInfo.numberOfObjects
         }
         return 0
+        
 
         
     }
@@ -73,6 +74,11 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
   
         return cell
         
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = UIScreen.main.bounds.width
+        return CGSize(width: (width - 10)/100, height: (width - 10)/100) // width & height are the same to make a square cell
     }
     
 //셀 생성 정의
@@ -98,6 +104,10 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
             if let destination = segue.destination as? ShowMembershipVC {
                 if let membership = sender as? Membership {
                     destination.cellData = membership
+                    
+                    // 밝기 값 저장 
+                    destination.bright = UIScreen.main.brightness
+                    ap.bright = UIScreen.main.brightness
                 }
             }
         }
@@ -133,39 +143,5 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
         
     }
     
-//콘트롤러 정의
-//    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-//        
-//        switch (type) {
-//        case .insert:
-//            if let indexPath = newIndexPath {
-//                collectionView.insertItems(at: [indexPath])
-//            }
-//            break
-//        case .delete:
-//            if let indexPath = indexPath {
-//                collectionView.deleteItems(at: [indexPath])
-//            }
-//            break
-//        case .update:
-//            if let indexPath = indexPath {
-//                let cell = collectionView.cellForItem(at: indexPath) as! MembershipCollectionVCell
-//                // update the cell data.
-//                
-//                configureCell(cell: cell, indexPath: indexPath as NSIndexPath)
-//            }
-//            break
-//        case .move:
-//            if let indexPath = indexPath {
-//                collectionView.deleteItems(at: [indexPath])
-//                
-//            }
-//            if let indexPath = newIndexPath {
-//                collectionView.insertItems(at: [indexPath])
-//                
-//            }
-//            break
-//        }
-//    }
 }
 

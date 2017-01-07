@@ -11,10 +11,14 @@ import CoreData
 import TesseractOCR
 
 class CouponViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate, G8TesseractDelegate {
-    
-    //model
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var segment: UISegmentedControl!
+    
+    //밝기 조절하는 변수.
+    
+    
+    //detail에서 넘어온 coupon 객체를 받기하기 위한 coupon 객체
+    var couponToDelete: Coupon?
     
     //+버튼 눌렀을때의 액션
     @IBAction func add(_ sender: Any) {
@@ -52,7 +56,6 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
         
         let custom = UIAlertAction(title: "사용자 직접 입력", style: .default) {
             (_) in
-            
             ad.selectActionSheet = 3
             
             if let addVC = self.storyboard?.instantiateViewController(withIdentifier: "AddEdit") {
@@ -69,56 +72,44 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
         
         //add 버튼이 눌렸음을 다음 뷰에 전달하기 위해 isAddButton 변수에 true를 저장.
         ad.isAddButton = true
-        
         self.present(alert, animated: true)
     }
     
     var controller: NSFetchedResultsController<Coupon>!
-    
-    //model 끝~
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.delegate = self
         tableView.dataSource = self
-        
-       // generateTestData()
         attemptFetch()
-
     }
+    
+ 
 
     
     //tableView를 위한 function
     //cell 재사용 정의
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CouponCell", for: indexPath) as! CouponCell
-        
         configureCell(cell: cell, indexPath: indexPath as NSIndexPath)
         return cell
     }
     
     func configureCell(cell: CouponCell, indexPath: NSIndexPath) {
-        
         //update cell
-        
         let item = controller.object(at: indexPath as IndexPath)
         cell.configureCell(item: item)
     }
-    
-    
+
     //cell 숫자 정의
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         if let sections = controller.sections {
             let sectionInfo = sections[section]
-            
             return sectionInfo.numberOfObjects
         }
         return 0
     }
-    
-    
+
     //선택된 cell의 처리 정의
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let objs = controller.fetchedObjects, objs.count > 0 {
@@ -132,13 +123,14 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
             if let destination = segue.destination as? CouponDetailViewController {
                 if let coupon = sender as? Coupon {
                     destination.couponToDetail = coupon
+                    ap.bright = UIScreen.main.brightness
+                    destination.bright = UIScreen.main.brightness
                 }
             }
         }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        
         if let sections = controller.sections {
             return sections.count
         }
@@ -147,26 +139,35 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
     
     //cell의 높이 정의
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
         return 100
     }
     
+    //swipe 시 edit 기능 가능하게 하는 메소드.
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    //swipe 시 delete 버튼 나타나게 하는 메소드.
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            if couponToDelete != nil {
+                context.delete(couponToDelete!)
+                ad.saveContext()
+                tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+            }
+        }
+    }
+    
     //coreData 부분
-    
     //패치해오는 펑션
-    
     func attemptFetch() {
-        
         let fetchRequest: NSFetchRequest<Coupon> = Coupon.fetchRequest()
         let dateSort = NSSortDescriptor(key: "created", ascending: false)
         fetchRequest.sortDescriptors = [dateSort]
-        
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         
         //save시 tableview update를 위한 델리게이트 전달
-        
         controller.delegate = self
-        
         self.controller = controller
         
         do {
@@ -180,19 +181,14 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
     
     //컨트롤러가 바뀔때마다 테이블뷰 업데이트
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        
         tableView.beginUpdates()
-        
     }
     
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        
         tableView.endUpdates()
-        
     }
     
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-        
         switch (type) {
         case .insert:
             if let indexPath = newIndexPath {
@@ -208,7 +204,6 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
             if let indexPath = indexPath {
                 let cell = tableView.cellForRow(at: indexPath) as! CouponCell
                 // update the cell data.
-                
                 configureCell(cell: cell, indexPath: indexPath as NSIndexPath)
             }
             break
@@ -219,30 +214,11 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
             }
             if let indexPath = newIndexPath {
                 tableView.insertRows(at: [indexPath], with: .fade)
-                
             }
             break
         }
-    
     }
     
-    func generateTestData() {
-        let item = Coupon(context: context)
-        
-        item.title = "문화상품권"
-        item.expireDate = Date() as NSDate
-        
-        let item2 = Coupon(context: context)
-        
-        item2.title = "독서상품권"
-        item2.expireDate = Date() as NSDate
-        
-        
-        ad.saveContext()
-    }
-    
-
-
     /*
     // MARK: - Navigation
 

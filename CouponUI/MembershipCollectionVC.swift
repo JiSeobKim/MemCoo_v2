@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, NSFetchedResultsControllerDelegate {
+class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, NSFetchedResultsControllerDelegate, UIGestureRecognizerDelegate{
 
     
 //
@@ -29,6 +29,13 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
         collectionView.dataSource = self
         
         attemptFetch()
+        
+        //롱프레스
+        let lpgr : UILongPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(MembershipCollectionVC.handleLongPress(_:)))
+        lpgr.minimumPressDuration = 0.5
+        lpgr.delegate = self
+        lpgr.delaysTouchesBegan = true
+        self.collectionView?.addGestureRecognizer(lpgr)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -39,6 +46,38 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
         self.collectionView.reloadData()
 
         
+    }
+    
+    func handleLongPress(_ gestureReconizer: UILongPressGestureRecognizer) {
+        if gestureReconizer.state != UIGestureRecognizerState.ended {
+            return
+        }
+        
+        let p = gestureReconizer.location(in: collectionView)
+        let indexPath = collectionView.indexPathForItem(at: p)
+        
+        if let index = indexPath {
+            _ = collectionView.cellForItem(at: index)
+            // do stuff with your cell, for example print the indexPath
+            print(index.row)
+            
+            if let objs = controller.fetchedObjects, objs.count > 0 {
+                let item = objs[(indexPath?.item)!]
+                
+        
+                if item.favorite == true {
+                    item.favorite = false
+                } else {
+                    item.favorite = true
+                }
+                ad.saveContext()
+                collectionView.reloadData()
+            
+            }
+
+        } else {
+            print("Could not find index path")
+        }
     }
     
     
@@ -111,6 +150,8 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
                 }
             }
         }
+        
+        
     }
     
     

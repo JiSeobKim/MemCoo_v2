@@ -28,12 +28,13 @@ class ShowMembershipVC: UIViewController {
     //viewLoad
     //
     override func viewWillDisappear(_ animated: Bool) {
-        ap.brightSwitch = false
+        ad.brightSwitch = false
+        UIScreen.main.brightness = ad.bright!
         //화면이 사라질때 밝기 수정 off
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        ap.brightSwitch = true
+        ad.brightSwitch = true
         //현재 페이지에선 밝기 수정 on
         
         if cellData != nil {
@@ -54,10 +55,7 @@ class ShowMembershipVC: UIViewController {
         
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        UIScreen.main.brightness = ap.bright!
-    }
-    
+
     //
     //controller
     //

@@ -107,7 +107,7 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
                     
                     // 밝기 값 저장 
                     destination.bright = UIScreen.main.brightness
-                    ap.bright = UIScreen.main.brightness
+                    ad.bright = UIScreen.main.brightness
                 }
             }
         }

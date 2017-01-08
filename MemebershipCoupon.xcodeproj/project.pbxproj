@@ -50,6 +50,7 @@
 		A0BB53561E21D61A00AF54C9 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BB53551E21D61A00AF54C9 /* TodayViewController.swift */; };
 		A0BB53591E21D61A00AF54C9 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0BB53571E21D61A00AF54C9 /* MainInterface.storyboard */; };
 		A0BB535D1E21D61A00AF54C9 /* Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A0BB53511E21D61900AF54C9 /* Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A0BB53621E21D80A00AF54C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0FB04861E0BFB69007FEA21 /* Assets.xcassets */; };
 		A0FB04741E0BCEFC007FEA21 /* logoSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FB04731E0BCEFC007FEA21 /* logoSelect.swift */; };
 		A0FB04761E0BCFBF007FEA21 /* logoTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FB04751E0BCFBF007FEA21 /* logoTableCell.swift */; };
 		A0FB04781E0BCFD7007FEA21 /* logoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FB04771E0BCFD7007FEA21 /* logoCollectionCell.swift */; };
@@ -421,6 +422,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0BB53621E21D80A00AF54C9 /* Assets.xcassets in Resources */,
 				A0BB53591E21D61A00AF54C9 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

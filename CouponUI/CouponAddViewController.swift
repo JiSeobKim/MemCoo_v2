@@ -243,6 +243,46 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
 //        if let copiedString = UIPasteboard.general.string {
 //            originalText.text = copiedString
 //        }
+        
+        //키보드 위에 버튼 표시.
+        let keyboardToolbar = UIToolbar()
+        keyboardToolbar.sizeToFit()
+        
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        let doneBarButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: self, action: #selector(self.doneClicked))
+        keyboardToolbar.setItems([flexibleSpace, doneBarButton], animated: true)
+        
+        product.inputAccessoryView = keyboardToolbar
+        barcode.inputAccessoryView = keyboardToolbar
+        expiredDate.inputAccessoryView = keyboardToolbar
+        originalText.inputAccessoryView = keyboardToolbar
+        
+        //키보드 크기만큼 뷰를 위로 이동.
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
+    }
+    
+    
+    //키보드 위에 버튼 표시.
+    func doneClicked() {
+        view.endEditing(true)
+    }
+    
+    //키보드 크기만큼 뷰를 위로 이동.
+    func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y != 0 {
+                self.view.frame.origin.y += keyboardSize.height
+            }
+        }
     }
     
     //파싱 퍼센트 표시.

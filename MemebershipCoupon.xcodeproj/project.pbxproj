@@ -46,7 +46,11 @@
 		A078544D1DFBA3D000CBF7C4 /* AddEditMemebershipVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07854461DFBA3D000CBF7C4 /* AddEditMemebershipVC.swift */; };
 		A078544E1DFBA3D000CBF7C4 /* ChoiceMembershipVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07854471DFBA3D000CBF7C4 /* ChoiceMembershipVC.swift */; };
 		A078544F1DFBA3D000CBF7C4 /* MembershipFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07854481DFBA3D000CBF7C4 /* MembershipFunction.swift */; };
-		A0F1BD7B1E1CF29D00AFB964 /* Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F1BD7A1E1CF29D00AFB964 /* Function.swift */; };
+		A0BB53531E21D61900AF54C9 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0BB53521E21D61900AF54C9 /* NotificationCenter.framework */; };
+		A0BB53561E21D61A00AF54C9 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BB53551E21D61A00AF54C9 /* TodayViewController.swift */; };
+		A0BB53591E21D61A00AF54C9 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0BB53571E21D61A00AF54C9 /* MainInterface.storyboard */; };
+		A0BB535D1E21D61A00AF54C9 /* Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A0BB53511E21D61900AF54C9 /* Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A0BB53621E21D80A00AF54C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0FB04861E0BFB69007FEA21 /* Assets.xcassets */; };
 		A0FB04741E0BCEFC007FEA21 /* logoSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FB04731E0BCEFC007FEA21 /* logoSelect.swift */; };
 		A0FB04761E0BCFBF007FEA21 /* logoTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FB04751E0BCFBF007FEA21 /* logoTableCell.swift */; };
 		A0FB04781E0BCFD7007FEA21 /* logoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FB04771E0BCFD7007FEA21 /* logoCollectionCell.swift */; };
@@ -54,6 +58,30 @@
 		A0FB04811E0BEE0D007FEA21 /* SelectLogo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0FB04801E0BEE0D007FEA21 /* SelectLogo.storyboard */; };
 		A0FB04871E0BFB69007FEA21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0FB04861E0BFB69007FEA21 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A0BB535B1E21D61A00AF54C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3E37D34D1DF09E490054C4DA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A0BB53501E21D61900AF54C9;
+			remoteInfo = Widget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A0BB53611E21D61A00AF54C9 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A0BB535D1E21D61A00AF54C9 /* Widget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3E09AEF41E2009DC00D4276F /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
@@ -97,7 +125,11 @@
 		A07854461DFBA3D000CBF7C4 /* AddEditMemebershipVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEditMemebershipVC.swift; sourceTree = "<group>"; };
 		A07854471DFBA3D000CBF7C4 /* ChoiceMembershipVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoiceMembershipVC.swift; sourceTree = "<group>"; };
 		A07854481DFBA3D000CBF7C4 /* MembershipFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembershipFunction.swift; sourceTree = "<group>"; };
-		A0F1BD7A1E1CF29D00AFB964 /* Function.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Function.swift; sourceTree = "<group>"; };
+		A0BB53511E21D61900AF54C9 /* Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Widget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0BB53521E21D61900AF54C9 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		A0BB53551E21D61A00AF54C9 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		A0BB53581E21D61A00AF54C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		A0BB535A1E21D61A00AF54C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0FB04731E0BCEFC007FEA21 /* logoSelect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = logoSelect.swift; sourceTree = "<group>"; };
 		A0FB04751E0BCFBF007FEA21 /* logoTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = logoTableCell.swift; sourceTree = "<group>"; };
 		A0FB04771E0BCFD7007FEA21 /* logoCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = logoCollectionCell.swift; sourceTree = "<group>"; };
@@ -114,6 +146,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				887E07EA7384948C6E757A75 /* Pods_MemebershipCoupon.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0BB534E1E21D61900AF54C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0BB53531E21D61900AF54C9 /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				3E37D3571DF09E4A0054C4DA /* MembershipCoupon */,
+				A0BB53541E21D61A00AF54C9 /* Widget */,
 				3E37D3561DF09E4A0054C4DA /* Products */,
 				DAFD14E94436668FB3157541 /* Pods */,
 				A3CE639472778979DD65B6D7 /* Frameworks */,
@@ -159,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				3E37D3551DF09E4A0054C4DA /* MemebershipCoupon.app */,
+				A0BB53511E21D61900AF54C9 /* Widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -172,7 +214,6 @@
 				42976BA01DF27DB000ADB0D7 /* Membership */,
 				42976B9F1DF27D9600ADB0D7 /* Util */,
 				3E37D3581DF09E4A0054C4DA /* AppDelegate.swift */,
-				A0F1BD7A1E1CF29D00AFB964 /* Function.swift */,
 				3E36B1711DF2036100385315 /* Coupon */,
 				3E09AEF31E20091B00D4276F /* Settings */,
 				42976BF61DF6B48100ADB0D7 /* Main.storyboard */,
@@ -249,10 +290,21 @@
 			name = DatabaseModel;
 			sourceTree = "<group>";
 		};
+		A0BB53541E21D61A00AF54C9 /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+				A0BB53551E21D61A00AF54C9 /* TodayViewController.swift */,
+				A0BB53571E21D61A00AF54C9 /* MainInterface.storyboard */,
+				A0BB535A1E21D61A00AF54C9 /* Info.plist */,
+			);
+			path = Widget;
+			sourceTree = "<group>";
+		};
 		A3CE639472778979DD65B6D7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				FF6C7AE377C9282F67BD1A11 /* Pods_MemebershipCoupon.framework */,
+				A0BB53521E21D61900AF54C9 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -279,15 +331,34 @@
 				3E37D3531DF09E4A0054C4DA /* Resources */,
 				13D46D102D47D7DD2AF0A3EB /* [CP] Embed Pods Frameworks */,
 				A3E449E21CEDBA0FA9097746 /* [CP] Copy Pods Resources */,
+				A0BB53611E21D61A00AF54C9 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A0BB535C1E21D61A00AF54C9 /* PBXTargetDependency */,
 			);
 			name = MemebershipCoupon;
 			productName = CouponUI;
 			productReference = 3E37D3551DF09E4A0054C4DA /* MemebershipCoupon.app */;
 			productType = "com.apple.product-type.application";
+		};
+		A0BB53501E21D61900AF54C9 /* Widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A0BB535E1E21D61A00AF54C9 /* Build configuration list for PBXNativeTarget "Widget" */;
+			buildPhases = (
+				A0BB534D1E21D61900AF54C9 /* Sources */,
+				A0BB534E1E21D61900AF54C9 /* Frameworks */,
+				A0BB534F1E21D61900AF54C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Widget;
+			productName = Widget;
+			productReference = A0BB53511E21D61900AF54C9 /* Widget.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -295,13 +366,18 @@
 		3E37D34D1DF09E490054C4DA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0810;
+				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = mino;
 				TargetAttributes = {
 					3E37D3541DF09E4A0054C4DA = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = VHBSR3XVN2;
+						DevelopmentTeam = HWY63NUUS4;
+						ProvisioningStyle = Automatic;
+					};
+					A0BB53501E21D61900AF54C9 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = HWY63NUUS4;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -320,6 +396,7 @@
 			projectRoot = "";
 			targets = (
 				3E37D3541DF09E4A0054C4DA /* MemebershipCoupon */,
+				A0BB53501E21D61900AF54C9 /* Widget */,
 			);
 		};
 /* End PBXProject section */
@@ -338,6 +415,15 @@
 				A03831151DFC1CB8002C0314 /* Coupon.storyboard in Resources */,
 				A0FB04871E0BFB69007FEA21 /* Assets.xcassets in Resources */,
 				42976BF71DF6B48100ADB0D7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0BB534F1E21D61900AF54C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0BB53621E21D80A00AF54C9 /* Assets.xcassets in Resources */,
+				A0BB53591E21D61A00AF54C9 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,7 +499,6 @@
 				3E36B1791DF2133000385315 /* GenerateBarcode.swift in Sources */,
 				A078544F1DFBA3D000CBF7C4 /* MembershipFunction.swift in Sources */,
 				42A657631E1F383B009BB240 /* FavoriteCell.swift in Sources */,
-				A0F1BD7B1E1CF29D00AFB964 /* Function.swift in Sources */,
 				42976C0A1DF6C23800ADB0D7 /* Model.xcdatamodeld in Sources */,
 				42976BE01DF6B39200ADB0D7 /* DBUtil.swift in Sources */,
 				3E09AEF51E2009DC00D4276F /* SettingsTableViewCell.swift in Sources */,
@@ -435,7 +520,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A0BB534D1E21D61900AF54C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0BB53561E21D61A00AF54C9 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A0BB535C1E21D61A00AF54C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A0BB53501E21D61900AF54C9 /* Widget */;
+			targetProxy = A0BB535B1E21D61A00AF54C9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		3E37D3631DF09E4A0054C4DA /* LaunchScreen.storyboard */ = {
@@ -444,6 +545,14 @@
 				3E37D3641DF09E4A0054C4DA /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A0BB53571E21D61A00AF54C9 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A0BB53581E21D61A00AF54C9 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -548,11 +657,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3E8B136C7DF5B1B29AF5A828 /* Pods-MemebershipCoupon.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = VHBSR3XVN2;
+				DEVELOPMENT_TEAM = HWY63NUUS4;
 				INFOPLIST_FILE = CouponUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.minos.MembershipCoupon;
+				PRODUCT_BUNDLE_IDENTIFIER = com.minos.Membership;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -562,12 +672,39 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AAAC10A62EA3E05F85630D72 /* Pods-MemebershipCoupon.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = VHBSR3XVN2;
+				DEVELOPMENT_TEAM = HWY63NUUS4;
 				INFOPLIST_FILE = CouponUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.minos.MembershipCoupon;
+				PRODUCT_BUNDLE_IDENTIFIER = com.minos.Membership;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		A0BB535F1E21D61A00AF54C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = HWY63NUUS4;
+				INFOPLIST_FILE = Widget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.minos.Membership.Widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		A0BB53601E21D61A00AF54C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = HWY63NUUS4;
+				INFOPLIST_FILE = Widget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.minos.Membership.Widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -592,6 +729,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		A0BB535E1E21D61A00AF54C9 /* Build configuration list for PBXNativeTarget "Widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A0BB535F1E21D61A00AF54C9 /* Debug */,
+				A0BB53601E21D61A00AF54C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 

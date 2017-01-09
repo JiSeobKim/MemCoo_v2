@@ -40,7 +40,8 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
     }
 
     override func viewWillDisappear(_ animated: Bool) {
-        UIScreen.main.brightness = ap.bright!
+        ad.brightSwitch = false
+        UIScreen.main.brightness = ad.bright!
         //화면이 사라질때 밝기 수정 off
     }
     
@@ -64,10 +65,6 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
             topItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
         }
         
-        //밝기 최대
-        UIScreen.main.brightness = 1.0
-        ap.brightSwitch = true
-        //현재 페이지에선 밝기 수정 on
 
     }
     
@@ -110,6 +107,7 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
         
         //밝기 최대
         UIScreen.main.brightness = 1.0
+        ad.brightSwitch = true
     }
     /*
      // MARK: - Navigation

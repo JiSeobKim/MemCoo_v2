@@ -123,7 +123,7 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
             if let destination = segue.destination as? CouponDetailViewController {
                 if let coupon = sender as? Coupon {
                     destination.couponToDetail = coupon
-                    ap.bright = UIScreen.main.brightness
+                    ad.bright = UIScreen.main.brightness
                     destination.bright = UIScreen.main.brightness
                 }
             }

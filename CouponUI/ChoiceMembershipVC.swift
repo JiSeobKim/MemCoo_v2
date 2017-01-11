@@ -62,13 +62,7 @@ class ChoiceMembershipVC: UIViewController, UICollectionViewDelegate, UICollecti
         cell?.layer.borderWidth = 0.0
     }
     
-    @IBAction func choice(_ sender: Any) {
-        //Done 버튼
-        self.delegate?.updataData(data: logoImage[logoNumber!]!)
-        
-        _ = self.navigationController?.popViewController(animated: true)
 
-    }
     
 }
 

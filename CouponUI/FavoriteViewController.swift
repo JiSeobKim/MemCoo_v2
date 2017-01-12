@@ -12,6 +12,30 @@ import CoreData
 class FavoriteViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
     var membershipController: NSFetchedResultsController<Membership>!
+    var couponController: NSFetchedResultsController<Coupon>!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let coupons = couponFetch()
+        let memberships = membershipFetch()
+        
+        objectsArray = [favoriteObjects(sectionName: "멤버십", sectionObjects: memberships), favoriteObjects(sectionName: "쿠폰", sectionObjects: coupons)]
+        
+        self.tableView.reloadData()
+    }
+    
+    // MARK: - Data Source Model
+    struct favoriteObjects {
+        var sectionName: String!
+        var sectionObjects: [Any]!
+    }
+    var objectsArray = [favoriteObjects]()
+    
+    // MARK: - TableView overriding
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FavoriteCell", for: indexPath) as! FavoriteCell
@@ -23,37 +47,37 @@ class FavoriteViewController: UITableViewController, NSFetchedResultsControllerD
    
     //cell 숫자 정의
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let sections = membershipController.sections {
-            let sectionInfo = sections[section]
-            return sectionInfo.numberOfObjects
-        }
-        return 0
+
+        return objectsArray[section].sectionObjects.count
+        
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        guard let sections = membershipController.sections else { return 0 }
-        return sections.count
+
+        return objectsArray.count
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        guard let sectionInfo = membershipController.sections?[section] else { fatalError("Unexpected Section") }
-        return sectionInfo.name
+
+        return objectsArray[section].sectionName
     }
     
     func configureCell(cell: FavoriteCell, indexPath: NSIndexPath) {
-        //update cell
-        let item = membershipController.object(at: indexPath as IndexPath)
-        cell.configureCell(item: item)
+
+         let item = objectsArray[indexPath.section].sectionObjects[indexPath.row]
+            
+         cell.configureCell(item: item)
+        
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        attemptFetch()
-    }
+
     
-    //coreData 부분
-    //패치해오는 펑션
-    func attemptFetch() {
+    // MARK: - coreData 부분
+    
+    
+    //membership 패치해오는 펑션
+    func membershipFetch() -> [Membership] {
+        var membership: [Membership] = []
         let fetchRequest: NSFetchRequest<Membership> = Membership.fetchRequest()
         let dateSort = NSSortDescriptor(key: "created", ascending: false)
         let favoriteSort = NSSortDescriptor(key: "favorite", ascending: false)
@@ -63,22 +87,49 @@ class FavoriteViewController: UITableViewController, NSFetchedResultsControllerD
         let isPrediccate = NSPredicate(format: "%K == YES", favorite)
         fetchRequest.sortDescriptors = [dateSort,favoriteSort]
         fetchRequest.predicate = isPrediccate
-       
+        
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         
         //save시 tableview update를 위한 델리게이트 전달
         controller.delegate = self
         self.membershipController = controller
         
-        do {
-            try controller.performFetch()
+        do{
+            membership = try ad.persistentContainer.viewContext.fetch(fetchRequest)
+            return membership
         } catch {
-            let error = error as NSError
             print("\(error)")
         }
-        
+        return membership
     }
     
+    //coupon 패치해오는 펑션
+    func couponFetch() -> [Coupon] {
+        var coupon: [Coupon] = []
+        let fetchRequest: NSFetchRequest<Coupon> = Coupon.fetchRequest()
+        let dateSort = NSSortDescriptor(key: "created", ascending: false)
+        let favoriteSort = NSSortDescriptor(key: "favorite", ascending: false)
+        
+        let favorite = "favorite"
+        
+        let isPrediccate = NSPredicate(format: "%K == YES", favorite)
+        fetchRequest.sortDescriptors = [dateSort,favoriteSort]
+        fetchRequest.predicate = isPrediccate
+        
+        let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        
+        //save시 tableview update를 위한 델리게이트 전달
+        controller.delegate = self
+        self.couponController = controller
+        
+        do{
+            coupon = try ad.persistentContainer.viewContext.fetch(fetchRequest)
+            return coupon
+        } catch {
+            print("\(error)")
+        }
+        return coupon
+    }
     //컨트롤러가 바뀔때마다 테이블뷰 업데이트
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.beginUpdates()

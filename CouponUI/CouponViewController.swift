@@ -82,8 +82,51 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.delegate = self
         tableView.dataSource = self
         attemptFetch()
+        
+        //long press gesture를 이용한 즐겨찾기 핸들링.
+        let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(self.longPress))
+        self.view.addGestureRecognizer(longPressGestureRecognizer)
     }
     
+    //long press gesture를 이용한 즐겨찾기 핸들링.
+    func longPress(_ longPressGestureRecognizer: UILongPressGestureRecognizer) {
+        if longPressGestureRecognizer.state == UIGestureRecognizerState.began {
+            let touchPoint = longPressGestureRecognizer.location(in: self.tableView)
+            
+            if let indexPath = tableView.indexPathForRow(at: touchPoint) {
+                if var objs = controller.fetchedObjects, objs.count > 0 {
+                    let item = objs[indexPath.row]
+                    
+                    if item.favorite == false {
+                        let alert = UIAlertController(title: "즐겨찾기 추가", message: "\"\(item.title!)\" 쿠폰을 \n즐겨찾기에 추가하시겠습니까?", preferredStyle: .alert)
+                        let add = UIAlertAction(title: "추가", style: .default) {
+                            (_) in
+                            item.favorite = true
+                            ad.saveContext()
+                        }
+                        
+                        let cancel = UIAlertAction(title: "취소", style: .cancel)
+                        alert.addAction(add)
+                        alert.addAction(cancel)
+                        self.present(alert, animated: true)
+                    }
+                    else {
+                        let alert = UIAlertController(title: "즐겨찾기 제거", message: "\"\(item.title!)\" 쿠폰을 \n즐겨찾기에서 제거하시겠습니까?", preferredStyle: .alert)
+                        let add = UIAlertAction(title: "제거", style: .default) {
+                            (_) in
+                            item.favorite = false
+                            ad.saveContext()
+                        }
+                        
+                        let cancel = UIAlertAction(title: "취소", style: .cancel)
+                        alert.addAction(add)
+                        alert.addAction(cancel)
+                        self.present(alert, animated: true)
+                    }
+                }
+            }
+        }
+    }
  
 
     
@@ -151,9 +194,17 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
             if var objs = controller.fetchedObjects, objs.count > 0{
-                let item = objs[indexPath.row]
-                context.delete(item)
-                ad.saveContext()
+                let alert = UIAlertController(title: "삭제하시겠습니까?", message: "한 번 삭제한 쿠폰은 복구할 수 없습니다!", preferredStyle: .alert)
+                let delete = UIAlertAction(title: "삭제", style: .destructive) {
+                    (_) in
+                    let item = objs[indexPath.row]
+                    context.delete(item)
+                    ad.saveContext()
+                }
+                let cancel = UIAlertAction(title: "취소", style: .cancel)
+                alert.addAction(delete)
+                alert.addAction(cancel)
+                self.present(alert, animated: true)
             }
         }
     }

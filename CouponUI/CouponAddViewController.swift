@@ -152,7 +152,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         }
         
         ad.saveContext()
-        _ = navigationController?.popViewController(animated: true)
+        _ = self.navigationController?.popToRootViewController(animated: true)
         }
     }
     

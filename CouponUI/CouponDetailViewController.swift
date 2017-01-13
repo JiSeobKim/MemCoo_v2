@@ -64,8 +64,6 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
         if let topItem = self.navigationController?.navigationBar.topItem {
             topItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
         }
-        
-
     }
     
     //아이템 데이타를 로드하는 펑션

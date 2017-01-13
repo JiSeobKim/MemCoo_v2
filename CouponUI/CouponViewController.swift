@@ -14,12 +14,6 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var segment: UISegmentedControl!
     
-    //밝기 조절하는 변수.
-    
-    
-    //detail에서 넘어온 coupon 객체를 받기하기 위한 coupon 객체
-    var couponToDelete: Coupon?
-    
     //+버튼 눌렀을때의 액션
     @IBAction func add(_ sender: Any) {
         let alert = UIAlertController(title: "쿠폰 추가", message: "쿠폰을 추가할 방식을 선택해주세요.", preferredStyle: .actionSheet)

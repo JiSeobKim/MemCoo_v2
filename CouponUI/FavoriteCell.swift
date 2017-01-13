@@ -14,10 +14,18 @@ class FavoriteCell: UITableViewCell {
     @IBOutlet weak var logo: UIImageView!
     
     
-    func configureCell(item: Membership) {
-        let barcodeNo = item.barcode
-        barcodeImg.image = generateBarcodeFromString(string: barcodeNo)
-        logo.image = item.toImage?.image as! UIImage?
+    func configureCell(item: Any) {
+        
+        if let membership = item as? Membership {
+            let barcodeNo = membership.barcode
+            barcodeImg.image = generateBarcodeFromString(string: barcodeNo)
+            logo.image = membership.toImage?.image as! UIImage?
+        } else if let coupon = item as? Coupon {
+            let barcodeNo = coupon.barcode
+            barcodeImg.image = generateBarcodeFromString(string: barcodeNo)
+            logo.image = coupon.toImage?.image as! UIImage?
+        }
+       
     }
 
     override func awakeFromNib() {

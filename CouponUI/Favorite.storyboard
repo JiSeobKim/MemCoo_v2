@@ -5,7 +5,8 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11762"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,33 +14,48 @@
         <scene sceneID="E3h-Mk-u21">
             <objects>
                 <tableViewController storyboardIdentifier="FavoriteMain" id="N2a-fE-9r6" customClass="FavoriteViewController" customModule="MemebershipCoupon" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="163" sectionHeaderHeight="28" sectionFooterHeight="28" id="Fna-gS-Hon">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="163" sectionHeaderHeight="18" sectionFooterHeight="18" id="Fna-gS-Hon">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FavoriteCell" rowHeight="163" id="Qr5-GV-Yb4" customClass="FavoriteCell" customModule="MemebershipCoupon" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="163"/>
+                                <rect key="frame" x="0.0" y="56" width="375" height="163"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qr5-GV-Yb4" id="NRs-Da-RpN">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="162"/>
-                                    <autoresizingMask key="autoresizingMask"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="163"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8tj-sS-02O">
-                                            <rect key="frame" x="0.0" y="58" width="375" height="104"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                        </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gvs-Mp-mLw">
-                                            <rect key="frame" x="8" y="8" width="50" height="50"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MRc-f3-bkp">
+                                            <rect key="frame" x="16" y="16" width="343" height="130.5"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8tj-sS-02O">
+                                                    <rect key="frame" x="0.0" y="51" width="343" height="79"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gvs-Mp-mLw">
+                                                    <rect key="frame" x="10" y="10" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="02l-tC-Qfr"/>
+                                                        <constraint firstAttribute="width" constant="40" id="Y0f-c3-D0q"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="50" id="7cV-fp-e7E"/>
-                                                <constraint firstAttribute="height" constant="50" id="ICv-Wb-dgH"/>
+                                                <constraint firstItem="Gvs-Mp-mLw" firstAttribute="leading" secondItem="MRc-f3-bkp" secondAttribute="leading" constant="10" id="3f2-Di-O0Q"/>
+                                                <constraint firstItem="Gvs-Mp-mLw" firstAttribute="top" secondItem="MRc-f3-bkp" secondAttribute="top" constant="10" id="khk-Ze-T1U"/>
                                             </constraints>
-                                        </imageView>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Gvs-Mp-mLw" firstAttribute="leading" secondItem="NRs-Da-RpN" secondAttribute="leading" constant="8" id="VGG-tN-Oxf"/>
-                                        <constraint firstItem="Gvs-Mp-mLw" firstAttribute="top" secondItem="NRs-Da-RpN" secondAttribute="top" constant="8" id="iuh-xg-7Wr"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="MRc-f3-bkp" secondAttribute="bottom" constant="8" id="7Rr-Bp-t4F"/>
+                                        <constraint firstItem="MRc-f3-bkp" firstAttribute="leading" secondItem="NRs-Da-RpN" secondAttribute="leadingMargin" constant="8" id="MHg-Y1-ZdS"/>
+                                        <constraint firstItem="MRc-f3-bkp" firstAttribute="top" secondItem="NRs-Da-RpN" secondAttribute="topMargin" constant="8" id="QzZ-Ly-WFg"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="MRc-f3-bkp" secondAttribute="trailing" constant="8" id="blo-iS-QjH"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

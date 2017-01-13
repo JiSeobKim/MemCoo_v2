@@ -147,13 +147,13 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
         return true
     }
     
-    //swipe 시 delete 버튼 나타나게 하는 메소드.
+    //swipe 시 delete 버튼이 작동하는 메소드.
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
-            if couponToDelete != nil {
-                context.delete(couponToDelete!)
+            if var objs = controller.fetchedObjects, objs.count > 0{
+                let item = objs[indexPath.row]
+                context.delete(item)
                 ad.saveContext()
-                tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
             }
         }
     }

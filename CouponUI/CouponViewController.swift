@@ -27,7 +27,7 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
         let clipboard = UIAlertAction(title: "클립보드 내용 자동 추가", style: .default) {
             (_) in
             //액션시트의 첫 번째 버튼이 눌렸음을 다음 뷰에 전달하기 위해 앱델리게이트의 selectActionSheet 변수에 1을 저장.
-            ad.selectActionSheet = 1
+            ad.isClipboardActionSheet = true
             
             //다음 뷰컨트롤러로 push.
             if let addVC = self.storyboard?.instantiateViewController(withIdentifier: "AddEdit") {
@@ -47,7 +47,7 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
 //                }
 //            }
             
-            ad.selectActionSheet = 2
+            ad.isClipboardActionSheet = false
             
             if let addVC = self.storyboard?.instantiateViewController(withIdentifier: "AddEdit") {
                 self.navigationController?.pushViewController(addVC, animated: true)
@@ -56,8 +56,6 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
         
         let custom = UIAlertAction(title: "사용자 직접 입력", style: .default) {
             (_) in
-            ad.selectActionSheet = 3
-            
             if let addVC = self.storyboard?.instantiateViewController(withIdentifier: "AddEdit") {
                 self.navigationController?.pushViewController(addVC, animated: true)
             }

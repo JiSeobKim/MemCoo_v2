@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     //CouponViewController의 ActionSheet에서 눌린 버튼을 CouponAddViewController에 전달하기 위한 변수.
-    var selectActionSheet: Int?
+    var isClipboardActionSheet: Bool?
     //CouponViewController의 add 버튼과 CouponDetailViewController의 edit 버튼 중 눌린 버튼을 CouponAddViewController에 전달하기 위한 변수.
     var isAddButton: Bool?
 

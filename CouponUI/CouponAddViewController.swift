@@ -40,10 +40,10 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
     //버튼 숨김 기능을 위한 버튼 아울렛.
     @IBOutlet weak var deleteButton: UIButton!
    
-    //로고를 선택하면 데이터베이스의 로고를 불러오기 위한 버튼액션(현재는 사진첩으로 가게해놓음)
-    @IBAction func picturePickerPressed(_ sender: UIButton) {
-        present(imagePicker, animated: true, completion: nil)
-    }
+//    //로고를 선택하면 데이터베이스의 로고를 불러오기 위한 버튼액션(현재는 사진첩으로 가게해놓음)
+//    @IBAction func picturePickerPressed(_ sender: UIButton) {
+//        present(imagePicker, animated: true, completion: nil)
+//    }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let img = info[UIImagePickerControllerOriginalImage] as? UIImage{
@@ -194,7 +194,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
             deleteButton.isHidden = true
             
             //클립보드 파싱 버튼을 눌렀을 때 자동으로 텍스트필드 입력.
-            if ad.selectActionSheet == 1 {
+            if ad.isClipboardActionSheet == true {
                 parsingBrain = ParsingBrain()
                 if let copiedString = UIPasteboard.general.strings {
                     couponInfo = parsingBrain.parsing(textFromClipboard: copiedString)
@@ -205,7 +205,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
                 }
             }
             //OCR 버튼을 눌렀을 때 이미지 OCR 후 바코드만 입력.
-            else if ad.selectActionSheet == 2 {
+            else if ad.isClipboardActionSheet == false {
                 if let tesseract = G8Tesseract(language: "eng+kor") {
                     tesseract.delegate = self
                     //tesseract.charWhitelist = "0123456789"
@@ -216,16 +216,10 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
                     originalText.text = tesseract.recognizedText
                 }
             }
-            
-            //        //사용자 입력 버튼을 눌렀을 때 빈칸(또는 이벤트 처리 안함).
-            //        else {
-            //
-            //        }
         }
         //수정 버튼을 눌렀을 때 타이틀과 버튼 이름 변경.
         else {
             self.navigationItem.title = "쿠폰 수정"
-            //self.navigationItem.rightBarButtonItem?.title = "확인"
             loadCouponData()
         }
         
@@ -320,3 +314,16 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
     }
     */
 }
+
+
+////extension 부분
+//
+//extension CouponAddViewController : logoData {
+//    
+//    func updataData(data: UIImage) {
+//        
+//        logo.image = data
+//        
+//    }
+//    
+//}

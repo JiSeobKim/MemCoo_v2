@@ -17,7 +17,6 @@ class FavoriteCell: UITableViewCell {
     func configureCell(item: Any) {
         
         if let membership = item as? Membership {
-            print("\(membership.barcode)")
             let barcodeNo = membership.barcode
             barcodeImg.image = generateBarcodeFromString(string: barcodeNo)
             logo.image = membership.toImage?.image as! UIImage?

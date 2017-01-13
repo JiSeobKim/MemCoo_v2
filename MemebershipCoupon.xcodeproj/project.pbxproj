@@ -27,6 +27,7 @@
 		42140E421DF7CDD9003B287B /* Coupon+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42140E381DF7CDD9003B287B /* Coupon+CoreDataProperties.swift */; };
 		42140E431DF7CDD9003B287B /* Image+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42140E391DF7CDD9003B287B /* Image+CoreDataClass.swift */; };
 		42140E441DF7CDD9003B287B /* Image+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42140E3A1DF7CDD9003B287B /* Image+CoreDataProperties.swift */; };
+		4251CD981E288D6900671A3F /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4251CD971E288D6900671A3F /* MaterialView.swift */; };
 		42976BD81DF6B37300ADB0D7 /* CouponCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42976BD71DF6B37300ADB0D7 /* CouponCell.swift */; };
 		42976BDC1DF6B38100ADB0D7 /* CouponViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42976BD91DF6B38100ADB0D7 /* CouponViewController.swift */; };
 		42976BDD1DF6B38100ADB0D7 /* CouponDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42976BDA1DF6B38100ADB0D7 /* CouponDetailViewController.swift */; };
@@ -107,6 +108,7 @@
 		42140E381DF7CDD9003B287B /* Coupon+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Coupon+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		42140E391DF7CDD9003B287B /* Image+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Image+CoreDataClass.swift"; sourceTree = "<group>"; };
 		42140E3A1DF7CDD9003B287B /* Image+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Image+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4251CD971E288D6900671A3F /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
 		42976BD71DF6B37300ADB0D7 /* CouponCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponCell.swift; sourceTree = "<group>"; };
 		42976BD91DF6B38100ADB0D7 /* CouponViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponViewController.swift; sourceTree = "<group>"; };
 		42976BDA1DF6B38100ADB0D7 /* CouponDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponDetailViewController.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 			children = (
 				3E37D35A1DF09E4A0054C4DA /* FavoriteViewController.swift */,
 				42A657621E1F383B009BB240 /* FavoriteCell.swift */,
+				4251CD971E288D6900671A3F /* MaterialView.swift */,
 			);
 			name = Favorite;
 			sourceTree = "<group>";
@@ -483,6 +486,7 @@
 				A0FB04781E0BCFD7007FEA21 /* logoCollectionCell.swift in Sources */,
 				42140E3B1DF7CDD9003B287B /* Brand+CoreDataClass.swift in Sources */,
 				42140E421DF7CDD9003B287B /* Coupon+CoreDataProperties.swift in Sources */,
+				4251CD981E288D6900671A3F /* MaterialView.swift in Sources */,
 				42976BDD1DF6B38100ADB0D7 /* CouponDetailViewController.swift in Sources */,
 				42976BDC1DF6B38100ADB0D7 /* CouponViewController.swift in Sources */,
 				3E146F4D1E1B51320091C767 /* ParsingOCR.swift in Sources */,

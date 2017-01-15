@@ -15,7 +15,7 @@ class MembershipCollectionVCell : UICollectionViewCell {
     @IBOutlet weak var viewLogoShow: UIImageView!
     @IBOutlet weak var viewLogoName: UILabel!
 
-    @IBOutlet weak var favorite: UIImageView!
+    
     
     //choicecell 이 가지고 있는 값
     @IBOutlet weak var choiceLogoShow: UIImageView!
@@ -26,15 +26,24 @@ class MembershipCollectionVCell : UICollectionViewCell {
         
         viewLogoName.text = item.toBrand?.title
         viewLogoShow.image = item.toImage?.image as? UIImage
+        
+//셀 라운드형
+        viewLogoShow.layer.cornerRadius = 4
+        viewLogoShow.layer.borderWidth = 1
+        viewLogoShow.layer.borderColor = UIColor.gray.cgColor
+        viewLogoShow.clipsToBounds = true
+//        viewLogoShow.layer.shadowColor = UIColor.black.cgColor
+//        viewLogoShow.layer.shadowOpacity = 0.8
+//        viewLogoShow.layer.shadowRadius = 3
+//        viewLogoShow.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+        
         if item.favorite == true {
-            favorite.image = UIImage(named: "Favorite")
+            
             let color = UIColor.yellow
             viewLogoName.layer.backgroundColor = color.cgColor
             viewLogoName.layer.cornerRadius = 10
         } else {
-            favorite.image = nil
             viewLogoName.layer.backgroundColor = nil
-
         }
         
     }

@@ -64,6 +64,7 @@ class ChoiceMembershipVC: UIViewController, UICollectionViewDelegate, UICollecti
     
 
     
+    
 }
 
 protocol logoData {

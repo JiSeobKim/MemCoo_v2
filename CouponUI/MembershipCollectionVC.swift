@@ -36,6 +36,17 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
         lpgr.delegate = self
         lpgr.delaysTouchesBegan = true
         self.collectionView?.addGestureRecognizer(lpgr)
+        
+        
+        //Test
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        let width = UIScreen.main.bounds.width
+        layout.sectionInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        layout.itemSize = CGSize(width: width / 3.4, height: width / 3)
+        layout.minimumInteritemSpacing = 8
+        layout.minimumLineSpacing = 8
+        collectionView!.collectionViewLayout = layout
+
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -136,6 +147,8 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
             performSegue(withIdentifier: "showCollection", sender: item)
         }
     }
+    
+    
 
 //화면전환시 데이터 넘기기 위한 준비
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

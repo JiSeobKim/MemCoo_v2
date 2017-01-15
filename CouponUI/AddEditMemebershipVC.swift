@@ -21,7 +21,7 @@ class AddEditMemebershipVC: UIViewController {
     var membershipToEdit: Membership?
     var membership: Membership!
     var bright : CGFloat?
-    var checkFavorite : Bool?
+    
     
 
     @IBOutlet weak var LabelBrand: UILabel!
@@ -98,7 +98,7 @@ class AddEditMemebershipVC: UIViewController {
             paramBarcode.layer.borderWidth = 0
             inputCheck2 = true
         }
-
+        
         if inputCheck1 == true && inputCheck2 == true {
             
             if membershipToEdit == nil {
@@ -122,9 +122,7 @@ class AddEditMemebershipVC: UIViewController {
             if let barcode = paramBarcode.text {
                 membership.barcode = barcode
             }
-            if checkFavorite != nil {
-                membership.favorite = true
-            }
+            
             
             ad.saveContext()
             
@@ -179,9 +177,7 @@ class AddEditMemebershipVC: UIViewController {
     
     @IBOutlet weak var favoriteLabel: UIButton!
     
-    @IBAction func favorite(_ sender: Any) {
-        checkFavorite = true
-    }
+    
     
     
     

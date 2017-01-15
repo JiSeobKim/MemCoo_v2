@@ -10,6 +10,7 @@ import UIKit
 
 class MembershipCollectionVCell : UICollectionViewCell {
 
+    
  
     //viewcell 이 가지고 있는 값
     @IBOutlet weak var viewLogoShow: UIImageView!
@@ -28,14 +29,26 @@ class MembershipCollectionVCell : UICollectionViewCell {
         viewLogoShow.image = item.toImage?.image as? UIImage
         
 //셀 라운드형
-        viewLogoShow.layer.cornerRadius = 4
-        viewLogoShow.layer.borderWidth = 1
-        viewLogoShow.layer.borderColor = UIColor.gray.cgColor
-        viewLogoShow.clipsToBounds = true
+//        viewLogoShow.layer.cornerRadius = 4
+//        viewLogoShow.layer.borderWidth = 1
+//        viewLogoShow.layer.borderColor = UIColor.gray.cgColor
+//        viewLogoShow.clipsToBounds = true
 //        viewLogoShow.layer.shadowColor = UIColor.black.cgColor
 //        viewLogoShow.layer.shadowOpacity = 0.8
 //        viewLogoShow.layer.shadowRadius = 3
 //        viewLogoShow.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+        
+        
+        // Shadow and Radius
+        
+        viewLogoShow.layer.borderColor = UIColor.gray.cgColor
+        viewLogoShow.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+        viewLogoShow.layer.shadowOffset = CGSize(width : 0,height: 2.0)
+        viewLogoShow.layer.shadowOpacity = 0.5
+        viewLogoShow.layer.shadowRadius = 0.0
+        viewLogoShow.layer.masksToBounds = false
+        viewLogoShow.layer.cornerRadius = 10.0
+        
         
         if item.favorite == true {
             

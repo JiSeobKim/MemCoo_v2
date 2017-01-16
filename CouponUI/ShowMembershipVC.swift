@@ -44,6 +44,21 @@ class ShowMembershipVC: UIViewController {
         if let topItem = self.navigationController?.navigationBar.topItem {
             topItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
         }
+        
+        //타이틀 명 변경
+        if let memebership = cellData{
+            self.navigationItem.title = memebership.toBrand?.title
+            }
+        
+        //
+        ShowLogo.layer.borderColor = UIColor.gray.cgColor
+        ShowLogo.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+        ShowLogo.layer.shadowOffset = CGSize(width : 0,height: 2.0)
+        ShowLogo.layer.shadowOpacity = 0.5
+        ShowLogo.layer.shadowRadius = 0.0
+        ShowLogo.layer.masksToBounds = false
+        ShowLogo.layer.cornerRadius = 10.0
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {

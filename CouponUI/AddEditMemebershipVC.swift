@@ -54,6 +54,8 @@ class AddEditMemebershipVC: UIViewController {
             self.navigationItem.title = "멤버십 카드 추가"
             self.deleteButton.isHidden = true
         }
+        
+        deleteButton.layer.cornerRadius = deleteButton.frame.height / 2
 
     }
     
@@ -175,7 +177,7 @@ class AddEditMemebershipVC: UIViewController {
         realTimeBarcode.image = generateBarcodeFromString(string: paramBarcode.text!)
     }
     
-    @IBOutlet weak var favoriteLabel: UIButton!
+    
     
     
     

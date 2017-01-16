@@ -134,15 +134,7 @@
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //셀 선택시 하이라이트
-        
-        let cell = collectionView.cellForItem(at: indexPath)
-        if cell?.layer.borderWidth == 0 {
-            cell?.layer.borderWidth = 2.0
-            cell?.layer.borderColor = UIColor.red.cgColor
-        } else {
-            cell?.layer.borderColor = nil
-            cell?.layer.borderWidth = 0.0
-        }
+
         
         selectedTagInfo = collectionView.tag
         selectedImgInfo = indexPath.row

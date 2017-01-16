@@ -28,17 +28,7 @@ class MembershipCollectionVCell : UICollectionViewCell {
         viewLogoName.text = item.toBrand?.title
         viewLogoShow.image = item.toImage?.image as? UIImage
         
-//셀 라운드형
-//        viewLogoShow.layer.cornerRadius = 4
-//        viewLogoShow.layer.borderWidth = 1
-//        viewLogoShow.layer.borderColor = UIColor.gray.cgColor
-//        viewLogoShow.clipsToBounds = true
-//        viewLogoShow.layer.shadowColor = UIColor.black.cgColor
-//        viewLogoShow.layer.shadowOpacity = 0.8
-//        viewLogoShow.layer.shadowRadius = 3
-//        viewLogoShow.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
-        
-        
+
         // Shadow and Radius
         
         viewLogoShow.layer.borderColor = UIColor.gray.cgColor

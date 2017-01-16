@@ -22,8 +22,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="xrv-m4-Kgd">
-                                <rect key="frame" x="16" y="403" width="343" height="55.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="xrv-m4-Kgd">
+                                <rect key="frame" x="16" y="403" width="343" height="56"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="브랜드" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqo-yb-SCQ">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
@@ -49,7 +49,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="1QD-Nx-8df">
-                                <rect key="frame" x="16" y="478.5" width="343" height="55.5"/>
+                                <rect key="frame" x="16" y="479.5" width="343" height="55.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="바코드" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N6m-ZW-jML">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
@@ -77,13 +77,13 @@
                                     <constraint firstAttribute="trailing" secondItem="Vi5-VV-Twg" secondAttribute="trailing" id="mM7-Fr-daP"/>
                                 </constraints>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kxd-nk-EcJ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kxd-nk-EcJ">
                                 <rect key="frame" x="8" y="351" width="359" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="Iyj-i9-qFL"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="zUP-7i-rYm">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="zUP-7i-rYm">
                                 <rect key="frame" x="117" y="181" width="140" height="140"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="6zo-gI-5nm"/>
@@ -91,10 +91,11 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pIN-gg-oYk">
-                                <rect key="frame" x="0.0" y="584" width="375" height="34"/>
+                                <rect key="frame" x="170.5" y="584" width="34" height="34"/>
                                 <color key="backgroundColor" red="0.93834900856018066" green="0.71765679121017456" blue="0.72039312124252319" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="iQQ-NQ-zEp"/>
+                                    <constraint firstAttribute="height" constant="34" id="5iZ-WI-N7k"/>
+                                    <constraint firstAttribute="width" constant="34" id="ynP-YC-UyZ"/>
                                 </constraints>
                                 <state key="normal" title="삭제">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -103,7 +104,7 @@
                                     <action selector="deletePressed:" destination="V9i-4b-dZ9" eventType="touchUpInside" id="Ulg-rJ-eQY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CAm-2P-rCT">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CAm-2P-rCT">
                                 <rect key="frame" x="111" y="175" width="152" height="152"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="152" id="QUX-E4-WHv"/>
@@ -124,17 +125,16 @@
                             <constraint firstItem="CAm-2P-rCT" firstAttribute="centerX" secondItem="Wqw-hW-ppK" secondAttribute="centerX" constant="-0.5" id="Sw4-tj-EC2"/>
                             <constraint firstItem="1QD-Nx-8df" firstAttribute="leading" secondItem="Wqw-hW-ppK" secondAttribute="leadingMargin" id="T8A-pY-Div"/>
                             <constraint firstItem="xrv-m4-Kgd" firstAttribute="leading" secondItem="Wqw-hW-ppK" secondAttribute="leadingMargin" id="X24-We-vLn"/>
-                            <constraint firstAttribute="trailing" secondItem="pIN-gg-oYk" secondAttribute="trailing" id="Z7k-EB-koa"/>
                             <constraint firstItem="zUP-7i-rYm" firstAttribute="centerX" secondItem="Wqw-hW-ppK" secondAttribute="centerX" id="ZCk-hd-thE"/>
-                            <constraint firstItem="pIN-gg-oYk" firstAttribute="leading" secondItem="Wqw-hW-ppK" secondAttribute="leading" id="gS5-5x-C7t"/>
+                            <constraint firstItem="HWN-aU-qOq" firstAttribute="top" secondItem="pIN-gg-oYk" secondAttribute="bottom" id="dWa-vv-uLC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1QD-Nx-8df" secondAttribute="trailing" id="hJX-x5-1lX"/>
-                            <constraint firstItem="pIN-gg-oYk" firstAttribute="top" secondItem="1QD-Nx-8df" secondAttribute="bottom" constant="50" id="hPu-CI-kvl"/>
+                            <constraint firstItem="pIN-gg-oYk" firstAttribute="centerX" secondItem="Wqw-hW-ppK" secondAttribute="centerX" id="jLw-9Q-IpI"/>
                             <constraint firstItem="Kxd-nk-EcJ" firstAttribute="top" secondItem="CAm-2P-rCT" secondAttribute="bottom" constant="24" id="jTR-XQ-tnS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xrv-m4-Kgd" secondAttribute="trailing" id="nYb-eC-bh9"/>
-                            <constraint firstItem="HWN-aU-qOq" firstAttribute="top" secondItem="pIN-gg-oYk" secondAttribute="bottom" id="sIv-eG-D34"/>
                             <constraint firstAttribute="trailing" secondItem="Kxd-nk-EcJ" secondAttribute="trailing" constant="8" id="t7b-wK-zSv"/>
                             <constraint firstItem="Kxd-nk-EcJ" firstAttribute="top" secondItem="zUP-7i-rYm" secondAttribute="bottom" constant="30" id="tNt-kE-OdK"/>
                             <constraint firstItem="Kxd-nk-EcJ" firstAttribute="leading" secondItem="Wqw-hW-ppK" secondAttribute="leading" constant="8" id="yY0-QA-95N"/>
+                            <constraint firstItem="pIN-gg-oYk" firstAttribute="top" secondItem="1QD-Nx-8df" secondAttribute="bottom" constant="49" id="z0f-U4-xTZ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="수정/추가" id="7FG-3M-xi2">

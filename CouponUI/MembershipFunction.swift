@@ -30,7 +30,6 @@ func addHyphen(data:String) -> String {
             let k = (i/4 - 1) * 5
             barcode = barcode.insert(string: "-", ind: (4 + k))
         }
-        print(i)
         i += 1
     }
     

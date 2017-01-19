@@ -48,6 +48,8 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
         layout.minimumLineSpacing = 8
         collectionView!.collectionViewLayout = layout
 
+
+        
         
         
     }

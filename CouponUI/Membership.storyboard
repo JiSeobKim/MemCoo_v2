@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="xrv-m4-Kgd">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="xrv-m4-Kgd">
                                 <rect key="frame" x="16" y="403" width="343" height="56"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="브랜드" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqo-yb-SCQ">
@@ -77,13 +77,13 @@
                                     <constraint firstAttribute="trailing" secondItem="Vi5-VV-Twg" secondAttribute="trailing" id="mM7-Fr-daP"/>
                                 </constraints>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kxd-nk-EcJ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kxd-nk-EcJ">
                                 <rect key="frame" x="8" y="351" width="359" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="Iyj-i9-qFL"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="zUP-7i-rYm">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="zUP-7i-rYm">
                                 <rect key="frame" x="117" y="181" width="140" height="140"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="6zo-gI-5nm"/>
@@ -104,7 +104,7 @@
                                     <action selector="deletePressed:" destination="V9i-4b-dZ9" eventType="touchUpInside" id="Ulg-rJ-eQY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CAm-2P-rCT">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CAm-2P-rCT">
                                 <rect key="frame" x="111" y="175" width="152" height="152"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="152" id="QUX-E4-WHv"/>
@@ -194,7 +194,7 @@
                                     <constraint firstAttribute="height" constant="36" id="Snt-4K-YgY"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.68229192495346069" green="0.68239206075668335" blue="0.68227005004882812" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -357,6 +357,6 @@
         <image name="default" width="440" height="433"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="axa-gl-xNh"/>
+        <segue reference="yGb-mq-bpU"/>
     </inferredMetricsTieBreakers>
 </document>

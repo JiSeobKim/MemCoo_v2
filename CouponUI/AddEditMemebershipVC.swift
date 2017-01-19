@@ -55,7 +55,13 @@ class AddEditMemebershipVC: UIViewController {
             self.deleteButton.isHidden = true
         }
         
+        //삭제 버튼 테두리
         deleteButton.layer.cornerRadius = deleteButton.frame.height / 2
+        
+        //키보드 크기만큼 뷰를 위로 이동.
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
+
 
     }
     
@@ -176,6 +182,24 @@ class AddEditMemebershipVC: UIViewController {
     @IBAction func paramBarcodeButton(_ sender: UITextField) {
         realTimeBarcode.image = generateBarcodeFromString(string: paramBarcode.text!)
     }
+    
+    //키보드 크기만큼 뷰를 위로 이동.
+    func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y != 0 {
+                self.view.frame.origin.y += keyboardSize.height
+            }
+        }
+    }
+
     
     
     

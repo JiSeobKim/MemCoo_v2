@@ -127,13 +127,7 @@
         
         let logoArray = allcategory(collectionView.tag)[indexPath.row] as! UIImage
         cell.logo.image = logoArray
-        cell.logo.layer.borderColor = UIColor.gray.cgColor
-        cell.logo.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
-        cell.logo.layer.shadowOffset = CGSize(width : 0,height: 2.0)
-        cell.logo.layer.shadowOpacity = 0.5
-        cell.logo.layer.shadowRadius = 0.0
-        cell.logo.layer.masksToBounds = false
-        cell.logo.layer.cornerRadius = 10.0
+        
         
         return cell
     }

@@ -10,9 +10,11 @@ import UIKit
 import CoreData
 import TesseractOCR
 
-class CouponViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate, G8TesseractDelegate {
+class CouponViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, NSFetchedResultsControllerDelegate, G8TesseractDelegate {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var segment: UISegmentedControl!
+    
+    var originalImage: UIImage!
     
     //+버튼 눌렀을때의 액션
     @IBAction func add(_ sender: Any) {
@@ -30,19 +32,18 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
         }
         
         let ocr = UIAlertAction(title: "사진에서 바코드만 읽어오기", style: .default) {
-            (_) in
-            //파싱 퍼센트 표시 알림창.
-//            func progressImageRecognition(for tesseract: G8Tesseract!) {
-//                let progress = UIAlertController(title: "알림", message: "Recognition Progress: \(tesseract.progress)%", preferredStyle: UIAlertControllerStyle.alert)
-//                self.present(progress, animated: true)
-//                
-//                if tesseract.progress >= 90 {
-//                    self.dismiss(animated: true)
-//                }
-//            }
-            
+            (_) in            
             ad.isClipboardActionSheet = false
             
+            //이미지 선택.
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+            //imagePicker.mediaTypes = [kUTTypeImage as String]
+            imagePicker.allowsEditing = false
+            self.present(imagePicker, animated: true, completion: nil)
+            
+            //뷰 전환.
             if let addVC = self.storyboard?.instantiateViewController(withIdentifier: "AddEdit") {
                 self.navigationController?.pushViewController(addVC, animated: true)
             }
@@ -65,6 +66,19 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
         //add 버튼이 눌렸음을 다음 뷰에 전달하기 위해 isAddButton 변수에 true를 저장.
         ad.isAddButton = true
         self.present(alert, animated: true)
+    }
+    
+    //사진 앱 접근을 위한 메소드.
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            originalImage = image
+        }
+        //        imagePicker.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     var controller: NSFetchedResultsController<Coupon>!

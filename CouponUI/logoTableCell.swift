@@ -28,6 +28,15 @@ extension logoTableCell {
         categoryCollection.setContentOffset(categoryCollection.contentOffset, animated: false)
         categoryCollection.reloadData()
         
+        //그림자 추가
+        category.layer.borderColor = UIColor.gray.cgColor
+        category.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+        category.layer.shadowOffset = CGSize(width : 0,height: 2.0)
+        category.layer.shadowOpacity = 0.5
+        category.layer.shadowRadius = 0.0
+        category.layer.masksToBounds = false
+        category.layer.cornerRadius = 10.0
+
     }
     
     var collectionViewOffset: CGFloat {

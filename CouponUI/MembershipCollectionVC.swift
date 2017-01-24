@@ -18,6 +18,7 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
     @IBOutlet weak var collectionView: UICollectionView!
     var controller: NSFetchedResultsController<Membership>!
     
+  
     
 //
 //viewLoad
@@ -36,6 +37,21 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
         lpgr.delegate = self
         lpgr.delaysTouchesBegan = true
         self.collectionView?.addGestureRecognizer(lpgr)
+        
+        
+        //Cell Size
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        let width = UIScreen.main.bounds.width
+        layout.sectionInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        layout.itemSize = CGSize(width: width / 3.4, height: width / 3)
+        layout.minimumInteritemSpacing = 8
+        layout.minimumLineSpacing = 8
+        collectionView!.collectionViewLayout = layout
+
+
+        
+        
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -104,12 +120,14 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "viewcell", for: indexPath) as! MembershipCollectionVCell
         // 설정할 cell 선택(빨간 "viewcell"은 어트리뷰트인스펙터의 identifier)
+
+
         
         
         configureCell(cell: cell, indexPath: indexPath as NSIndexPath)
         //로고의 이미지/ 텍스트 값 대입
         
-        
+    
   
         return cell
         
@@ -136,6 +154,8 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
             performSegue(withIdentifier: "showCollection", sender: item)
         }
     }
+    
+    
 
 //화면전환시 데이터 넘기기 위한 준비
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

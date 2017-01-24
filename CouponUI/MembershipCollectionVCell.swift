@@ -10,12 +10,13 @@ import UIKit
 
 class MembershipCollectionVCell : UICollectionViewCell {
 
+    
  
     //viewcell 이 가지고 있는 값
     @IBOutlet weak var viewLogoShow: UIImageView!
     @IBOutlet weak var viewLogoName: UILabel!
 
-    @IBOutlet weak var favorite: UIImageView!
+    
     
     //choicecell 이 가지고 있는 값
     @IBOutlet weak var choiceLogoShow: UIImageView!
@@ -26,15 +27,26 @@ class MembershipCollectionVCell : UICollectionViewCell {
         
         viewLogoName.text = item.toBrand?.title
         viewLogoShow.image = item.toImage?.image as? UIImage
+        
+
+        // Shadow and Radius
+        
+        viewLogoShow.layer.borderColor = UIColor.gray.cgColor
+        viewLogoShow.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+        viewLogoShow.layer.shadowOffset = CGSize(width : 0,height: 2.0)
+        viewLogoShow.layer.shadowOpacity = 0.5
+        viewLogoShow.layer.shadowRadius = 0.0
+        viewLogoShow.layer.masksToBounds = false
+        viewLogoShow.layer.cornerRadius = 10.0
+        
+        
         if item.favorite == true {
-            favorite.image = UIImage(named: "Favorite")
+            
             let color = UIColor.yellow
             viewLogoName.layer.backgroundColor = color.cgColor
             viewLogoName.layer.cornerRadius = 10
         } else {
-            favorite.image = nil
             viewLogoName.layer.backgroundColor = nil
-
         }
         
     }

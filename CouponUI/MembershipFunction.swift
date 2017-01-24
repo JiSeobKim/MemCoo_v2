@@ -21,18 +21,20 @@ extension String {
 func addHyphen(data:String) -> String {
     var barcode = data
     let stringCount = barcode.characters.count
-    if stringCount > 4 {
-        barcode = barcode.insert(string: "-", ind: 4)
+    
+    var i : Int = 1
+    
+    while(i < stringCount) {
+        
+        if i % 4 == 0 {
+            let k = (i/4 - 1) * 5
+            barcode = barcode.insert(string: "-", ind: (4 + k))
+        }
+        i += 1
     }
-    if stringCount > 8 {
-        barcode = barcode.insert(string: "-", ind: 9)
-    }
-    if stringCount > 12 {
-        barcode = barcode.insert(string: "-", ind: 14)
-    }
-    if stringCount > 16 {
-        barcode = barcode.insert(string: "-", ind: 19)
-    }
-
+    
+    
+    
+    
     return barcode
 }

@@ -173,9 +173,6 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         
         var parsingBrain: ParsingBrain
         var couponInfo: ParsingBrain.CouponInfo
-        var parsingOCR: ParsingOCR
-        var OCRCouponInfo: ParsingOCR.CouponInfo
-        
         
         //상품명 텍스트 필드를 최초 응답자로 지정(스토리보드 내에서 dock을 이용해도 가능).
         if ad.isAddButton == true {
@@ -208,24 +205,27 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
             }
             //OCR 버튼을 눌렀을 때 이미지 OCR 후 바코드만 입력.
             else if ad.isClipboardActionSheet == false {
-//                let imagePicker = UIImagePickerController()
-//                imagePicker.delegate = self
-//                imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
-//                //imagePicker.mediaTypes = [kUTTypeImage as String]
-//                imagePicker.allowsEditing = false
-//                self.present(imagePicker, animated: true, completion: nil)
+//                //파싱 퍼센트 표시 알림창.
+//                func progressImageRecognition(for tesseract: G8Tesseract!) {
+//                    let progress = UIAlertController(title: "알림", message: "Recognition Progress: \(tesseract.progress)%", preferredStyle: UIAlertControllerStyle.alert)
+//                    self.present(progress, animated: true)
+//                
+//                    if tesseract.progress >= 90 {
+//                        self.dismiss(animated: true)
+//                    }
+//                }
                 
-                if let tesseract = G8Tesseract(language: "eng+kor") {
-                    tesseract.delegate = self
-                    //tesseract.charWhitelist = "0123456789"
-                    tesseract.image = UIImage(named: "gifticon_cu")?.g8_grayScale()    //.g8_blackAndWhite()
-                    tesseract.recognize()
-                    
-                    parsingOCR = ParsingOCR()
-                    OCRCouponInfo = parsingOCR.parsing(textFromClipboard: tesseract.recognizedText)
-                    barcode.text = OCRCouponInfo.barcode
-                    originalText.text = OCRCouponInfo.originalText
-                }
+//                if let tesseract = G8Tesseract(language: "eng+kor") {
+//                    tesseract.delegate = self
+//                    //tesseract.charWhitelist = "0123456789"
+//                    tesseract.image = UIImage(named: "gifticon_cu")?.g8_grayScale()    //.g8_blackAndWhite()
+//                    tesseract.recognize()
+//                    
+//                    parsingOCR = ParsingOCR()
+//                    OCRCouponInfo = parsingOCR.parsing(textFromClipboard: tesseract.recognizedText)
+//                    barcode.text = OCRCouponInfo.barcode
+//                    originalText.text = OCRCouponInfo.originalText
+//                }
             }
         }
         //수정 버튼을 눌렀을 때 타이틀과 버튼 이름 변경.
@@ -270,6 +270,40 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
     }
     
+    //OCR
+    override func viewDidAppear(_ animated: Bool) {
+        var parsingOCR: ParsingOCR
+        var OCRCouponInfo: ParsingOCR.CouponInfo
+        
+        if ad.isAddButton == true && ad.isClipboardActionSheet == false {
+            if let tesseract = G8Tesseract(language: "eng+kor") {
+                tesseract.delegate = self
+                //tesseract.charWhitelist = "0123456789"
+                tesseract.image = UIImage(named: "gifticon_cu")?.g8_grayScale()    //.g8_blackAndWhite()
+                tesseract.recognize()
+            
+                parsingOCR = ParsingOCR()
+                OCRCouponInfo = parsingOCR.parsing(textFromClipboard: tesseract.recognizedText)
+                barcode.text = OCRCouponInfo.barcode
+                originalText.text = OCRCouponInfo.originalText
+            }
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //파싱 퍼센트 표시 알림창.
+        if ad.isAddButton == true && ad.isClipboardActionSheet == false {
+            func progressImageRecognition(for tesseract: G8Tesseract!) {
+                let progress = UIAlertController(title: "알림", message: "Recognition Progress: \(tesseract.progress)%", preferredStyle: UIAlertControllerStyle.alert)
+                self.present(progress, animated: true)
+            
+                if tesseract.progress >= 90 {
+                    self.dismiss(animated: true)
+                }
+            }
+        }
+    }
+    
     
     //키보드 위에 버튼 표시.
     func doneClicked() {
@@ -298,18 +332,18 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         print("Recognition Progress \(tesseract.progress)%")
     }
     
-    //사진 앱 접근을 위한 메소드.
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
-        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            logo.image = image
-        }
-//        imagePicker.dismiss(animated: true, completion: nil)
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        self.dismiss(animated: true, completion: nil)
-    }
+//    //사진 앱 접근을 위한 메소드.
+//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
+//        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+//            logo.image = image
+//        }
+////        imagePicker.dismiss(animated: true, completion: nil)
+//        self.dismiss(animated: true, completion: nil)
+//    }
+//    
+//    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+//        self.dismiss(animated: true, completion: nil)
+//    }
     
     //텍스트 필드가 아닌 곳을 터치했을 때 키보드 닫기.
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

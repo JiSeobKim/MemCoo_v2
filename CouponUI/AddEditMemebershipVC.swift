@@ -21,7 +21,7 @@ class AddEditMemebershipVC: UIViewController {
     var membershipToEdit: Membership?
     var membership: Membership!
     var bright : CGFloat?
-    var checkFavorite : Bool?
+    
     
 
     @IBOutlet weak var LabelBrand: UILabel!
@@ -54,6 +54,14 @@ class AddEditMemebershipVC: UIViewController {
             self.navigationItem.title = "멤버십 카드 추가"
             self.deleteButton.isHidden = true
         }
+        
+        //삭제 버튼 테두리
+        deleteButton.layer.cornerRadius = deleteButton.frame.height / 2
+        
+        //키보드 크기만큼 뷰를 위로 이동.
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
+
 
     }
     
@@ -98,7 +106,7 @@ class AddEditMemebershipVC: UIViewController {
             paramBarcode.layer.borderWidth = 0
             inputCheck2 = true
         }
-
+        
         if inputCheck1 == true && inputCheck2 == true {
             
             if membershipToEdit == nil {
@@ -122,9 +130,7 @@ class AddEditMemebershipVC: UIViewController {
             if let barcode = paramBarcode.text {
                 membership.barcode = barcode
             }
-            if checkFavorite != nil {
-                membership.favorite = true
-            }
+            
             
             ad.saveContext()
             
@@ -177,11 +183,27 @@ class AddEditMemebershipVC: UIViewController {
         realTimeBarcode.image = generateBarcodeFromString(string: paramBarcode.text!)
     }
     
-    @IBOutlet weak var favoriteLabel: UIButton!
-    
-    @IBAction func favorite(_ sender: Any) {
-        checkFavorite = true
+    //키보드 크기만큼 뷰를 위로 이동.
+    func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
     }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y != 0 {
+                self.view.frame.origin.y += keyboardSize.height
+            }
+        }
+    }
+
+    
+    
+    
+    
     
     
     

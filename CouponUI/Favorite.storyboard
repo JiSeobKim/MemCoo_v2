@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FavoriteCell" rowHeight="163" id="Qr5-GV-Yb4" customClass="FavoriteCell" customModule="MemebershipCoupon" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" showsReorderControl="YES" indentationWidth="10" reuseIdentifier="FavoriteCell" rowHeight="163" id="Qr5-GV-Yb4" customClass="FavoriteCell" customModule="MemebershipCoupon" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="56" width="375" height="163"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qr5-GV-Yb4" id="NRs-Da-RpN">
@@ -69,7 +69,13 @@
                             <outlet property="delegate" destination="N2a-fE-9r6" id="FMe-tE-TXk"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="즐겨찾기" id="67l-fp-m2C"/>
+                    <navigationItem key="navigationItem" title="즐겨찾기" id="67l-fp-m2C">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="edit" id="l2e-5v-5W4">
+                            <connections>
+                                <action selector="startEditing:" destination="N2a-fE-9r6" id="bD1-zp-VDZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>

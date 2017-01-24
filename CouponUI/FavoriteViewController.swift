@@ -17,6 +17,7 @@ class FavoriteViewController: UITableViewController, NSFetchedResultsControllerD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,6 +61,29 @@ class FavoriteViewController: UITableViewController, NSFetchedResultsControllerD
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 
         return objectsArray[section].sectionName
+    }
+    
+    //tableview re-oderring
+    @IBAction func startEditing(_ sender: Any) {
+        
+        tableView.setEditing(true, animated: true)
+    }
+    
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return UITableViewCellEditingStyle.none
+    }
+    
+    override func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
+    
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
     }
     
     func configureCell(cell: FavoriteCell, indexPath: NSIndexPath) {

@@ -34,7 +34,7 @@
     
     func addLogoAtArray()->(){
         //for 문을 통한 로고들 추가
-        for row in 1...10 {
+        for row in 1...11 {
             if UIImage(named:"telecommunication\(row)") != nil {
                 telecommunicationLogo.append(UIImage(named:"telecommunication\(row)")!)
             }
@@ -132,7 +132,7 @@
         
         let logoArray = allcategory(collectionView.tag)[indexPath.row] as! UIImage
         cell.logo.image = logoArray
-        
+        cell.brand.isHidden = true
         
         return cell
     }

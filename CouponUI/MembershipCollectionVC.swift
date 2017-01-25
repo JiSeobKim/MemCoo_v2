@@ -174,6 +174,7 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
         
     }
     
+
     
 //
 //coreData 부분

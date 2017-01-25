@@ -161,6 +161,9 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
 
     //선택된 cell의 처리 정의
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //셀 선택 후 뒤로 돌아왔을 때 선택 취소.
+        tableView.deselectRow(at: indexPath, animated: true)
+        
         if let objs = controller.fetchedObjects, objs.count > 0 {
             let item = objs[indexPath.row]
             performSegue(withIdentifier: "CouponDetailsVC", sender: item)

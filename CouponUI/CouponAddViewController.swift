@@ -174,21 +174,19 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         var parsingBrain: ParsingBrain
         var couponInfo: ParsingBrain.CouponInfo
         
-        //상품명 텍스트 필드를 최초 응답자로 지정(스토리보드 내에서 dock을 이용해도 가능).
-        if ad.isAddButton == true {
-            self.product.becomeFirstResponder()
-        }
-        //화면 전환시 입력창 바로 반응
-        
 //        imagePicker = UIImagePickerController()
 //        imagePicker.delegate = self
         if couponToEdit != nil {
             loadCouponData()
         }
         
-        //add 버튼을 눌렀을 때 타이틀과 버튼 이름 변경.
+        //add 버튼을 눌렀을 때.
         if ad.isAddButton == true {
             self.navigationItem.title = "쿠폰 추가"
+            
+            //상품명 텍스트 필드를 최초 응답자로 지정(스토리보드 내에서 dock을 이용해도 가능).
+            self.product.becomeFirstResponder()
+            
             //추가 상태일 때에는 삭제 버튼 숨김.
             deleteButton.isHidden = true
             
@@ -228,7 +226,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
 //                }
             }
         }
-        //수정 버튼을 눌렀을 때 타이틀과 버튼 이름 변경.
+        //수정 버튼을 눌렀을 때.
         else {
             self.navigationItem.title = "쿠폰 수정"
             loadCouponData()

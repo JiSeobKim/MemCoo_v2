@@ -132,7 +132,7 @@
         
         let logoArray = allcategory(collectionView.tag)[indexPath.row] as! UIImage
         cell.logo.image = logoArray
-        
+        cell.brand.isHidden = true
         
         return cell
     }

@@ -363,6 +363,15 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         
     }
     
+    //로고데이타 받아오기
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "logoSelect2" {
+            (segue.destination as? logoSelect)?.delegate = self
+        }
+    }
+
+    
     /*
     // MARK: - Navigation
 
@@ -375,14 +384,14 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
 }
 
 
-////extension 부분
-//
-//extension CouponAddViewController : logoData {
-//    
-//    func updataData(data: UIImage) {
-//        
-//        logo.image = data
-//        
-//    }
-//    
-//}
+//extension 부분
+
+
+
+extension CouponAddViewController : logoData {
+    
+    func updataData(data: UIImage) {
+        logo.image = data
+    }
+    
+}

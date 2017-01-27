@@ -147,7 +147,8 @@
         if selectedImgInfo != nil {
             let logoArray = allcategory(selectedTagInfo!)[selectedImgInfo!] as! UIImage
             self.delegate?.updataData(data: logoArray )
-            _ = self.navigationController?.popViewController(animated: true)
+//            _ = self.navigationController?.popViewController(animated: true)
+            self.presentingViewController?.dismiss(animated: true, completion: nil)
         }
 
         

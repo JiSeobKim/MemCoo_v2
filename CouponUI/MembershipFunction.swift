@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit
 
 
 ////////////////////////////지섭
@@ -38,3 +38,9 @@ func addHyphen(data:String) -> String {
     
     return barcode
 }
+
+protocol logoData {
+    func updataData(data: UIImage)
+}
+
+

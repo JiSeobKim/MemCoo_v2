@@ -13,6 +13,7 @@ class FavoriteViewController: UITableViewController, NSFetchedResultsControllerD
 
     var membershipController: NSFetchedResultsController<Membership>!
     var couponController: NSFetchedResultsController<Coupon>!
+    var favoriteController: NSFetchedResultsController<Favorite>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,59 +101,102 @@ class FavoriteViewController: UITableViewController, NSFetchedResultsControllerD
     
     
     //membership 패치해오는 펑션
-    func membershipFetch() -> [Membership] {
-        var membership: [Membership] = []
-        let fetchRequest: NSFetchRequest<Membership> = Membership.fetchRequest()
+    func membershipFetch() -> [Favorite] {
+//        var membership: [Membership] = []
+//        let fetchRequest: NSFetchRequest<Membership> = Membership.fetchRequest()
+//        let dateSort = NSSortDescriptor(key: "created", ascending: false)
+//        let favoriteSort = NSSortDescriptor(key: "favorite", ascending: false)
+//        
+//        let favorite = "favorite"
+//        
+//        let isPrediccate = NSPredicate(format: "%K == YES", favorite)
+//        fetchRequest.sortDescriptors = [dateSort,favoriteSort]
+//        fetchRequest.predicate = isPrediccate
+//        
+//        let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+//        
+//        //save시 tableview update를 위한 델리게이트 전달
+//        controller.delegate = self
+//        self.membershipController = controller
+//        
+//        do{
+//            membership = try ad.persistentContainer.viewContext.fetch(fetchRequest)
+//            return membership
+//        } catch {
+//            print("\(error)")
+//        }
+//        return membership
+        
+        var favorite: [Favorite] = []
+        let fetchRequest: NSFetchRequest<Favorite> = Favorite.fetchRequest()
         let dateSort = NSSortDescriptor(key: "created", ascending: false)
-        let favoriteSort = NSSortDescriptor(key: "favorite", ascending: false)
+        //        let favoriteSort = NSSortDescriptor(key: "isCoupon", ascending: false)
         
-        let favorite = "favorite"
-        
-        let isPrediccate = NSPredicate(format: "%K == YES", favorite)
-        fetchRequest.sortDescriptors = [dateSort,favoriteSort]
+        let isPrediccate = NSPredicate(format: "%K == YES", "isMembership")
+        fetchRequest.sortDescriptors = [dateSort]
         fetchRequest.predicate = isPrediccate
         
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-        
-        //save시 tableview update를 위한 델리게이트 전달
         controller.delegate = self
-        self.membershipController = controller
+        self.favoriteController = controller
         
         do{
-            membership = try ad.persistentContainer.viewContext.fetch(fetchRequest)
-            return membership
+            favorite = try ad.persistentContainer.viewContext.fetch(fetchRequest)
+            return favorite
         } catch {
             print("\(error)")
         }
-        return membership
+        return favorite
     }
     
     //coupon 패치해오는 펑션
-    func couponFetch() -> [Coupon] {
-        var coupon: [Coupon] = []
-        let fetchRequest: NSFetchRequest<Coupon> = Coupon.fetchRequest()
+    func couponFetch() -> [Favorite] {
+//        var coupon: [Coupon] = []
+//        let fetchRequest: NSFetchRequest<Coupon> = Coupon.fetchRequest()
+//        let dateSort = NSSortDescriptor(key: "created", ascending: false)
+//        let favoriteSort = NSSortDescriptor(key: "favorite", ascending: false)
+//        
+//        let favorite = "favorite"
+//        
+//        let isPrediccate = NSPredicate(format: "%K == YES", favorite)
+//        fetchRequest.sortDescriptors = [dateSort,favoriteSort]
+//        fetchRequest.predicate = isPrediccate
+//        
+//        let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+//        
+//        //save시 tableview update를 위한 델리게이트 전달
+//        controller.delegate = self
+//        self.couponController = controller
+//        
+//        do{
+//            coupon = try ad.persistentContainer.viewContext.fetch(fetchRequest)
+//            return coupon
+//        } catch {
+//            print("\(error)")
+//        }
+//        return coupon
+        
+        var favorite: [Favorite] = []
+        let fetchRequest: NSFetchRequest<Favorite> = Favorite.fetchRequest()
         let dateSort = NSSortDescriptor(key: "created", ascending: false)
-        let favoriteSort = NSSortDescriptor(key: "favorite", ascending: false)
+//        let favoriteSort = NSSortDescriptor(key: "isCoupon", ascending: false)
         
-        let favorite = "favorite"
-        
-        let isPrediccate = NSPredicate(format: "%K == YES", favorite)
-        fetchRequest.sortDescriptors = [dateSort,favoriteSort]
+        let isPrediccate = NSPredicate(format: "%K == YES", "isCoupon")
+        fetchRequest.sortDescriptors = [dateSort]
         fetchRequest.predicate = isPrediccate
         
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-        
-        //save시 tableview update를 위한 델리게이트 전달
         controller.delegate = self
-        self.couponController = controller
-        
+        self.favoriteController = controller
+
         do{
-            coupon = try ad.persistentContainer.viewContext.fetch(fetchRequest)
-            return coupon
+            favorite = try ad.persistentContainer.viewContext.fetch(fetchRequest)
+            return favorite
         } catch {
             print("\(error)")
         }
-        return coupon
+        return favorite
+        
     }
     //컨트롤러가 바뀔때마다 테이블뷰 업데이트
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {

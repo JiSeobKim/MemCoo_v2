@@ -18,6 +18,7 @@ extension String {
     }
 }
 
+//바코드 4자리 마다 하이픈 넣어주기
 func addHyphen(data:String) -> String {
     var barcode = data
     let stringCount = barcode.characters.count
@@ -39,8 +40,40 @@ func addHyphen(data:String) -> String {
     return barcode
 }
 
+//vc2->vc1 데이터 전송을 위한 프로토콜
 protocol logoData {
     func updataData(data: UIImage)
 }
 
 
+// 키보드 사라지게 하는 코드
+extension UIViewController {
+
+    
+    func hideKeyboardWhenTappedAround(_ a : CGFloat) {
+        ad.heightForKeyboard = a
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        NotificationCenter.default.addObserver(self, selector: #selector(UIViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(UIViewController.keyboardWillHide), name: Notification.Name.UIKeyboardWillHide, object: nil)
+    }
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    func keyboardWillShow(notification: Notification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height / ad.heightForKeyboard!
+            }
+        }
+    }
+    func keyboardWillHide(notification: Notification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y != 0 {
+                self.view.frame.origin.y += keyboardSize.height / ad.heightForKeyboard!
+            }
+        }
+    }
+
+}

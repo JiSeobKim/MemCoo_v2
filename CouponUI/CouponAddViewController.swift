@@ -9,11 +9,12 @@
 import UIKit
 import TesseractOCR
 
-class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, G8TesseractDelegate {
+class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, G8TesseractDelegate, UITextViewDelegate {
     var imagePicker: UIImagePickerController!
 
     //detail에서 넘어온 coupon 객체를 받기하기 위한 coupon 객체
     var couponToEdit: Coupon?
+    @IBOutlet weak var memoField: UITextView!
     
     //밝기 조절용
     var bright : CGFloat?
@@ -173,7 +174,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         
         var parsingBrain: ParsingBrain
         var couponInfo: ParsingBrain.CouponInfo
-        
+        memoField.delegate = self
 //        imagePicker = UIImagePickerController()
 //        imagePicker.delegate = self
         if couponToEdit != nil {
@@ -263,10 +264,8 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         expiredDate.inputAccessoryView = keyboardToolbar
         originalText.inputAccessoryView = keyboardToolbar
         
-        //키보드 크기만큼 뷰를 위로 이동.
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
-    }
+        
+        }
     
     //OCR
     override func viewDidAppear(_ animated: Bool) {
@@ -308,22 +307,6 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         view.endEditing(true)
     }
     
-    //키보드 크기만큼 뷰를 위로 이동.
-    func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0 {
-                self.view.frame.origin.y -= keyboardSize.height
-            }
-        }
-    }
-    
-    func keyboardWillHide(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y != 0 {
-                self.view.frame.origin.y += keyboardSize.height
-            }
-        }
-    }
     
     //파싱 퍼센트 표시.
     func progressImageRecognition(for tesseract: G8Tesseract!) {
@@ -370,6 +353,12 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
             (segue.destination as? logoSelect)?.delegate = self
         }
     }
+    //메모 선택시 프레임 이동
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        self.hideKeyboardWhenTappedAround(1)
+    }
+    
+ 
 
     
     /*
@@ -385,8 +374,6 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
 
 
 //extension 부분
-
-
 
 extension CouponAddViewController : logoData {
     

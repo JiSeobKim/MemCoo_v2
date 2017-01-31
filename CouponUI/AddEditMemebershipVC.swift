@@ -59,12 +59,23 @@ class AddEditMemebershipVC: UIViewController {
         //삭제 버튼 테두리
         deleteButton.layer.cornerRadius = deleteButton.frame.height / 2
         
-        //키보드 크기만큼 뷰를 위로 이동.
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
+        
+        //다른곳 터치시 키보드 내림 , 프레임 이동
+        self.hideKeyboardWhenTappedAround(1.5)
 
 
     }
+    
+    
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: Notification.Name.UIKeyboardDidHide, object: nil)
+    }
+    
+    //키보드 크기만큼 뷰를 위로 이동.
+    
+    
     
 
     
@@ -174,34 +185,15 @@ class AddEditMemebershipVC: UIViewController {
         }
     }
     
-    //텍스트 필드가 아닌 곳을 터치했을 때 키보드 닫기.
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        paramBrand.resignFirstResponder()
-        paramBarcode.resignFirstResponder()
-    }
+    
     
     //실시간 바코드 생성
     @IBAction func paramBarcodeButton(_ sender: UITextField) {
         realTimeBarcode.image = generateBarcodeFromString(string: paramBarcode.text!)
     }
     
-    //키보드 크기만큼 뷰를 위로 이동.
-    func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0 {
-                self.view.frame.origin.y -= keyboardSize.height / 2
-            }
-        }
-    }
     
-    func keyboardWillHide(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y != 0 {
-                self.view.frame.origin.y += keyboardSize.height / 2
-            }
-        }
-    }
-
+    
     
     
     

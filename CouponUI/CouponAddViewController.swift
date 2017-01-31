@@ -175,6 +175,9 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         var parsingBrain: ParsingBrain
         var couponInfo: ParsingBrain.CouponInfo
         memoField.delegate = self
+    
+        //다른곳 터치시 키보드 제거 및 프레임 원위치
+        self.hideKeyboardWhenTappedAround()
 //        imagePicker = UIImagePickerController()
 //        imagePicker.delegate = self
         if couponToEdit != nil {
@@ -326,13 +329,10 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
 //        self.dismiss(animated: true, completion: nil)
 //    }
     
-    //텍스트 필드가 아닌 곳을 터치했을 때 키보드 닫기.
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        product.resignFirstResponder()
-        barcode.resignFirstResponder()
-        expiredDate.resignFirstResponder()
-        originalText.resignFirstResponder()
-    }
+
+    
+    
+        
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -355,7 +355,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
     }
     //메모 선택시 프레임 이동
     func textViewDidBeginEditing(_ textView: UITextView) {
-        self.hideKeyboardWhenTappedAround(1)
+        self.moveFrame()
     }
     
  

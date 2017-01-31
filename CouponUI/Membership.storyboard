@@ -39,6 +39,9 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="brandField:" destination="V9i-4b-dZ9" eventType="editingDidBegin" id="54Y-aK-D2m"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -66,7 +69,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                         <connections>
-                                            <action selector="paramBarcodeButton:" destination="V9i-4b-dZ9" eventType="editingDidEnd" id="el7-ki-jBz"/>
+                                            <action selector="barcodeField:" destination="V9i-4b-dZ9" eventType="editingDidBegin" id="F5O-RN-RyY"/>
                                             <action selector="paramBarcodeButton:" destination="V9i-4b-dZ9" eventType="editingChanged" id="y5t-1d-agn"/>
                                         </connections>
                                     </textField>

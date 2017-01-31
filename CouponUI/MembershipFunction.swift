@@ -49,31 +49,37 @@ protocol logoData {
 // 키보드 사라지게 하는 코드
 extension UIViewController {
 
-    
-    func hideKeyboardWhenTappedAround(_ a : CGFloat) {
-        ad.heightForKeyboard = a
+
+
+    func hideKeyboardWhenTappedAround() {
+        
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
-        NotificationCenter.default.addObserver(self, selector: #selector(UIViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(UIViewController.keyboardWillHide), name: Notification.Name.UIKeyboardWillHide, object: nil)
+        
+        
+        
     }
     func dismissKeyboard() {
         view.endEditing(true)
     }
+    func moveFrame(){
+        NotificationCenter.default.addObserver(self, selector: #selector(UIViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(UIViewController.keyboardWillHide), name: Notification.Name.UIKeyboardWillHide, object: nil)
+    }
     
     func keyboardWillShow(notification: Notification) {
+        
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0 {
-                self.view.frame.origin.y -= keyboardSize.height / ad.heightForKeyboard!
-            }
+                self.view.frame.origin.y -= keyboardSize.height / 3            }
         }
     }
     func keyboardWillHide(notification: Notification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y != 0 {
-                self.view.frame.origin.y += keyboardSize.height / ad.heightForKeyboard!
-            }
-        }
+        self.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
     }
-
+    
 }
+
+
+

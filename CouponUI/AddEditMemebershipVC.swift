@@ -59,9 +59,9 @@ class AddEditMemebershipVC: UIViewController {
         //삭제 버튼 테두리
         deleteButton.layer.cornerRadius = deleteButton.frame.height / 2
         
+        //다른 곳 터치시 키보드 제거 및 프레임 원위치
+        self.hideKeyboardWhenTappedAround()
         
-        //다른곳 터치시 키보드 내림 , 프레임 이동
-        self.hideKeyboardWhenTappedAround(1.5)
 
 
     }
@@ -183,6 +183,7 @@ class AddEditMemebershipVC: UIViewController {
             
             (segue.destination as? logoSelect)?.delegate = self
         }
+        
     }
     
     
@@ -194,10 +195,22 @@ class AddEditMemebershipVC: UIViewController {
     
     
     
+//텍스트 필드 입력 관련
     
-    
-    
-    
+
+
+ 
+    @IBAction func brandField(_ sender: Any) {
+        //다른곳 터치시 키보드 내림 , 프레임 이동
+        ad.heightForKeyboard = 3
+        self.moveFrame()
+    }
+
+    @IBAction func barcodeField(_ sender: Any) {
+        //다른곳 터치시 키보드 내림 , 프레임 이동
+        ad.heightForKeyboard = 3
+        self.moveFrame()
+    }
     
     
     

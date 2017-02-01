@@ -21,5 +21,6 @@ extension Favorite {
     @NSManaged public var toCoupon: Coupon?
     @NSManaged public var toMembership: Membership?
     @NSManaged public var created: NSDate?
+    @NSManaged public var index: Int32
 
 }

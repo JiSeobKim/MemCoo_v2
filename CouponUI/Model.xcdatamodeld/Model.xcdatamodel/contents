@@ -29,6 +29,7 @@
     </entity>
     <entity name="Favorite" representedClassName="Favorite" syncable="YES">
         <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="index" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="isCoupon" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="isMembership" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="toCoupon" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Coupon" inverseName="toFavorite" inverseEntity="Coupon" syncable="YES"/>
@@ -55,7 +56,7 @@
         <element name="Brand" positionX="-126" positionY="-0" width="128" height="103"/>
         <element name="Category" positionX="-180" positionY="648" width="128" height="103"/>
         <element name="Coupon" positionX="-558" positionY="113" width="128" height="238"/>
-        <element name="Favorite" positionX="-794" positionY="306" width="128" height="120"/>
+        <element name="Favorite" positionX="-794" positionY="306" width="128" height="135"/>
         <element name="Image" positionX="160" positionY="315" width="128" height="120"/>
         <element name="Membership" positionX="-560" positionY="401" width="128" height="163"/>
     </elements>

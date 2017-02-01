@@ -87,6 +87,9 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
                     
                 } else {
                     item.favorite = true
+                    
+                    favoriteContext.isMembership = true
+                    favoriteContext.index = 0
                     item.toFavorite = favoriteContext
                 }
                 ad.saveContext()

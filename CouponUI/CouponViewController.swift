@@ -111,6 +111,7 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
                             item.favorite = true
                             
                             favoriteContext.isCoupon = true
+                            favoriteContext.index = 0
                             item.toFavorite = favoriteContext
                             ad.saveContext()
                         }

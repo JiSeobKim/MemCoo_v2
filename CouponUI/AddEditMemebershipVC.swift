@@ -62,8 +62,11 @@ class AddEditMemebershipVC: UIViewController {
         //다른 곳 터치시 키보드 제거 및 프레임 원위치
         self.hideKeyboardWhenTappedAround()
         
-
-
+        //툴바
+//        addToolBar(textField: paramBrand)
+//        addToolBar(textField: paramBarcode)
+        addInputAccessoryForTextFields(textFields: [paramBrand,paramBarcode],dismissable: true, previousNextable: true)
+        
     }
     
     
@@ -201,29 +204,26 @@ class AddEditMemebershipVC: UIViewController {
 
  
     @IBAction func brandField(_ sender: Any) {
-        //다른곳 터치시 키보드 내림 , 프레임 이동
-        ad.heightForKeyboard = 3
+        // 프레임 이동
+        ad.heightForKeyboard = 2.5
         self.moveFrame()
     }
 
     @IBAction func barcodeField(_ sender: Any) {
-        //다른곳 터치시 키보드 내림 , 프레임 이동
-        ad.heightForKeyboard = 3
+        //프레임 이동
+        ad.heightForKeyboard = 1.2
         self.moveFrame()
     }
     
-    
+
     
 }
 
 //extension 부분
 
     extension AddEditMemebershipVC : logoData {
-        
         func updataData(data: UIImage) {
-            
+            //받아온 값 넘기기
             paramImage.image = data
-            
         }
-        
     }

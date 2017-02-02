@@ -60,7 +60,7 @@
             }
             
             if UIImage(named:"symbol\(row)") != nil {
-                martLogo.append(UIImage(named:"symbol\(row)")!)
+                symbolLogo.append(UIImage(named:"symbol\(row)")!)
             }
         }
     }

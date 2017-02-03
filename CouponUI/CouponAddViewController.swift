@@ -175,14 +175,8 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         var parsingBrain: ParsingBrain
         var couponInfo: ParsingBrain.CouponInfo
         memoField.delegate = self
-    
-        //다른곳 터치시 키보드 제거 및 프레임 원위치
-        self.hideKeyboardWhenTappedAround()
-//        imagePicker = UIImagePickerController()
-//        imagePicker.delegate = self
-        if couponToEdit != nil {
-            loadCouponData()
-        }
+
+
         
         //add 버튼을 눌렀을 때.
         if ad.isAddButton == true {
@@ -235,37 +229,13 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
             self.navigationItem.title = "쿠폰 수정"
             loadCouponData()
         }
-        
-        //로고 탭했을 때 로고 뷰 보여주기.
-        //        var imageView = logoImage
-        //        let tapGestureRecoginzer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(img:)))
-        //        imageView?.isUserInteractionEnabled = true
-        //        imageView?.addGestureRecognizer(tapGestureRecoginzer)
-        //
-        //        func imageTapped(img: AnyObject) {
-        //            //
-        //        }
-        
+   
         //클립보드 표시.
 //        if let copiedString = UIPasteboard.general.string {
 //            originalText.text = copiedString
 //        }
         
-        //키보드 위에 버튼 표시.
-        let keyboardToolbar = UIToolbar()
-        keyboardToolbar.barStyle = .default
-        keyboardToolbar.isTranslucent = true
-        keyboardToolbar.sizeToFit()
-        
-        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
-        let doneBarButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: self, action: #selector(self.doneClicked))
-        //let nextBarButton = UIBarButtonItem(image: UIImage(named: "keyboardPreviousButton"), style: .plain, target: self, action: "")
-        keyboardToolbar.setItems([flexibleSpace, doneBarButton], animated: true)
-        
-        product.inputAccessoryView = keyboardToolbar
-        barcode.inputAccessoryView = keyboardToolbar
-        expiredDate.inputAccessoryView = keyboardToolbar
-        originalText.inputAccessoryView = keyboardToolbar
+
         
         
         }
@@ -305,11 +275,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
     }
     
     
-    //키보드 위에 버튼 표시.
-    func doneClicked() {
-        view.endEditing(true)
-    }
-    
+
     
     //파싱 퍼센트 표시.
     func progressImageRecognition(for tesseract: G8Tesseract!) {

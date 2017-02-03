@@ -63,8 +63,6 @@ class AddEditMemebershipVC: UIViewController {
         self.hideKeyboardWhenTappedAround()
         
         //툴바
-//        addToolBar(textField: paramBrand)
-//        addToolBar(textField: paramBarcode)
         addInputAccessoryForTextFields(textFields: [paramBrand,paramBarcode],dismissable: true, previousNextable: true)
         
     }
@@ -205,13 +203,13 @@ class AddEditMemebershipVC: UIViewController {
  
     @IBAction func brandField(_ sender: Any) {
         // 프레임 이동
-        ad.heightForKeyboard = 2.5
+        ad.heightForKeyboard = 2
         self.moveFrame()
     }
 
     @IBAction func barcodeField(_ sender: Any) {
         //프레임 이동
-        ad.heightForKeyboard = 1.2
+        ad.heightForKeyboard = 1.5
         self.moveFrame()
     }
     

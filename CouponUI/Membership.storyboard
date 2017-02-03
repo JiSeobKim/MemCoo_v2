@@ -81,16 +81,16 @@
                                 </constraints>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kxd-nk-EcJ">
-                                <rect key="frame" x="8" y="351.5" width="359" height="22"/>
+                                <rect key="frame" x="8" y="322.5" width="359" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="Iyj-i9-qFL"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="zUP-7i-rYm">
-                                <rect key="frame" x="117" y="181.5" width="140" height="140"/>
+                                <rect key="frame" x="103" y="124.5" width="168" height="168"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="140" id="6zo-gI-5nm"/>
-                                    <constraint firstAttribute="width" constant="140" id="Mi6-7D-akG"/>
+                                    <constraint firstAttribute="height" constant="168" id="6zo-gI-5nm"/>
+                                    <constraint firstAttribute="width" constant="168" id="Mi6-7D-akG"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pIN-gg-oYk">
@@ -108,10 +108,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CAm-2P-rCT">
-                                <rect key="frame" x="111" y="175.5" width="152" height="152"/>
+                                <rect key="frame" x="97" y="118.5" width="180" height="180"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="152" id="QUX-E4-WHv"/>
-                                    <constraint firstAttribute="height" constant="152" id="TtF-aP-acs"/>
+                                    <constraint firstAttribute="width" constant="180" id="QUX-E4-WHv"/>
+                                    <constraint firstAttribute="height" constant="180" id="TtF-aP-acs"/>
                                 </constraints>
                                 <color key="tintColor" red="0.56920522451400757" green="0.54980164766311646" blue="0.49957269430160522" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="100" maxX="90" maxY="0.0"/>
@@ -124,7 +124,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="1QD-Nx-8df" firstAttribute="top" secondItem="xrv-m4-Kgd" secondAttribute="bottom" constant="20" id="2ir-MQ-6tM"/>
-                            <constraint firstItem="xrv-m4-Kgd" firstAttribute="top" secondItem="Kxd-nk-EcJ" secondAttribute="bottom" constant="30" id="7C4-29-ldV"/>
+                            <constraint firstItem="Kxd-nk-EcJ" firstAttribute="centerY" secondItem="Wqw-hW-ppK" secondAttribute="centerY" id="86l-jy-Oka"/>
+                            <constraint firstItem="Kxd-nk-EcJ" firstAttribute="centerX" secondItem="Wqw-hW-ppK" secondAttribute="centerX" id="K7h-Pc-07q"/>
                             <constraint firstItem="CAm-2P-rCT" firstAttribute="centerX" secondItem="Wqw-hW-ppK" secondAttribute="centerX" constant="-0.5" id="Sw4-tj-EC2"/>
                             <constraint firstItem="1QD-Nx-8df" firstAttribute="leading" secondItem="Wqw-hW-ppK" secondAttribute="leadingMargin" id="T8A-pY-Div"/>
                             <constraint firstItem="xrv-m4-Kgd" firstAttribute="leading" secondItem="Wqw-hW-ppK" secondAttribute="leadingMargin" id="X24-We-vLn"/>

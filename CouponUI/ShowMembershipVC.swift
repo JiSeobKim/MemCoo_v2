@@ -42,8 +42,8 @@ class ShowMembershipVC: UIViewController, UIGestureRecognizerDelegate {
         panGesture.delegate = self
         panGesture.minimumNumberOfTouches = 1
         self.view.addGestureRecognizer(panGesture)
-            
         
+
         
         if cellData != nil {
             loadMembershipData()
@@ -86,14 +86,20 @@ class ShowMembershipVC: UIViewController, UIGestureRecognizerDelegate {
                 var brightness: Float = Float(UIScreen.main.brightness)
                 brightness = brightness - 0.03
                 UIScreen.main.brightness = CGFloat(brightness)
+                print("right")
+                print("\(brightness)")
             }
             else {
                 var brightness: Float = Float(UIScreen.main.brightness)
                 brightness = brightness + 0.03
                 UIScreen.main.brightness = CGFloat(brightness)
+                print("left")
+                print("\(brightness)")
             }
         }
     }
+    
+    
     //
     //controller
     //

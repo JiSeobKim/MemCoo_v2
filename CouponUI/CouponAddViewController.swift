@@ -215,7 +215,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
                     product.text = couponInfo.title
                     expiredDate.text = couponInfo.expireDate
                     barcode.text = couponInfo.barcode
-                    originalText.text = copiedString[0]
+                    originalText.text = copiedString.first
                 }
             }
             //OCR 버튼을 눌렀을 때 이미지 OCR 후 바코드만 입력.

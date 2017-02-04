@@ -19,22 +19,25 @@ class ParsingBrain {
         var originalText: [String]
     }
     
-    func parsing(textFromClipboard: [String]) -> CouponInfo {
+    func parsing(textFromClipboard: [String]?) -> CouponInfo {
         var title: String?
         var barcode: String?
         var expireDate: String?
         var originalText: [String]
         
         // 메세지 원본을 줄바꿈 구분자를 기준으로 나누어서 배열에 담는다 \r과 \n모두 각각 적용
-        var seperateByLine: [String]
-        originalText = textFromClipboard
+        var seperateByLine: [String] = []
+        originalText = textFromClipboard!
         
-        if textFromClipboard[0].contains("\r"){
-            seperateByLine = textFromClipboard[0].components(separatedBy: "\r")
+        if let copiedString = textFromClipboard?.first {
+            if copiedString.contains("\r"){
+                seperateByLine = copiedString.components(separatedBy: "\r")
+            }
+            else {
+                seperateByLine = copiedString.components(separatedBy: "\n")
+            }
         }
-        else {
-            seperateByLine = textFromClipboard[0].components(separatedBy: "\n")
-        }
+        
         //모든 배열의 요소를 검사한다.
         for key in seperateByLine {
             //번호 상품 기간이 의 키워드 필터링

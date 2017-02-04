@@ -1,9 +1,9 @@
 //
 //  Category+CoreDataProperties.swift
-//  MemebershipCoupon
+//  
 //
-//  Created by Joosung Kim on 07/12/2016.
-//  Copyright © 2016 mino. All rights reserved.
+//  Created by Joosung Kim on 31/01/2017.
+//
 //
 
 import Foundation
@@ -15,10 +15,11 @@ extension Category {
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Category> {
         return NSFetchRequest<Category>(entityName: "Category");
     }
+
     @NSManaged public var title: String?
     @NSManaged public var toCoupon: NSSet?
-    @NSManaged public var toMembership: NSSet?
     @NSManaged public var toImage: Image?
+    @NSManaged public var toMembership: NSSet?
 
 }
 

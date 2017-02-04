@@ -79,12 +79,18 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
             
             if let objs = controller.fetchedObjects, objs.count > 0 {
                 let item = objs[(indexPath?.item)!]
-                
+                let favoriteContext = Favorite(context: context)
         
                 if item.favorite == true {
                     item.favorite = false
+                    context.delete(item.toFavorite!)
+                    
                 } else {
                     item.favorite = true
+                    
+                    favoriteContext.isMembership = true
+                    favoriteContext.index = 0
+                    item.toFavorite = favoriteContext
                 }
                 ad.saveContext()
                 collectionView.reloadData()

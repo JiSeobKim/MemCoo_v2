@@ -8,20 +8,23 @@
 
 import UIKit
 import NotificationCenter
+import CoreData
 
-class TodayViewController: UIViewController, NCWidgetProviding {
+class TodayViewController: UIViewController, NCWidgetProviding, NSFetchedResultsControllerDelegate {
     
     
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
     @IBOutlet weak var button3: UIButton!
-    
+
     @IBOutlet weak var imageView: UIImageView!
     
+    var favorite: [Favorite]!
     
     
     @IBAction func buttonAction1(_ sender: Any) {
         imageView.image = UIImage(named: "telecommunication2")
+        
     }
     @IBAction func buttonAction2(_ sender: Any) {
         imageView.image = UIImage(named: "telecommunication3")
@@ -35,6 +38,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         // Do any additional setup after loading the view from its nib.
         
         self.extensionContext?.widgetLargestAvailableDisplayMode = NCWidgetDisplayMode.expanded
@@ -65,5 +70,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             self.preferredContentSize = CGSize(width: maxSize.width, height: 200)
         }
     }
+    
+    
+    
     
 }

@@ -11,8 +11,8 @@ import CoreData
 
 class FavoriteViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
-    var membershipController: NSFetchedResultsController<Membership>!
-    var couponController: NSFetchedResultsController<Coupon>!
+//    var membershipController: NSFetchedResultsController<Membership>!
+//    var couponController: NSFetchedResultsController<Coupon>!
     var favoriteController: NSFetchedResultsController<Favorite>!
     
     override func viewDidLoad() {
@@ -186,6 +186,7 @@ class FavoriteViewController: UITableViewController, NSFetchedResultsControllerD
                 favorite[index].index = Int32(index) + 1
             }
             ad.saveContext()
+
             return favorite
         } catch {
             print("\(error)")

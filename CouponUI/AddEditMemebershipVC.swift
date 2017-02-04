@@ -21,7 +21,7 @@ class AddEditMemebershipVC: UIViewController {
     var membershipToEdit: Membership?
     var membership: Membership!
     var bright : CGFloat?
-    var checkFavorite : Bool?
+    
     
 
     @IBOutlet weak var LabelBrand: UILabel!
@@ -33,6 +33,7 @@ class AddEditMemebershipVC: UIViewController {
     @IBOutlet weak var realTimeBarcode: UIImageView!
     
     @IBOutlet weak var deleteButton: UIButton!
+    
     
     
     
@@ -54,8 +55,28 @@ class AddEditMemebershipVC: UIViewController {
             self.navigationItem.title = "멤버십 카드 추가"
             self.deleteButton.isHidden = true
         }
-
+        
+        //삭제 버튼 테두리
+        deleteButton.layer.cornerRadius = deleteButton.frame.height / 2
+        
+        //다른 곳 터치시 키보드 제거 및 프레임 원위치
+        self.hideKeyboardWhenTappedAround()
+        
+        //툴바
+        addInputAccessoryForTextFields(textFields: [paramBrand,paramBarcode],dismissable: true, previousNextable: true)
+        
     }
+    
+    
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: Notification.Name.UIKeyboardDidHide, object: nil)
+    }
+    
+    //키보드 크기만큼 뷰를 위로 이동.
+    
+    
     
 
     
@@ -98,7 +119,7 @@ class AddEditMemebershipVC: UIViewController {
             paramBarcode.layer.borderWidth = 0
             inputCheck2 = true
         }
-
+        
         if inputCheck1 == true && inputCheck2 == true {
             
             if membershipToEdit == nil {
@@ -122,9 +143,7 @@ class AddEditMemebershipVC: UIViewController {
             if let barcode = paramBarcode.text {
                 membership.barcode = barcode
             }
-            if checkFavorite != nil {
-                membership.favorite = true
-            }
+            
             
             ad.saveContext()
             
@@ -162,39 +181,47 @@ class AddEditMemebershipVC: UIViewController {
     //extension 부분 정상 작동을 위한 작업
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "logoSelect" {
+            
             (segue.destination as? logoSelect)?.delegate = self
         }
+        
     }
     
-    //텍스트 필드가 아닌 곳을 터치했을 때 키보드 닫기.
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        paramBrand.resignFirstResponder()
-        paramBarcode.resignFirstResponder()
-    }
+    
     
     //실시간 바코드 생성
     @IBAction func paramBarcodeButton(_ sender: UITextField) {
         realTimeBarcode.image = generateBarcodeFromString(string: paramBarcode.text!)
     }
     
-    @IBOutlet weak var favoriteLabel: UIButton!
     
-    @IBAction func favorite(_ sender: Any) {
-        checkFavorite = true
+    
+//텍스트 필드 입력 관련
+    
+
+
+ 
+    @IBAction func brandField(_ sender: Any) {
+        // 프레임 이동
+        ad.heightForKeyboard = 2
+        self.moveFrame()
+    }
+
+    @IBAction func barcodeField(_ sender: Any) {
+        //프레임 이동
+        ad.heightForKeyboard = 1.5
+        self.moveFrame()
     }
     
-    
+
     
 }
 
 //extension 부분
 
     extension AddEditMemebershipVC : logoData {
-        
         func updataData(data: UIImage) {
-            
+            //받아온 값 넘기기
             paramImage.image = data
-            
         }
-        
     }

@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, NSFetchedResultsControllerDelegate {
+class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, NSFetchedResultsControllerDelegate, UIGestureRecognizerDelegate{
 
     
 //
@@ -18,6 +18,7 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
     @IBOutlet weak var collectionView: UICollectionView!
     var controller: NSFetchedResultsController<Membership>!
     
+  
     
 //
 //viewLoad
@@ -29,6 +30,28 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
         collectionView.dataSource = self
         
         attemptFetch()
+        
+        //롱프레스
+        let lpgr : UILongPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(MembershipCollectionVC.handleLongPress(_:)))
+        lpgr.minimumPressDuration = 0.5
+        lpgr.delegate = self
+        lpgr.delaysTouchesBegan = true
+        self.collectionView?.addGestureRecognizer(lpgr)
+        
+        
+        //Cell Size
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        let width = UIScreen.main.bounds.width
+        layout.sectionInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        layout.itemSize = CGSize(width: width / 3.4, height: width / 3)
+        layout.minimumInteritemSpacing = 8
+        layout.minimumLineSpacing = 8
+        collectionView!.collectionViewLayout = layout
+
+
+        
+        
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -39,6 +62,44 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
         self.collectionView.reloadData()
 
         
+    }
+    
+    func handleLongPress(_ gestureReconizer: UILongPressGestureRecognizer) {
+        if gestureReconizer.state != UIGestureRecognizerState.ended {
+            return
+        }
+        
+        let p = gestureReconizer.location(in: collectionView)
+        let indexPath = collectionView.indexPathForItem(at: p)
+        
+        if let index = indexPath {
+            _ = collectionView.cellForItem(at: index)
+            // do stuff with your cell, for example print the indexPath
+            print(index.row)
+            
+            if let objs = controller.fetchedObjects, objs.count > 0 {
+                let item = objs[(indexPath?.item)!]
+                let favoriteContext = Favorite(context: context)
+        
+                if item.favorite == true {
+                    item.favorite = false
+                    context.delete(item.toFavorite!)
+                    
+                } else {
+                    item.favorite = true
+                    
+                    favoriteContext.isMembership = true
+                    favoriteContext.index = 0
+                    item.toFavorite = favoriteContext
+                }
+                ad.saveContext()
+                collectionView.reloadData()
+            
+            }
+
+        } else {
+            print("Could not find index path")
+        }
     }
     
     
@@ -65,12 +126,14 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "viewcell", for: indexPath) as! MembershipCollectionVCell
         // 설정할 cell 선택(빨간 "viewcell"은 어트리뷰트인스펙터의 identifier)
+
+
         
         
         configureCell(cell: cell, indexPath: indexPath as NSIndexPath)
         //로고의 이미지/ 텍스트 값 대입
         
-        
+    
   
         return cell
         
@@ -97,6 +160,8 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
             performSegue(withIdentifier: "showCollection", sender: item)
         }
     }
+    
+    
 
 //화면전환시 데이터 넘기기 위한 준비
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -107,12 +172,15 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
                     
                     // 밝기 값 저장 
                     destination.bright = UIScreen.main.brightness
-                    ap.bright = UIScreen.main.brightness
+                    ad.bright = UIScreen.main.brightness
                 }
             }
         }
+        
+        
     }
     
+
     
 //
 //coreData 부분

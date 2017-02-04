@@ -20,20 +20,21 @@
     
     var storedOffsets = [Int: CGFloat]()
     
-    var logo : Array = ["통신사","카페","옷","화장품","포인트","편의점"]
+    var logo : Array = ["통신사","카페","화장품","포인트","라이프스타일","마트","심볼"]
     var telecommunicationLogo : [UIImage] = []
     var cafeLogo : [UIImage] = []
-    var clothLogo : [UIImage] = []
+    var lifeLogo : [UIImage] = []
     var cosmeticLogo : [UIImage] = []
     var pointLogo : [UIImage] = []
-    var convenienceLogo : [UIImage] = []
+    var martLogo : [UIImage] = []
+    var symbolLogo : [UIImage] = []
     
    
  
     
     func addLogoAtArray()->(){
         //for 문을 통한 로고들 추가
-        for row in 1...10 {
+        for row in 1...11 {
             if UIImage(named:"telecommunication\(row)") != nil {
                 telecommunicationLogo.append(UIImage(named:"telecommunication\(row)")!)
             }
@@ -42,8 +43,8 @@
                 cafeLogo.append(UIImage(named:"cafe\(row)")!)
             }
             
-            if UIImage(named:"clothes\(row)") != nil {
-                clothLogo.append(UIImage(named:"clothes\(row)")!)
+            if UIImage(named:"life\(row)") != nil {
+                lifeLogo.append(UIImage(named:"life\(row)")!)
             }
             
             if UIImage(named:"cosmetic\(row)") != nil {
@@ -54,14 +55,18 @@
                 pointLogo.append(UIImage(named:"point\(row)")!)
             }
             
-            if UIImage(named:"convenience\(row)") != nil {
-                convenienceLogo.append(UIImage(named:"convenience\(row)")!)
+            if UIImage(named:"mart\(row)") != nil {
+                martLogo.append(UIImage(named:"mart\(row)")!)
+            }
+            
+            if UIImage(named:"symbol\(row)") != nil {
+                symbolLogo.append(UIImage(named:"symbol\(row)")!)
             }
         }
     }
     func allcategory(_ data:Int) ->  Array<Any>{
         //모든 카테고리들을 한 배열에 추가
-        let allcategory  = [self.telecommunicationLogo,self.cafeLogo,self.clothLogo,self.cosmeticLogo,self.pointLogo,self.convenienceLogo]
+        let allcategory  = [self.telecommunicationLogo,self.cafeLogo,self.cosmeticLogo,self.pointLogo,self.lifeLogo,self.martLogo,self.symbolLogo]
         
         
         return allcategory[data]
@@ -71,7 +76,7 @@
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //테이블뷰 프로토콜
-        return 6
+        return 7
     }
     
     
@@ -127,22 +132,14 @@
         
         let logoArray = allcategory(collectionView.tag)[indexPath.row] as! UIImage
         cell.logo.image = logoArray
-        
+        cell.brand.isHidden = true
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //셀 선택시 하이라이트
-        
-        let cell = collectionView.cellForItem(at: indexPath)
-        if cell?.layer.borderWidth == 0 {
-            cell?.layer.borderWidth = 2.0
-            cell?.layer.borderColor = UIColor.red.cgColor
-        } else {
-            cell?.layer.borderColor = nil
-            cell?.layer.borderWidth = 0.0
-        }
+
         
         selectedTagInfo = collectionView.tag
         selectedImgInfo = indexPath.row
@@ -150,7 +147,8 @@
         if selectedImgInfo != nil {
             let logoArray = allcategory(selectedTagInfo!)[selectedImgInfo!] as! UIImage
             self.delegate?.updataData(data: logoArray )
-            _ = self.navigationController?.popViewController(animated: true)
+//            _ = self.navigationController?.popViewController(animated: true)
+            self.presentingViewController?.dismiss(animated: true, completion: nil)
         }
 
         

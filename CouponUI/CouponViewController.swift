@@ -10,15 +10,12 @@ import UIKit
 import CoreData
 import TesseractOCR
 
-class CouponViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate, G8TesseractDelegate {
+class CouponViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, NSFetchedResultsControllerDelegate, G8TesseractDelegate {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var segment: UISegmentedControl!
     
-    //밝기 조절하는 변수.
-    
-    
-    //detail에서 넘어온 coupon 객체를 받기하기 위한 coupon 객체
-    var couponToDelete: Coupon?
+    var originalImage: UIImage!
+    let imagePicker = UIImagePickerController()
     
     //+버튼 눌렀을때의 액션
     @IBAction func add(_ sender: Any) {
@@ -27,7 +24,7 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
         let clipboard = UIAlertAction(title: "클립보드 내용 자동 추가", style: .default) {
             (_) in
             //액션시트의 첫 번째 버튼이 눌렸음을 다음 뷰에 전달하기 위해 앱델리게이트의 selectActionSheet 변수에 1을 저장.
-            ad.selectActionSheet = 1
+            ad.isClipboardActionSheet = true
             
             //다음 뷰컨트롤러로 push.
             if let addVC = self.storyboard?.instantiateViewController(withIdentifier: "AddEdit") {
@@ -36,28 +33,24 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
         }
         
         let ocr = UIAlertAction(title: "사진에서 바코드만 읽어오기", style: .default) {
-            (_) in
-            //파싱 퍼센트 표시 알림창.
-//            func progressImageRecognition(for tesseract: G8Tesseract!) {
-//                let progress = UIAlertController(title: "알림", message: "Recognition Progress: \(tesseract.progress)%", preferredStyle: UIAlertControllerStyle.alert)
-//                self.present(progress, animated: true)
-//                
-//                if tesseract.progress >= 90 {
-//                    self.dismiss(animated: true)
-//                }
-//            }
+            (_) in            
+            ad.isClipboardActionSheet = false
             
-            ad.selectActionSheet = 2
+            //이미지 선택 뷰.
+            self.imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+            //imagePicker.mediaTypes = [kUTTypeImage as String]
+            self.imagePicker.allowsEditing = false
+            self.present(self.imagePicker, animated: true, completion: nil)
             
-            if let addVC = self.storyboard?.instantiateViewController(withIdentifier: "AddEdit") {
+            //뷰 전환.
+            if let addVC = self.storyboard?.instantiateViewController(withIdentifier: "AddEdit") as? CouponAddViewController {
+                addVC.originalImage = self.originalImage
                 self.navigationController?.pushViewController(addVC, animated: true)
             }
         }
         
         let custom = UIAlertAction(title: "사용자 직접 입력", style: .default) {
             (_) in
-            ad.selectActionSheet = 3
-            
             if let addVC = self.storyboard?.instantiateViewController(withIdentifier: "AddEdit") {
                 self.navigationController?.pushViewController(addVC, animated: true)
             }
@@ -75,15 +68,78 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
         self.present(alert, animated: true)
     }
     
+    //사진 앱 접근을 위한 메소드.
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            self.originalImage = image
+        }
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     var controller: NSFetchedResultsController<Coupon>!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        imagePicker.delegate = self
         attemptFetch()
+        
+        //long press gesture를 이용한 즐겨찾기 핸들링.
+        let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(self.longPress))
+        self.view.addGestureRecognizer(longPressGestureRecognizer)
     }
     
+    //long press gesture를 이용한 즐겨찾기 핸들링.
+    func longPress(_ longPressGestureRecognizer: UILongPressGestureRecognizer) {
+        if longPressGestureRecognizer.state == UIGestureRecognizerState.began {
+            let touchPoint = longPressGestureRecognizer.location(in: self.tableView)
+            
+            if let indexPath = tableView.indexPathForRow(at: touchPoint) {
+                if var objs = controller.fetchedObjects, objs.count > 0 {
+                    let item = objs[indexPath.row]
+                    let favoriteContext = Favorite(context: context)
+                    
+                    if item.favorite == false {
+                        let alert = UIAlertController(title: "즐겨찾기 추가", message: "\"\(item.title!)\" 쿠폰을 \n즐겨찾기에 추가하시겠습니까?", preferredStyle: .alert)
+                        let add = UIAlertAction(title: "추가", style: .default) {
+                            (_) in
+                            item.favorite = true
+                            
+                            favoriteContext.isCoupon = true
+                            favoriteContext.index = 0
+                            item.toFavorite = favoriteContext
+                            ad.saveContext()
+                        }
+                        
+                        let cancel = UIAlertAction(title: "취소", style: .cancel)
+                        alert.addAction(add)
+                        alert.addAction(cancel)
+                        self.present(alert, animated: true)
+                    }
+                    else {
+                        let alert = UIAlertController(title: "즐겨찾기 제거", message: "\"\(item.title!)\" 쿠폰을 \n즐겨찾기에서 제거하시겠습니까?", preferredStyle: .alert)
+                        let add = UIAlertAction(title: "제거", style: .default) {
+                            (_) in
+                            item.favorite = false
+                            
+                            context.delete(item.toFavorite!)
+                            ad.saveContext()
+                        }
+                        
+                        let cancel = UIAlertAction(title: "취소", style: .cancel)
+                        alert.addAction(add)
+                        alert.addAction(cancel)
+                        self.present(alert, animated: true)
+                    }
+                }
+            }
+        }
+    }
  
 
     
@@ -112,6 +168,9 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
 
     //선택된 cell의 처리 정의
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //셀 선택 후 뒤로 돌아왔을 때 선택 취소.
+        tableView.deselectRow(at: indexPath, animated: true)
+        
         if let objs = controller.fetchedObjects, objs.count > 0 {
             let item = objs[indexPath.row]
             performSegue(withIdentifier: "CouponDetailsVC", sender: item)
@@ -123,7 +182,7 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
             if let destination = segue.destination as? CouponDetailViewController {
                 if let coupon = sender as? Coupon {
                     destination.couponToDetail = coupon
-                    ap.bright = UIScreen.main.brightness
+                    ad.bright = UIScreen.main.brightness
                     destination.bright = UIScreen.main.brightness
                 }
             }
@@ -147,13 +206,21 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
         return true
     }
     
-    //swipe 시 delete 버튼 나타나게 하는 메소드.
+    //swipe 시 delete 버튼이 작동하는 메소드.
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
-            if couponToDelete != nil {
-                context.delete(couponToDelete!)
-                ad.saveContext()
-                tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+            if var objs = controller.fetchedObjects, objs.count > 0{
+                let alert = UIAlertController(title: "삭제하시겠습니까?", message: "한 번 삭제한 쿠폰은 복구할 수 없습니다!", preferredStyle: .alert)
+                let delete = UIAlertAction(title: "삭제", style: .destructive) {
+                    (_) in
+                    let item = objs[indexPath.row]
+                    context.delete(item)
+                    ad.saveContext()
+                }
+                let cancel = UIAlertAction(title: "취소", style: .cancel)
+                alert.addAction(delete)
+                alert.addAction(cancel)
+                self.present(alert, animated: true)
             }
         }
     }

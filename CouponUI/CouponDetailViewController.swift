@@ -107,6 +107,7 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
         UIScreen.main.brightness = 1.0
         ad.brightSwitch = true
     }
+    
     /*
      // MARK: - Navigation
      

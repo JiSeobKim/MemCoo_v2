@@ -172,9 +172,9 @@ class FavoriteViewController: UITableViewController, NSFetchedResultsControllerD
         //let dateSort = NSSortDescriptor(key: "created", ascending: false)
         let favoriteSort = NSSortDescriptor(key: "index", ascending: true)
         
-        let isPrediccate = NSPredicate(format: "%K == YES", "isMembership")
+        let isPredicate = NSPredicate(format: "%K == YES", "isMembership")
         fetchRequest.sortDescriptors = [favoriteSort]
-        fetchRequest.predicate = isPrediccate
+        fetchRequest.predicate = isPredicate
         
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         controller.delegate = self

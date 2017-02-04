@@ -231,8 +231,18 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
         let fetchRequest: NSFetchRequest<Coupon> = Coupon.fetchRequest()
         let dateSort = NSSortDescriptor(key: "created", ascending: false)
         fetchRequest.sortDescriptors = [dateSort]
-        let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         
+        if segment.selectedSegmentIndex == 0 {
+            let isPredicate = NSPredicate(format: "%K == NO", "isUsed")
+            fetchRequest.predicate = isPredicate
+        }else if segment.selectedSegmentIndex == 1 {
+            let isPredicate = NSPredicate(format: "%K == YES", "isUsed")
+            fetchRequest.predicate = isPredicate
+        }else if segment.selectedSegmentIndex == 2 {
+    
+        }
+        
+        let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         //save시 tableview update를 위한 델리게이트 전달
         controller.delegate = self
         self.controller = controller
@@ -244,6 +254,10 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
             print("\(error)")
         }
         
+    }
+    @IBAction func segmentChanged(_ sender: UISegmentedControl) {
+        attemptFetch()
+        tableView.reloadData()
     }
     
     //컨트롤러가 바뀔때마다 테이블뷰 업데이트

@@ -16,6 +16,7 @@ extension Membership {
         return NSFetchRequest<Membership>(entityName: "Membership");
     }
 
+    @NSManaged public var title: String?
     @NSManaged public var barcode: String?
     @NSManaged public var created: NSDate?
     @NSManaged public var favorite: Bool

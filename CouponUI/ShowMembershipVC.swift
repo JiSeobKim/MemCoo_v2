@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ShowMembershipVC: UIViewController {
+class ShowMembershipVC: UIViewController, UIGestureRecognizerDelegate {
     
     //
     //model
@@ -34,8 +34,16 @@ class ShowMembershipVC: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        ad.brightSwitch = true
         //현재 페이지에선 밝기 수정 on
+        ad.brightSwitch = true
+        
+        //제스쳐 밝기 조절
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self.pan(recognizer:)))
+        panGesture.delegate = self
+        panGesture.minimumNumberOfTouches = 1
+        self.view.addGestureRecognizer(panGesture)
+        
+
         
         if cellData != nil {
             loadMembershipData()
@@ -70,7 +78,26 @@ class ShowMembershipVC: UIViewController {
         
     }
     
-
+    
+    //밝기 제스쳐
+    func pan(recognizer:UIPanGestureRecognizer){
+        if recognizer.state == UIGestureRecognizerState.changed || recognizer.state == UIGestureRecognizerState.ended {
+            let velocity:CGPoint = recognizer.velocity(in: self.view)
+            
+            if velocity.y > 0{
+                var brightness: Float = Float(UIScreen.main.brightness)
+                brightness = brightness - 0.03
+                UIScreen.main.brightness = CGFloat(brightness)
+            }
+            else {
+                var brightness: Float = Float(UIScreen.main.brightness)
+                brightness = brightness + 0.03
+                UIScreen.main.brightness = CGFloat(brightness)
+            }
+        }
+    }
+    
+    
     //
     //controller
     //

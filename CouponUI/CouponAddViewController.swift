@@ -177,6 +177,11 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         }
     }
 
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -187,7 +192,11 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         memoField.delegate = self
 
 
+        //다른 곳 터치시 키보드 제거 및 프레임 원위치
+        self.hideKeyboardWhenTappedAround()
         
+        //툴바
+        addInputAccessoryForTextFields(textFields: [product, barcode, expiredDate],dismissable: true, previousNextable: true)
         //add 버튼을 눌렀을 때.
         if ad.isAddButton == true {
             self.navigationItem.title = "쿠폰 추가"

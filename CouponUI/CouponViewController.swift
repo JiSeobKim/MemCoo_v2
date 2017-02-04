@@ -15,6 +15,7 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var segment: UISegmentedControl!
     
     var originalImage: UIImage!
+    let imagePicker = UIImagePickerController()
     
     //+버튼 눌렀을때의 액션
     @IBAction func add(_ sender: Any) {
@@ -35,16 +36,15 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
             (_) in            
             ad.isClipboardActionSheet = false
             
-            //이미지 선택.
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+            //이미지 선택 뷰.
+            self.imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
             //imagePicker.mediaTypes = [kUTTypeImage as String]
-            imagePicker.allowsEditing = false
-            self.present(imagePicker, animated: true, completion: nil)
+            self.imagePicker.allowsEditing = false
+            self.present(self.imagePicker, animated: true, completion: nil)
             
             //뷰 전환.
-            if let addVC = self.storyboard?.instantiateViewController(withIdentifier: "AddEdit") {
+            if let addVC = self.storyboard?.instantiateViewController(withIdentifier: "AddEdit") as? CouponAddViewController {
+                addVC.originalImage = self.originalImage
                 self.navigationController?.pushViewController(addVC, animated: true)
             }
         }
@@ -71,9 +71,8 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
     //사진 앱 접근을 위한 메소드.
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            originalImage = image
+            self.originalImage = image
         }
-        //        imagePicker.dismiss(animated: true, completion: nil)
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -87,6 +86,7 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        imagePicker.delegate = self
         attemptFetch()
         
         //long press gesture를 이용한 즐겨찾기 핸들링.

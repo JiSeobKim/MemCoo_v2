@@ -214,6 +214,7 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
                 let delete = UIAlertAction(title: "삭제", style: .destructive) {
                     (_) in
                     let item = objs[indexPath.row]
+                    context.delete(item.toFavorite!)
                     context.delete(item)
                     ad.saveContext()
                 }

@@ -401,7 +401,7 @@
 						};
 					};
 					A0BB53501E21D61900AF54C9 = {
-						DevelopmentTeam = HWY63NUUS4;
+						DevelopmentTeam = XNB68CC222;
 					};
 				};
 			};
@@ -699,7 +699,7 @@
 				DEVELOPMENT_TEAM = XNB68CC222;
 				INFOPLIST_FILE = CouponUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.JMJ.MembershipCoupon;
+				PRODUCT_BUNDLE_IDENTIFIER = gq.dugong.MembershipCoupon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -714,7 +714,7 @@
 				DEVELOPMENT_TEAM = XNB68CC222;
 				INFOPLIST_FILE = CouponUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.JMJ.MembershipCoupon;
+				PRODUCT_BUNDLE_IDENTIFIER = gq.dugong.MembershipCoupon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -723,10 +723,10 @@
 		A0BB535F1E21D61A00AF54C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEVELOPMENT_TEAM = HWY63NUUS4;
+				DEVELOPMENT_TEAM = XNB68CC222;
 				INFOPLIST_FILE = Widget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.JMJ.MembershipCoupon.Widget;
+				PRODUCT_BUNDLE_IDENTIFIER = gq.dugong.MembershipCoupon.Widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -736,10 +736,10 @@
 		A0BB53601E21D61A00AF54C9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEVELOPMENT_TEAM = HWY63NUUS4;
+				DEVELOPMENT_TEAM = XNB68CC222;
 				INFOPLIST_FILE = Widget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.JMJ.MembershipCoupon.Widget;
+				PRODUCT_BUNDLE_IDENTIFIER = gq.dugong.MembershipCoupon.Widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;

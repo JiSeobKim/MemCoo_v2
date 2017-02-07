@@ -15,6 +15,7 @@ class MembershipCollectionVCell : UICollectionViewCell {
     //viewcell 이 가지고 있는 값
     @IBOutlet weak var viewLogoShow: UIImageView!
     @IBOutlet weak var viewLogoName: UILabel!
+    @IBOutlet weak var favorite: UILabel!
 
     
     
@@ -41,12 +42,9 @@ class MembershipCollectionVCell : UICollectionViewCell {
         
         
         if item.favorite == true {
-            
-            let color = UIColor.yellow
-            viewLogoName.layer.backgroundColor = color.cgColor
-            viewLogoName.layer.cornerRadius = 10
+            favorite.isHidden = false
         } else {
-            viewLogoName.layer.backgroundColor = nil
+            favorite.isHidden = true
         }
         
     }

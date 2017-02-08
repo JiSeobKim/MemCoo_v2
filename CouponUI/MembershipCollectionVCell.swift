@@ -29,16 +29,19 @@ class MembershipCollectionVCell : UICollectionViewCell {
         viewLogoName.text = item.toBrand?.title
         viewLogoShow.image = item.toImage?.image as? UIImage
         
+        viewLogoShow.layer.borderWidth = 1
+        viewLogoShow.layer.borderColor = UIColor(red: 244/225.0, green: 244/255.0, blue: 244/255.0, alpha: 1.0).cgColor
+        viewLogoShow.layer.cornerRadius = 10
 
         // Shadow and Radius
         
-        viewLogoShow.layer.borderColor = UIColor.gray.cgColor
-        viewLogoShow.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
-        viewLogoShow.layer.shadowOffset = CGSize(width : 0,height: 2.0)
-        viewLogoShow.layer.shadowOpacity = 0.5
-        viewLogoShow.layer.shadowRadius = 0.0
-        viewLogoShow.layer.masksToBounds = false
-        viewLogoShow.layer.cornerRadius = 10.0
+//        viewLogoShow.layer.borderColor = UIColor.gray.cgColor
+//        viewLogoShow.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+//        viewLogoShow.layer.shadowOffset = CGSize(width : 0,height: 2.0)
+//        viewLogoShow.layer.shadowOpacity = 0.5
+//        viewLogoShow.layer.shadowRadius = 0.0
+//        viewLogoShow.layer.masksToBounds = false
+//        viewLogoShow.layer.cornerRadius = 10.0
         
         
         if item.favorite == true {

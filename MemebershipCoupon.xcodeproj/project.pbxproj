@@ -60,17 +60,17 @@
 		A078544C1DFBA3D000CBF7C4 /* ShowMembershipVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07854451DFBA3D000CBF7C4 /* ShowMembershipVC.swift */; };
 		A078544D1DFBA3D000CBF7C4 /* AddEditMemebershipVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07854461DFBA3D000CBF7C4 /* AddEditMemebershipVC.swift */; };
 		A078544F1DFBA3D000CBF7C4 /* MembershipFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07854481DFBA3D000CBF7C4 /* MembershipFunction.swift */; };
+		A099881D1E4AB164008EBDE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A099881C1E4AB164008EBDE6 /* Assets.xcassets */; };
+		A099881E1E4AB167008EBDE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A099881C1E4AB164008EBDE6 /* Assets.xcassets */; };
 		A0BB53531E21D61900AF54C9 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0BB53521E21D61900AF54C9 /* NotificationCenter.framework */; };
 		A0BB53561E21D61A00AF54C9 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BB53551E21D61A00AF54C9 /* TodayViewController.swift */; };
 		A0BB53591E21D61A00AF54C9 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0BB53571E21D61A00AF54C9 /* MainInterface.storyboard */; };
 		A0BB535D1E21D61A00AF54C9 /* Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A0BB53511E21D61900AF54C9 /* Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		A0BB53621E21D80A00AF54C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0FB04861E0BFB69007FEA21 /* Assets.xcassets */; };
 		A0FB04741E0BCEFC007FEA21 /* logoSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FB04731E0BCEFC007FEA21 /* logoSelect.swift */; };
 		A0FB04761E0BCFBF007FEA21 /* logoTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FB04751E0BCFBF007FEA21 /* logoTableCell.swift */; };
 		A0FB04781E0BCFD7007FEA21 /* logoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FB04771E0BCFD7007FEA21 /* logoCollectionCell.swift */; };
 		A0FB047F1E0BED85007FEA21 /* Membership.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0FB047E1E0BED85007FEA21 /* Membership.storyboard */; };
 		A0FB04811E0BEE0D007FEA21 /* SelectLogo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0FB04801E0BEE0D007FEA21 /* SelectLogo.storyboard */; };
-		A0FB04871E0BFB69007FEA21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0FB04861E0BFB69007FEA21 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +142,7 @@
 		A07854451DFBA3D000CBF7C4 /* ShowMembershipVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowMembershipVC.swift; sourceTree = "<group>"; };
 		A07854461DFBA3D000CBF7C4 /* AddEditMemebershipVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEditMemebershipVC.swift; sourceTree = "<group>"; };
 		A07854481DFBA3D000CBF7C4 /* MembershipFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembershipFunction.swift; sourceTree = "<group>"; };
+		A099881C1E4AB164008EBDE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0BB53511E21D61900AF54C9 /* Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Widget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0BB53521E21D61900AF54C9 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		A0BB53551E21D61A00AF54C9 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -152,7 +153,6 @@
 		A0FB04771E0BCFD7007FEA21 /* logoCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = logoCollectionCell.swift; sourceTree = "<group>"; };
 		A0FB047E1E0BED85007FEA21 /* Membership.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Membership.storyboard; sourceTree = "<group>"; };
 		A0FB04801E0BEE0D007FEA21 /* SelectLogo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SelectLogo.storyboard; sourceTree = "<group>"; };
-		A0FB04861E0BFB69007FEA21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AAAC10A62EA3E05F85630D72 /* Pods-MemebershipCoupon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemebershipCoupon.release.xcconfig"; path = "Pods/Target Support Files/Pods-MemebershipCoupon/Pods-MemebershipCoupon.release.xcconfig"; sourceTree = "<group>"; };
 		FF6C7AE377C9282F67BD1A11 /* Pods_MemebershipCoupon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemebershipCoupon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -283,7 +283,7 @@
 		42976BA31DF27DFC00ADB0D7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				A0FB04861E0BFB69007FEA21 /* Assets.xcassets */,
+				A099881C1E4AB164008EBDE6 /* Assets.xcassets */,
 				3E37D3661DF09E4A0054C4DA /* Info.plist */,
 				3E37D3631DF09E4A0054C4DA /* LaunchScreen.storyboard */,
 				3ECCE3A21E041CF400AE739B /* tessdata */,
@@ -436,7 +436,7 @@
 				A0FB047F1E0BED85007FEA21 /* Membership.storyboard in Resources */,
 				A0FB04811E0BEE0D007FEA21 /* SelectLogo.storyboard in Resources */,
 				A03831151DFC1CB8002C0314 /* Coupon.storyboard in Resources */,
-				A0FB04871E0BFB69007FEA21 /* Assets.xcassets in Resources */,
+				A099881D1E4AB164008EBDE6 /* Assets.xcassets in Resources */,
 				42976BF71DF6B48100ADB0D7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,7 +445,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0BB53621E21D80A00AF54C9 /* Assets.xcassets in Resources */,
+				A099881E1E4AB167008EBDE6 /* Assets.xcassets in Resources */,
 				A0BB53591E21D61A00AF54C9 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

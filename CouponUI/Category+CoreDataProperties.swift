@@ -1,9 +1,9 @@
 //
 //  Category+CoreDataProperties.swift
-//  
+//  MemebershipCoupon
 //
-//  Created by Joosung Kim on 31/01/2017.
-//
+//  Created by Joosung Kim on 08/02/2017.
+//  Copyright © 2017 mino. All rights reserved.
 //
 
 import Foundation

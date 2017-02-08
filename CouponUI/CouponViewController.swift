@@ -102,15 +102,17 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
             if let indexPath = tableView.indexPathForRow(at: touchPoint) {
                 if var objs = controller.fetchedObjects, objs.count > 0 {
                     let item = objs[indexPath.row]
-                    let favoriteContext = Favorite(context: context)
+                    
                     
                     if item.favorite == false {
                         let alert = UIAlertController(title: "즐겨찾기 추가", message: "\"\(item.title!)\" 쿠폰을 \n즐겨찾기에 추가하시겠습니까?", preferredStyle: .alert)
                         let add = UIAlertAction(title: "추가", style: .default) {
                             (_) in
+                            let favoriteContext = Favorite(context: context)
                             item.favorite = true
                             
                             favoriteContext.isCoupon = true
+                            favoriteContext.isMembership = false
                             favoriteContext.index = 0
                             item.toFavorite = favoriteContext
                             ad.saveContext()

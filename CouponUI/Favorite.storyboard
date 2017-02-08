@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="N2a-fE-9r6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="N2a-fE-9r6">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -14,37 +14,51 @@
         <scene sceneID="E3h-Mk-u21">
             <objects>
                 <tableViewController storyboardIdentifier="FavoriteMain" id="N2a-fE-9r6" customClass="FavoriteViewController" customModule="MemebershipCoupon" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="163" sectionHeaderHeight="18" sectionFooterHeight="18" id="Fna-gS-Hon">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="133" sectionHeaderHeight="18" sectionFooterHeight="18" id="Fna-gS-Hon">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" showsReorderControl="YES" indentationWidth="10" reuseIdentifier="FavoriteCell" rowHeight="163" id="Qr5-GV-Yb4" customClass="FavoriteCell" customModule="MemebershipCoupon" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="56" width="375" height="163"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" showsReorderControl="YES" indentationWidth="10" reuseIdentifier="FavoriteCell" rowHeight="133" id="Qr5-GV-Yb4" customClass="FavoriteCell" customModule="MemebershipCoupon" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="56" width="375" height="133"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qr5-GV-Yb4" id="NRs-Da-RpN">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="163"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="133"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MRc-f3-bkp">
-                                            <rect key="frame" x="16" y="16" width="343" height="130.5"/>
+                                            <rect key="frame" x="16" y="16" width="343" height="101"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8tj-sS-02O">
-                                                    <rect key="frame" x="0.0" y="51" width="343" height="79"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gvs-Mp-mLw">
-                                                    <rect key="frame" x="10" y="10" width="40" height="40"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Fd1-Gw-LT8">
+                                                    <rect key="frame" x="8" y="0.0" width="327" height="101"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gvs-Mp-mLw">
+                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="50" id="hSY-IG-rQl"/>
+                                                                <constraint firstAttribute="height" constant="50" id="han-h7-D8h"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="circleBoundary" value="NO"/>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </imageView>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8tj-sS-02O">
+                                                            <rect key="frame" x="0.0" y="50" width="327" height="51"/>
+                                                        </imageView>
+                                                    </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="40" id="02l-tC-Qfr"/>
-                                                        <constraint firstAttribute="width" constant="40" id="Y0f-c3-D0q"/>
+                                                        <constraint firstItem="8tj-sS-02O" firstAttribute="leading" secondItem="Fd1-Gw-LT8" secondAttribute="leading" id="5iv-8u-0VB"/>
+                                                        <constraint firstAttribute="trailing" secondItem="8tj-sS-02O" secondAttribute="trailing" id="EVD-7g-IC5"/>
+                                                        <constraint firstAttribute="bottom" secondItem="8tj-sS-02O" secondAttribute="bottom" id="Uj9-rP-SL3"/>
                                                     </constraints>
-                                                </imageView>
+                                                </stackView>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstItem="Gvs-Mp-mLw" firstAttribute="leading" secondItem="MRc-f3-bkp" secondAttribute="leading" constant="10" id="3f2-Di-O0Q"/>
-                                                <constraint firstItem="Gvs-Mp-mLw" firstAttribute="top" secondItem="MRc-f3-bkp" secondAttribute="top" constant="10" id="khk-Ze-T1U"/>
+                                                <constraint firstAttribute="bottom" secondItem="Fd1-Gw-LT8" secondAttribute="bottom" id="TfX-2C-3jm"/>
+                                                <constraint firstAttribute="trailing" secondItem="Fd1-Gw-LT8" secondAttribute="trailing" constant="8" id="eyy-Rd-OOS"/>
+                                                <constraint firstItem="Fd1-Gw-LT8" firstAttribute="top" secondItem="MRc-f3-bkp" secondAttribute="top" id="rI3-jr-e3i"/>
+                                                <constraint firstItem="Fd1-Gw-LT8" firstAttribute="leading" secondItem="MRc-f3-bkp" secondAttribute="leading" constant="8" id="yEo-t8-l9b"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="YES"/>
@@ -70,7 +84,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="즐겨찾기" id="67l-fp-m2C">
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="edit" id="l2e-5v-5W4">
+                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="edit" id="l2e-5v-5W4">
                             <connections>
                                 <action selector="startEditing:" destination="N2a-fE-9r6" id="bD1-zp-VDZ"/>
                             </connections>

@@ -11,38 +11,26 @@ import CoreData
 
 class FavoriteViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
-    //    var membershipController: NSFetchedResultsController<Membership>!
-    //    var couponController: NSFetchedResultsController<Coupon>!
     var favoriteController: NSFetchedResultsController<Favorite>!
-    var isMovingItem : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.navigationItem.leftBarButtonItem = self.editButtonItem
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        //        let coupons = couponFetch()
-        //        let memberships = membershipFetch()
-        //
-        //        objectsArray = [favoriteObjects(sectionName: "멤버십", sectionObjects: memberships), favoriteObjects(sectionName: "쿠폰", sectionObjects: coupons)]
-        
         attemptFetch()
-        
         self.tableView.reloadData()
     }
     
-    // MARK: - Data Source Model
-    //    struct favoriteObjects {
-    //        var sectionName: String!
-    //        var sectionObjects: [Any]!
-    //    }
-    //    var objectsArray = [favoriteObjects]()
     
+    //
     // MARK: - TableView overriding
+    //
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "FavoriteCell", for: indexPath) as! FavoriteCell
         configureCell(cell: cell, indexPath: indexPath as NSIndexPath)
         
@@ -52,9 +40,6 @@ class FavoriteViewController: UITableViewController, NSFetchedResultsControllerD
     
     //cell 숫자 정의
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        //        return objectsArray[section].sectionObjects.count
-        
         if let sections = favoriteController.sections {
             let sectionInfo = sections[section]
             
@@ -63,28 +48,14 @@ class FavoriteViewController: UITableViewController, NSFetchedResultsControllerD
         return 0
         
     }
-    
+    //section 숫자 정의
     override func numberOfSections(in tableView: UITableView) -> Int {
-        
-        //        if objectsArray[0].sectionObjects.count == 0, objectsArray[1].sectionObjects.count == 0 {
-        //            let noDataLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
-        //            noDataLabel.text = "등록된 즐겨찾기가 없습니다. \r\n 즐겨찾는 아이템을 등록해 주세요."
-        //            noDataLabel.textAlignment = .center
-        //            noDataLabel.font = UIFont(name: noDataLabel.font.fontName, size: 12)
-        //            noDataLabel.numberOfLines = 0
-        //            noDataLabel.textColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
-        //            tableView.backgroundView = noDataLabel
-        //        } else {
-        //            tableView.backgroundView = nil
-        //        }
-        //
-        //        return objectsArray.count
         if let sections = favoriteController.sections {
             return sections.count
         }
         return 0
     }
-    
+    //section title 정의
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         if let sections = favoriteController.sections {
@@ -105,6 +76,7 @@ class FavoriteViewController: UITableViewController, NSFetchedResultsControllerD
         tableView.setEditing(true, animated: true)
     }
     
+    //tableview editing style
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
         if tableView.isEditing {
             return .delete
@@ -113,78 +85,74 @@ class FavoriteViewController: UITableViewController, NSFetchedResultsControllerD
         return .none
     }
     
+    //editing commit action
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
             
-            //                if indexPath.section == 0 {
-            //                    let memberships = membershipFetch()
-            //                    let item = memberships[indexPath.row]
-            //
-            //                    item.toMembership?.favorite = false
-            //
-            //                    context.delete(item)
-            //                    self.tableView.reloadData()
-            //
-            //                }
-            //                if indexPath.section == 1 {
-            //                    let coupons = couponFetch()
-            //                    let item = coupons[indexPath.row]
-            //
-            //                    item.toCoupon?.favorite = false
-            //
-            //                    context.delete(item)
-            //                    self.tableView.reloadData()
-            //                }
-            
-            ad.saveContext()
+            if var objs = favoriteController.fetchedObjects, objs.count > 0{
+                let alert = UIAlertController(title: "즐겨찾기 삭제", message: "멤버십 쿠폰은 삭제되지 않습니다.", preferredStyle: .alert)
+                let delete = UIAlertAction(title: "삭제", style: .destructive) {
+                    (_) in
+                    let item = objs[indexPath.row]
+                    item.toMembership?.favorite = false
+                    item.toCoupon?.favorite = false
+                    context.delete(item)
+                    ad.saveContext()
+                }
+                let cancel = UIAlertAction(title: "취소", style: .cancel)
+                alert.addAction(delete)
+                alert.addAction(cancel)
+                self.present(alert, animated: true)
+            }
         }
     }
     
+    //editing mode일때 안으로 indent시킬 것인지
     override func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     
-    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        isMovingItem = true
-//        if let sections = favoriteController.sections {
-//            let sectionInfo = sections[sourceIndexPath.section].name
-//            
-//            if sectionInfo == "0" {
-//                if var objs = favoriteController.fetchedObjects
-//            }
-//        }
-        if var objs = favoriteController.fetchedObjects, objs.count > 0 {
-            for index in objs {
-                if index.isMembership {
-                    print(index.toMembership?.barcode)
-                }
-                if index.isCoupon {
-                    print(index.toCoupon?.barcode)
-                }
-            }
-            let item = objs[sourceIndexPath.row]
-            let destinitem = objs[destinationIndexPath.row]
-            print(item.toMembership?.barcode)
-            print(destinitem.toMembership?.barcode)
-            objs.remove(at: sourceIndexPath.row)
-            objs.insert(item, at: destinationIndexPath.row)
-            print(objs.count)
-            for index in 0..<objs.count {
-                //index 0은 최초 즐겨찾기가 생성되는 아이템을 위해 비워둠
-                objs[index].index = Int32(index) + 1
-                print(objs[index].index)
-            }
-            context.updatedObjects
-            ad.saveContext()
-        }
-        
-        isMovingItem = false
-        
-    }
-    
+    //row 이동시 action 구현
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         return true
     }
+    
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        
+        attemptFetch()
+        if var objects = self.favoriteController.fetchedObjects {
+            self.favoriteController.delegate = nil
+            let object = objects[sourceIndexPath.row]
+            objects.remove(at: sourceIndexPath.row)
+            objects.insert(object, at: destinationIndexPath.row)
+            
+            var index = Int32(1)
+            
+            for object in objects where index < objects.count + 1 {
+                object.index = index
+                index += 1
+            }
+            ad.saveContext()
+            self.favoriteController.delegate = self
+            attemptFetch()
+        }
+        
+    }
+    
+    //section간에만 이동할 수 있도록 제한
+    override func tableView(_ tableView: UITableView, targetIndexPathForMoveFromRowAt sourceIndexPath: IndexPath, toProposedIndexPath proposedDestinationIndexPath: IndexPath) -> IndexPath {
+        if sourceIndexPath.section != proposedDestinationIndexPath.section {
+            var row = 0
+            
+            if sourceIndexPath.section < proposedDestinationIndexPath.section {
+                row = self.tableView(tableView, numberOfRowsInSection: sourceIndexPath.section) - 1
+            }
+            return IndexPath(row: row, section: sourceIndexPath.section)
+        }
+        return proposedDestinationIndexPath
+    }
+    
+    //cell 표현
     
     func configureCell(cell: FavoriteCell, indexPath: NSIndexPath) {
         
@@ -195,27 +163,17 @@ class FavoriteViewController: UITableViewController, NSFetchedResultsControllerD
         
     }
     
-    //section간에만 이동할 수 있도록 제한
-    override func tableView(_ tableView: UITableView, targetIndexPathForMoveFromRowAt sourceIndexPath: IndexPath, toProposedIndexPath proposedDestinationIndexPath: IndexPath) -> IndexPath {
-        if sourceIndexPath.section != proposedDestinationIndexPath.section {
-            var row = 0
-            if sourceIndexPath.section < proposedDestinationIndexPath.section {
-                row = self.tableView(tableView, numberOfRowsInSection: sourceIndexPath.section) - 1
-            }
-            return IndexPath(row: row, section: sourceIndexPath.section)
-        }
-        return proposedDestinationIndexPath
-    }
     
+    //
     // MARK: - coreData 부분
-    
+    //
     func attemptFetch()  {
         let fetchRequest: NSFetchRequest<Favorite> = Favorite.fetchRequest()
         let dateSort = NSSortDescriptor(key: "created", ascending: false)
         let typeSort = NSSortDescriptor(key: "isCoupon", ascending: true)
         let indexSort = NSSortDescriptor(key: "index", ascending: true)
         
-        fetchRequest.sortDescriptors = [typeSort, dateSort, indexSort]
+        fetchRequest.sortDescriptors = [typeSort, indexSort, dateSort]
         
         
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: "isCoupon", cacheName: nil)
@@ -237,23 +195,17 @@ class FavoriteViewController: UITableViewController, NSFetchedResultsControllerD
     //컨트롤러가 바뀔때마다 테이블뷰 업데이트
     
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        if isMovingItem {
-            return
-        }
+        
         tableView.beginUpdates()
     }
     
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        if isMovingItem {
-            return
-        }
+       
         tableView.endUpdates()
     }
     
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
-        if isMovingItem {
-            return
-        }
+        
         switch type {
         case .insert:
             tableView.insertSections(IndexSet(integer: sectionIndex), with: .fade)

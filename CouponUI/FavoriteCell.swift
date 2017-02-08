@@ -31,10 +31,12 @@ class FavoriteCell: UITableViewCell {
                 let barcodeNo = items.toCoupon?.barcode
                 barcodeImg.image = generateBarcodeFromString(string: barcodeNo)
                 logo.image = items.toCoupon?.toImage?.image as! UIImage?
+                print(items.index)
             } else if items.isMembership == true {
                 let barcodeNo = items.toMembership?.barcode
                 barcodeImg.image = generateBarcodeFromString(string: barcodeNo)
                 logo.image = items.toMembership?.toImage?.image as! UIImage?
+                print(items.index)
             }
         }
        

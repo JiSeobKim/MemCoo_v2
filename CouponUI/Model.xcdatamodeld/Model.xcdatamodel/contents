@@ -24,7 +24,7 @@
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="toBrand" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Brand" inverseName="toCoupon" inverseEntity="Brand" syncable="YES"/>
         <relationship name="toCategory" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Category" inverseName="toCoupon" inverseEntity="Category" syncable="YES"/>
-        <relationship name="toFavorite" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Favorite" inverseName="toCoupon" inverseEntity="Favorite" syncable="YES"/>
+        <relationship name="toFavorite" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Favorite" inverseName="toCoupon" inverseEntity="Favorite" syncable="YES"/>
         <relationship name="toImage" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Image" inverseName="toCoupon" inverseEntity="Image" syncable="YES"/>
     </entity>
     <entity name="Favorite" representedClassName="Favorite" syncable="YES">
@@ -50,7 +50,7 @@
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="toBrand" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Brand" inverseName="toMembership" inverseEntity="Brand" syncable="YES"/>
         <relationship name="toCategory" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Category" inverseName="toMembership" inverseEntity="Category" syncable="YES"/>
-        <relationship name="toFavorite" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Favorite" inverseName="toMembership" inverseEntity="Favorite" syncable="YES"/>
+        <relationship name="toFavorite" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Favorite" inverseName="toMembership" inverseEntity="Favorite" syncable="YES"/>
         <relationship name="toImage" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Image" inverseName="toMembership" inverseEntity="Image" syncable="YES"/>
     </entity>
     <elements>
@@ -59,6 +59,6 @@
         <element name="Coupon" positionX="-558" positionY="113" width="128" height="238"/>
         <element name="Favorite" positionX="-794" positionY="306" width="128" height="135"/>
         <element name="Image" positionX="160" positionY="315" width="128" height="120"/>
-        <element name="Membership" positionX="-560" positionY="401" width="128" height="180"/>
+        <element name="Membership" positionX="-560" positionY="401" width="128" height="178"/>
     </elements>
 </model>

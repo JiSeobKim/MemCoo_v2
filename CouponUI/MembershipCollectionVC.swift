@@ -49,7 +49,11 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
         collectionView!.collectionViewLayout = layout
         
         
-        
+        //네비게이션 컬러
+        self.navigationController?.navigationBar.tintColor = UIColor.black
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.isOpaque = true
+        self.navigationController?.navigationBar.backgroundColor = UIColor.white
         
         
     }

@@ -50,6 +50,7 @@
 		A078544F1DFBA3D000CBF7C4 /* MembershipFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07854481DFBA3D000CBF7C4 /* MembershipFunction.swift */; };
 		A099881D1E4AB164008EBDE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A099881C1E4AB164008EBDE6 /* Assets.xcassets */; };
 		A099881E1E4AB167008EBDE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A099881C1E4AB164008EBDE6 /* Assets.xcassets */; };
+		A09988201E4B5C12008EBDE6 /* LogoCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A099881F1E4B5C12008EBDE6 /* LogoCorner.swift */; };
 		A0BB53531E21D61900AF54C9 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0BB53521E21D61900AF54C9 /* NotificationCenter.framework */; };
 		A0BB53561E21D61A00AF54C9 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BB53551E21D61A00AF54C9 /* TodayViewController.swift */; };
 		A0BB53591E21D61A00AF54C9 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0BB53571E21D61A00AF54C9 /* MainInterface.storyboard */; };
@@ -131,6 +132,7 @@
 		A07854461DFBA3D000CBF7C4 /* AddEditMemebershipVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEditMemebershipVC.swift; sourceTree = "<group>"; };
 		A07854481DFBA3D000CBF7C4 /* MembershipFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembershipFunction.swift; sourceTree = "<group>"; };
 		A099881C1E4AB164008EBDE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A099881F1E4B5C12008EBDE6 /* LogoCorner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoCorner.swift; sourceTree = "<group>"; };
 		A0BB53511E21D61900AF54C9 /* Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Widget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0BB53521E21D61900AF54C9 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		A0BB53551E21D61A00AF54C9 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 				A0FB04751E0BCFBF007FEA21 /* logoTableCell.swift */,
 				A0FB04771E0BCFD7007FEA21 /* logoCollectionCell.swift */,
 				A07854481DFBA3D000CBF7C4 /* MembershipFunction.swift */,
+				A099881F1E4B5C12008EBDE6 /* LogoCorner.swift */,
 			);
 			name = Membership;
 			sourceTree = "<group>";
@@ -389,7 +392,7 @@
 						};
 					};
 					A0BB53501E21D61900AF54C9 = {
-						DevelopmentTeam = XNB68CC222;
+						DevelopmentTeam = HWY63NUUS4;
 					};
 				};
 			};
@@ -512,6 +515,7 @@
 				42FAB62B1E04E18E00671E32 /* ParsingBrain.swift in Sources */,
 				A0FB04741E0BCEFC007FEA21 /* logoSelect.swift in Sources */,
 				3E36B1791DF2133000385315 /* GenerateBarcode.swift in Sources */,
+				A09988201E4B5C12008EBDE6 /* LogoCorner.swift in Sources */,
 				4261B4B91E4A1B41000A6F25 /* Membership+CoreDataClass.swift in Sources */,
 				A078544F1DFBA3D000CBF7C4 /* MembershipFunction.swift in Sources */,
 				42A657631E1F383B009BB240 /* FavoriteCell.swift in Sources */,
@@ -675,7 +679,7 @@
 				DEVELOPMENT_TEAM = HWY63NUUS4;
 				INFOPLIST_FILE = CouponUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = gq.dugong.MembershipCoupon;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JMJ.MembershipCoupon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -690,7 +694,7 @@
 				DEVELOPMENT_TEAM = HWY63NUUS4;
 				INFOPLIST_FILE = CouponUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = gq.dugong.MembershipCoupon;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JMJ.MembershipCoupon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -699,10 +703,10 @@
 		A0BB535F1E21D61A00AF54C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEVELOPMENT_TEAM = XNB68CC222;
+				DEVELOPMENT_TEAM = HWY63NUUS4;
 				INFOPLIST_FILE = Widget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = gq.dugong.MembershipCoupon.Widget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JMJ.MembershipCoupon.Widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -712,10 +716,10 @@
 		A0BB53601E21D61A00AF54C9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEVELOPMENT_TEAM = XNB68CC222;
+				DEVELOPMENT_TEAM = HWY63NUUS4;
 				INFOPLIST_FILE = Widget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = gq.dugong.MembershipCoupon.Widget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JMJ.MembershipCoupon.Widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;

@@ -269,13 +269,10 @@
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ET7-wg-u97">
                                                             <rect key="frame" x="20" y="20" width="60" height="60"/>
                                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="60" id="V4D-6H-RBO"/>
-                                                                <constraint firstAttribute="height" constant="60" id="sHF-x3-kMr"/>
-                                                            </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="circleBoundary" value="NO"/>
                                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="NO"/>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="logoCornerDesign" value="YES"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="★" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ba1-S3-Rba">
@@ -288,8 +285,8 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brand" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7el-a9-znx">
-                                                            <rect key="frame" x="20" y="82" width="80" height="16"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5v-CW-wcB">
+                                                            <rect key="frame" x="0.0" y="82" width="100" height="16"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -297,16 +294,18 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
+                                                        <constraint firstItem="U5v-CW-wcB" firstAttribute="top" secondItem="ET7-wg-u97" secondAttribute="bottom" constant="2" id="0LT-OH-KB1"/>
+                                                        <constraint firstAttribute="trailing" secondItem="ET7-wg-u97" secondAttribute="trailing" constant="20" id="1db-eI-wVW"/>
                                                         <constraint firstAttribute="trailing" secondItem="ba1-S3-Rba" secondAttribute="trailing" id="2Ow-CG-jba"/>
-                                                        <constraint firstItem="ET7-wg-u97" firstAttribute="centerY" secondItem="mgn-w3-bhr" secondAttribute="centerY" constant="-10" id="FfB-or-tt9"/>
-                                                        <constraint firstItem="ET7-wg-u97" firstAttribute="centerX" secondItem="mgn-w3-bhr" secondAttribute="centerX" id="LpM-Ff-gJq"/>
+                                                        <constraint firstItem="ET7-wg-u97" firstAttribute="leading" secondItem="mgn-w3-bhr" secondAttribute="leading" constant="20" id="2og-uT-vPf"/>
                                                         <constraint firstItem="ba1-S3-Rba" firstAttribute="top" secondItem="mgn-w3-bhr" secondAttribute="top" id="NOp-mj-EwJ"/>
-                                                        <constraint firstAttribute="trailing" secondItem="7el-a9-znx" secondAttribute="trailing" id="Tah-KR-s7D"/>
-                                                        <constraint firstItem="7el-a9-znx" firstAttribute="top" secondItem="ET7-wg-u97" secondAttribute="bottom" constant="2" id="ejc-aN-4EI"/>
-                                                        <constraint firstItem="7el-a9-znx" firstAttribute="leading" secondItem="mgn-w3-bhr" secondAttribute="leading" constant="20" id="qkN-fw-pgW"/>
+                                                        <constraint firstAttribute="trailing" secondItem="U5v-CW-wcB" secondAttribute="trailing" id="XFz-yW-lf3"/>
+                                                        <constraint firstItem="ET7-wg-u97" firstAttribute="top" secondItem="mgn-w3-bhr" secondAttribute="top" constant="20" id="nbF-mL-F68"/>
+                                                        <constraint firstItem="U5v-CW-wcB" firstAttribute="leading" secondItem="mgn-w3-bhr" secondAttribute="leading" id="tVi-8a-Piv"/>
+                                                        <constraint firstAttribute="bottom" secondItem="ET7-wg-u97" secondAttribute="bottom" constant="40" id="y09-jw-Jjf"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="NO"/>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
@@ -318,11 +317,11 @@
                                             <constraint firstItem="mgn-w3-bhr" firstAttribute="leading" secondItem="Pb7-vL-ZG4" secondAttribute="leading" id="vqF-iw-he2"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="favorite" destination="ba1-S3-Rba" id="eDY-Ot-7oh"/>
-                                            <outlet property="viewLogoName" destination="7el-a9-znx" id="GW1-4B-ojW"/>
+                                            <outlet property="viewLogoName" destination="U5v-CW-wcB" id="ciR-wl-uCE"/>
                                             <outlet property="viewLogoShow" destination="ET7-wg-u97" id="SEa-Jw-CKb"/>
                                         </connections>
                                     </collectionViewCell>
@@ -372,7 +371,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="default" width="440" height="433"/>
+        <image name="default" width="222" height="195"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="axa-gl-xNh"/>

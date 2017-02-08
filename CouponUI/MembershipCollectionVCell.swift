@@ -29,10 +29,7 @@ class MembershipCollectionVCell : UICollectionViewCell {
         viewLogoName.text = item.toBrand?.title
         viewLogoShow.image = item.toImage?.image as? UIImage
         
-        viewLogoShow.layer.borderWidth = 1
-        viewLogoShow.layer.borderColor = UIColor(red: 244/225.0, green: 244/255.0, blue: 244/255.0, alpha: 1.0).cgColor
-        viewLogoShow.layer.cornerRadius = 10
-
+       
         // Shadow and Radius
         
 //        viewLogoShow.layer.borderColor = UIColor.gray.cgColor

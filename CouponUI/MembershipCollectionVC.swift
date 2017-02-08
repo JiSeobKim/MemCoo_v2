@@ -81,16 +81,17 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
             
             if let objs = controller.fetchedObjects, objs.count > 0 {
                 let item = objs[(indexPath?.item)!]
-                let favoriteContext = Favorite(context: context)
-                
+                print(item.favorite)
                 
                 if item.favorite == false {
                     let alert = UIAlertController(title: "즐겨찾기 추가", message: "\"\((item.toBrand?.title)!)\" 멤버십을 \n즐겨찾기에 추가하시겠습니까?", preferredStyle: .alert)
                     let add = UIAlertAction(title: "추가", style: .default) {
                         (_) in
+                        let favoriteContext = Favorite(context: context)
                         item.favorite = true
                         
                         favoriteContext.isMembership = true
+                        favoriteContext.isCoupon = false
                         favoriteContext.index = 0
                         item.toFavorite = favoriteContext
                         ad.saveContext()
@@ -102,13 +103,14 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
                     alert.addAction(cancel)
                     self.present(alert, animated: true)
                 }
-                else {
+                if item.favorite == true {
                     let alert = UIAlertController(title: "즐겨찾기 제거", message: "\"\((item.toBrand?.title)!)\" 멤버십을 \n즐겨찾기에서 제거하시겠습니까?", preferredStyle: .alert)
                     let add = UIAlertAction(title: "제거", style: .default) {
                         (_) in
-                        item.favorite = false
                         
+                        item.favorite = false
                         context.delete(item.toFavorite!)
+                        
                         ad.saveContext()
                         self.collectionView.reloadData()
                     }

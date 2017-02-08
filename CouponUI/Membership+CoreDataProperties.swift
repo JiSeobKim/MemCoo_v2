@@ -1,9 +1,9 @@
 //
 //  Membership+CoreDataProperties.swift
-//  
+//  MemebershipCoupon
 //
-//  Created by Joosung Kim on 31/01/2017.
-//
+//  Created by Joosung Kim on 08/02/2017.
+//  Copyright © 2017 mino. All rights reserved.
 //
 
 import Foundation
@@ -16,15 +16,15 @@ extension Membership {
         return NSFetchRequest<Membership>(entityName: "Membership");
     }
 
-    @NSManaged public var title: String?
     @NSManaged public var barcode: String?
     @NSManaged public var created: NSDate?
     @NSManaged public var favorite: Bool
     @NSManaged public var isFavorite: Bool
+    @NSManaged public var title: String?
     @NSManaged public var toBrand: Brand?
     @NSManaged public var toCategory: NSSet?
-    @NSManaged public var toImage: Image?
     @NSManaged public var toFavorite: Favorite?
+    @NSManaged public var toImage: Image?
 
 }
 

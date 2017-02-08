@@ -19,7 +19,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, NSFetchedResults
 
     @IBOutlet weak var imageView: UIImageView!
     
-    var favorite: [Favorite]!
+//    var favorite: [Favorite]!
     
     
     @IBAction func buttonAction1(_ sender: Any) {

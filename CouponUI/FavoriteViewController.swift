@@ -16,6 +16,11 @@ class FavoriteViewController: UITableViewController, NSFetchedResultsControllerD
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.leftBarButtonItem = self.editButtonItem
+        self.navigationController?.navigationBar.tintColor = UIColor.black
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.isOpaque = true
+        self.navigationController?.navigationBar.backgroundColor = UIColor.white
+       
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,6 +58,14 @@ class FavoriteViewController: UITableViewController, NSFetchedResultsControllerD
         if let sections = favoriteController.sections {
             return sections.count
         }
+        let noDataLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
+        noDataLabel.text = "등록된 즐겨찾기가 없습니다. \r\n 즐겨찾는 아이템을 등록해 주세요."
+        noDataLabel.textAlignment = .center
+        noDataLabel.font = UIFont(name: noDataLabel.font.fontName, size: 12)
+        noDataLabel.numberOfLines = 0
+        noDataLabel.textColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+        tableView.backgroundView = noDataLabel
+        
         return 0
     }
     //section title 정의
@@ -90,7 +103,7 @@ class FavoriteViewController: UITableViewController, NSFetchedResultsControllerD
         if editingStyle == UITableViewCellEditingStyle.delete {
             
             if var objs = favoriteController.fetchedObjects, objs.count > 0{
-                let alert = UIAlertController(title: "즐겨찾기 삭제", message: "멤버십 쿠폰은 삭제되지 않습니다.", preferredStyle: .alert)
+                let alert = UIAlertController(title: "즐겨찾기 삭제", message: "멤버십카드, 쿠폰 데이터는 삭제되지 않습니다.", preferredStyle: .alert)
                 let delete = UIAlertAction(title: "삭제", style: .destructive) {
                     (_) in
                     let item = objs[indexPath.row]

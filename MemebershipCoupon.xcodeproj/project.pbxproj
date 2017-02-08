@@ -216,6 +216,7 @@
 		3E37D3571DF09E4A0054C4DA /* MembershipCoupon */ = {
 			isa = PBXGroup;
 			children = (
+				42CE8E1C1E4B5F1900603AA2 /* View */,
 				42976C1B1DF6C4C400ADB0D7 /* DatabaseModel */,
 				42976BA31DF27DFC00ADB0D7 /* Supporting Files */,
 				42976BA11DF27DC900ADB0D7 /* Favorite */,
@@ -266,7 +267,6 @@
 			children = (
 				3E37D35A1DF09E4A0054C4DA /* FavoriteViewController.swift */,
 				42A657621E1F383B009BB240 /* FavoriteCell.swift */,
-				4251CD971E288D6900671A3F /* MaterialView.swift */,
 			);
 			name = Favorite;
 			sourceTree = "<group>";
@@ -299,6 +299,14 @@
 				4261B4B81E4A1B41000A6F25 /* Favorite+CoreDataProperties.swift */,
 			);
 			name = DatabaseModel;
+			sourceTree = "<group>";
+		};
+		42CE8E1C1E4B5F1900603AA2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4251CD971E288D6900671A3F /* MaterialView.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		A0BB53541E21D61A00AF54C9 /* Widget */ = {

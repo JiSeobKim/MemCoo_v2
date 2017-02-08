@@ -14,10 +14,14 @@
         <scene sceneID="E3h-Mk-u21">
             <objects>
                 <tableViewController storyboardIdentifier="FavoriteMain" id="N2a-fE-9r6" customClass="FavoriteViewController" customModule="MemebershipCoupon" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="133" sectionHeaderHeight="18" sectionFooterHeight="18" id="Fna-gS-Hon">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="133" sectionHeaderHeight="18" sectionFooterHeight="18" id="Fna-gS-Hon">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="separatorColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexTrackingBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" showsReorderControl="YES" indentationWidth="10" reuseIdentifier="FavoriteCell" rowHeight="133" id="Qr5-GV-Yb4" customClass="FavoriteCell" customModule="MemebershipCoupon" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="56" width="375" height="133"/>
@@ -85,12 +89,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="즐겨찾기" id="67l-fp-m2C">
                         <barButtonItem key="leftBarButtonItem" style="done" systemItem="edit" id="l2e-5v-5W4">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="startEditing:" destination="N2a-fE-9r6" id="bD1-zp-VDZ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Ya-bm-5jL" userLabel="First Responder" sceneMemberID="firstResponder"/>

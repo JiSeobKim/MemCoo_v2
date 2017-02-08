@@ -15,12 +15,7 @@ class FavoriteViewController: UITableViewController, NSFetchedResultsControllerD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.leftBarButtonItem = self.editButtonItem
-        self.navigationController?.navigationBar.tintColor = UIColor.black
-        self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationController?.navigationBar.isOpaque = true
-        self.navigationController?.navigationBar.backgroundColor = UIColor.white
-       
+        setNavigationBarColor()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -257,6 +252,14 @@ class FavoriteViewController: UITableViewController, NSFetchedResultsControllerD
             }
             break
         }
+    }
+    
+    func setNavigationBarColor()  {
+        self.navigationItem.leftBarButtonItem = self.editButtonItem
+        self.navigationController?.navigationBar.tintColor = UIColor.black
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.isOpaque = true
+        self.navigationController?.navigationBar.backgroundColor = UIColor.white
     }
     
 }

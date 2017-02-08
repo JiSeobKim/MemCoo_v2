@@ -224,7 +224,6 @@ class FavoriteViewController: UITableViewController, NSFetchedResultsControllerD
             break
         case .delete:
             if let indexPath = indexPath {
-                print(indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
             }
             break

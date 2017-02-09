@@ -9,7 +9,7 @@
 import UIKit
 import TesseractOCR
 
-class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, G8TesseractDelegate {
+class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, G8TesseractDelegate, UITextViewDelegate {
     @IBOutlet weak var testimage: UIImageView!
     var imagePicker: UIImagePickerController!
 
@@ -88,6 +88,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
     }
 
     @IBOutlet weak var originalText: UITextView!
+    
     
     //모든 값을 코어데이터 테이블로 저장하기 위한 액션
     @IBAction func saveBtnPressed(_ sender: UIBarButtonItem) {
@@ -184,7 +185,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        originalText.delegate = self
         self.testimage.image = originalImage
         
         var parsingBrain: ParsingBrain
@@ -313,15 +314,22 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
     func textViewDidBeginEditing(_ textView: UITextView) {
         ad.heightForKeyboard = 1
         self.moveFrame()
+        UIView.animate(withDuration: 0.3, animations: {
+             self.view.frame.origin.y -= 200
+        }, completion: nil)
+       
     }
-    @IBAction func titleField(_ sender: Any) {
-        ad.heightForKeyboard = 1
-        self.moveFrame()
-    }
+    
+    
+//    @IBAction func titleField(_ sender: Any) {
+//        ad.heightForKeyboard = 1
+//        self.moveFrame()
+//    }
     
 //    func textViewDidEndEditing(_ textView: UITextView) {
 //        ad.heightForKeyboard = 1
 //        self.moveFrame()
+//        
 //    }
 
     

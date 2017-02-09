@@ -314,7 +314,7 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="F0129B52-05BD-417E-9102-0BF5BA6B6B12" translatesAutoresizingMaskIntoConstraints="NO" id="Oma-dl-Rli">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="A7ED57D2-ECA7-46FE-A0AD-F4D8AB8B931A" translatesAutoresizingMaskIntoConstraints="NO" id="Oma-dl-Rli">
                                 <rect key="frame" x="8" y="8" width="126" height="126"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="126" id="AWv-L3-961"/>
@@ -349,6 +349,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="titleField:" destination="Unb-jy-f92" eventType="editingDidEnd" id="oEo-BY-lhr"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="쿠폰 번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gc-yp-syv">
                                 <rect key="frame" x="142" y="75" width="225" height="21"/>
@@ -512,7 +515,6 @@
                         <outlet property="deleteButton" destination="LYs-Sz-I4T" id="JLd-82-4rB"/>
                         <outlet property="expiredDate" destination="I5N-wI-h5V" id="Vdf-CG-aS1"/>
                         <outlet property="logo" destination="Oma-dl-Rli" id="5VA-rc-1GU"/>
-                        <outlet property="memoField" destination="6O0-kw-vCm" id="7T2-QZ-Blc"/>
                         <outlet property="originalText" destination="6O0-kw-vCm" id="BOR-Qx-hEp"/>
                         <outlet property="product" destination="l0h-N2-ub4" id="uWc-tL-C2h"/>
                         <outlet property="testimage" destination="cUb-FD-V5I" id="Mho-DL-a3h"/>
@@ -532,7 +534,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="F0129B52-05BD-417E-9102-0BF5BA6B6B12" width="314" height="314">
+        <image name="A7ED57D2-ECA7-46FE-A0AD-F4D8AB8B931A" width="314" height="314">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
@@ -5534,6 +5536,6 @@ fAAEkYAABJGLAASRlAAEkZkABJGhAASRpAAEkakABJG4AASRvAAEkcMABJHLAASR2AAEkd0ABJHfAASR
 AAAAAAAABJIdA
 </mutableData>
         </image>
-        <image name="default" width="440" height="433"/>
+        <image name="default" width="222" height="195"/>
     </resources>
 </document>

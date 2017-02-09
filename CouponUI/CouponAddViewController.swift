@@ -9,13 +9,13 @@
 import UIKit
 import TesseractOCR
 
-class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, G8TesseractDelegate, UITextViewDelegate {
+class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, G8TesseractDelegate {
     @IBOutlet weak var testimage: UIImageView!
     var imagePicker: UIImagePickerController!
 
     //detail에서 넘어온 coupon 객체를 받기하기 위한 coupon 객체
     var couponToEdit: Coupon?
-    @IBOutlet weak var memoField: UITextView!
+    
     
     //밝기 조절용
     var bright : CGFloat?
@@ -189,7 +189,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         
         var parsingBrain: ParsingBrain
         var couponInfo: ParsingBrain.CouponInfo
-        memoField.delegate = self
+        
 
 
         //다른 곳 터치시 키보드 제거 및 프레임 원위치
@@ -197,6 +197,9 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         
         //툴바
         addInputAccessoryForTextFields(textFields: [product, barcode, expiredDate],dismissable: true, previousNextable: true)
+        addInputAccessoryForTextViews(textViews: [originalText], dismissable: true, previousNextable: true)
+        
+        
         //add 버튼을 눌렀을 때.
         if ad.isAddButton == true {
             self.navigationItem.title = "쿠폰 추가"
@@ -242,12 +245,6 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
 //            originalText.text = copiedString
 //        }
         
-        //다른 곳 터치시 키보드 제거 및 프레임 원위치
-        self.hideKeyboardWhenTappedAround()
-        
-        //툴바
-        addInputAccessoryForTextFields(textFields: [product, barcode, expiredDate], dismissable: true, previousNextable: true)
-        addInputAccessoryForTextViews(textViews: [originalText], dismissable: true, previousNextable: true)
         }
     
     //OCR
@@ -314,13 +311,17 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
     }
     //메모 선택시 프레임 이동
     func textViewDidBeginEditing(_ textView: UITextView) {
-        ad.heightForKeyboard = 2
+        ad.heightForKeyboard = 1
+        self.moveFrame()
+    }
+    @IBAction func titleField(_ sender: Any) {
+        ad.heightForKeyboard = 1
         self.moveFrame()
     }
     
 //    func textViewDidEndEditing(_ textView: UITextView) {
-//        ad.heightForKeyboard = 0
-//        //self.moveFrame()
+//        ad.heightForKeyboard = 1
+//        self.moveFrame()
 //    }
 
     

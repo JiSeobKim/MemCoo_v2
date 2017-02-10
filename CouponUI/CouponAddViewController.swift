@@ -42,19 +42,6 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
     
     //버튼 숨김 기능을 위한 버튼 아울렛.
     @IBOutlet weak var deleteButton: UIButton!
-   
-//    //로고를 선택하면 데이터베이스의 로고를 불러오기 위한 버튼액션(현재는 사진첩으로 가게해놓음)
-//    @IBAction func picturePickerPressed(_ sender: UIButton) {
-//        present(imagePicker, animated: true, completion: nil)
-//    }
-    
-//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-//        if let img = info[UIImagePickerControllerOriginalImage] as? UIImage{
-//            logo.image = img
-//        }
-//        imagePicker.dismiss(animated: true, completion: nil)
-//    }
-    
     @IBOutlet weak var product: UITextField!
     @IBOutlet weak var barcode: UITextField!
     
@@ -92,12 +79,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         expiredDate.text = dateFormatter.string(from: sender.date)
     }
 
-    //카테고리 필드 클릭시 여태까지 만들어 놓았던 카테고리를 픽커뷰로 보여주기 위한 액션
-    @IBAction func categoryFieldPressed(_ sender: UITextField) {
-    }
-
     @IBOutlet weak var originalText: UITextView!
-    
     
     //모든 값을 코어데이터 테이블로 저장하기 위한 액션
     @IBAction func saveBtnPressed(_ sender: UIBarButtonItem) {

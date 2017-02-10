@@ -111,10 +111,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CAm-2P-rCT">
-                                <rect key="frame" x="106" y="127" width="163" height="163"/>
+                                <rect key="frame" x="107" y="128" width="160" height="160"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="163" id="QUX-E4-WHv"/>
-                                    <constraint firstAttribute="height" constant="163" id="TtF-aP-acs"/>
+                                    <constraint firstAttribute="width" constant="160" id="QUX-E4-WHv"/>
+                                    <constraint firstAttribute="height" constant="160" id="TtF-aP-acs"/>
                                 </constraints>
                                 <color key="tintColor" red="0.56920522451400757" green="0.54980164766311646" blue="0.49957269430160522" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="100" maxX="90" maxY="0.0"/>
@@ -136,7 +136,7 @@
                             <constraint firstItem="HWN-aU-qOq" firstAttribute="top" secondItem="pIN-gg-oYk" secondAttribute="bottom" id="dWa-vv-uLC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1QD-Nx-8df" secondAttribute="trailing" id="hJX-x5-1lX"/>
                             <constraint firstItem="pIN-gg-oYk" firstAttribute="centerX" secondItem="Wqw-hW-ppK" secondAttribute="centerX" id="jLw-9Q-IpI"/>
-                            <constraint firstItem="Kxd-nk-EcJ" firstAttribute="top" secondItem="CAm-2P-rCT" secondAttribute="bottom" constant="32.5" id="jTR-XQ-tnS"/>
+                            <constraint firstItem="Kxd-nk-EcJ" firstAttribute="top" secondItem="CAm-2P-rCT" secondAttribute="bottom" constant="34.5" id="jTR-XQ-tnS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xrv-m4-Kgd" secondAttribute="trailing" id="nYb-eC-bh9"/>
                             <constraint firstAttribute="trailing" secondItem="Kxd-nk-EcJ" secondAttribute="trailing" constant="8" id="t7b-wK-zSv"/>
                             <constraint firstItem="Kxd-nk-EcJ" firstAttribute="top" secondItem="zUP-7i-rYm" secondAttribute="bottom" constant="30" id="tNt-kE-OdK"/>
@@ -203,6 +203,9 @@
                                     <constraint firstAttribute="width" constant="150" id="9hF-db-PfA"/>
                                     <constraint firstAttribute="height" constant="150" id="lYc-bd-q0z"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="logoCornerDesign" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -269,15 +272,6 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mgn-w3-bhr">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="120"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ET7-wg-u97">
-                                                            <rect key="frame" x="20" y="15" width="60" height="65"/>
-                                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="circleBoundary" value="NO"/>
-                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="NO"/>
-                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="logoCornerDesign" value="YES"/>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="★" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ba1-S3-Rba">
                                                             <rect key="frame" x="84" y="0.0" width="16" height="21"/>
                                                             <constraints>
@@ -289,23 +283,33 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5v-CW-wcB">
-                                                            <rect key="frame" x="0.0" y="82" width="100" height="16"/>
+                                                            <rect key="frame" x="0.0" y="90" width="100" height="16"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ET7-wg-u97">
+                                                            <rect key="frame" x="23" y="20" width="54" height="62"/>
+                                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="circleBoundary" value="NO"/>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="NO"/>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="logoCornerDesign" value="YES"/>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstItem="U5v-CW-wcB" firstAttribute="top" secondItem="ET7-wg-u97" secondAttribute="bottom" constant="2" id="0LT-OH-KB1"/>
-                                                        <constraint firstAttribute="trailing" secondItem="ET7-wg-u97" secondAttribute="trailing" constant="20" id="1db-eI-wVW"/>
+                                                        <constraint firstItem="U5v-CW-wcB" firstAttribute="top" secondItem="ET7-wg-u97" secondAttribute="bottom" constant="8" id="0LT-OH-KB1"/>
+                                                        <constraint firstAttribute="trailing" secondItem="ET7-wg-u97" secondAttribute="trailing" constant="23" id="1db-eI-wVW"/>
                                                         <constraint firstAttribute="trailing" secondItem="ba1-S3-Rba" secondAttribute="trailing" id="2Ow-CG-jba"/>
-                                                        <constraint firstItem="ET7-wg-u97" firstAttribute="leading" secondItem="mgn-w3-bhr" secondAttribute="leading" constant="20" id="2og-uT-vPf"/>
+                                                        <constraint firstItem="ET7-wg-u97" firstAttribute="leading" secondItem="mgn-w3-bhr" secondAttribute="leading" constant="23" id="2og-uT-vPf"/>
+                                                        <constraint firstAttribute="bottom" secondItem="U5v-CW-wcB" secondAttribute="bottom" constant="14" id="CHc-Wm-0Op"/>
                                                         <constraint firstItem="ba1-S3-Rba" firstAttribute="top" secondItem="mgn-w3-bhr" secondAttribute="top" id="NOp-mj-EwJ"/>
                                                         <constraint firstAttribute="trailing" secondItem="U5v-CW-wcB" secondAttribute="trailing" id="XFz-yW-lf3"/>
-                                                        <constraint firstItem="ET7-wg-u97" firstAttribute="top" secondItem="mgn-w3-bhr" secondAttribute="top" constant="15" id="nbF-mL-F68"/>
+                                                        <constraint firstItem="ET7-wg-u97" firstAttribute="top" secondItem="mgn-w3-bhr" secondAttribute="top" constant="20" id="nbF-mL-F68"/>
                                                         <constraint firstItem="U5v-CW-wcB" firstAttribute="leading" secondItem="mgn-w3-bhr" secondAttribute="leading" id="tVi-8a-Piv"/>
-                                                        <constraint firstAttribute="bottom" secondItem="ET7-wg-u97" secondAttribute="bottom" constant="40" id="y09-jw-Jjf"/>
+                                                        <constraint firstAttribute="bottom" secondItem="ET7-wg-u97" secondAttribute="bottom" constant="38" id="y09-jw-Jjf"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="YES"/>

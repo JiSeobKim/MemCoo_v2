@@ -203,6 +203,7 @@ class AddEditMemebershipVC: UIViewController {
  
     @IBAction func brandField(_ sender: Any) {
         // 프레임 이동
+        print("hi")
         ad.heightForKeyboard = 2
         self.moveFrame()
     }

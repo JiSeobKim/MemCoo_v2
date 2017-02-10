@@ -129,6 +129,7 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
                             (_) in
                             item.favorite = false
                             
+                            //error!
                             context.delete(item.toFavorite!)
                             ad.saveContext()
                         }

@@ -59,13 +59,13 @@ class ShowMembershipVC: UIViewController, UIGestureRecognizerDelegate {
             }
         
         //하단에 그림자 추가
-        ShowLogo.layer.borderColor = UIColor.gray.cgColor
-        ShowLogo.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
-        ShowLogo.layer.shadowOffset = CGSize(width : 0,height: 2.0)
-        ShowLogo.layer.shadowOpacity = 0.5
-        ShowLogo.layer.shadowRadius = 0.0
-        ShowLogo.layer.masksToBounds = false
-        ShowLogo.layer.cornerRadius = 10.0
+//        ShowLogo.layer.borderColor = UIColor.gray.cgColor
+//        ShowLogo.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+//        ShowLogo.layer.shadowOffset = CGSize(width : 0,height: 2.0)
+//        ShowLogo.layer.shadowOpacity = 0.5
+//        ShowLogo.layer.shadowRadius = 0.0
+//        ShowLogo.layer.masksToBounds = false
+//        ShowLogo.layer.cornerRadius = 10.0
         
     }
 

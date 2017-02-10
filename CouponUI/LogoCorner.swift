@@ -21,9 +21,27 @@ extension UIImageView {
         set{
             logoCorner = newValue
                 if logoCorner {
-                    self.layer.borderWidth = 2
-                    self.layer.borderColor = UIColor(red: 244/255.0, green: 244/255.0, blue: 244/255.0, alpha: 1.0).cgColor
-                    self.layer.cornerRadius = 10
+                    
+                    self.layer.borderColor = UIColor(red: 233/255.0, green: 233/255.0, blue: 233/255.0, alpha: 1.0).cgColor
+                    self.layer.cornerRadius = self.frame.width / 5
+                    if UIScreen.main.bounds.width == 320 {
+                        self.layer.borderWidth = 1.5
+                        if self.frame.width > 100 {
+                            self.layer.cornerRadius = 20
+                        } else {
+                            self.layer.cornerRadius = 10
+                        }
+
+                    } else {
+                        self.layer.borderWidth = 2
+                        if self.frame.width > 100 {
+                            self.layer.cornerRadius = 25
+                        } else {
+                            self.layer.cornerRadius = 15
+                        }
+                        
+                    }
+                    print("iPhone Frame is \(UIScreen.main.bounds.width)")
                 } else {
                     self.layer.borderWidth = 0
                     self.layer.cornerRadius = 0

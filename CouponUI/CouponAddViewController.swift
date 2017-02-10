@@ -75,6 +75,15 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         sender.inputView = datePicker
         datePicker.addTarget(self, action: #selector(CouponAddViewController.datePickerValueChanged), for: UIControlEvents.valueChanged)
     }
+    @IBAction func expiredDateFieldEnd(_ sender: Any) {
+        
+        if expiredDate.text == ""{
+            let todaysDate = Date()
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            expiredDate.text = dateFormatter.string(from: todaysDate)
+        }
+    }
     
     //타겟시 데이트피커의 값을 텍스트 필드에 넣어주기 위한 펑션
     func datePickerValueChanged(sender: UIDatePicker) {

@@ -41,7 +41,7 @@ extension UIImageView {
                         }
                         
                     }
-                    print("iPhone Frame is \(UIScreen.main.bounds.width)")
+                    
                 } else {
                     self.layer.borderWidth = 0
                     self.layer.cornerRadius = 0

@@ -131,7 +131,7 @@ extension UIViewController {
     }
     
     func addInputAccessoryForTextViews(textViews: [UITextView], dismissable: Bool = true, previousNextable: Bool = false) {
-        for (index, textField) in textViews.enumerated() {
+        for (_, textField) in textViews.enumerated() {
             //툴바 사이즈 및 컬러
             let toolbar: UIToolbar = UIToolbar()
             toolbar.sizeToFit()
@@ -142,31 +142,31 @@ extension UIViewController {
             var items = [UIBarButtonItem]()
             
             
-            if previousNextable {
-                
-                //이전 버튼
-                let previousButton = UIBarButtonItem(title: "<", style: .plain, target: nil, action: nil)
-                previousButton.width = 30
-                if textField == textViews.first {
-                    previousButton.isEnabled = false
-                } else {
-                    previousButton.target = textViews[index - 1]
-                    previousButton.action = #selector(UITextField.becomeFirstResponder)
-                }
-                
-                //다음 버튼
-                let nextButton = UIBarButtonItem(title: ">", style: .plain, target: nil, action: nil)
-                nextButton.width = 30
-                if textField == textViews.last {
-                    nextButton.isEnabled = false
-                } else {
-                    nextButton.target = textViews[index + 1]
-                    nextButton.action = #selector(UITextField.becomeFirstResponder)
-                }
-                
-                //툴바에 쓸 아이템 추가
-                items.append(contentsOf: [previousButton, nextButton])
-            }
+//            if previousNextable {
+//                
+//                //이전 버튼
+//                let previousButton = UIBarButtonItem(title: "<", style: .plain, target: nil, action: nil)
+//                previousButton.width = 30
+//                if textField == textViews.first {
+//                    previousButton.isEnabled = false
+//                } else {
+//                    previousButton.target = textViews[index - 1]
+//                    previousButton.action = #selector(UITextField.becomeFirstResponder)
+//                }
+//                
+//                //다음 버튼
+//                let nextButton = UIBarButtonItem(title: ">", style: .plain, target: nil, action: nil)
+//                nextButton.width = 30
+//                if textField == textViews.last {
+//                    nextButton.isEnabled = false
+//                } else {
+//                    nextButton.target = textViews[index + 1]
+//                    nextButton.action = #selector(UITextField.becomeFirstResponder)
+//                }
+//                
+//                //툴바에 쓸 아이템 추가
+//                items.append(contentsOf: [previousButton, nextButton])
+//            }
             
             let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
             let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: view, action: #selector(UIView.endEditing))

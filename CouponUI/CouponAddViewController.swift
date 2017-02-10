@@ -321,11 +321,12 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
     }
     //메모 선택시 프레임 이동
     func textViewDidBeginEditing(_ textView: UITextView) {
+        print("Hi")
         ad.heightForKeyboard = 3
         self.moveFrame()
-//        UIView.animate(withDuration: 0.3, animations: {
-//             self.view.frame.origin.y -= 200
-//        }, completion: nil)
+        UIView.animate(withDuration: 0.25, animations: {
+             self.view.frame.origin.y -= 200
+        }, completion: nil)
        
     }
     

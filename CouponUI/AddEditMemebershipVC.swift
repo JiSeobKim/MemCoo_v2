@@ -65,6 +65,8 @@ class AddEditMemebershipVC: UIViewController {
         //툴바
         addInputAccessoryForTextFields(textFields: [paramBrand,paramBarcode],dismissable: true, previousNextable: true)
         
+     
+
     }
     
     

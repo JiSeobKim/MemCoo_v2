@@ -75,7 +75,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         sender.inputView = datePicker
         datePicker.addTarget(self, action: #selector(CouponAddViewController.datePickerValueChanged), for: UIControlEvents.valueChanged)
     }
-    @IBAction func expiredDateFieldEnd(_ sender: Any) {
+    @IBAction func expiredDateFieldEnd(_ sender: UITextField) {
         
         if expiredDate.text == ""{
             let todaysDate = Date()

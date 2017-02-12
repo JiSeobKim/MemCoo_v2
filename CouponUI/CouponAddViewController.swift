@@ -15,7 +15,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
 
     //detail에서 넘어온 coupon 객체를 받기하기 위한 coupon 객체
     var couponToEdit: Coupon?
-    @IBOutlet weak var memoField: UITextView!
+    
     
     //밝기 조절용
     var bright : CGFloat?
@@ -42,19 +42,6 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
     
     //버튼 숨김 기능을 위한 버튼 아울렛.
     @IBOutlet weak var deleteButton: UIButton!
-   
-//    //로고를 선택하면 데이터베이스의 로고를 불러오기 위한 버튼액션(현재는 사진첩으로 가게해놓음)
-//    @IBAction func picturePickerPressed(_ sender: UIButton) {
-//        present(imagePicker, animated: true, completion: nil)
-//    }
-    
-//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-//        if let img = info[UIImagePickerControllerOriginalImage] as? UIImage{
-//            logo.image = img
-//        }
-//        imagePicker.dismiss(animated: true, completion: nil)
-//    }
-    
     @IBOutlet weak var product: UITextField!
     @IBOutlet weak var barcode: UITextField!
     
@@ -75,16 +62,21 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         sender.inputView = datePicker
         datePicker.addTarget(self, action: #selector(CouponAddViewController.datePickerValueChanged), for: UIControlEvents.valueChanged)
     }
+    @IBAction func expiredDateFieldEnd(_ sender: UITextField) {
+        
+        if expiredDate.text == ""{
+            let todaysDate = Date()
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            expiredDate.text = dateFormatter.string(from: todaysDate)
+        }
+    }
     
     //타겟시 데이트피커의 값을 텍스트 필드에 넣어주기 위한 펑션
     func datePickerValueChanged(sender: UIDatePicker) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         expiredDate.text = dateFormatter.string(from: sender.date)
-    }
-
-    //카테고리 필드 클릭시 여태까지 만들어 놓았던 카테고리를 픽커뷰로 보여주기 위한 액션
-    @IBAction func categoryFieldPressed(_ sender: UITextField) {
     }
 
     @IBOutlet weak var originalText: UITextView!
@@ -184,12 +176,12 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        originalText.delegate = self
         self.testimage.image = originalImage
         
         var parsingBrain: ParsingBrain
         var couponInfo: ParsingBrain.CouponInfo
-        memoField.delegate = self
+        
 
 
         //다른 곳 터치시 키보드 제거 및 프레임 원위치
@@ -197,6 +189,9 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         
         //툴바
         addInputAccessoryForTextFields(textFields: [product, barcode, expiredDate],dismissable: true, previousNextable: true)
+        addInputAccessoryForTextViews(textViews: [originalText], dismissable: true, previousNextable: true)
+        
+        
         //add 버튼을 눌렀을 때.
         if ad.isAddButton == true {
             self.navigationItem.title = "쿠폰 추가"
@@ -242,12 +237,6 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
 //            originalText.text = copiedString
 //        }
         
-        //다른 곳 터치시 키보드 제거 및 프레임 원위치
-        self.hideKeyboardWhenTappedAround()
-        
-        //툴바
-        addInputAccessoryForTextFields(textFields: [product, barcode, expiredDate], dismissable: true, previousNextable: true)
-        addInputAccessoryForTextViews(textViews: [originalText], dismissable: true, previousNextable: true)
         }
     
     //OCR
@@ -314,13 +303,25 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
     }
     //메모 선택시 프레임 이동
     func textViewDidBeginEditing(_ textView: UITextView) {
-        ad.heightForKeyboard = 2
+        print("Hi")
+        ad.heightForKeyboard = 3
         self.moveFrame()
+        UIView.animate(withDuration: 0.25, animations: {
+             self.view.frame.origin.y -= 200
+        }, completion: nil)
+       
     }
     
+    
+//    @IBAction func titleField(_ sender: Any) {
+//        ad.heightForKeyboard = 1
+//        self.moveFrame()
+//    }
+    
 //    func textViewDidEndEditing(_ textView: UITextView) {
-//        ad.heightForKeyboard = 0
-//        //self.moveFrame()
+//        ad.heightForKeyboard = 1
+//        self.moveFrame()
+//        
 //    }
 
     

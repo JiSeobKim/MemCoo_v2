@@ -12,8 +12,8 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
     @IBOutlet weak var barcodeImg: UIImageView!
     @IBOutlet weak var barcode: UILabel!
     @IBOutlet weak var expireDate: UILabel!
-    @IBOutlet weak var category: UILabel!
     @IBOutlet weak var finishButtonOutlet: UIButton!
+    @IBOutlet weak var logoImage: UIImageView!
     
     //쿠폰뷰콘트롤러에서 받는 couponToDetail과 쿠폰애드뷰콘트롤러에 전달해주는 couponToEdit이 있다.
     var couponToDetail: Coupon?
@@ -56,9 +56,12 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
                 barcodeImg.isHidden = true
                 barcode.text = "사용 완료"
                 expireDate.isHidden = true
-                category.isHidden = true
                 finishButtonOutlet.isHidden = true
             }
+        }
+        print(self.view.frame.origin.y)
+        if let coupon = couponToDetail {
+            self.navigationItem.title = coupon.title
         }
         
         if let topItem = self.navigationController?.navigationBar.topItem {
@@ -69,9 +72,10 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
     //아이템 데이타를 로드하는 펑션
     func loadCouponData() {
         if let coupon = couponToDetail {
-            barcode.text = coupon.barcode
+            barcode.text = addHyphen(data: coupon.barcode!)
             barcodeImg.image = generateBarcodeFromString(string: coupon.barcode)
-            expireDate.text = displayTheDate(theDate: coupon.expireDate as! Date) + " 까지"
+            expireDate.text = displayTheDate(theDate: coupon.expireDate as! Date)
+            logoImage.image = coupon.toImage?.image as! UIImage?
             //originalText.text = coupon.originalText
             titleName = coupon.title
         }
@@ -98,7 +102,6 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
                 barcodeImg.isHidden = true
                 barcode.text = "사용 완료"
                 expireDate.isHidden = true
-                category.isHidden = true
                 finishButtonOutlet.isHidden = true
             }
         }

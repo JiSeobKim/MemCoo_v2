@@ -92,6 +92,13 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
         //long press gesture를 이용한 즐겨찾기 핸들링.
         let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(self.longPress))
         self.view.addGestureRecognizer(longPressGestureRecognizer)
+        
+        //네비 컬러
+        self.navigationController?.navigationBar.tintColor = UIColor.black
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.isOpaque = true
+        self.navigationController?.navigationBar.backgroundColor = UIColor.white
+
     }
     
     //long press gesture를 이용한 즐겨찾기 핸들링.

@@ -33,7 +33,7 @@ class CouponCell: UITableViewCell {
         expireDate.text = dateFormatter.string(from: item.expireDate as! Date)
         logo.image = item.toImage?.image as? UIImage
         barcodeImg.image = generateBarcodeFromString(string: item.barcode)
-        dday.text = daysBetweenDates(startDate: Date(), endDate: item.expireDate as! Date)
+        dday.text = ddayCalculate(endDate: item.expireDate as! Date)
     }
     
     override func awakeFromNib() {

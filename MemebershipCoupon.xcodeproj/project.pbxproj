@@ -30,6 +30,28 @@
 		4261B4C21E4A1B41000A6F25 /* Coupon+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4261B4B61E4A1B41000A6F25 /* Coupon+CoreDataProperties.swift */; };
 		4261B4C31E4A1B41000A6F25 /* Favorite+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4261B4B71E4A1B41000A6F25 /* Favorite+CoreDataClass.swift */; };
 		4261B4C41E4A1B41000A6F25 /* Favorite+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4261B4B81E4A1B41000A6F25 /* Favorite+CoreDataProperties.swift */; };
+		427D916E1E505FD600B26230 /* Favorite+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4261B4B71E4A1B41000A6F25 /* Favorite+CoreDataClass.swift */; };
+		427D916F1E505FD800B26230 /* Favorite+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4261B4B81E4A1B41000A6F25 /* Favorite+CoreDataProperties.swift */; };
+		427D91701E50607200B26230 /* Coupon+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4261B4B61E4A1B41000A6F25 /* Coupon+CoreDataProperties.swift */; };
+		427D91711E50607400B26230 /* Coupon+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4261B4B51E4A1B41000A6F25 /* Coupon+CoreDataClass.swift */; };
+		427D91721E50607800B26230 /* Membership+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4261B4AE1E4A1B41000A6F25 /* Membership+CoreDataProperties.swift */; };
+		427D91731E50607B00B26230 /* Membership+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4261B4AD1E4A1B41000A6F25 /* Membership+CoreDataClass.swift */; };
+		427D91741E50609900B26230 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 42976C081DF6C23800ADB0D7 /* Model.xcdatamodeld */; };
+		427D91751E5060B900B26230 /* Brand+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4261B4AF1E4A1B41000A6F25 /* Brand+CoreDataClass.swift */; };
+		427D91761E5060BC00B26230 /* Brand+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4261B4B01E4A1B41000A6F25 /* Brand+CoreDataProperties.swift */; };
+		427D91771E5060BF00B26230 /* Image+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4261B4B11E4A1B41000A6F25 /* Image+CoreDataClass.swift */; };
+		427D91781E5060C200B26230 /* Image+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4261B4B21E4A1B41000A6F25 /* Image+CoreDataProperties.swift */; };
+		427D91791E5060C600B26230 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4261B4B31E4A1B41000A6F25 /* Category+CoreDataClass.swift */; };
+		427D917A1E5060C900B26230 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4261B4B41E4A1B41000A6F25 /* Category+CoreDataProperties.swift */; };
+		427D917C1E50A29000B26230 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427D917B1E50A29000B26230 /* CoreDataService.swift */; };
+		427D917D1E50A29000B26230 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427D917B1E50A29000B26230 /* CoreDataService.swift */; };
+		427D91801E50BE6100B26230 /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427D917F1E50BE6100B26230 /* PersistentContainer.swift */; };
+		427D91811E50BE6100B26230 /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427D917F1E50BE6100B26230 /* PersistentContainer.swift */; };
+		427D91831E518E2400B26230 /* MembershipWidgetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427D91821E518E2400B26230 /* MembershipWidgetVC.swift */; };
+		427D91851E518E3800B26230 /* CouponWidgetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427D91841E518E3800B26230 /* CouponWidgetVC.swift */; };
+		427D91861E51963B00B26230 /* GenerateBarcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E36B1781DF2133000385315 /* GenerateBarcode.swift */; };
+		427D91881E51CB5300B26230 /* MembershipWidgetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427D91871E51CB5300B26230 /* MembershipWidgetCell.swift */; };
+		427D918A1E51D78400B26230 /* CouponWidgetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427D91891E51D78400B26230 /* CouponWidgetCell.swift */; };
 		42976BD81DF6B37300ADB0D7 /* CouponCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42976BD71DF6B37300ADB0D7 /* CouponCell.swift */; };
 		42976BDC1DF6B38100ADB0D7 /* CouponViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42976BD91DF6B38100ADB0D7 /* CouponViewController.swift */; };
 		42976BDD1DF6B38100ADB0D7 /* CouponDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42976BDA1DF6B38100ADB0D7 /* CouponDetailViewController.swift */; };
@@ -114,6 +136,12 @@
 		4261B4B71E4A1B41000A6F25 /* Favorite+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Favorite+CoreDataClass.swift"; sourceTree = "<group>"; };
 		4261B4B81E4A1B41000A6F25 /* Favorite+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Favorite+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		426740101E4235B400DEEE53 /* MemebershipCoupon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MemebershipCoupon.entitlements; sourceTree = "<group>"; };
+		427D917B1E50A29000B26230 /* CoreDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		427D917F1E50BE6100B26230 /* PersistentContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistentContainer.swift; sourceTree = "<group>"; };
+		427D91821E518E2400B26230 /* MembershipWidgetVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembershipWidgetVC.swift; sourceTree = "<group>"; };
+		427D91841E518E3800B26230 /* CouponWidgetVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponWidgetVC.swift; sourceTree = "<group>"; };
+		427D91871E51CB5300B26230 /* MembershipWidgetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembershipWidgetCell.swift; sourceTree = "<group>"; };
+		427D91891E51D78400B26230 /* CouponWidgetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponWidgetCell.swift; sourceTree = "<group>"; };
 		42976BD71DF6B37300ADB0D7 /* CouponCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponCell.swift; sourceTree = "<group>"; };
 		42976BD91DF6B38100ADB0D7 /* CouponViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponViewController.swift; sourceTree = "<group>"; };
 		42976BDA1DF6B38100ADB0D7 /* CouponDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponDetailViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +150,7 @@
 		42976BF61DF6B48100ADB0D7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		42976C091DF6C23800ADB0D7 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		42A657621E1F383B009BB240 /* FavoriteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
+		42E93B0C1E5040D2002B9D7A /* Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Widget.entitlements; sourceTree = "<group>"; };
 		42FAB62A1E04E18E00671E32 /* ParsingBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsingBrain.swift; sourceTree = "<group>"; };
 		A038310E1DFC1BE5002C0314 /* Favorite.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Favorite.storyboard; sourceTree = "<group>"; };
 		A03831141DFC1CB8002C0314 /* Coupon.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Coupon.storyboard; sourceTree = "<group>"; };
@@ -296,6 +325,8 @@
 				4261B4B61E4A1B41000A6F25 /* Coupon+CoreDataProperties.swift */,
 				4261B4B71E4A1B41000A6F25 /* Favorite+CoreDataClass.swift */,
 				4261B4B81E4A1B41000A6F25 /* Favorite+CoreDataProperties.swift */,
+				427D917B1E50A29000B26230 /* CoreDataService.swift */,
+				427D917F1E50BE6100B26230 /* PersistentContainer.swift */,
 			);
 			name = DatabaseModel;
 			sourceTree = "<group>";
@@ -312,9 +343,14 @@
 		A0BB53541E21D61A00AF54C9 /* Widget */ = {
 			isa = PBXGroup;
 			children = (
+				42E93B0C1E5040D2002B9D7A /* Widget.entitlements */,
 				A0BB53551E21D61A00AF54C9 /* TodayViewController.swift */,
 				A0BB53571E21D61A00AF54C9 /* MainInterface.storyboard */,
 				A0BB535A1E21D61A00AF54C9 /* Info.plist */,
+				427D91821E518E2400B26230 /* MembershipWidgetVC.swift */,
+				427D91841E518E3800B26230 /* CouponWidgetVC.swift */,
+				427D91871E51CB5300B26230 /* MembershipWidgetCell.swift */,
+				427D91891E51D78400B26230 /* CouponWidgetCell.swift */,
 			);
 			path = Widget;
 			sourceTree = "<group>";
@@ -391,16 +427,21 @@
 				TargetAttributes = {
 					3E37D3541DF09E4A0054C4DA = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = HWY63NUUS4;
+						DevelopmentTeam = XNB68CC222;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
 					A0BB53501E21D61900AF54C9 = {
-						DevelopmentTeam = HWY63NUUS4;
+						DevelopmentTeam = XNB68CC222;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -527,6 +568,7 @@
 				A057B36A1E4C9DA40007E388 /* logoCollectionCell.swift in Sources */,
 				3E36B1791DF2133000385315 /* GenerateBarcode.swift in Sources */,
 				A09988201E4B5C12008EBDE6 /* LogoCorner.swift in Sources */,
+				427D917C1E50A29000B26230 /* CoreDataService.swift in Sources */,
 				A057B36E1E4C9DA40007E388 /* MembershipFunction.swift in Sources */,
 				4261B4B91E4A1B41000A6F25 /* Membership+CoreDataClass.swift in Sources */,
 				42A657631E1F383B009BB240 /* FavoriteCell.swift in Sources */,
@@ -535,6 +577,7 @@
 				42976BE01DF6B39200ADB0D7 /* DBUtil.swift in Sources */,
 				3E09AEF51E2009DC00D4276F /* SettingsTableViewCell.swift in Sources */,
 				3E37D35B1DF09E4A0054C4DA /* FavoriteViewController.swift in Sources */,
+				427D91801E50BE6100B26230 /* PersistentContainer.swift in Sources */,
 				A057B36B1E4C9DA40007E388 /* logoSelect.swift in Sources */,
 				4261B4C41E4A1B41000A6F25 /* Favorite+CoreDataProperties.swift in Sources */,
 				4261B4BF1E4A1B41000A6F25 /* Category+CoreDataClass.swift in Sources */,
@@ -550,6 +593,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0BB53561E21D61A00AF54C9 /* TodayViewController.swift in Sources */,
+				427D91751E5060B900B26230 /* Brand+CoreDataClass.swift in Sources */,
+				427D917D1E50A29000B26230 /* CoreDataService.swift in Sources */,
+				427D91701E50607200B26230 /* Coupon+CoreDataProperties.swift in Sources */,
+				427D91791E5060C600B26230 /* Category+CoreDataClass.swift in Sources */,
+				427D91881E51CB5300B26230 /* MembershipWidgetCell.swift in Sources */,
+				427D91781E5060C200B26230 /* Image+CoreDataProperties.swift in Sources */,
+				427D916E1E505FD600B26230 /* Favorite+CoreDataClass.swift in Sources */,
+				427D91741E50609900B26230 /* Model.xcdatamodeld in Sources */,
+				427D91811E50BE6100B26230 /* PersistentContainer.swift in Sources */,
+				427D91861E51963B00B26230 /* GenerateBarcode.swift in Sources */,
+				427D917A1E5060C900B26230 /* Category+CoreDataProperties.swift in Sources */,
+				427D91771E5060BF00B26230 /* Image+CoreDataClass.swift in Sources */,
+				427D91721E50607800B26230 /* Membership+CoreDataProperties.swift in Sources */,
+				427D918A1E51D78400B26230 /* CouponWidgetCell.swift in Sources */,
+				427D916F1E505FD800B26230 /* Favorite+CoreDataProperties.swift in Sources */,
+				427D91831E518E2400B26230 /* MembershipWidgetVC.swift in Sources */,
+				427D91851E518E3800B26230 /* CouponWidgetVC.swift in Sources */,
+				427D91711E50607400B26230 /* Coupon+CoreDataClass.swift in Sources */,
+				427D91731E50607B00B26230 /* Membership+CoreDataClass.swift in Sources */,
+				427D91761E5060BC00B26230 /* Brand+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -684,10 +747,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = HWY63NUUS4;
+				CODE_SIGN_ENTITLEMENTS = MemebershipCoupon.entitlements;
+				DEVELOPMENT_TEAM = XNB68CC222;
 				INFOPLIST_FILE = CouponUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.JMJ.MembershipCoupon;
+				PRODUCT_BUNDLE_IDENTIFIER = gq.dugong.MembershipCoupon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -699,10 +763,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = HWY63NUUS4;
+				CODE_SIGN_ENTITLEMENTS = MemebershipCoupon.entitlements;
+				DEVELOPMENT_TEAM = XNB68CC222;
 				INFOPLIST_FILE = CouponUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.JMJ.MembershipCoupon;
+				PRODUCT_BUNDLE_IDENTIFIER = gq.dugong.MembershipCoupon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -711,10 +776,11 @@
 		A0BB535F1E21D61A00AF54C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEVELOPMENT_TEAM = HWY63NUUS4;
+				CODE_SIGN_ENTITLEMENTS = Widget/Widget.entitlements;
+				DEVELOPMENT_TEAM = XNB68CC222;
 				INFOPLIST_FILE = Widget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.JMJ.MembershipCoupon.Widget;
+				PRODUCT_BUNDLE_IDENTIFIER = gq.dugong.MembershipCoupon.Widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -724,10 +790,11 @@
 		A0BB53601E21D61A00AF54C9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEVELOPMENT_TEAM = HWY63NUUS4;
+				CODE_SIGN_ENTITLEMENTS = Widget/Widget.entitlements;
+				DEVELOPMENT_TEAM = XNB68CC222;
 				INFOPLIST_FILE = Widget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.JMJ.MembershipCoupon.Widget;
+				PRODUCT_BUNDLE_IDENTIFIER = gq.dugong.MembershipCoupon.Widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;

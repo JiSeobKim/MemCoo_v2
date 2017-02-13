@@ -12,17 +12,19 @@ import CoreData
 class FavoriteViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
     var favoriteController: NSFetchedResultsController<Favorite>!
+    var favorites: [Favorite]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationBarColor()
+       
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         attemptFetch()
         self.tableView.reloadData()
     }
-    
     
     //
     // MARK: - TableView overriding

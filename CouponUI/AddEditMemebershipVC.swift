@@ -53,11 +53,11 @@ class AddEditMemebershipVC: UIViewController {
             self.navigationItem.rightBarButtonItem?.title = "수정"
         } else {
             self.navigationItem.title = "멤버십 카드 추가"
-            self.deleteButton.isHidden = true
+//            self.deleteButton.isEnabled = false
         }
         
-        //삭제 버튼 테두리
-        deleteButton.layer.cornerRadius = deleteButton.frame.height / 2
+        
+        
         
         //다른 곳 터치시 키보드 제거 및 프레임 원위치
         self.hideKeyboardWhenTappedAround()

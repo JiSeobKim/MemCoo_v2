@@ -36,7 +36,6 @@ class ShowMembershipVC: UIViewController, UIGestureRecognizerDelegate {
         super.viewDidLoad()
         //현재 페이지에선 밝기 수정 on
         ad.brightSwitch = true
-        print(self.view.frame.origin.y)
         //제스쳐 밝기 조절
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self.pan(recognizer:)))
         panGesture.delegate = self

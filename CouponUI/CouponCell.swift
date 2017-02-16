@@ -30,7 +30,6 @@ class CouponCell: UITableViewCell {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         logo.image = item.toImage?.image as? UIImage
-        barcodeImg.image = generateBarcodeFromString(string: item.barcode)
         dday.text = ddayCalculate(endDate: item.expireDate as! Date)
     }
     

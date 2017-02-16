@@ -157,7 +157,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1234-4321-1234-4321" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eii-B3-8aT">
-                                <rect key="frame" x="16" y="378.5" width="343" height="20"/>
+                                <rect key="frame" x="16" y="379" width="343" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20.5" id="94q-SZ-qqp"/>
                                 </constraints>
@@ -166,20 +166,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aX1-88-mjM">
-                                <rect key="frame" x="103" y="78.5" width="170" height="170"/>
+                                <rect key="frame" x="103" y="79" width="170" height="170"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="170" id="4eX-76-zp9"/>
                                     <constraint firstAttribute="height" constant="170" id="SZY-9R-hGf"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gxu-Ij-JYz">
-                                <rect key="frame" x="16" y="288.5" width="343" height="90"/>
+                                <rect key="frame" x="16" y="289" width="343" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="zW6-ze-SqA"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nlN-LH-XI0">
-                                <rect key="frame" x="33" y="406.5" width="311" height="20"/>
+                                <rect key="frame" x="33" y="407" width="311" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="CJX-S0-Oak"/>
                                 </constraints>
@@ -310,7 +310,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" enablesReturnKeyAutomatically="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="light" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="쿠폰 번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gc-yp-syv">
                                 <rect key="frame" x="142" y="139" width="225" height="21"/>
@@ -328,7 +328,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" keyboardAppearance="alert" enablesReturnKeyAutomatically="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" keyboardAppearance="light" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
                                     <action selector="createdBarcodeImg:" destination="Unb-jy-f92" eventType="editingChanged" id="qH0-e1-C2a"/>
                                 </connections>
@@ -370,7 +370,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="textColor" red="0.19323048856395952" green="0.17888621588307527" blue="0.14097068071400151" alpha="0.68980094179999996" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="light"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES" shipmentTrackingNumber="YES" flightNumber="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="Unb-jy-f92" id="pw1-1y-yQP"/>

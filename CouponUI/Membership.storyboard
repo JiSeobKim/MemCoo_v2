@@ -277,13 +277,13 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5v-CW-wcB">
-                                                            <rect key="frame" x="0.0" y="90" width="100" height="16"/>
+                                                            <rect key="frame" x="0.0" y="101" width="100" height="16"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ET7-wg-u97">
-                                                            <rect key="frame" x="23" y="20" width="54" height="62"/>
+                                                            <rect key="frame" x="15" y="14" width="70" height="79"/>
                                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="circleBoundary" value="NO"/>
@@ -295,15 +295,15 @@
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstItem="U5v-CW-wcB" firstAttribute="top" secondItem="ET7-wg-u97" secondAttribute="bottom" constant="8" id="0LT-OH-KB1"/>
-                                                        <constraint firstAttribute="trailing" secondItem="ET7-wg-u97" secondAttribute="trailing" constant="23" id="1db-eI-wVW"/>
+                                                        <constraint firstAttribute="trailing" secondItem="ET7-wg-u97" secondAttribute="trailing" constant="15" id="1db-eI-wVW"/>
                                                         <constraint firstAttribute="trailing" secondItem="ba1-S3-Rba" secondAttribute="trailing" id="2Ow-CG-jba"/>
-                                                        <constraint firstItem="ET7-wg-u97" firstAttribute="leading" secondItem="mgn-w3-bhr" secondAttribute="leading" constant="23" id="2og-uT-vPf"/>
-                                                        <constraint firstAttribute="bottom" secondItem="U5v-CW-wcB" secondAttribute="bottom" constant="14" id="CHc-Wm-0Op"/>
+                                                        <constraint firstItem="ET7-wg-u97" firstAttribute="leading" secondItem="mgn-w3-bhr" secondAttribute="leading" constant="15" id="2og-uT-vPf"/>
+                                                        <constraint firstAttribute="bottom" secondItem="U5v-CW-wcB" secondAttribute="bottom" constant="3" id="CHc-Wm-0Op"/>
                                                         <constraint firstItem="ba1-S3-Rba" firstAttribute="top" secondItem="mgn-w3-bhr" secondAttribute="top" id="NOp-mj-EwJ"/>
                                                         <constraint firstAttribute="trailing" secondItem="U5v-CW-wcB" secondAttribute="trailing" id="XFz-yW-lf3"/>
-                                                        <constraint firstItem="ET7-wg-u97" firstAttribute="top" secondItem="mgn-w3-bhr" secondAttribute="top" constant="20" id="nbF-mL-F68"/>
+                                                        <constraint firstItem="ET7-wg-u97" firstAttribute="top" secondItem="mgn-w3-bhr" secondAttribute="top" constant="14" id="nbF-mL-F68"/>
                                                         <constraint firstItem="U5v-CW-wcB" firstAttribute="leading" secondItem="mgn-w3-bhr" secondAttribute="leading" id="tVi-8a-Piv"/>
-                                                        <constraint firstAttribute="bottom" secondItem="ET7-wg-u97" secondAttribute="bottom" constant="38" id="y09-jw-Jjf"/>
+                                                        <constraint firstAttribute="bottom" secondItem="ET7-wg-u97" secondAttribute="bottom" constant="27" id="y09-jw-Jjf"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="YES"/>
@@ -375,6 +375,6 @@
         <image name="default" width="222" height="195"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yGb-mq-bpU"/>
+        <segue reference="axa-gl-xNh"/>
     </inferredMetricsTieBreakers>
 </document>

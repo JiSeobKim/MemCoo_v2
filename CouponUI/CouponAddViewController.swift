@@ -23,8 +23,9 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var logo: UIImageView!
     var originalImage: UIImage?
     
+    @IBOutlet weak var deleteOutlet: UIBarButtonItem!
     //데이터베이스에서 삭제
-    @IBAction func deletePressed(_ sender: UIButton) {
+    @IBAction func deleteButton(_ sender: Any) {
         let alert = UIAlertController(title: "삭제하시겠습니까?", message: "한 번 삭제한 쿠폰은 복구할 수 없습니다!", preferredStyle: .alert)
         let delete = UIAlertAction(title: "삭제", style: .destructive) {
             (_) in
@@ -38,10 +39,11 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         alert.addAction(delete)
         alert.addAction(cancel)
         self.present(alert, animated: true)
+        
     }
-    
+
     //버튼 숨김 기능을 위한 버튼 아울렛.
-    @IBOutlet weak var deleteButton: UIButton!
+
     @IBOutlet weak var product: UITextField!
     @IBOutlet weak var barcode: UITextField!
     
@@ -200,7 +202,8 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
             self.product.becomeFirstResponder()
             
             //추가 상태일 때에는 삭제 버튼 숨김.
-            deleteButton.isHidden = true
+            deleteOutlet.isEnabled = false
+            deleteOutlet.tintColor = UIColor.white
             
             //클립보드 파싱 버튼을 눌렀을 때 자동으로 텍스트필드 입력.
             if ad.isClipboardActionSheet == true {

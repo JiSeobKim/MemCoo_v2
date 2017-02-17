@@ -37,12 +37,21 @@ class AddEditMemebershipVC: UIViewController {
     @IBOutlet weak var deleteOutlet: UIBarButtonItem!
     
     @IBAction func deleteButton(_ sender: Any) {
-        if membershipToEdit != nil {
-            context.delete(membershipToEdit!)
-            ad.saveContext()
+               
+        let alert = UIAlertController(title: "삭제하시겠습니까?", message: "한 번 삭제한 쿠폰은 복구할 수 없습니다!", preferredStyle: .alert)
+        let delete = UIAlertAction(title: "삭제", style: .destructive) {
+            (_) in
+            if self.membershipToEdit != nil {
+                context.delete(self.membershipToEdit!)
+                ad.saveContext()
+            }
+            _ = self.navigationController?.popToRootViewController(animated: true)
         }
-        _ = navigationController?.popToRootViewController(animated: true)
-
+        let cancel = UIAlertAction(title: "취소", style: .cancel)
+        alert.addAction(delete)
+        alert.addAction(cancel)
+        self.present(alert, animated: true)
+        
     }
     
     

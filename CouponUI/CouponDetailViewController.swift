@@ -48,7 +48,6 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.backgroundColor = UIColor.red
         if couponToDetail != nil {
             loadCouponData()
             self.navigationItem.title = titleName

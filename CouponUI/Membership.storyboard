@@ -29,11 +29,12 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="브랜드" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqo-yb-SCQ">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.56920522451400757" green="0.54980164766311646" blue="0.49957269430160522" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ex) KT or 해피포인트" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Ff-Fx-89c">
                                         <rect key="frame" x="0.0" y="25.5" width="343" height="30"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Qq4-QE-w0s"/>
                                         </constraints>
@@ -58,7 +59,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="바코드" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N6m-ZW-jML">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.56920522451400757" green="0.54980164766311646" blue="0.49957269430160522" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="코드 번호를 입력해 주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vi5-VV-Twg">
@@ -103,7 +104,7 @@
                                     <constraint firstAttribute="width" constant="155" id="QUX-E4-WHv"/>
                                     <constraint firstAttribute="height" constant="155" id="TtF-aP-acs"/>
                                 </constraints>
-                                <color key="tintColor" red="0.56920522451400757" green="0.54980164766311646" blue="0.49957269430160522" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="100" maxX="90" maxY="0.0"/>
                                 <state key="normal" title=" Edit"/>
                                 <connections>
@@ -217,7 +218,7 @@
                     <navigationItem key="navigationItem" title="브랜드" id="unU-OI-ChH">
                         <barButtonItem key="backBarButtonItem" title="Back" id="twa-gh-vda"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="RZl-ME-hcH">
-                            <color key="tintColor" red="0.5692052245" green="0.54980164769999995" blue="0.49957269430000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="V9i-4b-dZ9" kind="show" identifier="MembershipEdit" id="yGb-mq-bpU"/>
                             </connections>

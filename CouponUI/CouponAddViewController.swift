@@ -71,6 +71,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd"
             expiredDate.text = dateFormatter.string(from: todaysDate)
+            
         }
     }
     

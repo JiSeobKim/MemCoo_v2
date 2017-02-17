@@ -136,19 +136,10 @@ extension UIViewController {
             let todayButton = UIBarButtonItem(title: "Today", style: .plain, target: nil, action: nil)
             todayButton.width = 30
             if textFields.count == 3, textField == textFields.last {
-                
-                if (todayButton.action != nil) {
-                    
-                    
-                }
-            
                 todayButton.action = #selector(self.datePickerTodayButton)
-//                todayButton.action = #selector(CouponAddViewController.expiredDateFieldBegin(_:))
-                
                 
             } else {
                 todayButton.isEnabled = false
-                
             }
 
            
@@ -171,13 +162,7 @@ extension UIViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         vc?.expiredDate.text = dateFormatter.string(from: todaysDate)
-        #selector(vc?.expiredDateFieldBegin(_:))
-//        let datePicker: UIDatePicker = UIDatePicker()
-//        datePicker.backgroundColor = UIColor(white: 0.5, alpha: 0.8)
-//        datePicker.setValue(UIColor.white, forKey: "textColor")
-//        datePicker.datePickerMode = .date
-//        sender.inputView = datePicker
-
+        self.dismissKeyboard()
     }
     
     

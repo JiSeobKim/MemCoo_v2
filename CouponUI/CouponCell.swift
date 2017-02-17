@@ -30,17 +30,8 @@ class CouponCell: UITableViewCell {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         logo.image = item.toImage?.image as? UIImage
-        barcodeImg.image = generateBarcodeFromString(string: item.barcode)
+//        barcodeImg.image = generateBarcodeFromString(string: item.barcode)
         dday.text = ddayCalculate(endDate: item.expireDate as! Date)
     }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
-    }
 }
+

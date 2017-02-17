@@ -30,7 +30,7 @@
                                     <segment title="사용 완료"/>
                                     <segment title="전체"/>
                                 </segments>
-                                <color key="tintColor" red="0.37839070429999999" green="0.34711434759999998" blue="0.27333310529999999" alpha="0.68980094179999996" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="segmentChanged:" destination="QWw-7U-fLY" eventType="valueChanged" id="Brj-vk-JOh"/>
                                 </connections>
@@ -52,7 +52,6 @@
                                                         <constraint firstAttribute="width" constant="135" id="5Js-In-zD8"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                                                    <color key="textColor" red="0.37839070429999999" green="0.34711434759999998" blue="0.27333310529999999" alpha="0.68980094179999996" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D-234" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Y3-se-gC1">
@@ -61,7 +60,6 @@
                                                         <constraint firstAttribute="height" constant="21" id="kKI-wC-oKA"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
-                                                    <color key="textColor" red="0.37839070429999999" green="0.34711434759999998" blue="0.27333310529999999" alpha="0.68980094179999996" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="★" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C7w-oh-PGa">
@@ -126,7 +124,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Coupon" id="p0p-dR-pg7">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="aYP-HO-pxO">
-                            <color key="tintColor" red="0.63400222080000002" green="0.58159797459999996" blue="0.45797582710000001" alpha="0.68980094179999996" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="add:" destination="QWw-7U-fLY" id="Cje-5L-r3G"/>
                             </connections>
@@ -157,29 +155,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1234-4321-1234-4321" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eii-B3-8aT">
-                                <rect key="frame" x="16" y="378.5" width="343" height="20"/>
+                                <rect key="frame" x="16" y="379" width="343" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20.5" id="94q-SZ-qqp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aX1-88-mjM">
-                                <rect key="frame" x="103" y="78.5" width="170" height="170"/>
+                                <rect key="frame" x="103" y="79" width="170" height="170"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="170" id="4eX-76-zp9"/>
                                     <constraint firstAttribute="height" constant="170" id="SZY-9R-hGf"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gxu-Ij-JYz">
-                                <rect key="frame" x="16" y="288.5" width="343" height="90"/>
+                                <rect key="frame" x="16" y="289" width="343" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="zW6-ze-SqA"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nlN-LH-XI0">
-                                <rect key="frame" x="33" y="406.5" width="311" height="20"/>
+                                <rect key="frame" x="33" y="407" width="311" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="CJX-S0-Oak"/>
                                 </constraints>
@@ -207,17 +204,12 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Title" id="lKM-GH-LkQ">
                         <barButtonItem key="backBarButtonItem" title="Back" id="plp-GU-lOj"/>
-                        <rightBarButtonItems>
-                            <barButtonItem systemItem="edit" id="UdC-K0-dSg">
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <segue destination="Unb-jy-f92" kind="show" identifier="CouponEditVC" id="nSJ-n1-YT2"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem style="plain" systemItem="trash" id="zrA-XL-aQe">
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="UdC-K0-dSg">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="Unb-jy-f92" kind="show" identifier="CouponEditVC" id="nSJ-n1-YT2"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="barcode" destination="eii-B3-8aT" id="5Mf-Dq-fxG"/>
@@ -289,28 +281,30 @@
                                     <constraint firstAttribute="width" constant="126" id="0gC-wa-89Y"/>
                                     <constraint firstAttribute="height" constant="126" id="IIG-iJ-zmC"/>
                                 </constraints>
-                                <state key="normal" title="edit"/>
+                                <state key="normal" title="edit">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <segue destination="0cA-AV-8dh" kind="presentation" identifier="logoSelect2" id="Abm-L6-eMH"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상품명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbF-p4-w3A">
                                 <rect key="frame" x="142" y="72" width="225" height="21"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="vsE-lG-x4z"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
-                                <color key="textColor" red="0.37839070429999999" green="0.34711434759999998" blue="0.27333310529999999" alpha="0.68980094179999996" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="상품명 입력(*필수)" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="l0h-N2-ub4">
                                 <rect key="frame" x="142" y="101" width="225" height="30"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="kSg-wO-Igs"/>
                                 </constraints>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" enablesReturnKeyAutomatically="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="light" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="쿠폰 번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gc-yp-syv">
                                 <rect key="frame" x="142" y="139" width="225" height="21"/>
@@ -318,7 +312,6 @@
                                     <constraint firstAttribute="height" constant="21" id="TMz-IN-cXP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
-                                <color key="textColor" red="0.37839070429999999" green="0.34711434759999998" blue="0.27333310529999999" alpha="0.68980094179999996" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="쿠폰 번호 입력(*필수)" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="3tE-va-qma">
@@ -328,7 +321,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" keyboardAppearance="alert" enablesReturnKeyAutomatically="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" keyboardAppearance="light" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
                                     <action selector="createdBarcodeImg:" destination="Unb-jy-f92" eventType="editingChanged" id="qH0-e1-C2a"/>
                                 </connections>
@@ -353,7 +346,6 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="메모" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="raZ-tN-jDW">
                                 <rect key="frame" x="8" y="345" width="359" height="18"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
-                                <color key="textColor" red="0.37839070429999999" green="0.34711434759999998" blue="0.27333310529999999" alpha="0.68980094179999996" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="유효기간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Zo-2X-kBb">
@@ -362,35 +354,18 @@
                                     <constraint firstAttribute="height" constant="21" id="MJw-gB-56y"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
-                                <color key="textColor" red="0.37839070429999999" green="0.34711434759999998" blue="0.27333310529999999" alpha="0.68980094179999996" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" text="메모" translatesAutoresizingMaskIntoConstraints="NO" id="6O0-kw-vCm">
                                 <rect key="frame" x="0.0" y="371" width="375" height="247"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <color key="textColor" red="0.19323048856395952" green="0.17888621588307527" blue="0.14097068071400151" alpha="0.68980094179999996" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="light"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES" shipmentTrackingNumber="YES" flightNumber="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="Unb-jy-f92" id="pw1-1y-yQP"/>
                                 </connections>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LYs-Sz-I4T">
-                                <rect key="frame" x="0.0" y="578" width="375" height="40"/>
-                                <color key="backgroundColor" red="0.9137254901960784" green="0.65490196078431373" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="CKu-tC-fvN"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="삭제">
-                                    <color key="titleColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="deletePressed:" destination="Unb-jy-f92" eventType="touchUpInside" id="SfX-Z9-wQg"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cUb-FD-V5I">
                                 <rect key="frame" x="215" y="236" width="127" height="128"/>
                                 <constraints>
@@ -408,7 +383,6 @@
                             <constraint firstItem="3tE-va-qma" firstAttribute="top" secondItem="9gc-yp-syv" secondAttribute="bottom" constant="8" id="39K-5x-ueA"/>
                             <constraint firstAttribute="trailing" secondItem="9gc-yp-syv" secondAttribute="trailing" constant="8" id="3sT-7H-3LA"/>
                             <constraint firstAttribute="trailing" secondItem="raZ-tN-jDW" secondAttribute="trailing" constant="8" id="3wq-P8-pMD"/>
-                            <constraint firstItem="LYs-Sz-I4T" firstAttribute="leading" secondItem="EWl-xM-ZaA" secondAttribute="leading" id="9DG-TY-vB8"/>
                             <constraint firstAttribute="trailing" secondItem="3tE-va-qma" secondAttribute="trailing" constant="8" id="9lA-ju-jPD"/>
                             <constraint firstItem="Oma-dl-Rli" firstAttribute="top" secondItem="boq-eC-4EU" secondAttribute="bottom" constant="8" id="AOw-hJ-G11"/>
                             <constraint firstItem="EE9-YA-Bcs" firstAttribute="centerY" secondItem="Oma-dl-Rli" secondAttribute="centerY" id="Dlh-yP-jE7"/>
@@ -425,7 +399,6 @@
                             <constraint firstAttribute="trailing" secondItem="gbF-p4-w3A" secondAttribute="trailing" constant="8" id="duE-no-TX0"/>
                             <constraint firstItem="PHc-rN-mxc" firstAttribute="leading" secondItem="EWl-xM-ZaA" secondAttribute="leading" constant="8" id="eLW-h7-ueD"/>
                             <constraint firstItem="9gc-yp-syv" firstAttribute="leading" secondItem="Oma-dl-Rli" secondAttribute="trailing" constant="8" id="efD-rQ-6TO"/>
-                            <constraint firstAttribute="trailing" secondItem="LYs-Sz-I4T" secondAttribute="trailing" id="egP-ex-ugh"/>
                             <constraint firstItem="cUb-FD-V5I" firstAttribute="top" secondItem="8Zo-2X-kBb" secondAttribute="top" id="gSV-mC-DN9"/>
                             <constraint firstItem="9gc-yp-syv" firstAttribute="top" secondItem="l0h-N2-ub4" secondAttribute="bottom" constant="8" id="gv2-k0-nyN"/>
                             <constraint firstItem="gbF-p4-w3A" firstAttribute="top" secondItem="boq-eC-4EU" secondAttribute="bottom" constant="8" id="hgE-rX-aQY"/>
@@ -435,7 +408,6 @@
                             <constraint firstItem="I5N-wI-h5V" firstAttribute="top" secondItem="8Zo-2X-kBb" secondAttribute="bottom" constant="8" id="nbf-Dv-wHG"/>
                             <constraint firstItem="PHc-rN-mxc" firstAttribute="top" secondItem="3tE-va-qma" secondAttribute="bottom" constant="8" id="p4m-HR-qbl"/>
                             <constraint firstAttribute="trailing" secondItem="I5N-wI-h5V" secondAttribute="trailing" constant="8" id="p5q-gD-JtO"/>
-                            <constraint firstItem="rzB-Wt-MhA" firstAttribute="top" secondItem="LYs-Sz-I4T" secondAttribute="bottom" id="pBb-eT-IeP"/>
                             <constraint firstItem="Oma-dl-Rli" firstAttribute="leading" secondItem="EWl-xM-ZaA" secondAttribute="leading" constant="8" id="q91-s2-2NG"/>
                             <constraint firstItem="EE9-YA-Bcs" firstAttribute="centerX" secondItem="Oma-dl-Rli" secondAttribute="centerX" id="qIb-hs-R3R"/>
                             <constraint firstItem="6O0-kw-vCm" firstAttribute="top" secondItem="raZ-tN-jDW" secondAttribute="bottom" constant="8" id="rOL-Q8-aC6"/>
@@ -444,18 +416,26 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add / Edit" id="HSR-eY-yf2">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="3PH-RW-6RR">
-                            <color key="tintColor" red="0.63400222080000002" green="0.58159797459999996" blue="0.45797582710000001" alpha="0.68980094179999996" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <action selector="saveBtnPressed:" destination="Unb-jy-f92" id="YdC-2C-N2e"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="save" id="3PH-RW-6RR">
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="saveBtnPressed:" destination="Unb-jy-f92" id="YdC-2C-N2e"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem style="plain" systemItem="trash" id="4Ki-82-4Z0">
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="deleteButton:" destination="Unb-jy-f92" id="NmJ-F5-NBf"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="barcode" destination="3tE-va-qma" id="Vrm-eg-qS3"/>
                         <outlet property="barcodeImg" destination="PHc-rN-mxc" id="mr6-Wl-blg"/>
-                        <outlet property="deleteButton" destination="LYs-Sz-I4T" id="JLd-82-4rB"/>
+                        <outlet property="deleteOutlet" destination="4Ki-82-4Z0" id="B5K-mf-t25"/>
                         <outlet property="expiredDate" destination="I5N-wI-h5V" id="Vdf-CG-aS1"/>
                         <outlet property="logo" destination="Oma-dl-Rli" id="5VA-rc-1GU"/>
                         <outlet property="originalText" destination="6O0-kw-vCm" id="BOR-Qx-hEp"/>

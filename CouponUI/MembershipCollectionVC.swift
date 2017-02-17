@@ -42,10 +42,14 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
         //Cell Size
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         let width = UIScreen.main.bounds.width
-        layout.sectionInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
-        layout.itemSize = CGSize(width: width / 3.4, height: width / 3)
-        layout.minimumInteritemSpacing = 8
-        layout.minimumLineSpacing = 8
+        layout.sectionInset = UIEdgeInsets(top: 30, left: 30, bottom: 15, right: 30)
+        layout.itemSize = CGSize(width: width / 4, height: width / 3.6)
+        layout.minimumInteritemSpacing = 0
+        if UIScreen.main.bounds.width == 320 {
+            layout.minimumLineSpacing = 9
+        } else {
+            layout.minimumLineSpacing = 20
+        }
         collectionView!.collectionViewLayout = layout
         
         
@@ -57,6 +61,8 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
         
         
     }
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         // 뷰2->뷰1는 viewDidLoad로 못함

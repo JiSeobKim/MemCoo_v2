@@ -32,10 +32,27 @@ class AddEditMemebershipVC: UIViewController {
     @IBOutlet weak var choiceButton: UIButton!
     @IBOutlet weak var realTimeBarcode: UIImageView!
     
-    @IBOutlet weak var deleteButton: UIButton!
     
     
+    @IBOutlet weak var deleteOutlet: UIBarButtonItem!
     
+    @IBAction func deleteButton(_ sender: Any) {
+               
+        let alert = UIAlertController(title: "삭제하시겠습니까?", message: "한 번 삭제한 쿠폰은 복구할 수 없습니다!", preferredStyle: .alert)
+        let delete = UIAlertAction(title: "삭제", style: .destructive) {
+            (_) in
+            if self.membershipToEdit != nil {
+                context.delete(self.membershipToEdit!)
+                ad.saveContext()
+            }
+            _ = self.navigationController?.popToRootViewController(animated: true)
+        }
+        let cancel = UIAlertAction(title: "취소", style: .cancel)
+        alert.addAction(delete)
+        alert.addAction(cancel)
+        self.present(alert, animated: true)
+        
+    }
     
     
     //
@@ -53,9 +70,9 @@ class AddEditMemebershipVC: UIViewController {
             self.navigationItem.rightBarButtonItem?.title = "수정"
         } else {
             self.navigationItem.title = "멤버십 카드 추가"
-//            self.deleteButton.isEnabled = false
+            self.deleteOutlet.isEnabled = false
+            self.deleteOutlet.tintColor = UIColor.white
         }
-        
         
         
         
@@ -157,15 +174,7 @@ class AddEditMemebershipVC: UIViewController {
     //휴지통버튼을 눌렀을시 데이터베이스에서 삭제
    
     
-    @IBAction func deletePressed(_ sender: Any) {
-        if membershipToEdit != nil {
-            context.delete(membershipToEdit!)
-            ad.saveContext()
-        }
-        _ = navigationController?.popToRootViewController(animated: true)
-    }
-    
-    
+
     
     //
     //controller
@@ -205,7 +214,6 @@ class AddEditMemebershipVC: UIViewController {
  
     @IBAction func brandField(_ sender: Any) {
         // 프레임 이동
-        print("hi")
         ad.heightForKeyboard = 2
         self.moveFrame()
     }

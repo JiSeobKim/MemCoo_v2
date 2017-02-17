@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CouponDetailViewController: UIViewController, UINavigationControllerDelegate {
+class CouponDetailViewController: UIViewController, UINavigationControllerDelegate, UIGestureRecognizerDelegate{
     @IBOutlet weak var barcodeImg: UIImageView!
     @IBOutlet weak var barcode: UILabel!
     @IBOutlet weak var expireDate: UILabel!
@@ -59,7 +59,14 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
                 finishButtonOutlet.isHidden = true
             }
         }
-        print(self.view.frame.origin.y)
+        
+        //밝기 제스쳐 적용
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self.pan(recognizer:)))
+        panGesture.delegate = self
+        panGesture.minimumNumberOfTouches = 1
+        self.view.addGestureRecognizer(panGesture)
+
+       
         if let coupon = couponToDetail {
             self.navigationItem.title = coupon.title
         }
@@ -68,6 +75,25 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
             topItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
         }
     }
+    
+    //밝기 제스쳐
+    func pan(recognizer:UIPanGestureRecognizer){
+        if recognizer.state == UIGestureRecognizerState.changed || recognizer.state == UIGestureRecognizerState.ended {
+            let velocity:CGPoint = recognizer.velocity(in: self.view)
+            
+            if velocity.y > 0{
+                var brightness: Float = Float(UIScreen.main.brightness)
+                brightness = brightness - 0.03
+                UIScreen.main.brightness = CGFloat(brightness)
+            }
+            else {
+                var brightness: Float = Float(UIScreen.main.brightness)
+                brightness = brightness + 0.03
+                UIScreen.main.brightness = CGFloat(brightness)
+            }
+        }
+    }
+
     
     //아이템 데이타를 로드하는 펑션
     func loadCouponData() {

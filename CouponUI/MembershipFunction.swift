@@ -84,7 +84,11 @@ extension UIViewController {
     
 }
 
+
+
+
 extension UIViewController {
+    
     func addInputAccessoryForTextFields(textFields: [UITextField], dismissable: Bool = true, previousNextable: Bool = false) {
         for (index, textField) in textFields.enumerated() {
             //툴바 사이즈 및 컬러
@@ -95,7 +99,7 @@ extension UIViewController {
             
             //툴바에 넣을 아이템 배열
             var items = [UIBarButtonItem]()
-            
+            let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
             
             if previousNextable {
                 
@@ -119,18 +123,48 @@ extension UIViewController {
                     nextButton.action = #selector(UITextField.becomeFirstResponder)
                 }
                 
+                
+                
+                
                 //툴바에 쓸 아이템 추가
+             
                 items.append(contentsOf: [previousButton, nextButton])
+                
             }
             
-            let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+                        //Today 버튼
+            let todayButton = UIBarButtonItem(title: "Today", style: .plain, target: nil, action: nil)
+            todayButton.width = 30
+            if textFields.count == 3, textField == textFields.last {
+                todayButton.action = #selector(self.datePickerTodayButton)
+                
+            } else {
+                todayButton.isEnabled = false
+            }
+
+           
             let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: view, action: #selector(UIView.endEditing))
-            items.append(contentsOf: [spacer, doneButton])
             
+            if textFields.count == 3 {
+                items.append(contentsOf: [spacer, todayButton,spacer, doneButton])
+            } else {
+                items.append(contentsOf: [spacer, doneButton])
+            }
             toolbar.setItems(items, animated: false)
             textField.inputAccessoryView = toolbar
         }
+        
+        
     }
+    func datePickerTodayButton(_ a : UIBarButtonItem) {
+        let vc = self as? CouponAddViewController
+        let todaysDate = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        vc?.expiredDate.text = dateFormatter.string(from: todaysDate)
+        self.dismissKeyboard()
+    }
+    
     
     func addInputAccessoryForTextViews(textViews: [UITextView], dismissable: Bool = true, previousNextable: Bool = false) {
         for (_, textField) in textViews.enumerated() {

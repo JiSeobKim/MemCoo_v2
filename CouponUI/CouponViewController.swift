@@ -21,6 +21,8 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
     @IBAction func add(_ sender: Any) {
         let alert = UIAlertController(title: "쿠폰 추가", message: "쿠폰을 추가할 방식을 선택해주세요.", preferredStyle: .actionSheet)
         
+        alert.view.tintColor = UIColor.black
+        
         let clipboard = UIAlertAction(title: "클립보드 내용 자동 추가", style: .default) {
             (_) in
             //액션시트의 첫 번째 버튼이 눌렸음을 다음 뷰에 전달하기 위해 앱델리게이트의 selectActionSheet 변수에 1을 저장.
@@ -112,7 +114,9 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
                     
                     
                     if item.favorite == false {
-                        let alert = UIAlertController(title: "즐겨찾기 추가", message: "\"\(item.title!)\" 쿠폰을 \n즐겨찾기에 추가하시겠습니까?", preferredStyle: .alert)
+                        let alert = UIAlertController(title: "즐겨찾기 추가", message: "\"\(item.title!)\" 쿠폰을\n즐겨찾기에 추가하시겠습니까?", preferredStyle: .alert)
+                        alert.view.tintColor = UIColor.black
+                        
                         let add = UIAlertAction(title: "추가", style: .default) {
                             (_) in
                             let favoriteContext = Favorite(context: context)
@@ -131,7 +135,9 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
                         self.present(alert, animated: true)
                     }
                     else {
-                        let alert = UIAlertController(title: "즐겨찾기 제거", message: "\"\(item.title!)\" 쿠폰을 \n즐겨찾기에서 제거하시겠습니까?", preferredStyle: .alert)
+                        let alert = UIAlertController(title: "즐겨찾기 제거", message: "\"\(item.title!)\" 쿠폰을\n즐겨찾기에서 제거하시겠습니까?", preferredStyle: .alert)
+                        alert.view.tintColor = UIColor.black
+                        
                         let add = UIAlertAction(title: "제거", style: .default) {
                             (_) in
                             item.favorite = false
@@ -220,10 +226,13 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
             if var objs = controller.fetchedObjects, objs.count > 0{
-                let alert = UIAlertController(title: "삭제하시겠습니까?", message: "한 번 삭제한 쿠폰은 복구할 수 없습니다!", preferredStyle: .alert)
+                let item = objs[indexPath.row]
+                
+                let alert = UIAlertController(title: "쿠폰 삭제", message: "\"\(item.title!)\" 쿠폰을\n삭제하시겠습니까?", preferredStyle: .alert)
+                alert.view.tintColor = UIColor.black
+                
                 let delete = UIAlertAction(title: "삭제", style: .destructive) {
                     (_) in
-                    let item = objs[indexPath.row]
                     context.delete(item.toFavorite!)
                     context.delete(item)
                     ad.saveContext()

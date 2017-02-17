@@ -26,7 +26,9 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var deleteOutlet: UIBarButtonItem!
     //데이터베이스에서 삭제
     @IBAction func deleteButton(_ sender: Any) {
-        let alert = UIAlertController(title: "삭제하시겠습니까?", message: "한 번 삭제한 쿠폰은 복구할 수 없습니다!", preferredStyle: .alert)
+        let alert = UIAlertController(title: "쿠폰 삭제", message: "쿠폰을 삭제하시겠습니까?", preferredStyle: .alert)
+        alert.view.tintColor = UIColor.black
+        
         let delete = UIAlertAction(title: "삭제", style: .destructive) {
             (_) in
             if self.couponToEdit != nil {
@@ -209,6 +211,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
             //클립보드 파싱 버튼을 눌렀을 때 자동으로 텍스트필드 입력.
             if ad.isClipboardActionSheet == true {
                 parsingBrain = ParsingBrain()
+                
                 if let copiedString = UIPasteboard.general.strings {
                     couponInfo = parsingBrain.parsing(textFromClipboard: copiedString)
                     product.text = couponInfo.title

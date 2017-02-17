@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CouponDetailViewController: UIViewController, UINavigationControllerDelegate, UIGestureRecognizerDelegate{
+class CouponDetailViewController: UIViewController, UINavigationControllerDelegate, UIGestureRecognizerDelegate {
     @IBOutlet weak var barcodeImg: UIImageView!
     @IBOutlet weak var barcode: UILabel!
     @IBOutlet weak var expireDate: UILabel!
@@ -17,7 +17,10 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
     
     //쿠폰뷰콘트롤러에서 받는 couponToDetail과 쿠폰애드뷰콘트롤러에 전달해주는 couponToEdit이 있다.
     var couponToDetail: Coupon?
+    
     var titleName: String?
+    var originalText: String?
+    var originalImage: UIImage?
     
     //밝기 조절용
     var bright : CGFloat?
@@ -102,8 +105,9 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
             barcodeImg.image = generateBarcodeFromString(string: coupon.barcode)
             expireDate.text = displayTheDate(theDate: coupon.expireDate as! Date)
             logoImage.image = coupon.toImage?.image as! UIImage?
-            //originalText.text = coupon.originalText
             titleName = coupon.title
+            originalText = coupon.originalText
+            originalImage = coupon.image as! UIImage?
         }
     }
     
@@ -136,6 +140,24 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
         UIScreen.main.brightness = 1.0
         ad.brightSwitch = true
     }
+    
+    @IBAction func showOriginalData(_ sender: Any) {
+        guard let moreDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? CouponMoreDetailViewController else {
+            return
+        }
+        if originalText != "" {
+            print("\(originalText)")
+            moreDetailViewController.originalText = originalText
+        }
+        
+        if originalImage != nil {
+            moreDetailViewController.originalImage = originalImage
+        }
+        
+        self.present(moreDetailViewController, animated: true)
+    }
+    
+    
     /*
      // MARK: - Navigation
      

@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QWw-7U-fLY">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QWw-7U-fLY">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -145,7 +145,7 @@
         <!--Title-->
         <scene sceneID="Zdb-Y6-hFt">
             <objects>
-                <viewController id="haz-r9-OTI" customClass="CouponDetailViewController" customModule="MemebershipCoupon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SimpleViewController" id="haz-r9-OTI" customClass="CouponDetailViewController" customModule="MemebershipCoupon" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="s20-fR-HIi"/>
                         <viewControllerLayoutGuide type="bottom" id="zJR-dQ-UdP"/>
@@ -184,6 +184,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e9k-tE-qNs">
+                                <rect key="frame" x="122" y="442" width="131" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Show Original Data"/>
+                                <connections>
+                                    <action selector="showOriginalData:" destination="haz-r9-OTI" eventType="touchUpInside" id="ZFb-Vf-Orp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -222,10 +230,10 @@
             </objects>
             <point key="canvasLocation" x="3796" y="1277.8110944527737"/>
         </scene>
-        <!--View Controller-->
+        <!--Coupon More Detail View Controller-->
         <scene sceneID="bgj-zx-BDW">
             <objects>
-                <viewController id="hnY-G2-gCQ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" id="hnY-G2-gCQ" customClass="CouponMoreDetailViewController" customModule="MemebershipCoupon" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ofr-sZ-RLd"/>
                         <viewControllerLayoutGuide type="bottom" id="P8q-C6-QTn"/>
@@ -234,13 +242,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayM-hW-ws2">
-                                <rect key="frame" x="16" y="84" width="343" height="583"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OriginalText" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GL1-5c-3fy">
                                 <rect key="frame" x="16" y="42" width="343" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -248,13 +249,43 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OriginalImage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCk-bU-vlj">
+                                <rect key="frame" x="16" y="323" width="106" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zQa-DA-LhB">
+                                <rect key="frame" x="16" y="352" width="343" height="307"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="OriginalText" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="TJ7-g4-axh">
+                                <rect key="frame" x="16" y="71" width="343" height="244"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S4M-yY-Px9">
+                                <rect key="frame" x="321" y="37" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="닫기"/>
+                                <connections>
+                                    <action selector="close:" destination="hnY-G2-gCQ" eventType="touchUpInside" id="P6N-B7-P3S"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="originalImageView" destination="zQa-DA-LhB" id="zuJ-Tt-YWx"/>
+                        <outlet property="originalTextView" destination="TJ7-g4-axh" id="LJ2-jo-OqV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qYI-ZA-UWw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3796" y="1968.6656671664171"/>
+            <point key="canvasLocation" x="3796" y="2052"/>
         </scene>
         <!--Add / Edit-->
         <scene sceneID="gy8-aX-ZXc">
@@ -356,7 +387,7 @@
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" text="메모" translatesAutoresizingMaskIntoConstraints="NO" id="6O0-kw-vCm">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="6O0-kw-vCm">
                                 <rect key="frame" x="0.0" y="371" width="375" height="247"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
@@ -423,7 +454,7 @@
                                     <action selector="saveBtnPressed:" destination="Unb-jy-f92" id="YdC-2C-N2e"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem style="plain" systemItem="trash" id="4Ki-82-4Z0">
+                            <barButtonItem systemItem="trash" id="4Ki-82-4Z0">
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="deleteButton:" destination="Unb-jy-f92" id="NmJ-F5-NBf"/>

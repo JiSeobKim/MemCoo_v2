@@ -20,12 +20,11 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
     //+버튼 눌렀을때의 액션
     @IBAction func add(_ sender: Any) {
         let alert = UIAlertController(title: "쿠폰 추가", message: "쿠폰을 추가할 방식을 선택해주세요.", preferredStyle: .actionSheet)
-        
         alert.view.tintColor = UIColor.black
         
         let clipboard = UIAlertAction(title: "클립보드 내용 자동 추가", style: .default) {
             (_) in
-            //액션시트의 첫 번째 버튼이 눌렸음을 다음 뷰에 전달하기 위해 앱델리게이트의 selectActionSheet 변수에 1을 저장.
+            //액션시트의 첫 번째 버튼이 눌렸음을 다음 뷰에 전달하기 위해 앱델리게이트의 selectActionSheet 변수에 true를 저장.
             ad.isClipboardActionSheet = true
             
             //다음 뷰컨트롤러로 push.
@@ -34,21 +33,15 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
             }
         }
         
-        let ocr = UIAlertAction(title: "사진에서 바코드만 읽어오기", style: .default) {
+        let ocr = UIAlertAction(title: "사진에서 텍스트 추출", style: .default) {
             (_) in            
             ad.isClipboardActionSheet = false
             
             //이미지 선택 뷰.
-            self.imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+            self.imagePicker.sourceType = UIImagePickerControllerSourceType.savedPhotosAlbum    //.photoLibrary
             //imagePicker.mediaTypes = [kUTTypeImage as String]
             self.imagePicker.allowsEditing = false
             self.present(self.imagePicker, animated: true, completion: nil)
-            
-            //뷰 전환.
-            if let addVC = self.storyboard?.instantiateViewController(withIdentifier: "AddEdit") as? CouponAddViewController {
-                addVC.originalImage = self.originalImage
-                self.navigationController?.pushViewController(addVC, animated: true)
-            }
         }
         
         let custom = UIAlertAction(title: "사용자 직접 입력", style: .default) {
@@ -74,12 +67,21 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             self.originalImage = image
+            
+            //뷰 전환.
+            if self.originalImage != nil {
+                if let addVC = self.storyboard?.instantiateViewController(withIdentifier: "AddEdit") as? CouponAddViewController {
+                    addVC.originalImage = self.originalImage
+                    self.navigationController?.pushViewController(addVC, animated: true)
+                }
+            }
         }
-        self.dismiss(animated: true, completion: nil)
+
+        picker.dismiss(animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        self.dismiss(animated: true, completion: nil)
+        picker.dismiss(animated: true, completion: nil)
     }
     
     var controller: NSFetchedResultsController<Coupon>!
@@ -111,7 +113,6 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
             if let indexPath = tableView.indexPathForRow(at: touchPoint) {
                 if var objs = controller.fetchedObjects, objs.count > 0 {
                     let item = objs[indexPath.row]
-                    
                     
                     if item.favorite == false {
                         let alert = UIAlertController(title: "즐겨찾기 추가", message: "\"\(item.title!)\" 쿠폰을\n즐겨찾기에 추가하시겠습니까?", preferredStyle: .alert)
@@ -158,7 +159,6 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
     }
  
 
-    
     //tableView를 위한 function
     //cell 재사용 정의
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

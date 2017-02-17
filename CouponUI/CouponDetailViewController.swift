@@ -14,6 +14,7 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
     @IBOutlet weak var expireDate: UILabel!
     @IBOutlet weak var finishButtonOutlet: UIButton!
     @IBOutlet weak var logoImage: UIImageView!
+    @IBOutlet weak var showOriginalDataOutlet: UIButton!
     
     //쿠폰뷰콘트롤러에서 받는 couponToDetail과 쿠폰애드뷰콘트롤러에 전달해주는 couponToEdit이 있다.
     var couponToDetail: Coupon?
@@ -26,7 +27,7 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
     var bright : CGFloat?
     
     @IBAction func finishButton(_ sender: Any) {
-        let alert = UIAlertController(title: "사용 완료하시겠습니까?", message: "사용 완료 후 되돌릴 수 없습니다!", preferredStyle: .alert)
+        let alert = UIAlertController(title: "사용 완료", message: "사용 완료하시겠습니까?", preferredStyle: .alert)
         let finish = UIAlertAction(title: "사용 완료", style: .destructive) {
             (_) in
             if self.couponToDetail != nil {
@@ -76,6 +77,10 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
         
         if let topItem = self.navigationController?.navigationBar.topItem {
             topItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
+        }
+        
+        if originalText == "" {
+            showOriginalDataOutlet.isHidden = true
         }
     }
     

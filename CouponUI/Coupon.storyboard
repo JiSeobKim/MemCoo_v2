@@ -224,6 +224,7 @@
                         <outlet property="barcodeImg" destination="Gxu-Ij-JYz" id="c9o-TM-FJR"/>
                         <outlet property="expireDate" destination="nlN-LH-XI0" id="VDZ-l3-r8Z"/>
                         <outlet property="logoImage" destination="aX1-88-mjM" id="KYZ-P7-SVf"/>
+                        <outlet property="showOriginalDataOutlet" destination="e9k-tE-qNs" id="EH0-Z4-cgK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oHT-Wu-vSG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -397,11 +398,9 @@
                                     <outlet property="delegate" destination="Unb-jy-f92" id="pw1-1y-yQP"/>
                                 </connections>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cUb-FD-V5I">
-                                <rect key="frame" x="215" y="236" width="127" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="127" id="dI4-4k-hC3"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cUb-FD-V5I">
+                                <rect key="frame" x="240" y="235" width="127" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -418,19 +417,16 @@
                             <constraint firstItem="Oma-dl-Rli" firstAttribute="top" secondItem="boq-eC-4EU" secondAttribute="bottom" constant="8" id="AOw-hJ-G11"/>
                             <constraint firstItem="EE9-YA-Bcs" firstAttribute="centerY" secondItem="Oma-dl-Rli" secondAttribute="centerY" id="Dlh-yP-jE7"/>
                             <constraint firstItem="l0h-N2-ub4" firstAttribute="trailing" secondItem="EWl-xM-ZaA" secondAttribute="trailingMargin" constant="8" id="ELE-lr-AuM"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="cUb-FD-V5I" secondAttribute="trailing" constant="17" id="ETb-gn-eKd"/>
                             <constraint firstItem="I5N-wI-h5V" firstAttribute="leading" secondItem="EWl-xM-ZaA" secondAttribute="leading" constant="8" id="F3j-39-eDV"/>
                             <constraint firstItem="8Zo-2X-kBb" firstAttribute="top" secondItem="PHc-rN-mxc" secondAttribute="bottom" constant="8" id="Fcb-0I-UhR"/>
                             <constraint firstItem="6O0-kw-vCm" firstAttribute="centerX" secondItem="EWl-xM-ZaA" secondAttribute="centerX" id="MXM-Gc-wp2"/>
                             <constraint firstItem="I5N-wI-h5V" firstAttribute="centerX" secondItem="EWl-xM-ZaA" secondAttribute="centerX" id="PxI-Fo-NZg"/>
-                            <constraint firstItem="6O0-kw-vCm" firstAttribute="top" secondItem="cUb-FD-V5I" secondAttribute="bottom" constant="7" id="Q2i-c9-WhN"/>
                             <constraint firstAttribute="trailing" secondItem="8Zo-2X-kBb" secondAttribute="trailing" constant="8" id="RYw-OE-aaP"/>
                             <constraint firstItem="raZ-tN-jDW" firstAttribute="top" secondItem="I5N-wI-h5V" secondAttribute="bottom" constant="61" id="U7a-CD-wmR"/>
                             <constraint firstItem="rzB-Wt-MhA" firstAttribute="top" secondItem="6O0-kw-vCm" secondAttribute="bottom" id="aPA-gV-iFG"/>
                             <constraint firstAttribute="trailing" secondItem="gbF-p4-w3A" secondAttribute="trailing" constant="8" id="duE-no-TX0"/>
                             <constraint firstItem="PHc-rN-mxc" firstAttribute="leading" secondItem="EWl-xM-ZaA" secondAttribute="leading" constant="8" id="eLW-h7-ueD"/>
                             <constraint firstItem="9gc-yp-syv" firstAttribute="leading" secondItem="Oma-dl-Rli" secondAttribute="trailing" constant="8" id="efD-rQ-6TO"/>
-                            <constraint firstItem="cUb-FD-V5I" firstAttribute="top" secondItem="8Zo-2X-kBb" secondAttribute="top" id="gSV-mC-DN9"/>
                             <constraint firstItem="9gc-yp-syv" firstAttribute="top" secondItem="l0h-N2-ub4" secondAttribute="bottom" constant="8" id="gv2-k0-nyN"/>
                             <constraint firstItem="gbF-p4-w3A" firstAttribute="top" secondItem="boq-eC-4EU" secondAttribute="bottom" constant="8" id="hgE-rX-aQY"/>
                             <constraint firstAttribute="trailing" secondItem="6O0-kw-vCm" secondAttribute="trailing" id="ig0-72-tuo"/>

@@ -16,7 +16,6 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
     //detail에서 넘어온 coupon 객체를 받기하기 위한 coupon 객체
     var couponToEdit: Coupon?
     
-    
     //밝기 조절용
     var bright : CGFloat?
     
@@ -66,6 +65,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         sender.inputView = datePicker
         datePicker.addTarget(self, action: #selector(CouponAddViewController.datePickerValueChanged), for: UIControlEvents.valueChanged)
     }
+    
     @IBAction func expiredDateFieldEnd(_ sender: UITextField) {
         
         if expiredDate.text == ""{
@@ -89,28 +89,43 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
     //모든 값을 코어데이터 테이블로 저장하기 위한 액션
     @IBAction func saveBtnPressed(_ sender: UIBarButtonItem) {
         var coupon: Coupon!
-        let ImageContext = Image(context: context)
+        let imageContext = Image(context: context)
         
         //입력되지 않은 부분이 있을 때에는 알림창, 모두 입력되었을 때에는 저장.
         if product.text == "" {
-            let alert = UIAlertController(title: "오류", message: "상품명을 입력해 주세요.", preferredStyle: .alert)
-            let ok = UIAlertAction(title: "확인", style: .cancel)
-            alert.addAction(ok)
-            self.present(alert, animated: true)
-        }
-        else if expiredDate.text == "" {
-            let alert = UIAlertController(title: "오류", message: "쿠폰 번호를 입력해 주세요.", preferredStyle: .alert)
-            let ok = UIAlertAction(title: "확인", style: .cancel)
-            alert.addAction(ok)
-            self.present(alert, animated: true)
-        }
-        else if barcode.text == "" {
-            let alert = UIAlertController(title: "오류", message: "유효 기간을 입력해 주세요.", preferredStyle: .alert)
-            let ok = UIAlertAction(title: "확인", style: .cancel)
-            alert.addAction(ok)
-            self.present(alert, animated: true)
+            let color = UIColor.red
+            product.layer.borderWidth = 1
+            product.layer.cornerRadius = CGFloat(7)
+            product.layer.borderColor = color.cgColor
+            product.attributedPlaceholder = NSAttributedString(string: "입력해 주세요.", attributes: [NSForegroundColorAttributeName: UIColor.red])
         }
         else {
+            product.layer.borderWidth = 0
+        }
+        
+        if expiredDate.text == "" {
+            let color = UIColor.red
+            expiredDate.layer.borderWidth = 1
+            expiredDate.layer.cornerRadius = CGFloat(7)
+            expiredDate.layer.borderColor = color.cgColor
+            expiredDate.attributedPlaceholder = NSAttributedString(string: "입력해 주세요.", attributes: [NSForegroundColorAttributeName: UIColor.red])
+        }
+        else {
+            expiredDate.layer.borderWidth = 0
+        }
+        
+        if barcode.text == "" {
+            let color = UIColor.red
+            barcode.layer.borderWidth = 1
+            barcode.layer.cornerRadius = CGFloat(7)
+            barcode.layer.borderColor = color.cgColor
+            barcode.attributedPlaceholder = NSAttributedString(string: "입력해 주세요.", attributes: [NSForegroundColorAttributeName: UIColor.red])
+        }
+        else {
+            barcode.layer.borderWidth = 0
+        }
+        
+        if product.text != "" && expiredDate.text != "" && barcode.text != "" {
             //itemToEdit이 nil일 경우 새로운 객체를 전달해서 저장 아닐경우 그 itemToEdit으로 저장
             if couponToEdit == nil {
                 coupon = Coupon(context: context)
@@ -123,8 +138,8 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         
             //logo 담기!
             if let logoImg = logo.image {
-                ImageContext.image = logoImg
-                coupon.toImage = ImageContext
+                imageContext.image = logoImg
+                coupon.toImage = imageContext
             }
         
             //상품명 담기!
@@ -174,11 +189,6 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         }
     }
 
-    
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         originalText.delegate = self
@@ -187,15 +197,12 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         var parsingBrain: ParsingBrain
         var couponInfo: ParsingBrain.CouponInfo
         
-
-
         //다른 곳 터치시 키보드 제거 및 프레임 원위치
         self.hideKeyboardWhenTappedAround()
         
         //툴바
         addInputAccessoryForTextFields(textFields: [product, barcode, expiredDate],dismissable: true, previousNextable: true)
         addInputAccessoryForTextViews(textViews: [originalText], dismissable: true, previousNextable: true)
-        
         
         //add 버튼을 눌렀을 때.
         if ad.isAddButton == true {
@@ -222,15 +229,13 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
             }
             //OCR 버튼을 눌렀을 때 이미지 OCR 후 바코드만 입력.
             else if ad.isClipboardActionSheet == false {
-                //파싱 퍼센트 표시 알림창.
-//                func progressImageRecognition(for tesseract: G8Tesseract!) {
-//                    let progress = UIAlertController(title: "알림", message: "Recognition Progress: \(tesseract.progress)%", preferredStyle: UIAlertControllerStyle.alert)
-//                    self.present(progress, animated: true)
-//                
-//                    if tesseract.progress >= 90 {
-//                        self.dismiss(animated: true)
-//                    }
-//                }
+                if let tesseract = G8Tesseract(language: "eng+kor") {
+                    tesseract.delegate = self
+                    //tesseract.charWhitelist = "0123456789"
+                    tesseract.image = originalImage?.g8_grayScale() //.g8_blackAndWhite()
+                    tesseract.recognize()
+                    originalText.text = tesseract.recognizedText
+                }
             }
         }
         //수정 버튼을 눌렀을 때.
@@ -238,26 +243,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
             self.navigationItem.title = "쿠폰 수정"
             loadCouponData()
         }
-   
-        //클립보드 표시.
-//        if let copiedString = UIPasteboard.general.string {
-//            originalText.text = copiedString
-//        }
-        
-        }
-    
-    //OCR
-//    override func viewDidAppear(_ animated: Bool) {
-//        if ad.isAddButton == true && ad.isClipboardActionSheet == false {
-//            if let tesseract = G8Tesseract(language: "eng+kor") {
-//                tesseract.delegate = self
-//                //tesseract.charWhitelist = "0123456789"
-//                tesseract.image = originalImage?.g8_grayScale() //.g8_blackAndWhite()
-//                tesseract.recognize()
-//                originalText.text = tesseract.recognizedText
-//            }
-//        }
-//    }
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         //파싱 퍼센트 표시 알림창.
@@ -270,19 +256,8 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
                     self.dismiss(animated: true)
                 }
             }
-            
-//            if let tesseract = G8Tesseract(language: "eng+kor") {
-//                tesseract.delegate = self
-//                //tesseract.charWhitelist = "0123456789"
-//                tesseract.image = originalImage?.g8_grayScale() //.g8_blackAndWhite()
-//                tesseract.recognize()
-//                originalText.text = tesseract.recognizedText
-//            }
         }
     }
-    
-    
-
     
     //파싱 퍼센트 표시.
     func progressImageRecognition(for tesseract: G8Tesseract!) {
@@ -294,7 +269,6 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
 //            self.dismiss(animated: true)
 //        }
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -317,20 +291,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         }, completion: nil)
        
     }
-    
-    
-//    @IBAction func titleField(_ sender: Any) {
-//        ad.heightForKeyboard = 1
-//        self.moveFrame()
-//    }
-    
-//    func textViewDidEndEditing(_ textView: UITextView) {
-//        ad.heightForKeyboard = 1
-//        self.moveFrame()
-//        
-//    }
 
-    
     /*
     // MARK: - Navigation
 
@@ -344,7 +305,6 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
 
 
 //extension 부분
-
 extension CouponAddViewController : logoData {
     
     func updataData(data: UIImage) {

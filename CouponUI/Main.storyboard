@@ -38,7 +38,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZkG-7U-JPn" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="leN-bb-QVD"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FjC-sr-Anl">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="FjC-sr-Anl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -51,13 +51,13 @@
             </objects>
             <point key="canvasLocation" x="1540" y="-734"/>
         </scene>
-        <!--멤버십 카드-->
+        <!--Navigation Controller-->
         <scene sceneID="ReK-QO-g05">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KZY-G8-lUU" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="멤버십 카드" image="membershipTabbar1" selectedImage="membershipTabbar1" id="pep-7c-ymX"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Nzl-Cn-Ai0">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Nzl-Cn-Ai0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -71,7 +71,7 @@
             </objects>
             <point key="canvasLocation" x="1540" y="143"/>
         </scene>
-        <!--설정-->
+        <!--Navigation Controller-->
         <scene sceneID="uXQ-Vc-ARB">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jfW-1F-J1l" sceneMemberID="viewController">
@@ -79,7 +79,7 @@
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dyd-qD-yh0">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="dyd-qD-yh0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -98,12 +98,12 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6P1-eX-TLA" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="쿠폰" image="couponTabBar" selectedImage="couponTabBar" id="QXT-XA-9H0"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Edq-7L-Rxa">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Edq-7L-Rxa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="0.37839070429999999" green="0.34711434759999998" blue="0.27333310529999999" alpha="0.68980094179999996" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>

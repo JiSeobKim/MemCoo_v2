@@ -16,6 +16,7 @@
 		3E37D3591DF09E4A0054C4DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E37D3581DF09E4A0054C4DA /* AppDelegate.swift */; };
 		3E37D35B1DF09E4A0054C4DA /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E37D35A1DF09E4A0054C4DA /* FavoriteViewController.swift */; };
 		3E37D3651DF09E4A0054C4DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E37D3631DF09E4A0054C4DA /* LaunchScreen.storyboard */; };
+		3E5E9D9F1E57674500C577A1 /* CouponMoreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5E9D9E1E57674500C577A1 /* CouponMoreDetailViewController.swift */; };
 		3ECCE3A31E041CF400AE739B /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 3ECCE3A21E041CF400AE739B /* tessdata */; };
 		422867031E59B1EE002F65F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 422867021E59B1EE002F65F6 /* Assets.xcassets */; };
 		422867041E59B1EE002F65F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 422867021E59B1EE002F65F6 /* Assets.xcassets */; };
@@ -64,6 +65,10 @@
 		42A657631E1F383B009BB240 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A657621E1F383B009BB240 /* FavoriteCell.swift */; };
 		42FAB62B1E04E18E00671E32 /* ParsingBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FAB62A1E04E18E00671E32 /* ParsingBrain.swift */; };
 		887E07EA7384948C6E757A75 /* Pods_MemebershipCoupon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF6C7AE377C9282F67BD1A11 /* Pods_MemebershipCoupon.framework */; };
+		A02475921E57E3B5009EC3A9 /* NanumSquareBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A02475911E57E3B5009EC3A9 /* NanumSquareBold.ttf */; };
+		A02475931E57E3B5009EC3A9 /* NanumSquareBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A02475911E57E3B5009EC3A9 /* NanumSquareBold.ttf */; };
+		A02475951E57E3DB009EC3A9 /* NanumSquareRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A02475941E57E3DB009EC3A9 /* NanumSquareRegular.ttf */; };
+		A02475961E57E3DB009EC3A9 /* NanumSquareRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A02475941E57E3DB009EC3A9 /* NanumSquareRegular.ttf */; };
 		A038310F1DFC1BE5002C0314 /* Favorite.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A038310E1DFC1BE5002C0314 /* Favorite.storyboard */; };
 		A03831151DFC1CB8002C0314 /* Coupon.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A03831141DFC1CB8002C0314 /* Coupon.storyboard */; };
 		A03831191DFC1CED002C0314 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A03831181DFC1CED002C0314 /* Settings.storyboard */; };
@@ -81,14 +86,6 @@
 		A0BB53561E21D61A00AF54C9 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BB53551E21D61A00AF54C9 /* TodayViewController.swift */; };
 		A0BB53591E21D61A00AF54C9 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0BB53571E21D61A00AF54C9 /* MainInterface.storyboard */; };
 		A0BB535D1E21D61A00AF54C9 /* Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A0BB53511E21D61900AF54C9 /* Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		A0DAE6441E4EAD14003E64EF /* NanumSquareBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0DAE6401E4EAD14003E64EF /* NanumSquareBold.ttf */; };
-		A0DAE6451E4EAD14003E64EF /* NanumSquareBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0DAE6401E4EAD14003E64EF /* NanumSquareBold.ttf */; };
-		A0DAE6461E4EAD14003E64EF /* NanumSquareExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0DAE6411E4EAD14003E64EF /* NanumSquareExtraBold.ttf */; };
-		A0DAE6471E4EAD14003E64EF /* NanumSquareExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0DAE6411E4EAD14003E64EF /* NanumSquareExtraBold.ttf */; };
-		A0DAE6481E4EAD14003E64EF /* NanumSquareLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0DAE6421E4EAD14003E64EF /* NanumSquareLight.ttf */; };
-		A0DAE6491E4EAD14003E64EF /* NanumSquareLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0DAE6421E4EAD14003E64EF /* NanumSquareLight.ttf */; };
-		A0DAE64A1E4EAD14003E64EF /* NanumSquareRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0DAE6431E4EAD14003E64EF /* NanumSquareRegular.ttf */; };
-		A0DAE64B1E4EAD14003E64EF /* NanumSquareRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0DAE6431E4EAD14003E64EF /* NanumSquareRegular.ttf */; };
 		A0FB04811E0BEE0D007FEA21 /* SelectLogo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0FB04801E0BEE0D007FEA21 /* SelectLogo.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -128,6 +125,7 @@
 		3E37D35A1DF09E4A0054C4DA /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		3E37D3641DF09E4A0054C4DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E37D3661DF09E4A0054C4DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E5E9D9E1E57674500C577A1 /* CouponMoreDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponMoreDetailViewController.swift; sourceTree = "<group>"; };
 		3E8B136C7DF5B1B29AF5A828 /* Pods-MemebershipCoupon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemebershipCoupon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MemebershipCoupon/Pods-MemebershipCoupon.debug.xcconfig"; sourceTree = "<group>"; };
 		3ECCE3A21E041CF400AE739B /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
 		422867021E59B1EE002F65F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -161,6 +159,8 @@
 		42A657621E1F383B009BB240 /* FavoriteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		42E93B0C1E5040D2002B9D7A /* Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Widget.entitlements; sourceTree = "<group>"; };
 		42FAB62A1E04E18E00671E32 /* ParsingBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsingBrain.swift; sourceTree = "<group>"; };
+		A02475911E57E3B5009EC3A9 /* NanumSquareBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareBold.ttf; sourceTree = "<group>"; };
+		A02475941E57E3DB009EC3A9 /* NanumSquareRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRegular.ttf; sourceTree = "<group>"; };
 		A038310E1DFC1BE5002C0314 /* Favorite.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Favorite.storyboard; sourceTree = "<group>"; };
 		A03831141DFC1CB8002C0314 /* Coupon.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Coupon.storyboard; sourceTree = "<group>"; };
 		A03831181DFC1CED002C0314 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
@@ -179,10 +179,6 @@
 		A0BB53551E21D61A00AF54C9 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		A0BB53581E21D61A00AF54C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		A0BB535A1E21D61A00AF54C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A0DAE6401E4EAD14003E64EF /* NanumSquareBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareBold.ttf; sourceTree = "<group>"; };
-		A0DAE6411E4EAD14003E64EF /* NanumSquareExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareExtraBold.ttf; sourceTree = "<group>"; };
-		A0DAE6421E4EAD14003E64EF /* NanumSquareLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareLight.ttf; sourceTree = "<group>"; };
-		A0DAE6431E4EAD14003E64EF /* NanumSquareRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRegular.ttf; sourceTree = "<group>"; };
 		A0FB04801E0BEE0D007FEA21 /* SelectLogo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SelectLogo.storyboard; sourceTree = "<group>"; };
 		AAAC10A62EA3E05F85630D72 /* Pods-MemebershipCoupon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemebershipCoupon.release.xcconfig"; path = "Pods/Target Support Files/Pods-MemebershipCoupon/Pods-MemebershipCoupon.release.xcconfig"; sourceTree = "<group>"; };
 		FF6C7AE377C9282F67BD1A11 /* Pods_MemebershipCoupon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemebershipCoupon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -226,6 +222,7 @@
 				42976BD91DF6B38100ADB0D7 /* CouponViewController.swift */,
 				42976BD71DF6B37300ADB0D7 /* CouponCell.swift */,
 				42976BDA1DF6B38100ADB0D7 /* CouponDetailViewController.swift */,
+				3E5E9D9E1E57674500C577A1 /* CouponMoreDetailViewController.swift */,
 				42976BDB1DF6B38100ADB0D7 /* CouponAddViewController.swift */,
 				42FAB62A1E04E18E00671E32 /* ParsingBrain.swift */,
 				3E146F4C1E1B51320091C767 /* ParsingOCR.swift */,
@@ -236,11 +233,9 @@
 		3E37D34C1DF09E490054C4DA = {
 			isa = PBXGroup;
 			children = (
+				A02475911E57E3B5009EC3A9 /* NanumSquareBold.ttf */,
 				426740101E4235B400DEEE53 /* MemebershipCoupon.entitlements */,
-				A0DAE6401E4EAD14003E64EF /* NanumSquareBold.ttf */,
-				A0DAE6411E4EAD14003E64EF /* NanumSquareExtraBold.ttf */,
-				A0DAE6421E4EAD14003E64EF /* NanumSquareLight.ttf */,
-				A0DAE6431E4EAD14003E64EF /* NanumSquareRegular.ttf */,
+				A02475941E57E3DB009EC3A9 /* NanumSquareRegular.ttf */,
 				3E37D3571DF09E4A0054C4DA /* MembershipCoupon */,
 				A0BB53541E21D61A00AF54C9 /* Widget */,
 				3E37D3561DF09E4A0054C4DA /* Products */,
@@ -485,8 +480,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0DAE6481E4EAD14003E64EF /* NanumSquareLight.ttf in Resources */,
-				A0DAE6441E4EAD14003E64EF /* NanumSquareBold.ttf in Resources */,
+				A02475921E57E3B5009EC3A9 /* NanumSquareBold.ttf in Resources */,
 				3E37D3651DF09E4A0054C4DA /* LaunchScreen.storyboard in Resources */,
 				3ECCE3A31E041CF400AE739B /* tessdata in Resources */,
 				A038310F1DFC1BE5002C0314 /* Favorite.storyboard in Resources */,
@@ -494,10 +488,9 @@
 				422867031E59B1EE002F65F6 /* Assets.xcassets in Resources */,
 				A0FB04811E0BEE0D007FEA21 /* SelectLogo.storyboard in Resources */,
 				A03831151DFC1CB8002C0314 /* Coupon.storyboard in Resources */,
+				A02475951E57E3DB009EC3A9 /* NanumSquareRegular.ttf in Resources */,
 				A057B3601E4C9D980007E388 /* Membership.storyboard in Resources */,
 				42976BF71DF6B48100ADB0D7 /* Main.storyboard in Resources */,
-				A0DAE6461E4EAD14003E64EF /* NanumSquareExtraBold.ttf in Resources */,
-				A0DAE64A1E4EAD14003E64EF /* NanumSquareRegular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -570,6 +563,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4261B4BA1E4A1B41000A6F25 /* Membership+CoreDataProperties.swift in Sources */,
+				3E5E9D9F1E57674500C577A1 /* CouponMoreDetailViewController.swift in Sources */,
 				4261B4C11E4A1B41000A6F25 /* Coupon+CoreDataClass.swift in Sources */,
 				4261B4C21E4A1B41000A6F25 /* Coupon+CoreDataProperties.swift in Sources */,
 				4251CD981E288D6900671A3F /* MaterialView.swift in Sources */,

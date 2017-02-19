@@ -26,6 +26,11 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>NanumSquareBold.ttf</string>
+		<string>NanumSquareRegular.ttf</string>
+	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

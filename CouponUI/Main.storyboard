@@ -14,10 +14,12 @@
             <objects>
                 <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
+                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="ZkG-7U-JPn" kind="relationship" relationship="viewControllers" id="LIv-EY-Qxw"/>
@@ -30,11 +32,11 @@
             </objects>
             <point key="canvasLocation" x="137" y="879"/>
         </scene>
-        <!--즐겨찾기-->
+        <!--Navigation Controller-->
         <scene sceneID="eA4-MF-RaY">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZkG-7U-JPn" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="즐겨찾기" image="first" id="leN-bb-QVD"/>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="leN-bb-QVD"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="FjC-sr-Anl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -53,11 +55,12 @@
         <scene sceneID="ReK-QO-g05">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KZY-G8-lUU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="멤버십 카드" image="first" id="pep-7c-ymX"/>
+                    <tabBarItem key="tabBarItem" title="멤버십 카드" image="membershipTabbar1" selectedImage="membershipTabbar1" id="pep-7c-ymX"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Nzl-Cn-Ai0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -72,7 +75,9 @@
         <scene sceneID="uXQ-Vc-ARB">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jfW-1F-J1l" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="설정" image="first" id="cHQ-B6-csL"/>
+                    <tabBarItem key="tabBarItem" title="설정" image="settingsTabBar" selectedImage="settingsTabBar" id="cHQ-B6-csL">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dyd-qD-yh0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -91,7 +96,7 @@
         <scene sceneID="dk6-bc-VCf">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6P1-eX-TLA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="쿠폰" image="first" id="QXT-XA-9H0"/>
+                    <tabBarItem key="tabBarItem" title="쿠폰" image="couponTabBar" selectedImage="couponTabBar" id="QXT-XA-9H0"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Edq-7L-Rxa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -152,6 +157,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
+        <image name="couponTabBar" width="50" height="50"/>
+        <image name="membershipTabbar1" width="50" height="50"/>
+        <image name="settingsTabBar" width="50" height="50"/>
     </resources>
 </document>

@@ -17,6 +17,8 @@
 		3E37D35B1DF09E4A0054C4DA /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E37D35A1DF09E4A0054C4DA /* FavoriteViewController.swift */; };
 		3E37D3651DF09E4A0054C4DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E37D3631DF09E4A0054C4DA /* LaunchScreen.storyboard */; };
 		3ECCE3A31E041CF400AE739B /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 3ECCE3A21E041CF400AE739B /* tessdata */; };
+		422867031E59B1EE002F65F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 422867021E59B1EE002F65F6 /* Assets.xcassets */; };
+		422867041E59B1EE002F65F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 422867021E59B1EE002F65F6 /* Assets.xcassets */; };
 		4251CD981E288D6900671A3F /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4251CD971E288D6900671A3F /* MaterialView.swift */; };
 		4261B4B91E4A1B41000A6F25 /* Membership+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4261B4AD1E4A1B41000A6F25 /* Membership+CoreDataClass.swift */; };
 		4261B4BA1E4A1B41000A6F25 /* Membership+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4261B4AE1E4A1B41000A6F25 /* Membership+CoreDataProperties.swift */; };
@@ -74,8 +76,6 @@
 		A057B36E1E4C9DA40007E388 /* MembershipFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A057B3661E4C9DA40007E388 /* MembershipFunction.swift */; };
 		A057B36F1E4C9DA40007E388 /* MembershipCollectionVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A057B3671E4C9DA40007E388 /* MembershipCollectionVCell.swift */; };
 		A057B3701E4C9DA40007E388 /* MembershipCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A057B3681E4C9DA40007E388 /* MembershipCollectionVC.swift */; };
-		A099881D1E4AB164008EBDE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A099881C1E4AB164008EBDE6 /* Assets.xcassets */; };
-		A099881E1E4AB167008EBDE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A099881C1E4AB164008EBDE6 /* Assets.xcassets */; };
 		A09988201E4B5C12008EBDE6 /* LogoCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A099881F1E4B5C12008EBDE6 /* LogoCorner.swift */; };
 		A0BB53531E21D61900AF54C9 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0BB53521E21D61900AF54C9 /* NotificationCenter.framework */; };
 		A0BB53561E21D61A00AF54C9 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BB53551E21D61A00AF54C9 /* TodayViewController.swift */; };
@@ -130,6 +130,7 @@
 		3E37D3661DF09E4A0054C4DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E8B136C7DF5B1B29AF5A828 /* Pods-MemebershipCoupon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemebershipCoupon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MemebershipCoupon/Pods-MemebershipCoupon.debug.xcconfig"; sourceTree = "<group>"; };
 		3ECCE3A21E041CF400AE739B /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
+		422867021E59B1EE002F65F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4251CD971E288D6900671A3F /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
 		4261B4AD1E4A1B41000A6F25 /* Membership+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Membership+CoreDataClass.swift"; sourceTree = "<group>"; };
 		4261B4AE1E4A1B41000A6F25 /* Membership+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Membership+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -172,7 +173,6 @@
 		A057B3661E4C9DA40007E388 /* MembershipFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembershipFunction.swift; sourceTree = "<group>"; };
 		A057B3671E4C9DA40007E388 /* MembershipCollectionVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembershipCollectionVCell.swift; sourceTree = "<group>"; };
 		A057B3681E4C9DA40007E388 /* MembershipCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembershipCollectionVC.swift; sourceTree = "<group>"; };
-		A099881C1E4AB164008EBDE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A099881F1E4B5C12008EBDE6 /* LogoCorner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoCorner.swift; sourceTree = "<group>"; };
 		A0BB53511E21D61900AF54C9 /* Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Widget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0BB53521E21D61900AF54C9 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
@@ -318,7 +318,7 @@
 		42976BA31DF27DFC00ADB0D7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				A099881C1E4AB164008EBDE6 /* Assets.xcassets */,
+				422867021E59B1EE002F65F6 /* Assets.xcassets */,
 				3E37D3661DF09E4A0054C4DA /* Info.plist */,
 				3E37D3631DF09E4A0054C4DA /* LaunchScreen.storyboard */,
 				3ECCE3A21E041CF400AE739B /* tessdata */,
@@ -443,7 +443,7 @@
 				TargetAttributes = {
 					3E37D3541DF09E4A0054C4DA = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = HWY63NUUS4;
+						DevelopmentTeam = XNB68CC222;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -452,7 +452,7 @@
 						};
 					};
 					A0BB53501E21D61900AF54C9 = {
-						DevelopmentTeam = HWY63NUUS4;
+						DevelopmentTeam = XNB68CC222;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -491,10 +491,10 @@
 				3ECCE3A31E041CF400AE739B /* tessdata in Resources */,
 				A038310F1DFC1BE5002C0314 /* Favorite.storyboard in Resources */,
 				A03831191DFC1CED002C0314 /* Settings.storyboard in Resources */,
+				422867031E59B1EE002F65F6 /* Assets.xcassets in Resources */,
 				A0FB04811E0BEE0D007FEA21 /* SelectLogo.storyboard in Resources */,
 				A03831151DFC1CB8002C0314 /* Coupon.storyboard in Resources */,
 				A057B3601E4C9D980007E388 /* Membership.storyboard in Resources */,
-				A099881D1E4AB164008EBDE6 /* Assets.xcassets in Resources */,
 				42976BF71DF6B48100ADB0D7 /* Main.storyboard in Resources */,
 				A0DAE6461E4EAD14003E64EF /* NanumSquareExtraBold.ttf in Resources */,
 				A0DAE64A1E4EAD14003E64EF /* NanumSquareRegular.ttf in Resources */,
@@ -505,11 +505,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A099881E1E4AB167008EBDE6 /* Assets.xcassets in Resources */,
 				A0DAE6491E4EAD14003E64EF /* NanumSquareLight.ttf in Resources */,
 				A0DAE64B1E4EAD14003E64EF /* NanumSquareRegular.ttf in Resources */,
 				A0DAE6471E4EAD14003E64EF /* NanumSquareExtraBold.ttf in Resources */,
 				A0DAE6451E4EAD14003E64EF /* NanumSquareBold.ttf in Resources */,
+				422867041E59B1EE002F65F6 /* Assets.xcassets in Resources */,
 				A0BB53591E21D61A00AF54C9 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -772,10 +772,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MemebershipCoupon.entitlements;
-				DEVELOPMENT_TEAM = HWY63NUUS4;
+				DEVELOPMENT_TEAM = XNB68CC222;
 				INFOPLIST_FILE = CouponUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.JMJ.MembershipCoupon;
+				PRODUCT_BUNDLE_IDENTIFIER = gq.dugong.MembershipCoupon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -788,10 +788,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MemebershipCoupon.entitlements;
-				DEVELOPMENT_TEAM = HWY63NUUS4;
+				DEVELOPMENT_TEAM = XNB68CC222;
 				INFOPLIST_FILE = CouponUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.JMJ.MembershipCoupon;
+				PRODUCT_BUNDLE_IDENTIFIER = gq.dugong.MembershipCoupon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -801,10 +801,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Widget/Widget.entitlements;
-				DEVELOPMENT_TEAM = HWY63NUUS4;
+				DEVELOPMENT_TEAM = XNB68CC222;
 				INFOPLIST_FILE = Widget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.JMJ.MembershipCoupon.Widget;
+				PRODUCT_BUNDLE_IDENTIFIER = gq.dugong.MembershipCoupon.Widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -815,10 +815,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Widget/Widget.entitlements;
-				DEVELOPMENT_TEAM = HWY63NUUS4;
+				DEVELOPMENT_TEAM = XNB68CC222;
 				INFOPLIST_FILE = Widget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.JMJ.MembershipCoupon.Widget;
+				PRODUCT_BUNDLE_IDENTIFIER = gq.dugong.MembershipCoupon.Widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;

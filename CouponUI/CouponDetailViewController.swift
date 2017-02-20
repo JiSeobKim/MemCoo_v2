@@ -26,7 +26,7 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
     //밝기 조절용
     var bright : CGFloat?
     
-    @IBAction func finishButton(_ sender: Any) {
+    @IBAction func finishButton(_ sender: UIButton) {
         let alert = UIAlertController(title: "사용 완료", message: "사용 완료하시겠습니까?", preferredStyle: .alert)
         let finish = UIAlertAction(title: "사용 완료", style: .destructive) {
             (_) in
@@ -52,6 +52,7 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         if couponToDetail != nil {
             loadCouponData()
             self.navigationItem.title = titleName
@@ -82,6 +83,13 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
         if originalText == "" {
             showOriginalDataOutlet.isHidden = true
         }
+        
+        //사용 완료 테두리
+        finishButtonOutlet.layer.borderWidth = 1
+        finishButtonOutlet.layer.borderColor = UIColor(red: 222/255.0, green: 222/255.0, blue: 222/255.0, alpha: 1.0).cgColor
+        finishButtonOutlet.layer.cornerRadius = 10
+        
+       
     }
     
     //밝기 제스쳐
@@ -140,10 +148,11 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
                 finishButtonOutlet.isHidden = true
             }
         }
-        
-        //밝기 최대
-        UIScreen.main.brightness = 1.0
-        ad.brightSwitch = true
+        //자동 밝기 최대
+        if ad.brightEditToggle == true {
+            UIScreen.main.brightness = 1.0
+            ad.brightSwitch = true
+        }
     }
     
     @IBAction func showOriginalData(_ sender: Any) {

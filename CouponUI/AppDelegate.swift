@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var bright : CGFloat?
     var brightSwitch : Bool?
+    var brightEditToggle : Bool?
     var heightForKeyboard : CGFloat?
     
     

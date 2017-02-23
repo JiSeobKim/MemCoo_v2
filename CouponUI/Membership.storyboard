@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="NanumSquareBold.ttf">
+        <array key="NanumBold.ttf">
             <string>NanumSquareB</string>
         </array>
     </customFonts>
@@ -182,44 +182,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Mw-6g-QVg">
-                                <rect key="frame" x="0.0" y="308.5" width="375" height="70"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="YKJ-9Y-b0v"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Mw-6g-QVg">
+                                <rect key="frame" x="16" y="249" width="343" height="110"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qv3-Se-9Tt">
-                                <rect key="frame" x="112.5" y="118.5" width="150" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="IAe-mC-4op"/>
-                                    <constraint firstAttribute="height" constant="150" id="rCI-kv-UGZ"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qv3-Se-9Tt">
+                                <rect key="frame" x="127" y="81" width="120" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="logoCornerDesign" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1234-5678-9101-1213" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Re2-UO-qWb">
-                                <rect key="frame" x="16" y="378.5" width="343" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20.5" id="fAb-Cz-zFs"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1234-5678-9101-1213" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Re2-UO-qWb">
+                                <rect key="frame" x="16" y="360" width="343" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="4Mw-6g-QVg" firstAttribute="leading" secondItem="XZE-Cu-GHo" secondAttribute="leading" id="EM3-65-Efe"/>
-                            <constraint firstItem="qv3-Se-9Tt" firstAttribute="centerX" secondItem="XZE-Cu-GHo" secondAttribute="centerX" id="FJd-dp-hxc"/>
-                            <constraint firstItem="4Mw-6g-QVg" firstAttribute="top" secondItem="qv3-Se-9Tt" secondAttribute="bottom" constant="40" id="WH4-mK-ogN"/>
-                            <constraint firstItem="Re2-UO-qWb" firstAttribute="top" secondItem="4Mw-6g-QVg" secondAttribute="bottom" id="XPj-KG-vcu"/>
-                            <constraint firstItem="4Mw-6g-QVg" firstAttribute="centerY" secondItem="XZE-Cu-GHo" secondAttribute="centerY" constant="10" id="agE-y7-Vr4"/>
-                            <constraint firstItem="Re2-UO-qWb" firstAttribute="leading" secondItem="XZE-Cu-GHo" secondAttribute="leadingMargin" id="iYA-Q1-geT"/>
-                            <constraint firstItem="Re2-UO-qWb" firstAttribute="trailing" secondItem="XZE-Cu-GHo" secondAttribute="trailingMargin" id="m81-V7-HWe"/>
-                            <constraint firstItem="4Mw-6g-QVg" firstAttribute="centerX" secondItem="XZE-Cu-GHo" secondAttribute="centerX" id="t6I-vn-bqc"/>
-                            <constraint firstAttribute="trailing" secondItem="4Mw-6g-QVg" secondAttribute="trailing" id="wOh-TD-VYK"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="브랜드" id="unU-OI-ChH">
                         <barButtonItem key="backBarButtonItem" title="Back" id="twa-gh-vda"/>

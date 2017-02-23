@@ -78,8 +78,8 @@
 		A057B36F1E4C9DA40007E388 /* MembershipCollectionVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A057B3671E4C9DA40007E388 /* MembershipCollectionVCell.swift */; };
 		A057B3701E4C9DA40007E388 /* MembershipCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A057B3681E4C9DA40007E388 /* MembershipCollectionVC.swift */; };
 		A09988201E4B5C12008EBDE6 /* LogoCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A099881F1E4B5C12008EBDE6 /* LogoCorner.swift */; };
-		A0AD4F5A1E5B208F00B50FD4 /* NanumSquareBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0AD4F591E5B208F00B50FD4 /* NanumSquareBold.ttf */; };
-		A0AD4F5B1E5B208F00B50FD4 /* NanumSquareBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0AD4F591E5B208F00B50FD4 /* NanumSquareBold.ttf */; };
+		A0AD4F5A1E5B208F00B50FD4 /* NanumBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0AD4F591E5B208F00B50FD4 /* NanumBold.ttf */; };
+		A0AD4F5B1E5B208F00B50FD4 /* NanumBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0AD4F591E5B208F00B50FD4 /* NanumBold.ttf */; };
 		A0BB53531E21D61900AF54C9 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0BB53521E21D61900AF54C9 /* NotificationCenter.framework */; };
 		A0BB53561E21D61A00AF54C9 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BB53551E21D61A00AF54C9 /* TodayViewController.swift */; };
 		A0BB53591E21D61A00AF54C9 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0BB53571E21D61A00AF54C9 /* MainInterface.storyboard */; };
@@ -172,7 +172,7 @@
 		A099881F1E4B5C12008EBDE6 /* LogoCorner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoCorner.swift; sourceTree = "<group>"; };
 		A0AD4F521E5B1C1D00B50FD4 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		A0AD4F531E5B1C1D00B50FD4 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/MainInterface.strings; sourceTree = "<group>"; };
-		A0AD4F591E5B208F00B50FD4 /* NanumSquareBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareBold.ttf; sourceTree = "<group>"; };
+		A0AD4F591E5B208F00B50FD4 /* NanumBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBold.ttf; sourceTree = "<group>"; };
 		A0BB53511E21D61900AF54C9 /* Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Widget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0BB53521E21D61900AF54C9 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		A0BB53551E21D61A00AF54C9 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -233,7 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				426740101E4235B400DEEE53 /* MemebershipCoupon.entitlements */,
-				A0AD4F591E5B208F00B50FD4 /* NanumSquareBold.ttf */,
+				A0AD4F591E5B208F00B50FD4 /* NanumBold.ttf */,
 				3E37D3571DF09E4A0054C4DA /* MembershipCoupon */,
 				A0BB53541E21D61A00AF54C9 /* Widget */,
 				3E37D3561DF09E4A0054C4DA /* Products */,
@@ -478,7 +478,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0AD4F5A1E5B208F00B50FD4 /* NanumSquareBold.ttf in Resources */,
+				A0AD4F5A1E5B208F00B50FD4 /* NanumBold.ttf in Resources */,
 				3E37D3651DF09E4A0054C4DA /* LaunchScreen.storyboard in Resources */,
 				3ECCE3A31E041CF400AE739B /* tessdata in Resources */,
 				A038310F1DFC1BE5002C0314 /* Favorite.storyboard in Resources */,
@@ -496,7 +496,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				422867041E59B1EE002F65F6 /* Assets.xcassets in Resources */,
-				A0AD4F5B1E5B208F00B50FD4 /* NanumSquareBold.ttf in Resources */,
+				A0AD4F5B1E5B208F00B50FD4 /* NanumBold.ttf in Resources */,
 				A0BB53591E21D61A00AF54C9 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

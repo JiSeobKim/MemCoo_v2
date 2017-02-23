@@ -28,7 +28,6 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
         
         collectionView.delegate = self
         collectionView.dataSource = self
-        
         attemptFetch()
         
         //롱프레스
@@ -59,7 +58,9 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
         self.navigationController?.navigationBar.isOpaque = true
         self.navigationController?.navigationBar.backgroundColor = UIColor.white
         
-        
+        //네비 폰트
+        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "NanumSquare", size: 20)!]
+
     }
     
     

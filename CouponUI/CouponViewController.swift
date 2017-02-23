@@ -102,6 +102,10 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.isOpaque = true
         self.navigationController?.navigationBar.backgroundColor = UIColor.white
+        
+        //네비 폰트
+        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "NanumSquare", size: 20)!]
+
 
     }
     

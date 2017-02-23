@@ -47,7 +47,7 @@
                                         <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
-                                            <action selector="brandField:" destination="V9i-4b-dZ9" eventType="editingDidBegin" id="54Y-aK-D2m"/>
+                                            <outlet property="delegate" destination="V9i-4b-dZ9" id="UPp-Sj-swO"/>
                                         </connections>
                                     </textField>
                                 </subviews>
@@ -76,8 +76,8 @@
                                         <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                         <connections>
-                                            <action selector="barcodeField:" destination="V9i-4b-dZ9" eventType="editingDidBegin" id="F5O-RN-RyY"/>
                                             <action selector="paramBarcodeButton:" destination="V9i-4b-dZ9" eventType="editingChanged" id="y5t-1d-agn"/>
+                                            <outlet property="delegate" destination="V9i-4b-dZ9" id="Qzd-DE-MuX"/>
                                         </connections>
                                     </textField>
                                 </subviews>
@@ -153,7 +153,6 @@
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="LabelBarcode" destination="N6m-ZW-jML" id="LwQ-Ep-fCe"/>

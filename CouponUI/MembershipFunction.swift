@@ -68,18 +68,21 @@ extension UIViewController {
         
      
         if ad.heightForKeyboard != nil {
+            
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            
             if self.view.frame.origin.y == 64 {
                 self.view.frame.origin.y -= keyboardSize.height / ad.heightForKeyboard!
                 }
-            
             }
+            
+            
         }
     }
     //프레임 원위치
     func keyboardWillHide(notification: Notification) {
         self.view.frame = CGRect(x: 0, y: 64, width: self.view.frame.width, height: self.view.frame.height)
-        ad.heightForKeyboard = nil
+        ad.heightForKeyboard = 2
     }
     
 }

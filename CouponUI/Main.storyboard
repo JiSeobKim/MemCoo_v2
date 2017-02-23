@@ -57,7 +57,6 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KZY-G8-lUU" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="멤버십 카드" image="membershipTabbar1" selectedImage="membershipTabbar1" id="pep-7c-ymX"/>
                     <toolbarItems/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Nzl-Cn-Ai0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

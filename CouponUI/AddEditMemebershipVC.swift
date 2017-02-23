@@ -62,6 +62,7 @@ class AddEditMemebershipVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print(self.view.frame.origin.y)
         if membershipToEdit != nil {
             loadMembershipData()
             //수정 버튼을 통해 들어온 것 확인
@@ -81,6 +82,12 @@ class AddEditMemebershipVC: UIViewController {
         
         //툴바
         addInputAccessoryForTextFields(textFields: [paramBrand,paramBarcode],dismissable: true, previousNextable: true)
+        //네비 아이템 폰트
+        
+        self.navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "NanumSquare", size: 18)!], for: .normal)
+//        self.navigationItem.backBarButtonItem?.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "NanumSquare", size: 18)!], for: .normal)
+        self.navigationItem.leftBarButtonItem?.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "NanumSquare", size: 15)!], for: .normal)
+
         
      
 

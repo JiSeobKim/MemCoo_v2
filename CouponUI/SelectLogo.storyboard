@@ -10,12 +10,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="NanumSquareBold.ttf">
+        <array key="NanumBold.ttf">
             <string>NanumSquareB</string>
         </array>
     </customFonts>
     <scenes>
-        <!--Title-->
+        <!--로고 선택-->
         <scene sceneID="THS-o9-dc7">
             <objects>
                 <viewController storyboardIdentifier="SelectLogo" id="t2E-kZ-guc" customClass="logoSelect" customModule="MemebershipCoupon" customModuleProvider="target" sceneMemberID="viewController">
@@ -30,9 +30,23 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="137" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TEA-LI-mdG">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="QjK-mC-JcN">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <items>
+                                        <navigationItem title="Title" id="neh-yb-hju">
+                                            <barButtonItem key="leftBarButtonItem" title="Back" id="zlK-jh-BMb">
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <connections>
+                                                    <action selector="cancelButton:" destination="t2E-kZ-guc" id="SJ0-jl-DuR"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </navigationItem>
+                                    </items>
+                                </navigationBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryCell" rowHeight="137" id="Txf-kY-RDa" customClass="logoTableCell" customModule="MemebershipCoupon" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="137"/>
+                                        <rect key="frame" x="0.0" y="72" width="375" height="137"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Txf-kY-RDa" id="SpV-Rd-WEE">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="137"/>
@@ -123,10 +137,19 @@
                             <constraint firstAttribute="trailing" secondItem="TEA-LI-mdG" secondAttribute="trailing" id="z4v-f0-lOY"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="f1U-kG-OYl"/>
+                    <navigationItem key="navigationItem" title="로고 선택" id="f1U-kG-OYl">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="2km-oP-8pn">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="cancelButton:" destination="t2E-kZ-guc" id="OOF-z8-BoG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <nil key="simulatedStatusBarMetrics"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="naviBar" destination="QjK-mC-JcN" id="hU6-w5-iNG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Z7-0X-wUe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

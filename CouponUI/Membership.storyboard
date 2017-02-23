@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="NanumSquareBold.ttf">
+        <array key="NanumBold.ttf">
             <string>NanumSquareB</string>
         </array>
     </customFonts>
@@ -29,7 +29,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="xrv-m4-Kgd">
-                                <rect key="frame" x="16" y="407.5" width="343" height="54"/>
+                                <rect key="frame" x="16" y="408" width="343" height="54"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="브랜드" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqo-yb-SCQ">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="19"/>
@@ -88,13 +88,13 @@
                                 </constraints>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kxd-nk-EcJ">
-                                <rect key="frame" x="8" y="322.5" width="359" height="22"/>
+                                <rect key="frame" x="8" y="323" width="359" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="Iyj-i9-qFL"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="zUP-7i-rYm">
-                                <rect key="frame" x="103.5" y="124.5" width="168" height="168"/>
+                                <rect key="frame" x="104" y="125" width="168" height="168"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="168" id="6zo-gI-5nm"/>
                                     <constraint firstAttribute="width" constant="168" id="Mi6-7D-akG"/>
@@ -104,7 +104,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CAm-2P-rCT">
-                                <rect key="frame" x="109.5" y="131.5" width="155" height="155"/>
+                                <rect key="frame" x="110" y="132" width="155" height="155"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="155" id="QUX-E4-WHv"/>
                                     <constraint firstAttribute="height" constant="155" id="TtF-aP-acs"/>
@@ -333,9 +333,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="IU1-Gy-R4e"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Bzb-Di-sM6">
                             <connections>
-                                <segue destination="V9i-4b-dZ9" kind="show" id="axa-gl-xNh">
-                                    <nil key="action"/>
-                                </segue>
+                                <segue destination="V9i-4b-dZ9" kind="push" id="axa-gl-xNh"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

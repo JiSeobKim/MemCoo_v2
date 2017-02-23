@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="NanumSquareBold.ttf">
+        <array key="NanumBold.ttf">
             <string>NanumSquareB</string>
         </array>
     </customFonts>
@@ -60,7 +60,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D-234" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Y3-se-gC1">
-                                                    <rect key="frame" x="312.5" y="39" width="38.5" height="21"/>
+                                                    <rect key="frame" x="312" y="39" width="39" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="kKI-wC-oKA"/>
                                                     </constraints>
@@ -128,6 +128,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Coupon" id="p0p-dR-pg7">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="gku-Nd-Xcf"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="aYP-HO-pxO">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -445,6 +446,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add / Edit" id="HSR-eY-yf2">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="nTI-0q-9v6"/>
                         <rightBarButtonItems>
                             <barButtonItem systemItem="save" id="3PH-RW-6RR">
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>

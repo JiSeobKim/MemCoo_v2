@@ -18,7 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var brightSwitch : Bool?
     var brightEditToggle : Bool?
     var heightForKeyboard : CGFloat?
-    
+    var nanumFont = [NSFontAttributeName: UIFont(name: "NanumSquare", size: 20)!]
+
     
     //CouponViewController의 ActionSheet에서 눌린 버튼을 CouponAddViewController에 전달하기 위한 변수.
     var isClipboardActionSheet: Bool?

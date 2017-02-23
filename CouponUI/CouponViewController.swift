@@ -105,9 +105,15 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
         
         //네비 폰트
         self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "NanumSquare", size: 20)!]
+        
+        //세그먼트 폰트
+        segment.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "NanumSquare", size: 10)!]
+, for: .normal)
 
 
     }
+    
+    //세그먼트 폰트
     
     //long press gesture를 이용한 즐겨찾기 핸들링.
     func longPress(_ longPressGestureRecognizer: UILongPressGestureRecognizer) {

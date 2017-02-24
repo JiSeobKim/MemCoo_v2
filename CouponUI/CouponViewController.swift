@@ -107,10 +107,7 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
         self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "NanumSquare", size: 17)!]
         
         //세그먼트 폰트
-        segment.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "NanumSquare", size: 12)!]
-, for: .normal)
-
-
+        segment.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "NanumSquare", size: 12)!], for: .normal)
     }
     
     //세그먼트 폰트
@@ -152,8 +149,6 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
                         let add = UIAlertAction(title: "제거", style: .default) {
                             (_) in
                             item.favorite = false
-                            
-                            //error!
                             context.delete(item.toFavorite!)
                             ad.saveContext()
                         }

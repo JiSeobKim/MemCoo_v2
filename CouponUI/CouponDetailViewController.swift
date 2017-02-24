@@ -26,20 +26,38 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
     var bright : CGFloat?
     
     @IBAction func finishButton(_ sender: UIButton) {
-        let alert = UIAlertController(title: "사용 완료", message: "사용 완료하시겠습니까?", preferredStyle: .alert)
-        let finish = UIAlertAction(title: "사용 완료", style: .destructive) {
-            (_) in
-            if self.couponToDetail != nil {
-                self.couponToDetail?.isUsed = true
-                ad.saveContext()
+        if self.couponToDetail?.isUsed == false {
+            let alert = UIAlertController(title: "사용 완료", message: "사용 완료하시겠습니까?", preferredStyle: .alert)
+            let finish = UIAlertAction(title: "사용 완료", style: .destructive) {
+                (_) in
+                if self.couponToDetail != nil {
+                    self.couponToDetail?.isUsed = true
+                    ad.saveContext()
+                }
+                _ = self.navigationController?.popToRootViewController(animated: true)
             }
-            _ = self.navigationController?.popToRootViewController(animated: true)
-        }
         
-        let cancel = UIAlertAction(title: "취소", style: .cancel)
-        alert.addAction(finish)
-        alert.addAction(cancel)
-        self.present(alert, animated: true)
+            let cancel = UIAlertAction(title: "취소", style: .cancel)
+            alert.addAction(finish)
+            alert.addAction(cancel)
+            self.present(alert, animated: true)
+        }
+        else {
+            let alert = UIAlertController(title: "사용 완료 해제", message: "사용 완료를 해제하시겠습니까?", preferredStyle: .alert)
+            let finish = UIAlertAction(title: "해제", style: .destructive) {
+                (_) in
+                if self.couponToDetail != nil {
+                    self.couponToDetail?.isUsed = false
+                    ad.saveContext()
+                }
+                _ = self.navigationController?.popToRootViewController(animated: true)
+            }
+            
+            let cancel = UIAlertAction(title: "취소", style: .cancel)
+            alert.addAction(finish)
+            alert.addAction(cancel)
+            self.present(alert, animated: true)
+        }
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -50,19 +68,6 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
-        if couponToDetail != nil {
-            loadCouponData()
-            self.navigationItem.title = titleName
-            if couponToDetail?.isUsed == true {
-                self.navigationItem.rightBarButtonItem?.isEnabled = false
-                barcodeImg.isHidden = true
-                barcode.text = "사용 완료"
-                expireDate.isHidden = true
-                finishButtonOutlet.isHidden = true
-            }
-        }
         
         //밝기 제스쳐 적용
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self.pan(recognizer:)))
@@ -83,12 +88,6 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
         finishButtonOutlet.layer.borderWidth = 1
         finishButtonOutlet.layer.borderColor = UIColor(red: 222/255.0, green: 222/255.0, blue: 222/255.0, alpha: 1.0).cgColor
         finishButtonOutlet.layer.cornerRadius = 10
-        
-        //raw data가 없을 때 버튼 숨김.
-        if originalText == "" {
-            self.navigationItem.rightBarButtonItems?[1].isEnabled = false
-        }
-       
     }
     
     //밝기 제스쳐
@@ -137,6 +136,8 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
         
         if segue.identifier == "RawData" {
             if let destination = segue.destination as? CouponRawDataViewController {
+                destination.titleName = titleName
+                
                 if originalText != "" {
                     print("\(originalText)")
                     destination.originalText = originalText
@@ -152,16 +153,32 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
     override func viewWillAppear(_ animated: Bool) {
         if couponToDetail != nil {
             loadCouponData()
+            self.navigationItem.title = titleName
+            
             if couponToDetail?.isUsed == true {
-                self.navigationItem.rightBarButtonItem?.isEnabled = false
-                barcodeImg.isHidden = true
-                barcode.text = "사용 완료"
-                expireDate.isHidden = true
-                finishButtonOutlet.isHidden = true
+                self.navigationItem.rightBarButtonItems?[0].isEnabled = false
+                barcodeImg.tintColor = UIColor.gray
+                barcode.textColor = UIColor.gray
+                expireDate.textColor = UIColor.gray
+                finishButtonOutlet.tintColor = UIColor.gray
+                finishButtonOutlet.setTitle("사용 완료 해제", for: .normal)
+            }
+            else {
+                self.navigationItem.rightBarButtonItems?[0].isEnabled = true
+                barcodeImg.tintColor = UIColor.black
+                barcode.textColor = UIColor.black
+                expireDate.textColor = UIColor.black
+                finishButtonOutlet.tintColor = UIColor.black
+                finishButtonOutlet.setTitle("사용 완료", for: .normal)
+            }
+            
+            //raw data가 없을 때 원본 버튼 숨김.
+            if originalText == "" {
+                self.navigationItem.rightBarButtonItems?[1].isEnabled = false
             }
         }
+
         //자동 밝기 최대
-        
         let userData = UserDefaults.standard
         let brightOnOffData = userData.object(forKey: "Bright") as? Bool
         

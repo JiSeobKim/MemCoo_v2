@@ -17,7 +17,6 @@ class CouponCell: UITableViewCell {
     func configureCell(item: Coupon) {
         title.text = item.title
         
-        //category는 to many관계이므로 처리하기 어렵다.
         if item.favorite == true {
             favorite.text = "★"
         }
@@ -28,7 +27,6 @@ class CouponCell: UITableViewCell {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         logo.image = item.toImage?.image as? UIImage
-//        barcodeImg.image = generateBarcodeFromString(string: item.barcode)
         dday.text = ddayCalculate(endDate: item.expireDate as! Date)
     }
 }

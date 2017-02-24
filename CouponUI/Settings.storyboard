@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -27,34 +28,43 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="상세 화면 최대 밝기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XhD-mW-Gv8">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상세 화면 최대 밝기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XhD-mW-Gv8">
                                                     <rect key="frame" x="8" y="18" width="131" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="알림 날짜" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="skN-Hl-bgY">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알림 날짜" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="skN-Hl-bgY">
                                                     <rect key="frame" x="8" y="52" width="64" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zQL-vL-IZX">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zQL-vL-IZX">
                                                     <rect key="frame" x="318" y="13" width="51" height="31"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="onTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <connections>
                                                         <action selector="brightSwitch:" destination="WCV-oN-cdp" eventType="valueChanged" id="vwg-i3-Gyf"/>
                                                     </connections>
                                                 </switch>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aKE-t4-3VU">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aKE-t4-3VU">
                                                     <rect key="frame" x="318" y="47" width="51" height="31"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="onTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <connections>
+                                                        <action selector="notificationSwitch:" destination="WCV-oN-cdp" eventType="valueChanged" id="0gZ-mc-bau"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="zQL-vL-IZX" firstAttribute="leading" secondItem="aKE-t4-3VU" secondAttribute="leading" id="06S-mO-z8a"/>
+                                                <constraint firstItem="zQL-vL-IZX" firstAttribute="top" secondItem="mVW-cq-60a" secondAttribute="topMargin" constant="5" id="6cL-iJ-Hla"/>
+                                                <constraint firstItem="XhD-mW-Gv8" firstAttribute="centerY" secondItem="zQL-vL-IZX" secondAttribute="centerY" id="Ccd-fQ-tKD"/>
+                                                <constraint firstItem="skN-Hl-bgY" firstAttribute="centerY" secondItem="aKE-t4-3VU" secondAttribute="centerY" id="IWv-o8-8Rq"/>
+                                                <constraint firstItem="XhD-mW-Gv8" firstAttribute="leading" secondItem="mVW-cq-60a" secondAttribute="leadingMargin" id="NXQ-t6-JGo"/>
+                                                <constraint firstItem="aKE-t4-3VU" firstAttribute="top" secondItem="zQL-vL-IZX" secondAttribute="bottom" constant="3" id="RbG-uL-y2D"/>
+                                                <constraint firstItem="XhD-mW-Gv8" firstAttribute="leading" secondItem="skN-Hl-bgY" secondAttribute="leading" id="Vje-EB-z9R"/>
+                                                <constraint firstItem="zQL-vL-IZX" firstAttribute="trailing" secondItem="mVW-cq-60a" secondAttribute="trailingMargin" id="x8j-LM-ZXp"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -94,6 +104,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="brightOutlet" destination="zQL-vL-IZX" id="OKj-Eo-SXf"/>
+                        <outlet property="notificationOutlet" destination="aKE-t4-3VU" id="cnZ-kQ-OhC"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UhI-7l-FIz" userLabel="First Responder" sceneMemberID="firstResponder"/>

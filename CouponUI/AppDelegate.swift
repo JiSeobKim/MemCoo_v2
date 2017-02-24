@@ -119,3 +119,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 let ad = UIApplication.shared.delegate as! AppDelegate
 let context = CoreDataService.shared.persistentContainer.viewContext
+
+

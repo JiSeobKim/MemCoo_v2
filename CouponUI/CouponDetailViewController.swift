@@ -149,7 +149,11 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
             }
         }
         //자동 밝기 최대
-        if ad.brightEditToggle == true {
+        
+        let userData = UserDefaults.standard
+        let brightOnOffData = userData.object(forKey: "Bright") as? Bool
+        
+        if brightOnOffData == true {
             UIScreen.main.brightness = 1.0
             ad.brightSwitch = true
         }

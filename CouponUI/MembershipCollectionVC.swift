@@ -131,27 +131,10 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
                     alert.addAction(cancel)
                     self.present(alert, animated: true)
                 }
-                
-                
-                
-                //                if item.favorite == true {
-                //                    item.favorite = false
-                //                    context.delete(item.toFavorite!)
-                //
-                //                } else {
-                //                    item.favorite = true
-                //
-                //                    favoriteContext.isMembership = true
-                //                    favoriteContext.index = 0
-                //                    item.toFavorite = favoriteContext
-                //                }
-                //                ad.saveContext()
-                //                collectionView.reloadData()
-                //
             }
             
         } else {
-            print("Could not find index path")
+            print("Could not find index path(longPress)")
         }
     }
     

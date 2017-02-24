@@ -61,8 +61,6 @@ class AddEditMemebershipVC: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        print(self.view.frame.origin.y)
         if membershipToEdit != nil {
             loadMembershipData()
             //수정 버튼을 통해 들어온 것 확인

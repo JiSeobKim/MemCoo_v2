@@ -104,10 +104,10 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
         self.navigationController?.navigationBar.backgroundColor = UIColor.white
         
         //네비 폰트
-        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "NanumSquare", size: 20)!]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "NanumSquare", size: 17)!]
         
         //세그먼트 폰트
-        segment.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "NanumSquare", size: 10)!]
+        segment.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "NanumSquare", size: 12)!]
 , for: .normal)
 
 
@@ -194,9 +194,6 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
 
     //선택된 cell의 처리 정의
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //셀 선택 후 뒤로 돌아왔을 때 선택 취소.
-        tableView.deselectRow(at: indexPath, animated: true)
-        
         if let objs = controller.fetchedObjects, objs.count > 0 {
             let item = objs[indexPath.row]
             performSegue(withIdentifier: "CouponDetailsVC", sender: item)
@@ -243,7 +240,9 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
                 
                 let delete = UIAlertAction(title: "삭제", style: .destructive) {
                     (_) in
-                    context.delete(item.toFavorite!)
+                    if item.favorite == true {
+                        context.delete(item.toFavorite!)
+                    }
                     context.delete(item)
                     ad.saveContext()
                 }

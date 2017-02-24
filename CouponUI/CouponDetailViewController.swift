@@ -14,7 +14,6 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
     @IBOutlet weak var expireDate: UILabel!
     @IBOutlet weak var finishButtonOutlet: UIButton!
     @IBOutlet weak var logoImage: UIImageView!
-    @IBOutlet weak var showOriginalDataOutlet: UIButton!
     
     //쿠폰뷰콘트롤러에서 받는 couponToDetail과 쿠폰애드뷰콘트롤러에 전달해주는 couponToEdit이 있다.
     var couponToDetail: Coupon?
@@ -79,16 +78,16 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
         if let topItem = self.navigationController?.navigationBar.topItem {
             topItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
         }
-        
-        if originalText == "" {
-            showOriginalDataOutlet.isHidden = true
-        }
-        
+                
         //사용 완료 테두리
         finishButtonOutlet.layer.borderWidth = 1
         finishButtonOutlet.layer.borderColor = UIColor(red: 222/255.0, green: 222/255.0, blue: 222/255.0, alpha: 1.0).cgColor
         finishButtonOutlet.layer.cornerRadius = 10
         
+        //raw data가 없을 때 버튼 숨김.
+        if originalText == "" {
+            self.navigationItem.rightBarButtonItems?[1].isEnabled = false
+        }
        
     }
     
@@ -135,6 +134,19 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
                 }
             }
         }
+        
+        if segue.identifier == "RawData" {
+            if let destination = segue.destination as? CouponRawDataViewController {
+                if originalText != "" {
+                    print("\(originalText)")
+                    destination.originalText = originalText
+                }
+                
+                if originalImage != nil {
+                    destination.originalImage = originalImage
+                }
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -158,23 +170,6 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
             ad.brightSwitch = true
         }
     }
-    
-    @IBAction func showOriginalData(_ sender: Any) {
-        guard let moreDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? CouponMoreDetailViewController else {
-            return
-        }
-        if originalText != "" {
-            print("\(originalText)")
-            moreDetailViewController.originalText = originalText
-        }
-        
-        if originalImage != nil {
-            moreDetailViewController.originalImage = originalImage
-        }
-        
-        self.present(moreDetailViewController, animated: true)
-    }
-    
     
     /*
      // MARK: - Navigation

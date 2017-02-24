@@ -10,7 +10,6 @@ import UIKit
 import TesseractOCR
 
 class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, G8TesseractDelegate, UITextViewDelegate {
-    @IBOutlet weak var testimage: UIImageView!
     var imagePicker: UIImagePickerController!
 
     //detail에서 넘어온 coupon 객체를 받기하기 위한 coupon 객체
@@ -194,7 +193,6 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         originalText.delegate = self
-        self.testimage.image = originalImage
         
         var parsingBrain: ParsingBrain
         var couponInfo: ParsingBrain.CouponInfo

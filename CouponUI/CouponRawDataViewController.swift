@@ -1,5 +1,5 @@
 //
-//  CouponMoreDetailViewController.swift
+//  CouponRawDataViewController.swift
 //  MemebershipCoupon
 //
 //  Created by mino on 2017. 2. 18..
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CouponMoreDetailViewController: UIViewController {
+class CouponRawDataViewController: UIViewController {
     @IBOutlet weak var originalTextView: UITextView!
     @IBOutlet weak var originalImageView: UIImageView!
     

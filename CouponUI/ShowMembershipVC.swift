@@ -72,7 +72,11 @@ class ShowMembershipVC: UIViewController, UIGestureRecognizerDelegate {
             loadMembershipData()
         }
         //현재 페이지에선 밝기 수정 on
-        if ad.brightEditToggle == true {
+        
+        let userData = UserDefaults.standard
+        let brightOnOffData = userData.object(forKey: "Bright") as? Bool
+
+        if brightOnOffData == true {
             ad.brightSwitch = true
             UIScreen.main.brightness = 1.0
         }

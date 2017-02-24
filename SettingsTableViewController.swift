@@ -10,8 +10,7 @@ import UIKit
 
 class SettingsTableViewController: UITableViewController {
     
-    var titleList = ["쿠폰 알림", "기부하기", "만든이", "오류 제보/제안", "리뷰 남기기"]
-
+   
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,13 +23,42 @@ class SettingsTableViewController: UITableViewController {
         //네비 폰트
         self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "NanumSquare", size: 20)!]
 
+        
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let userData = UserDefaults.standard
+        let brightOnOffData = userData.object(forKey: "Bright") as? Bool
+        if brightOnOffData != nil {
+            if brightOnOffData == true {
+                brightOutlet.setOn(true, animated: false)
+            } else {
+                brightOutlet.setOn(false, animated: false)
+            }
+        }
+
+
+    }
+    override func viewDidAppear(_ animated: Bool) {
+            }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
+    //자동 밝기
+    @IBOutlet weak var brightOutlet: UISwitch!
+    @IBAction func brightSwitch(_ sender: UISwitch) {
+        let brightdata = UserDefaults.standard
+        if brightOutlet.isOn {
+            brightdata.set(true, forKey: "Bright")
+            print("saveTrue")
+        } else {
+            brightdata.set(false, forKey: "Bright")
+            print("saveFalse")
+        }
+    }
     // MARK: - Table view data source
 
     /* override func numberOfSections(in tableView: UITableView) -> Int {
@@ -38,21 +66,7 @@ class SettingsTableViewController: UITableViewController {
         return 0
     } */
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.titleList.count
-    }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let row = self.titleList[indexPath.row]
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsCell", for: indexPath) as! SettingsTableViewCell
-        cell.title.text = row
-        // Configure the cell...
-
-        return cell
-    }
-
-    /*
+       /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.

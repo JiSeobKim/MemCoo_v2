@@ -20,6 +20,8 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
     var bright : CGFloat?
     
     @IBOutlet weak var logo: UIImageView!
+    //로고 선택 시 버튼 숨기기 위한 변수.
+    @IBOutlet weak var logoButton: UIButton!
     var originalImage: UIImage?
     
     @IBOutlet weak var deleteOutlet: UIBarButtonItem!

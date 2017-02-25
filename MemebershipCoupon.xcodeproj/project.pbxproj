@@ -19,7 +19,6 @@
 		3E5E9D9F1E57674500C577A1 /* CouponMoreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5E9D9E1E57674500C577A1 /* CouponMoreDetailViewController.swift */; };
 		3ECCE3A31E041CF400AE739B /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 3ECCE3A21E041CF400AE739B /* tessdata */; };
 		422867031E59B1EE002F65F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 422867021E59B1EE002F65F6 /* Assets.xcassets */; };
-		422867041E59B1EE002F65F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 422867021E59B1EE002F65F6 /* Assets.xcassets */; };
 		4251CD981E288D6900671A3F /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4251CD971E288D6900671A3F /* MaterialView.swift */; };
 		4261B4B91E4A1B41000A6F25 /* Membership+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4261B4AD1E4A1B41000A6F25 /* Membership+CoreDataClass.swift */; };
 		4261B4BA1E4A1B41000A6F25 /* Membership+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4261B4AE1E4A1B41000A6F25 /* Membership+CoreDataProperties.swift */; };
@@ -63,6 +62,7 @@
 		42976BF71DF6B48100ADB0D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42976BF61DF6B48100ADB0D7 /* Main.storyboard */; };
 		42976C0A1DF6C23800ADB0D7 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 42976C081DF6C23800ADB0D7 /* Model.xcdatamodeld */; };
 		42A657631E1F383B009BB240 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A657621E1F383B009BB240 /* FavoriteCell.swift */; };
+		42C910401E5D73E500A04984 /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4251CD971E288D6900671A3F /* MaterialView.swift */; };
 		42FAB62B1E04E18E00671E32 /* ParsingBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FAB62A1E04E18E00671E32 /* ParsingBrain.swift */; };
 		887E07EA7384948C6E757A75 /* Pods_MemebershipCoupon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF6C7AE377C9282F67BD1A11 /* Pods_MemebershipCoupon.framework */; };
 		A02475921E57E3B5009EC3A9 /* NanumSquareBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A02475911E57E3B5009EC3A9 /* NanumSquareBold.ttf */; };
@@ -498,11 +498,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0DAE6491E4EAD14003E64EF /* NanumSquareLight.ttf in Resources */,
-				A0DAE64B1E4EAD14003E64EF /* NanumSquareRegular.ttf in Resources */,
-				A0DAE6471E4EAD14003E64EF /* NanumSquareExtraBold.ttf in Resources */,
-				A0DAE6451E4EAD14003E64EF /* NanumSquareBold.ttf in Resources */,
-				422867041E59B1EE002F65F6 /* Assets.xcassets in Resources */,
+				A02475961E57E3DB009EC3A9 /* NanumSquareRegular.ttf in Resources */,
+				A02475931E57E3B5009EC3A9 /* NanumSquareBold.ttf in Resources */,
 				A0BB53591E21D61A00AF54C9 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -625,6 +622,7 @@
 				427D91771E5060BF00B26230 /* Image+CoreDataClass.swift in Sources */,
 				427D91721E50607800B26230 /* Membership+CoreDataProperties.swift in Sources */,
 				427D918A1E51D78400B26230 /* CouponWidgetCell.swift in Sources */,
+				42C910401E5D73E500A04984 /* MaterialView.swift in Sources */,
 				427D916F1E505FD800B26230 /* Favorite+CoreDataProperties.swift in Sources */,
 				427D91831E518E2400B26230 /* MembershipWidgetVC.swift in Sources */,
 				427D91851E518E3800B26230 /* CouponWidgetVC.swift in Sources */,

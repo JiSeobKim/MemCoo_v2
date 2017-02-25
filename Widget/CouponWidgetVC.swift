@@ -16,16 +16,18 @@ class CouponWidgetVC: UIViewController, NSFetchedResultsControllerDelegate, UICo
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var barcodeTop: NSLayoutConstraint!
     @IBOutlet weak var barcodeView: UIView!
     @IBOutlet weak var barcodeImg: UIImageView!
     @IBAction func barcodeTouch(_ sender: UIButton) {
+        barcodeTop.constant = -70
         barcodeView.isHidden = true
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         attemptFetch()
+        barcodeTop.constant = -70
         collectionView.delegate = self
         collectionView.dataSource = self
     }
@@ -38,6 +40,7 @@ class CouponWidgetVC: UIViewController, NSFetchedResultsControllerDelegate, UICo
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let objs = favoriteController.fetchedObjects, objs.count > 0 {
             let item = objs[indexPath.row]
+            barcodeTop.constant = 0
             barcodeView.isHidden = false
             barcodeImg.image = generateBarcodeFromString(string: item.toCoupon?.barcode)
         }

@@ -16,9 +16,11 @@ class MembershipWidgetVC: UIViewController, NSFetchedResultsControllerDelegate, 
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var barcodeTop: NSLayoutConstraint!
     @IBOutlet weak var barcodeView: UIView!
     @IBOutlet weak var barcodeImg: UIImageView!
     @IBAction func barcodeTouch(_ sender: UIButton) {
+        barcodeTop.constant = -70
         barcodeView.isHidden = true
     }
     
@@ -26,6 +28,7 @@ class MembershipWidgetVC: UIViewController, NSFetchedResultsControllerDelegate, 
         super.viewDidLoad()
         
         attemptFetch()
+        barcodeTop.constant = -70
         collectionView.delegate = self
         collectionView.dataSource = self
         
@@ -39,6 +42,7 @@ class MembershipWidgetVC: UIViewController, NSFetchedResultsControllerDelegate, 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {        
         if let objs = favoriteController.fetchedObjects, objs.count > 0 {
             let item = objs[indexPath.row]
+            barcodeTop.constant = 0
             barcodeView.isHidden = false
             barcodeImg.image = generateBarcodeFromString(string: item.toMembership?.barcode)
         }

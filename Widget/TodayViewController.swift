@@ -14,6 +14,7 @@ class TodayViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBar.bounds.size.height = 20
+        self.tabBar.tintColor = UIColor.black
         
         self.extensionContext?.widgetLargestAvailableDisplayMode = NCWidgetDisplayMode.expanded
      
@@ -39,7 +40,7 @@ class TodayViewController: UITabBarController {
             self.preferredContentSize = maxSize
         }
         else {
-            self.preferredContentSize = CGSize(width: maxSize.width, height: self.view.frame.size.height)
+            self.preferredContentSize = CGSize(width: maxSize.width, height: self.tabBarController?.selectedViewController?.view.bounds.size.height ?? 250)
         }
     }
     

@@ -1,5 +1,5 @@
 //
-//  CouponMoreDetailViewController.swift
+//  CouponRawDataViewController.swift
 //  MemebershipCoupon
 //
 //  Created by mino on 2017. 2. 18..
@@ -8,10 +8,11 @@
 
 import UIKit
 
-class CouponMoreDetailViewController: UIViewController {
+class CouponRawDataViewController: UIViewController {
     @IBOutlet weak var originalTextView: UITextView!
     @IBOutlet weak var originalImageView: UIImageView!
     
+    var titleName: String?
     var originalText: String?
     var originalImage: UIImage?
 
@@ -21,6 +22,12 @@ class CouponMoreDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = titleName
+        
+        if let topItem = self.navigationController?.navigationBar.topItem {
+            topItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
+        }
+        
         if originalText == nil {
             originalTextView.isHidden = true
         }

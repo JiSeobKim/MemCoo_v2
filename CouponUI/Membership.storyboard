@@ -11,8 +11,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="NanumSquareRegular.ttf">
-            <string>NanumSquareR</string>
+        <array key="NanumBold.ttf">
+            <string>NanumSquareB</string>
         </array>
     </customFonts>
     <scenes>
@@ -33,7 +33,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="브랜드" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqo-yb-SCQ">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="19"/>
-                                        <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -44,10 +44,10 @@
                                             <constraint firstAttribute="height" constant="30" id="Qq4-QE-w0s"/>
                                         </constraints>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
-                                            <action selector="brandField:" destination="V9i-4b-dZ9" eventType="editingDidBegin" id="54Y-aK-D2m"/>
+                                            <outlet property="delegate" destination="V9i-4b-dZ9" id="UPp-Sj-swO"/>
                                         </connections>
                                     </textField>
                                 </subviews>
@@ -63,7 +63,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="바코드" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N6m-ZW-jML">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="19"/>
-                                        <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -73,11 +73,11 @@
                                             <constraint firstAttribute="height" constant="30" id="omY-Sf-8b8"/>
                                         </constraints>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                         <connections>
-                                            <action selector="barcodeField:" destination="V9i-4b-dZ9" eventType="editingDidBegin" id="F5O-RN-RyY"/>
                                             <action selector="paramBarcodeButton:" destination="V9i-4b-dZ9" eventType="editingChanged" id="y5t-1d-agn"/>
+                                            <outlet property="delegate" destination="V9i-4b-dZ9" id="Qzd-DE-MuX"/>
                                         </connections>
                                     </textField>
                                 </subviews>
@@ -88,13 +88,13 @@
                                 </constraints>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kxd-nk-EcJ">
-                                <rect key="frame" x="8" y="322.5" width="359" height="22"/>
+                                <rect key="frame" x="8" y="323" width="359" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="Iyj-i9-qFL"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="zUP-7i-rYm">
-                                <rect key="frame" x="103.5" y="124.5" width="168" height="168"/>
+                                <rect key="frame" x="104" y="125" width="168" height="168"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="168" id="6zo-gI-5nm"/>
                                     <constraint firstAttribute="width" constant="168" id="Mi6-7D-akG"/>
@@ -104,11 +104,12 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CAm-2P-rCT">
-                                <rect key="frame" x="109.5" y="131.5" width="155" height="155"/>
+                                <rect key="frame" x="110" y="132" width="155" height="155"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="155" id="QUX-E4-WHv"/>
                                     <constraint firstAttribute="height" constant="155" id="TtF-aP-acs"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="17"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="100" maxX="90" maxY="0.0"/>
                                 <state key="normal" title=" Edit"/>
@@ -152,7 +153,6 @@
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="LabelBarcode" destination="N6m-ZW-jML" id="LwQ-Ep-fCe"/>
@@ -181,44 +181,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Mw-6g-QVg">
-                                <rect key="frame" x="0.0" y="308.5" width="375" height="70"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="YKJ-9Y-b0v"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Mw-6g-QVg">
+                                <rect key="frame" x="16" y="249" width="343" height="110"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qv3-Se-9Tt">
-                                <rect key="frame" x="112.5" y="118.5" width="150" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="IAe-mC-4op"/>
-                                    <constraint firstAttribute="height" constant="150" id="rCI-kv-UGZ"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qv3-Se-9Tt">
+                                <rect key="frame" x="127" y="81" width="120" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="logoCornerDesign" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1234-5678-9101-1213" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Re2-UO-qWb">
-                                <rect key="frame" x="16" y="378.5" width="343" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20.5" id="fAb-Cz-zFs"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1234-5678-9101-1213" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Re2-UO-qWb">
+                                <rect key="frame" x="16" y="360" width="343" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="4Mw-6g-QVg" firstAttribute="leading" secondItem="XZE-Cu-GHo" secondAttribute="leading" id="EM3-65-Efe"/>
-                            <constraint firstItem="qv3-Se-9Tt" firstAttribute="centerX" secondItem="XZE-Cu-GHo" secondAttribute="centerX" id="FJd-dp-hxc"/>
-                            <constraint firstItem="4Mw-6g-QVg" firstAttribute="top" secondItem="qv3-Se-9Tt" secondAttribute="bottom" constant="40" id="WH4-mK-ogN"/>
-                            <constraint firstItem="Re2-UO-qWb" firstAttribute="top" secondItem="4Mw-6g-QVg" secondAttribute="bottom" id="XPj-KG-vcu"/>
-                            <constraint firstItem="4Mw-6g-QVg" firstAttribute="centerY" secondItem="XZE-Cu-GHo" secondAttribute="centerY" constant="10" id="agE-y7-Vr4"/>
-                            <constraint firstItem="Re2-UO-qWb" firstAttribute="leading" secondItem="XZE-Cu-GHo" secondAttribute="leadingMargin" id="iYA-Q1-geT"/>
-                            <constraint firstItem="Re2-UO-qWb" firstAttribute="trailing" secondItem="XZE-Cu-GHo" secondAttribute="trailingMargin" id="m81-V7-HWe"/>
-                            <constraint firstItem="4Mw-6g-QVg" firstAttribute="centerX" secondItem="XZE-Cu-GHo" secondAttribute="centerX" id="t6I-vn-bqc"/>
-                            <constraint firstAttribute="trailing" secondItem="4Mw-6g-QVg" secondAttribute="trailing" id="wOh-TD-VYK"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="브랜드" id="unU-OI-ChH">
                         <barButtonItem key="backBarButtonItem" title="Back" id="twa-gh-vda"/>
@@ -283,7 +265,7 @@
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5v-CW-wcB">
                                                             <rect key="frame" x="0.0" y="101" width="100" height="16"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -350,9 +332,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="IU1-Gy-R4e"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Bzb-Di-sM6">
                             <connections>
-                                <segue destination="V9i-4b-dZ9" kind="show" id="axa-gl-xNh">
-                                    <nil key="action"/>
-                                </segue>
+                                <segue destination="V9i-4b-dZ9" kind="push" id="axa-gl-xNh"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

@@ -22,15 +22,14 @@
 	<true/>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>사진첩 엑세스를 허용해주세요.</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>NanumBold.ttf</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
-	<key>UIAppFonts</key>
-	<array>
-		<string>NanumSquareBold.ttf</string>
-		<string>NanumSquareRegular.ttf</string>
-	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
@@ -50,11 +49,6 @@
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>UIAppFonts</key>
-	<array>
-		<string>NanumSquareLight.ttf</string>
-		<string>NanumSquareRegular.ttf</string>
 	</array>
 </dict>
 </plist>

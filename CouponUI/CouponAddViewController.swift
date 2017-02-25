@@ -10,7 +10,6 @@ import UIKit
 import TesseractOCR
 
 class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, G8TesseractDelegate, UITextViewDelegate {
-    @IBOutlet weak var testimage: UIImageView!
     var imagePicker: UIImagePickerController!
 
     //detail에서 넘어온 coupon 객체를 받기하기 위한 coupon 객체
@@ -20,6 +19,8 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
     var bright : CGFloat?
     
     @IBOutlet weak var logo: UIImageView!
+    //로고 선택 시 버튼 숨기기 위한 변수.
+    @IBOutlet weak var logoButton: UIButton!
     var originalImage: UIImage?
     
     @IBOutlet weak var deleteOutlet: UIBarButtonItem!
@@ -93,36 +94,36 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         
         //입력되지 않은 부분이 있을 때에는 알림창, 모두 입력되었을 때에는 저장.
         if product.text == "" {
-            let color = UIColor.red
-            product.layer.borderWidth = 1
-            product.layer.cornerRadius = CGFloat(7)
-            product.layer.borderColor = color.cgColor
+            //let color = UIColor.red
+            //product.layer.borderWidth = 1
+            //product.layer.cornerRadius = CGFloat(3)
+            //product.layer.borderColor = color.cgColor
             product.attributedPlaceholder = NSAttributedString(string: "입력해 주세요.", attributes: [NSForegroundColorAttributeName: UIColor.red])
         }
         else {
-            product.layer.borderWidth = 0
+            //product.layer.borderWidth = 0
         }
         
         if expiredDate.text == "" {
-            let color = UIColor.red
-            expiredDate.layer.borderWidth = 1
-            expiredDate.layer.cornerRadius = CGFloat(7)
-            expiredDate.layer.borderColor = color.cgColor
+            //let color = UIColor.red
+            //expiredDate.layer.borderWidth = 1
+            //expiredDate.layer.cornerRadius = CGFloat(3)
+            //expiredDate.layer.borderColor = color.cgColor
             expiredDate.attributedPlaceholder = NSAttributedString(string: "입력해 주세요.", attributes: [NSForegroundColorAttributeName: UIColor.red])
         }
         else {
-            expiredDate.layer.borderWidth = 0
+            //expiredDate.layer.borderWidth = 0
         }
         
         if barcode.text == "" {
-            let color = UIColor.red
-            barcode.layer.borderWidth = 1
-            barcode.layer.cornerRadius = CGFloat(7)
-            barcode.layer.borderColor = color.cgColor
+            //let color = UIColor.red
+            //barcode.layer.borderWidth = 1
+            //barcode.layer.cornerRadius = CGFloat(3)
+            //barcode.layer.borderColor = color.cgColor
             barcode.attributedPlaceholder = NSAttributedString(string: "입력해 주세요.", attributes: [NSForegroundColorAttributeName: UIColor.red])
         }
         else {
-            barcode.layer.borderWidth = 0
+            //barcode.layer.borderWidth = 0
         }
         
         if product.text != "" && expiredDate.text != "" && barcode.text != "" {
@@ -192,7 +193,6 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         originalText.delegate = self
-        self.testimage.image = originalImage
         
         var parsingBrain: ParsingBrain
         var couponInfo: ParsingBrain.CouponInfo
@@ -243,6 +243,10 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
             self.navigationItem.title = "쿠폰 수정"
             loadCouponData()
         }
+        
+        if let topItem = self.navigationController?.navigationBar.topItem {
+            topItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -262,12 +266,6 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
     //파싱 퍼센트 표시.
     func progressImageRecognition(for tesseract: G8Tesseract!) {
         print("Recognition Progress \(tesseract.progress)%")
-//        let progress = UIAlertController(title: "알림", message: "Recognition Progress: \(tesseract.progress)%", preferredStyle: UIAlertControllerStyle.alert)
-//        self.present(progress, animated: true)
-//        
-//        if tesseract.progress >= 90 {
-//            self.dismiss(animated: true)
-//        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -284,12 +282,15 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
     }
     //메모 선택시 프레임 이동
     func textViewDidBeginEditing(_ textView: UITextView) {
-        ad.heightForKeyboard = 3
-        self.moveFrame()
         UIView.animate(withDuration: 0.25, animations: {
              self.view.frame.origin.y -= 200
         }, completion: nil)
        
+    }
+    func textViewDidEndEditing(_ textView: UITextView) {
+        UIView.animate(withDuration: 0.15, animations: {
+            self.view.frame.origin.y += 200
+        }, completion: nil)
     }
 
     /*

@@ -9,15 +9,16 @@
 import UIKit
 import CoreData
 
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     var bright : CGFloat?
     var brightSwitch : Bool?
+    var brightEditToggle : Bool?
     var heightForKeyboard : CGFloat?
-    
+    var nanumFont = [NSFontAttributeName: UIFont(name: "NanumSquare", size: 20)!]
+
     
     //CouponViewController의 ActionSheet에서 눌린 버튼을 CouponAddViewController에 전달하기 위한 변수.
     var isClipboardActionSheet: Bool?
@@ -31,14 +32,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
 
         // Override point for customization after application launch.
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont(name: "NanumSquare", size: 18)!], for: .normal)
+        
+        //경고창, 배지, 사운드를 사용하는 알림 환경 정보를 생성하고, 이를 애플리케이션에 저장.
+        let setting = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+        application.registerUserNotificationSettings(setting)
+        
         return true
     }
+   
     
     func applicationWillResignActive(_ application: UIApplication) {
         if let bright = self.bright {
             UIScreen.main.brightness = bright
         }
-        
         
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
@@ -115,3 +122,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 let ad = UIApplication.shared.delegate as! AppDelegate
 let context = CoreDataService.shared.persistentContainer.viewContext
+
+

@@ -18,6 +18,9 @@ class FavoriteViewController: UITableViewController, NSFetchedResultsControllerD
         super.viewDidLoad()
         setNavigationBarColor()
        
+        //네비 폰트
+        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "NanumSquare", size: 20)!]
+
         
     }
     
@@ -173,6 +176,7 @@ class FavoriteViewController: UITableViewController, NSFetchedResultsControllerD
         
     }
     
+   
     
     //
     // MARK: - coreData 부분

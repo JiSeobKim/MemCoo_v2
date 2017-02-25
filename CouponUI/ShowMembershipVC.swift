@@ -34,8 +34,7 @@ class ShowMembershipVC: UIViewController, UIGestureRecognizerDelegate {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        //현재 페이지에선 밝기 수정 on
-        ad.brightSwitch = true
+        
         //제스쳐 밝기 조절
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self.pan(recognizer:)))
         panGesture.delegate = self
@@ -72,8 +71,16 @@ class ShowMembershipVC: UIViewController, UIGestureRecognizerDelegate {
         if cellData != nil {
             loadMembershipData()
         }
+        //현재 페이지에선 밝기 수정 on
         
-        UIScreen.main.brightness = 1.0
+        let userData = UserDefaults.standard
+        let brightOnOffData = userData.object(forKey: "Bright") as? Bool
+
+        if brightOnOffData == true {
+            ad.brightSwitch = true
+            UIScreen.main.brightness = 1.0
+        }
+        
         
     }
     

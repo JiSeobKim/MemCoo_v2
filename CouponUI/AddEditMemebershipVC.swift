@@ -9,7 +9,7 @@
 import UIKit
 
 
-class AddEditMemebershipVC: UIViewController {
+class AddEditMemebershipVC: UIViewController, UITextFieldDelegate {
     
     
     
@@ -53,7 +53,7 @@ class AddEditMemebershipVC: UIViewController {
         self.present(alert, animated: true)
         
     }
-    
+
     
     //
     //viewLoad
@@ -61,15 +61,14 @@ class AddEditMemebershipVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         if membershipToEdit != nil {
             loadMembershipData()
             //수정 버튼을 통해 들어온 것 확인
-            self.navigationItem.title = "멤버십 카드 수정"
+            self.navigationItem.title = "멤버십 수정"
             //네비게이션 타이틀 변경
             self.navigationItem.rightBarButtonItem?.title = "수정"
         } else {
-            self.navigationItem.title = "멤버십 카드 추가"
+            self.navigationItem.title = "멤버십 추가"
             self.deleteOutlet.isEnabled = false
             self.deleteOutlet.tintColor = UIColor.white
         }
@@ -81,6 +80,9 @@ class AddEditMemebershipVC: UIViewController {
         
         //툴바
         addInputAccessoryForTextFields(textFields: [paramBrand,paramBarcode],dismissable: true, previousNextable: true)
+        //네비 아이템 폰트
+        
+
         
      
 
@@ -93,7 +95,20 @@ class AddEditMemebershipVC: UIViewController {
         NotificationCenter.default.removeObserver(self, name: Notification.Name.UIKeyboardDidHide, object: nil)
     }
     
-    //키보드 크기만큼 뷰를 위로 이동.
+    //텍스트 필드 관련
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        UIView.animate(withDuration: 0.25, animations: {
+            self.view.frame.origin.y -= 200
+        }, completion: nil)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        self.view.endEditing(true)
+        UIView.animate(withDuration: 0.15, animations: {
+            self.view.frame.origin.y += 200
+        }, completion: nil)
+    }
     
     
     
@@ -134,6 +149,13 @@ class AddEditMemebershipVC: UIViewController {
             paramBarcode.layer.cornerRadius = CGFloat(7)
             paramBarcode.layer.borderColor = color.cgColor
             paramBarcode.placeholder = "입력해 주세요"
+        } else if (Int(self.paramBarcode.text!) == nil) {
+            let color = UIColor.red
+            paramBarcode.layer.borderWidth = 1
+            paramBarcode.layer.cornerRadius = CGFloat(7)
+            paramBarcode.layer.borderColor = color.cgColor
+            paramBarcode.text = ""
+            paramBarcode.placeholder = "숫자만 입력해 주세요"
         } else {
             paramBarcode.layer.borderWidth = 0
             inputCheck2 = true
@@ -212,17 +234,20 @@ class AddEditMemebershipVC: UIViewController {
 
 
  
-    @IBAction func brandField(_ sender: Any) {
-        // 프레임 이동
-        ad.heightForKeyboard = 2
-        self.moveFrame()
-    }
 
-    @IBAction func barcodeField(_ sender: Any) {
-        //프레임 이동
-        ad.heightForKeyboard = 1.5
-        self.moveFrame()
-    }
+//    @IBAction func brandField(_ sender: Any) {
+//        // 프레임 이동
+//        ad.heightForKeyboard = 2
+//        self.moveFrame()
+//
+//    }
+//    
+//
+//    @IBAction func barcodeField(_ sender: Any) {
+//        //프레임 이동
+//        ad.heightForKeyboard = 1.5
+//        self.moveFrame()
+//    }
     
 
     

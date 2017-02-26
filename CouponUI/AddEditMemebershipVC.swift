@@ -149,7 +149,7 @@ class AddEditMemebershipVC: UIViewController, UITextFieldDelegate {
             paramBarcode.layer.cornerRadius = CGFloat(7)
             paramBarcode.layer.borderColor = color.cgColor
             paramBarcode.placeholder = "입력해 주세요"
-        } else if (Int(self.paramBarcode.text!) == nil) {
+        } else if (Double(self.paramBarcode.text!) == nil) {
             let color = UIColor.red
             paramBarcode.layer.borderWidth = 1
             paramBarcode.layer.cornerRadius = CGFloat(7)

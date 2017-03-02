@@ -97,7 +97,7 @@ extension UIViewController {
             //툴바 사이즈 및 컬러
             let toolbar: UIToolbar = UIToolbar()
             toolbar.sizeToFit()
-            toolbar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+            toolbar.tintColor = UIColor(red: 1/255, green: 1/255, blue: 1/255, alpha: 1)
             toolbar.barStyle = UIBarStyle.default
             
             //툴바에 넣을 아이템 배열

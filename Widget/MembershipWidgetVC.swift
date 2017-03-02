@@ -22,8 +22,13 @@ class MembershipWidgetVC: UIViewController, NSFetchedResultsControllerDelegate, 
     @IBAction func barcodeTouch(_ sender: UIButton) {
         barcodeTop.constant = -70
         barcodeView.isHidden = true
+        
+        ///////////여기
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        collectionView.collectionViewLayout = layout
+        //////////
     }
-    
+    let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,6 +36,13 @@ class MembershipWidgetVC: UIViewController, NSFetchedResultsControllerDelegate, 
         barcodeTop.constant = -70
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        ///////////여기
+        let width = UIScreen.main.bounds.width
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        layout.itemSize = CGSize(width: width / 7.5, height: width / 7.5)
+        collectionView.collectionViewLayout = layout
+        ///////////
         
     }
 
@@ -46,6 +58,10 @@ class MembershipWidgetVC: UIViewController, NSFetchedResultsControllerDelegate, 
             barcodeView.isHidden = false
             barcodeImg.image = generateBarcodeFromString(string: item.toMembership?.barcode)
         }
+        ///////////여기
+        layout.sectionInset = UIEdgeInsets(top: 35, left: 0, bottom: 0, right: 0)
+        collectionView.collectionViewLayout = layout
+        ///////////
     }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1

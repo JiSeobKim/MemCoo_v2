@@ -33,12 +33,12 @@ func addHyphen(data:String) -> String {
         }
         i += 1
     }
-    
-    
-    
-    
+
     return barcode
 }
+
+
+//delay Function
 
 //vc2->vc1 데이터 전송을 위한 프로토콜
 protocol logoData {

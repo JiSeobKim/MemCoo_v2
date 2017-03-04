@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,8 +21,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="239"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Zs4-oZ-6fF">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Zs4-oZ-6fF">
                                 <rect key="frame" x="16" y="78" width="288" height="141"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YZY-BQ-bHZ">
                                     <size key="itemSize" width="60" height="60"/>
@@ -60,45 +60,28 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </collectionView>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oah-0q-MKQ">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oah-0q-MKQ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1OA-Xg-HId">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1OA-Xg-HId">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
-                                    <button opaque="NO" alpha="0.20000000298023224" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yh5-0k-lXK">
+                                    <button opaque="NO" alpha="0.20000000298023224" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yh5-0k-lXK">
                                         <rect key="frame" x="30" y="0.0" width="260" height="70"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <connections>
                                             <action selector="barcodeTouch:" destination="oaJ-dT-Ps1" eventType="touchUpInside" id="Xbm-4d-6GR"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="1OA-Xg-HId" secondAttribute="bottom" id="G1C-WV-gsv"/>
-                                    <constraint firstItem="Yh5-0k-lXK" firstAttribute="top" secondItem="Oah-0q-MKQ" secondAttribute="top" id="NIM-5n-V9v"/>
-                                    <constraint firstAttribute="bottom" secondItem="Yh5-0k-lXK" secondAttribute="bottom" id="QoO-gv-fOH"/>
-                                    <constraint firstAttribute="height" constant="70" id="aLk-eQ-riX"/>
-                                    <constraint firstItem="1OA-Xg-HId" firstAttribute="leading" secondItem="Oah-0q-MKQ" secondAttribute="leading" id="bag-k6-hOY"/>
-                                    <constraint firstAttribute="trailing" secondItem="Yh5-0k-lXK" secondAttribute="trailing" constant="30" id="ne7-d8-98K"/>
-                                    <constraint firstItem="1OA-Xg-HId" firstAttribute="top" secondItem="Oah-0q-MKQ" secondAttribute="top" id="pTZ-AQ-QNm"/>
-                                    <constraint firstAttribute="trailing" secondItem="1OA-Xg-HId" secondAttribute="trailing" id="sMM-fv-x9W"/>
-                                    <constraint firstItem="Yh5-0k-lXK" firstAttribute="leading" secondItem="Oah-0q-MKQ" secondAttribute="leading" constant="30" id="xui-NY-K9e"/>
-                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Oah-0q-MKQ" firstAttribute="top" secondItem="igr-Ek-gbr" secondAttribute="bottom" id="DOg-kk-BTZ"/>
-                            <constraint firstItem="Zs4-oZ-6fF" firstAttribute="trailing" secondItem="STA-c3-6KR" secondAttribute="trailingMargin" id="Gin-hr-ar6"/>
-                            <constraint firstItem="Zs4-oZ-6fF" firstAttribute="leading" secondItem="STA-c3-6KR" secondAttribute="leadingMargin" id="TgX-la-dk9"/>
-                            <constraint firstItem="Zs4-oZ-6fF" firstAttribute="top" secondItem="Oah-0q-MKQ" secondAttribute="bottom" constant="8" id="YwR-0w-2eZ"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="Zs4-oZ-6fF" secondAttribute="bottom" constant="20" id="c2e-G0-CCQ"/>
-                            <constraint firstAttribute="trailing" secondItem="Oah-0q-MKQ" secondAttribute="trailing" id="npX-wp-XKo"/>
-                            <constraint firstItem="Oah-0q-MKQ" firstAttribute="leading" secondItem="STA-c3-6KR" secondAttribute="leading" id="vkN-hi-ArO"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="쿠폰" id="aCL-hY-4kp">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-25"/>
@@ -107,7 +90,6 @@
                     <size key="freeformSize" width="320" height="239"/>
                     <connections>
                         <outlet property="barcodeImg" destination="1OA-Xg-HId" id="HSx-0U-24h"/>
-                        <outlet property="barcodeTop" destination="DOg-kk-BTZ" id="1pm-sf-qUM"/>
                         <outlet property="barcodeView" destination="Oah-0q-MKQ" id="8yG-Ww-TcE"/>
                         <outlet property="collectionView" destination="Zs4-oZ-6fF" id="J26-zE-GMH"/>
                     </connections>
@@ -126,10 +108,11 @@
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Nrh-ii-24x">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="239"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cSO-dq-ClD">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cSO-dq-ClD">
                                 <rect key="frame" x="16" y="78" width="288" height="141"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3i5-P5-sBv">
                                     <size key="itemSize" width="60" height="60"/>
@@ -163,46 +146,29 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </collectionView>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hYm-9m-y06">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hYm-9m-y06">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zJM-4J-2Pa">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zJM-4J-2Pa">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
-                                    <button opaque="NO" alpha="0.20000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RAN-kE-Mvc">
+                                    <button opaque="NO" alpha="0.20000000000000001" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RAN-kE-Mvc">
                                         <rect key="frame" x="30" y="0.0" width="260" height="70"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <action selector="barcodeTouch:" destination="jfL-vT-3Or" eventType="touchUpInside" id="shl-Qf-sVH"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="zJM-4J-2Pa" secondAttribute="bottom" id="26g-yA-vLL"/>
-                                    <constraint firstItem="zJM-4J-2Pa" firstAttribute="top" secondItem="hYm-9m-y06" secondAttribute="top" id="Oqb-yl-BKd"/>
-                                    <constraint firstAttribute="trailing" secondItem="zJM-4J-2Pa" secondAttribute="trailing" id="Pfl-dk-522"/>
-                                    <constraint firstItem="RAN-kE-Mvc" firstAttribute="leading" secondItem="hYm-9m-y06" secondAttribute="leading" constant="30" id="R6n-lf-aMz"/>
-                                    <constraint firstAttribute="height" constant="70" id="WiQ-OK-1Ks"/>
-                                    <constraint firstAttribute="trailing" secondItem="RAN-kE-Mvc" secondAttribute="trailing" constant="30" id="aNg-hY-MOn"/>
-                                    <constraint firstItem="zJM-4J-2Pa" firstAttribute="leading" secondItem="hYm-9m-y06" secondAttribute="leading" id="cG6-a5-Gyw"/>
-                                    <constraint firstAttribute="bottom" secondItem="RAN-kE-Mvc" secondAttribute="bottom" id="nDb-re-CbV"/>
-                                    <constraint firstItem="RAN-kE-Mvc" firstAttribute="top" secondItem="hYm-9m-y06" secondAttribute="top" id="yfr-xu-y0g"/>
-                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="cSO-dq-ClD" firstAttribute="trailing" secondItem="Nrh-ii-24x" secondAttribute="trailingMargin" id="880-Je-nf2"/>
-                            <constraint firstAttribute="trailing" secondItem="hYm-9m-y06" secondAttribute="trailing" id="92x-Jv-Xe1"/>
-                            <constraint firstItem="cSO-dq-ClD" firstAttribute="top" secondItem="hYm-9m-y06" secondAttribute="bottom" constant="8" id="NJZ-fG-WPL"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="cSO-dq-ClD" secondAttribute="bottom" constant="20" id="NJb-qW-phM"/>
-                            <constraint firstItem="cSO-dq-ClD" firstAttribute="leading" secondItem="Nrh-ii-24x" secondAttribute="leadingMargin" id="cPS-bI-xg6"/>
-                            <constraint firstItem="hYm-9m-y06" firstAttribute="top" secondItem="I92-xv-1VN" secondAttribute="bottom" id="ewl-2o-wKz"/>
-                            <constraint firstItem="hYm-9m-y06" firstAttribute="leading" secondItem="Nrh-ii-24x" secondAttribute="leading" id="hlT-fq-CRn"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="멤버십" id="gzQ-Q3-A2u">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-25"/>
@@ -211,7 +177,6 @@
                     <size key="freeformSize" width="320" height="239"/>
                     <connections>
                         <outlet property="barcodeImg" destination="zJM-4J-2Pa" id="buQ-qR-DFT"/>
-                        <outlet property="barcodeTop" destination="ewl-2o-wKz" id="Meu-Tc-yWp"/>
                         <outlet property="barcodeView" destination="hYm-9m-y06" id="hcm-9M-bSB"/>
                         <outlet property="collectionView" destination="cSO-dq-ClD" id="FLA-0f-olV"/>
                     </connections>

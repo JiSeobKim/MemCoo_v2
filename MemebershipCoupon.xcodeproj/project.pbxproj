@@ -436,7 +436,7 @@
 				TargetAttributes = {
 					3E37D3541DF09E4A0054C4DA = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = VHBSR3XVN2;
+						DevelopmentTeam = XNB68CC222;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -445,7 +445,7 @@
 						};
 					};
 					A0BB53501E21D61900AF54C9 = {
-						DevelopmentTeam = VHBSR3XVN2;
+						DevelopmentTeam = XNB68CC222;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -495,8 +495,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A02475961E57E3DB009EC3A9 /* NanumSquareRegular.ttf in Resources */,
-				A02475931E57E3B5009EC3A9 /* NanumSquareBold.ttf in Resources */,
+				A0AD4F5B1E5B208F00B50FD4 /* NanumBold.ttf in Resources */,
 				A0BB53591E21D61A00AF54C9 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -765,10 +764,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MemebershipCoupon.entitlements;
-				DEVELOPMENT_TEAM = VHBSR3XVN2;
+				DEVELOPMENT_TEAM = XNB68CC222;
 				INFOPLIST_FILE = CouponUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.minos.MembershipCoupon;
+				PRODUCT_BUNDLE_IDENTIFIER = gq.dugong.MembershipCoupon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -781,10 +780,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MemebershipCoupon.entitlements;
-				DEVELOPMENT_TEAM = VHBSR3XVN2;
+				DEVELOPMENT_TEAM = XNB68CC222;
 				INFOPLIST_FILE = CouponUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.minos.MembershipCoupon;
+				PRODUCT_BUNDLE_IDENTIFIER = gq.dugong.MembershipCoupon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -794,10 +793,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Widget/Widget.entitlements;
-				DEVELOPMENT_TEAM = VHBSR3XVN2;
+				DEVELOPMENT_TEAM = XNB68CC222;
 				INFOPLIST_FILE = Widget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.minos.MembershipCoupon.Widget;
+				PRODUCT_BUNDLE_IDENTIFIER = gq.dugong.MembershipCoupon.Widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -808,10 +807,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Widget/Widget.entitlements;
-				DEVELOPMENT_TEAM = VHBSR3XVN2;
+				DEVELOPMENT_TEAM = XNB68CC222;
 				INFOPLIST_FILE = Widget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.minos.MembershipCoupon.Widget;
+				PRODUCT_BUNDLE_IDENTIFIER = gq.dugong.MembershipCoupon.Widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;

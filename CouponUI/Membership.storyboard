@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="CvN-aA-7jd">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E175b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="CvN-aA-7jd">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -29,7 +29,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="xrv-m4-Kgd">
-                                <rect key="frame" x="16" y="405" width="343" height="55.5"/>
+                                <rect key="frame" x="16" y="408" width="343" height="54"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="브랜드" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqo-yb-SCQ">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="19"/>
@@ -93,7 +93,7 @@
                                     <constraint firstAttribute="height" constant="22" id="Iyj-i9-qFL"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="zUP-7i-rYm">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultMembership" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zUP-7i-rYm">
                                 <rect key="frame" x="104" y="125" width="168" height="168"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="168" id="6zo-gI-5nm"/>
@@ -357,7 +357,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="default" width="222" height="195"/>
+        <image name="defaultMembership" width="227" height="201"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="axa-gl-xNh"/>

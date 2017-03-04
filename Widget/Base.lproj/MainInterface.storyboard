@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4et-qa-bIr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E163f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4et-qa-bIr">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -41,7 +41,7 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LM7-y7-tQ7">
                                                     <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="circleBoundary" value="NO"/>
                                                     </userDefinedRuntimeAttributes>
@@ -56,6 +56,9 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </collectionView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oah-0q-MKQ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
@@ -81,8 +84,12 @@
                                     <constraint firstAttribute="trailing" secondItem="1OA-Xg-HId" secondAttribute="trailing" id="sMM-fv-x9W"/>
                                     <constraint firstItem="Yh5-0k-lXK" firstAttribute="leading" secondItem="Oah-0q-MKQ" secondAttribute="leading" constant="30" id="xui-NY-K9e"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Oah-0q-MKQ" firstAttribute="top" secondItem="igr-Ek-gbr" secondAttribute="bottom" id="DOg-kk-BTZ"/>
                             <constraint firstItem="Zs4-oZ-6fF" firstAttribute="trailing" secondItem="STA-c3-6KR" secondAttribute="trailingMargin" id="Gin-hr-ar6"/>
@@ -140,7 +147,7 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CgH-fl-N2d">
                                                     <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
@@ -152,6 +159,9 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </collectionView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hYm-9m-y06">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
@@ -178,8 +188,12 @@
                                     <constraint firstAttribute="bottom" secondItem="RAN-kE-Mvc" secondAttribute="bottom" id="nDb-re-CbV"/>
                                     <constraint firstItem="RAN-kE-Mvc" firstAttribute="top" secondItem="hYm-9m-y06" secondAttribute="top" id="yfr-xu-y0g"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="cSO-dq-ClD" firstAttribute="trailing" secondItem="Nrh-ii-24x" secondAttribute="trailingMargin" id="880-Je-nf2"/>
                             <constraint firstAttribute="trailing" secondItem="hYm-9m-y06" secondAttribute="trailing" id="92x-Jv-Xe1"/>

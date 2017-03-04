@@ -11,7 +11,7 @@ import Foundation
 func displayTheDate(theDate:Date) -> String {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "yyyy-MM-dd"
-    let strDate = dateFormatter.string(from: theDate)
+    let strDate = dateFormatter.string(from: theDate) + " 까지"
     
     return strDate
 }

@@ -98,7 +98,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
             //product.layer.borderWidth = 1
             //product.layer.cornerRadius = CGFloat(3)
             //product.layer.borderColor = color.cgColor
-            product.attributedPlaceholder = NSAttributedString(string: "입력해 주세요.", attributes: [NSForegroundColorAttributeName: UIColor.red])
+            product.attributedPlaceholder = NSAttributedString(string: "입력해 주세요.", attributes: [NSForegroundColorAttributeName: UIColor.purple])
         }
         else {
             //product.layer.borderWidth = 0
@@ -109,7 +109,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
             //expiredDate.layer.borderWidth = 1
             //expiredDate.layer.cornerRadius = CGFloat(3)
             //expiredDate.layer.borderColor = color.cgColor
-            expiredDate.attributedPlaceholder = NSAttributedString(string: "입력해 주세요.", attributes: [NSForegroundColorAttributeName: UIColor.red])
+            expiredDate.attributedPlaceholder = NSAttributedString(string: "입력해 주세요.", attributes: [NSForegroundColorAttributeName: UIColor.purple])
         }
         else {
             //expiredDate.layer.borderWidth = 0
@@ -120,7 +120,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
             //barcode.layer.borderWidth = 1
             //barcode.layer.cornerRadius = CGFloat(3)
             //barcode.layer.borderColor = color.cgColor
-            barcode.attributedPlaceholder = NSAttributedString(string: "입력해 주세요.", attributes: [NSForegroundColorAttributeName: UIColor.red])
+            barcode.attributedPlaceholder = NSAttributedString(string: "입력해 주세요.", attributes: [NSForegroundColorAttributeName: UIColor.purple])
         }
         else {
             //barcode.layer.borderWidth = 0

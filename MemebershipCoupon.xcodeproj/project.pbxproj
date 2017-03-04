@@ -79,7 +79,6 @@
 		A057B3701E4C9DA40007E388 /* MembershipCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A057B3681E4C9DA40007E388 /* MembershipCollectionVC.swift */; };
 		A09988201E4B5C12008EBDE6 /* LogoCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A099881F1E4B5C12008EBDE6 /* LogoCorner.swift */; };
 		A0AD4F5A1E5B208F00B50FD4 /* NanumBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0AD4F591E5B208F00B50FD4 /* NanumBold.ttf */; };
-		A0AD4F5B1E5B208F00B50FD4 /* NanumBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0AD4F591E5B208F00B50FD4 /* NanumBold.ttf */; };
 		A0BB53531E21D61900AF54C9 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0BB53521E21D61900AF54C9 /* NotificationCenter.framework */; };
 		A0BB53561E21D61A00AF54C9 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BB53551E21D61A00AF54C9 /* TodayViewController.swift */; };
 		A0BB53591E21D61A00AF54C9 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0BB53571E21D61A00AF54C9 /* MainInterface.storyboard */; };

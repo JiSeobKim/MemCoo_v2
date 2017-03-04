@@ -10,7 +10,7 @@ import CoreData
 
 struct CoreDataServiceConsts {
 //    static let applicationGroupIdentifier = "group.MembershipCoupon"
-    static let applicationGroupIdentifier = "group.MembershipCoupon"
+    static let applicationGroupIdentifier = "group.Jiseob"
 //    static let applicationGroupIdentifier = "group.MembershipCoupon"
 }
 

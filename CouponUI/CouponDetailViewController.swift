@@ -14,6 +14,7 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
     @IBOutlet weak var expireDate: UILabel!
     @IBOutlet weak var finishButtonOutlet: UIButton!
     @IBOutlet weak var logoImage: UIImageView!
+    @IBOutlet weak var usedView: UIView!
     
     //쿠폰뷰콘트롤러에서 받는 couponToDetail과 쿠폰애드뷰콘트롤러에 전달해주는 couponToEdit이 있다.
     var couponToDetail: Coupon?
@@ -157,24 +158,19 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
             
             if couponToDetail?.isUsed == true {
                 self.navigationItem.rightBarButtonItems?[0].isEnabled = false
-                barcodeImg.tintColor = UIColor.gray
-                barcode.textColor = UIColor.gray
-                expireDate.textColor = UIColor.gray
-                finishButtonOutlet.tintColor = UIColor.gray
                 finishButtonOutlet.setTitle("사용 완료 해제", for: .normal)
+                usedView.backgroundColor = UIColor(white: 1, alpha: 0.7)
             }
             else {
                 self.navigationItem.rightBarButtonItems?[0].isEnabled = true
-                barcodeImg.tintColor = UIColor.black
-                barcode.textColor = UIColor.black
-                expireDate.textColor = UIColor.black
-                finishButtonOutlet.tintColor = UIColor.black
                 finishButtonOutlet.setTitle("사용 완료", for: .normal)
+                usedView.backgroundColor = UIColor(white: 1, alpha: 0.0)
             }
             
             //raw data가 없을 때 원본 버튼 숨김.
             if originalText == "" {
                 self.navigationItem.rightBarButtonItems?[1].isEnabled = false
+                self.navigationItem.rightBarButtonItems?[1].title = ""
             }
         }
 

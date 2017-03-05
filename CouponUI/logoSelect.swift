@@ -13,15 +13,15 @@
     override func viewDidLoad() {
         navigationController?.delegate = self
         addLogoAtArray()
-        naviBar.frame = CGRect(x: 0, y: 0, width: 320, height: 60)
-        naviBar.tintColor = UIColor.black
-        naviBar.isTranslucent = false
-        naviBar.isOpaque = true
-        naviBar.backgroundColor = UIColor.white
-        naviBar.topItem?.title = "로고 선택"
-        naviBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "NanumSquare", size: 20)!]
-        naviBar.topItem?.leftBarButtonItem?.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "NanumSquare", size: 18)!], for: .normal)
-        
+//        naviBar.frame = CGRect(x: 0, y: 0, width: 320, height: 60)
+//        naviBar.tintColor = UIColor.black
+//        naviBar.isTranslucent = false
+//        naviBar.isOpaque = true
+//        naviBar.backgroundColor = UIColor.white
+//        naviBar.topItem?.title = "로고 선택"
+//        naviBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "NanumSquare", size: 20)!]
+//        naviBar.topItem?.leftBarButtonItem?.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "NanumSquare", size: 18)!], for: .normal)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "NanumSquare", size: 20)!]
     }
     
     //선택된 테이블 셀 번호/그 내부에서 선택된 셀

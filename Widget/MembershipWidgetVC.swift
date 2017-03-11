@@ -16,33 +16,48 @@ class MembershipWidgetVC: UIViewController, NSFetchedResultsControllerDelegate, 
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    @IBOutlet weak var barcodeTop: NSLayoutConstraint!
+
     @IBOutlet weak var barcodeView: UIView!
     @IBOutlet weak var barcodeImg: UIImageView!
     @IBAction func barcodeTouch(_ sender: UIButton) {
-        barcodeTop.constant = -70
-        barcodeView.isHidden = true
         
-        ///////////여기
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        collectionView.collectionViewLayout = layout
-        //////////
+
+        UIView.animate(withDuration: 0.3, animations: {
+            self.collectionView.frame.origin.y = 10
+            self.barcodeView.alpha = 0
+        }, completion: nil)
+
+        //dalay Code
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3 , execute: {self.barcodeView.isHidden = true})
+
     }
     let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
     override func viewDidLoad() {
         super.viewDidLoad()
         
         attemptFetch()
-        barcodeTop.constant = -70
+
         collectionView.delegate = self
         collectionView.dataSource = self
+        //바코드뷰 애니메이션 효과를 위해
+        self.barcodeView.alpha = 0
         
-        ///////////여기
-        let width = UIScreen.main.bounds.width
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        layout.itemSize = CGSize(width: width / 7.5, height: width / 7.5)
+
+        //셀 사이즈
+        let cellSize = 31*(UIScreen.main.bounds.height/UIScreen.main.bounds.width)
+        layout.itemSize = CGSize(width: cellSize, height: cellSize)
+
         collectionView.collectionViewLayout = layout
-        ///////////
+        
+        
+    }
+
+    //컬렉션뷰 위치 이동
+    override func viewDidLayoutSubviews() {
+        collectionView.frame.origin.y = 10
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
         
     }
 
@@ -54,14 +69,20 @@ class MembershipWidgetVC: UIViewController, NSFetchedResultsControllerDelegate, 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {        
         if let objs = favoriteController.fetchedObjects, objs.count > 0 {
             let item = objs[indexPath.row]
-            barcodeTop.constant = 0
             barcodeView.isHidden = false
             barcodeImg.image = generateBarcodeFromString(string: item.toMembership?.barcode)
+
+
+            if self.collectionView.frame.origin.y == 10 {
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.collectionView.frame.origin.y += self.barcodeView.frame.maxY
+                    self.barcodeView.alpha = 1
+                }, completion: nil)
+            }
+
+            
         }
-        ///////////여기
-        layout.sectionInset = UIEdgeInsets(top: 35, left: 0, bottom: 0, right: 0)
-        collectionView.collectionViewLayout = layout
-        ///////////
+      
     }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1

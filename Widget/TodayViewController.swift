@@ -37,12 +37,13 @@ class TodayViewController: UITabBarController {
     
     func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
         
-        let height = UIScreen.main.bounds.height
+        let heightSize = 1.1*93*(UIScreen.main.bounds.height/UIScreen.main.bounds.width)
+//        let height = UIScreen.main.bounds.height
         if (activeDisplayMode == NCWidgetDisplayMode.compact) {
             self.preferredContentSize = maxSize
         }
         else {
-            self.preferredContentSize = CGSize(width: maxSize.width, height: height/3.5)
+            self.preferredContentSize = CGSize(width: maxSize.width, height: heightSize)
         }
     }
     

@@ -19,7 +19,9 @@ class CouponWidgetCell: UICollectionViewCell {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        layer.cornerRadius = self.frame.height / 2
+
+        layer.cornerRadius = self.frame.height / 2.3
+
     }
     
 }

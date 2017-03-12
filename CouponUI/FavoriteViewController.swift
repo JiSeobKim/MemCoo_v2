@@ -19,7 +19,7 @@ class FavoriteViewController: UITableViewController, NSFetchedResultsControllerD
         setNavigationBarColor()
        
         //네비 폰트
-        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "NanumSquare", size: 20)!]
+//        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "NanumSquare", size: 20)!]
 
         
     }
@@ -262,10 +262,10 @@ class FavoriteViewController: UITableViewController, NSFetchedResultsControllerD
     
     func setNavigationBarColor()  {
         self.navigationItem.leftBarButtonItem = self.editButtonItem
-        self.navigationController?.navigationBar.tintColor = UIColor.black
+//        self.navigationController?.navigationBar.tintColor = UIColor.black
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.isOpaque = true
-        self.navigationController?.navigationBar.backgroundColor = UIColor.white
+//        self.navigationController?.navigationBar.backgroundColor = UIColor.white
     }
     
 }

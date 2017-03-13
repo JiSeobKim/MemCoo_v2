@@ -18,6 +18,8 @@
 		3E37D3651DF09E4A0054C4DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E37D3631DF09E4A0054C4DA /* LaunchScreen.storyboard */; };
 		3E5E9D9F1E57674500C577A1 /* CouponRawDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5E9D9E1E57674500C577A1 /* CouponRawDataViewController.swift */; };
 		3ECCE3A31E041CF400AE739B /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 3ECCE3A21E041CF400AE739B /* tessdata */; };
+		423503E51E7571DE00D4E5C9 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423503E41E7571DE00D4E5C9 /* TabBarVC.swift */; };
+		423503E71E7575B600D4E5C9 /* NavigationSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423503E61E7575B600D4E5C9 /* NavigationSettingView.swift */; };
 		4251CD981E288D6900671A3F /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4251CD971E288D6900671A3F /* MaterialView.swift */; };
 		4261B4B91E4A1B41000A6F25 /* Membership+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4261B4AD1E4A1B41000A6F25 /* Membership+CoreDataClass.swift */; };
 		4261B4BA1E4A1B41000A6F25 /* Membership+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4261B4AE1E4A1B41000A6F25 /* Membership+CoreDataProperties.swift */; };
@@ -128,6 +130,8 @@
 		3E5E9D9E1E57674500C577A1 /* CouponRawDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponRawDataViewController.swift; sourceTree = "<group>"; };
 		3E8B136C7DF5B1B29AF5A828 /* Pods-MemebershipCoupon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemebershipCoupon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MemebershipCoupon/Pods-MemebershipCoupon.debug.xcconfig"; sourceTree = "<group>"; };
 		3ECCE3A21E041CF400AE739B /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
+		423503E41E7571DE00D4E5C9 /* TabBarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
+		423503E61E7575B600D4E5C9 /* NavigationSettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationSettingView.swift; sourceTree = "<group>"; };
 		4251CD971E288D6900671A3F /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
 		4261B4AD1E4A1B41000A6F25 /* Membership+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Membership+CoreDataClass.swift"; sourceTree = "<group>"; };
 		4261B4AE1E4A1B41000A6F25 /* Membership+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Membership+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -274,6 +278,7 @@
 				A03831181DFC1CED002C0314 /* Settings.storyboard */,
 				A0FB04801E0BEE0D007FEA21 /* SelectLogo.storyboard */,
 				42976C081DF6C23800ADB0D7 /* Model.xcdatamodeld */,
+				423503E41E7571DE00D4E5C9 /* TabBarVC.swift */,
 			);
 			name = MembershipCoupon;
 			path = CouponUI;
@@ -351,6 +356,7 @@
 				4251CD971E288D6900671A3F /* MaterialView.swift */,
 				42992DDE1E75325700EB73AA /* MemcooView.swift */,
 				42992DE01E75423A00EB73AA /* FavoriteFlag.swift */,
+				423503E61E7575B600D4E5C9 /* NavigationSettingView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -565,6 +571,7 @@
 				3E5E9D9F1E57674500C577A1 /* CouponRawDataViewController.swift in Sources */,
 				4261B4C11E4A1B41000A6F25 /* Coupon+CoreDataClass.swift in Sources */,
 				4261B4C21E4A1B41000A6F25 /* Coupon+CoreDataProperties.swift in Sources */,
+				423503E71E7575B600D4E5C9 /* NavigationSettingView.swift in Sources */,
 				4251CD981E288D6900671A3F /* MaterialView.swift in Sources */,
 				42976BDD1DF6B38100ADB0D7 /* CouponDetailViewController.swift in Sources */,
 				A057B3691E4C9DA40007E388 /* AddEditMemebershipVC.swift in Sources */,
@@ -591,6 +598,7 @@
 				A057B36E1E4C9DA40007E388 /* MembershipFunction.swift in Sources */,
 				4261B4B91E4A1B41000A6F25 /* Membership+CoreDataClass.swift in Sources */,
 				42A657631E1F383B009BB240 /* FavoriteCell.swift in Sources */,
+				423503E51E7571DE00D4E5C9 /* TabBarVC.swift in Sources */,
 				42976C0A1DF6C23800ADB0D7 /* Model.xcdatamodeld in Sources */,
 				4261B4BE1E4A1B41000A6F25 /* Image+CoreDataProperties.swift in Sources */,
 				42976BE01DF6B39200ADB0D7 /* DBUtil.swift in Sources */,

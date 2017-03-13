@@ -51,16 +51,6 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
         }
         collectionView!.collectionViewLayout = layout
         
-        
-        //네비게이션 컬러
-        self.navigationController?.navigationBar.tintColor = UIColor.black
-        self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationController?.navigationBar.isOpaque = true
-        self.navigationController?.navigationBar.backgroundColor = UIColor.white
-        
-        //네비 폰트
-        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "NanumSquare", size: 20)!]
-        
     }
     
     

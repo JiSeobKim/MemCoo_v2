@@ -139,13 +139,13 @@
                     <navigationItem key="navigationItem" title="수정/추가" id="7FG-3M-xi2">
                         <rightBarButtonItems>
                             <barButtonItem systemItem="save" id="6qt-8n-Irs">
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="0.96470588239999999" green="0.40000000000000002" blue="0.13725490200000001" alpha="0.78000000000000003" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="addItem:" destination="V9i-4b-dZ9" id="yFt-Vy-fWp"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem systemItem="trash" id="CWT-QK-fCo">
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="0.96470588239999999" green="0.40000000000000002" blue="0.13725490200000001" alpha="0.78000000000000003" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="deleteButton:" destination="V9i-4b-dZ9" id="Vts-yc-QlP"/>
                                 </connections>
@@ -203,7 +203,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="브랜드" id="unU-OI-ChH">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="RZl-ME-hcH">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="tintColor" red="0.96470588239999999" green="0.40000000000000002" blue="0.13725490200000001" alpha="0.78000000000000003" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="V9i-4b-dZ9" kind="show" identifier="MembershipEdit" id="yGb-mq-bpU"/>
                             </connections>
@@ -219,7 +219,7 @@
             </objects>
             <point key="canvasLocation" x="3317.5999999999999" y="-645.42728635682158"/>
         </scene>
-        <!--Membership-->
+        <!--멤버십-->
         <scene sceneID="1uA-hS-bIz">
             <objects>
                 <viewController storyboardIdentifier="MembershipMain" id="CvN-aA-7jd" customClass="MembershipCollectionVC" customModule="MemebershipCoupon" customModuleProvider="target" sceneMemberID="viewController">
@@ -326,7 +326,7 @@
                             <constraint firstItem="1vx-Sd-Cba" firstAttribute="leading" secondItem="Y4g-LG-xWn" secondAttribute="leading" id="tVs-QB-1fT"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Membership" id="KC7-Sa-qRv">
+                    <navigationItem key="navigationItem" title="멤버십" id="KC7-Sa-qRv">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Bzb-Di-sM6">
                             <connections>
                                 <segue destination="V9i-4b-dZ9" kind="push" id="axa-gl-xNh"/>
@@ -359,6 +359,6 @@
         <image name="defaultMembership" width="227" height="201"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="axa-gl-xNh"/>
+        <segue reference="yGb-mq-bpU"/>
     </inferredMetricsTieBreakers>
 </document>

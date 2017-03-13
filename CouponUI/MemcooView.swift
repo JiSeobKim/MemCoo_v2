@@ -104,6 +104,4 @@ class MemcooView: NSObject {
             return result
         }
     }
-    
-    
 }

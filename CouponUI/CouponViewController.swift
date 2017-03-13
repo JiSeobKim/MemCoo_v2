@@ -97,15 +97,6 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
         let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(self.longPress))
         self.view.addGestureRecognizer(longPressGestureRecognizer)
         
-        //네비 컬러
-        self.navigationController?.navigationBar.tintColor = UIColor.black
-        self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationController?.navigationBar.isOpaque = true
-        self.navigationController?.navigationBar.backgroundColor = UIColor.white
-        
-        //네비 폰트
-        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "NanumSquare", size: 17)!]
-        
         //세그먼트 폰트
         segment.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "NanumSquare", size: 12)!], for: .normal)
     }

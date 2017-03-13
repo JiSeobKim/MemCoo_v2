@@ -33,6 +33,8 @@
 		4261B4C21E4A1B41000A6F25 /* Coupon+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4261B4B61E4A1B41000A6F25 /* Coupon+CoreDataProperties.swift */; };
 		4261B4C31E4A1B41000A6F25 /* Favorite+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4261B4B71E4A1B41000A6F25 /* Favorite+CoreDataClass.swift */; };
 		4261B4C41E4A1B41000A6F25 /* Favorite+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4261B4B81E4A1B41000A6F25 /* Favorite+CoreDataProperties.swift */; };
+		427152C31E76A6B90009E3A5 /* CircleBoundary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427152C21E76A6B90009E3A5 /* CircleBoundary.swift */; };
+		427152C71E76E3D60009E3A5 /* FavoriteFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427152C61E76E3D60009E3A5 /* FavoriteFlag.swift */; };
 		427D916E1E505FD600B26230 /* Favorite+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4261B4B71E4A1B41000A6F25 /* Favorite+CoreDataClass.swift */; };
 		427D916F1E505FD800B26230 /* Favorite+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4261B4B81E4A1B41000A6F25 /* Favorite+CoreDataProperties.swift */; };
 		427D91701E50607200B26230 /* Coupon+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4261B4B61E4A1B41000A6F25 /* Coupon+CoreDataProperties.swift */; };
@@ -145,6 +147,8 @@
 		4261B4B71E4A1B41000A6F25 /* Favorite+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Favorite+CoreDataClass.swift"; sourceTree = "<group>"; };
 		4261B4B81E4A1B41000A6F25 /* Favorite+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Favorite+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		426740101E4235B400DEEE53 /* MemebershipCoupon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MemebershipCoupon.entitlements; sourceTree = "<group>"; };
+		427152C21E76A6B90009E3A5 /* CircleBoundary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleBoundary.swift; sourceTree = "<group>"; };
+		427152C61E76E3D60009E3A5 /* FavoriteFlag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteFlag.swift; sourceTree = "<group>"; };
 		427D917B1E50A29000B26230 /* CoreDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		427D917F1E50BE6100B26230 /* PersistentContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistentContainer.swift; sourceTree = "<group>"; };
 		427D91821E518E2400B26230 /* MembershipWidgetVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembershipWidgetVC.swift; sourceTree = "<group>"; };
@@ -354,6 +358,8 @@
 				4251CD971E288D6900671A3F /* MaterialView.swift */,
 				42992DDE1E75325700EB73AA /* MemcooView.swift */,
 				423503E61E7575B600D4E5C9 /* NavigationSettingView.swift */,
+				427152C21E76A6B90009E3A5 /* CircleBoundary.swift */,
+				427152C61E76E3D60009E3A5 /* FavoriteFlag.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -564,6 +570,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				427152C31E76A6B90009E3A5 /* CircleBoundary.swift in Sources */,
 				4261B4BA1E4A1B41000A6F25 /* Membership+CoreDataProperties.swift in Sources */,
 				3E5E9D9F1E57674500C577A1 /* CouponRawDataViewController.swift in Sources */,
 				4261B4C11E4A1B41000A6F25 /* Coupon+CoreDataClass.swift in Sources */,
@@ -590,6 +597,7 @@
 				3E36B1791DF2133000385315 /* GenerateBarcode.swift in Sources */,
 				A09988201E4B5C12008EBDE6 /* LogoCorner.swift in Sources */,
 				42992DDF1E75325700EB73AA /* MemcooView.swift in Sources */,
+				427152C71E76E3D60009E3A5 /* FavoriteFlag.swift in Sources */,
 				427D917C1E50A29000B26230 /* CoreDataService.swift in Sources */,
 				A057B36E1E4C9DA40007E388 /* MembershipFunction.swift in Sources */,
 				4261B4B91E4A1B41000A6F25 /* Membership+CoreDataClass.swift in Sources */,

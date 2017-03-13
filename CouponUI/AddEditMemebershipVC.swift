@@ -83,7 +83,7 @@ class AddEditMemebershipVC: UIViewController, UITextFieldDelegate {
         //네비 아이템 폰트
         
 
-        
+        choiceButton.setImage(MemcooView.imageOfLogoSelectButton(), for: .normal)
      
 
     }
@@ -208,6 +208,7 @@ class AddEditMemebershipVC: UIViewController, UITextFieldDelegate {
             paramImage.image = membership.toImage?.image as? UIImage
             paramBarcode.text = membership.barcode
             paramBrand.text = membership.toBrand?.title
+            realTimeBarcode.image = generateBarcodeFromString(string: membership.barcode)
         }
     }
     

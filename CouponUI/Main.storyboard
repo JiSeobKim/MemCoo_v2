@@ -123,7 +123,7 @@
         <scene sceneID="dk6-bc-VCf">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6P1-eX-TLA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="쿠폰" image="couponTabBar" selectedImage="couponTabBar" id="QXT-XA-9H0"/>
+                    <tabBarItem key="tabBarItem" title="쿠폰" image="CouponTabbarIcon" selectedImage="CouponTabbarIcon" id="QXT-XA-9H0"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Edq-7L-Rxa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -189,7 +189,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="couponTabBar" width="33" height="25"/>
+        <image name="CouponTabbarIcon" width="34" height="21"/>
         <image name="membershipTabbar" width="33" height="25"/>
         <image name="settingsTabBar" width="25" height="25"/>
     </resources>

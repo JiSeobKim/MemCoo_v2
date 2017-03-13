@@ -63,7 +63,6 @@
 		42976BF71DF6B48100ADB0D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42976BF61DF6B48100ADB0D7 /* Main.storyboard */; };
 		42976C0A1DF6C23800ADB0D7 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 42976C081DF6C23800ADB0D7 /* Model.xcdatamodeld */; };
 		42992DDF1E75325700EB73AA /* MemcooView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42992DDE1E75325700EB73AA /* MemcooView.swift */; };
-		42992DE11E75423A00EB73AA /* FavoriteFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42992DE01E75423A00EB73AA /* FavoriteFlag.swift */; };
 		42A657631E1F383B009BB240 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A657621E1F383B009BB240 /* FavoriteCell.swift */; };
 		42C910401E5D73E500A04984 /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4251CD971E288D6900671A3F /* MaterialView.swift */; };
 		42FAB62B1E04E18E00671E32 /* ParsingBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FAB62A1E04E18E00671E32 /* ParsingBrain.swift */; };
@@ -160,7 +159,6 @@
 		42976BF61DF6B48100ADB0D7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		42976C091DF6C23800ADB0D7 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		42992DDE1E75325700EB73AA /* MemcooView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemcooView.swift; sourceTree = "<group>"; };
-		42992DE01E75423A00EB73AA /* FavoriteFlag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteFlag.swift; sourceTree = "<group>"; };
 		42A657621E1F383B009BB240 /* FavoriteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		42E93B0C1E5040D2002B9D7A /* Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Widget.entitlements; sourceTree = "<group>"; };
 		42FAB62A1E04E18E00671E32 /* ParsingBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsingBrain.swift; sourceTree = "<group>"; };
@@ -355,7 +353,6 @@
 				A099881F1E4B5C12008EBDE6 /* LogoCorner.swift */,
 				4251CD971E288D6900671A3F /* MaterialView.swift */,
 				42992DDE1E75325700EB73AA /* MemcooView.swift */,
-				42992DE01E75423A00EB73AA /* FavoriteFlag.swift */,
 				423503E61E7575B600D4E5C9 /* NavigationSettingView.swift */,
 			);
 			name = View;
@@ -588,7 +585,6 @@
 				3E37D3591DF09E4A0054C4DA /* AppDelegate.swift in Sources */,
 				A057B36D1E4C9DA40007E388 /* ShowMembershipVC.swift in Sources */,
 				4261B4BB1E4A1B41000A6F25 /* Brand+CoreDataClass.swift in Sources */,
-				42992DE11E75423A00EB73AA /* FavoriteFlag.swift in Sources */,
 				42FAB62B1E04E18E00671E32 /* ParsingBrain.swift in Sources */,
 				A057B36A1E4C9DA40007E388 /* logoCollectionCell.swift in Sources */,
 				3E36B1791DF2133000385315 /* GenerateBarcode.swift in Sources */,

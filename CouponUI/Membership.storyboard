@@ -344,10 +344,10 @@
             </objects>
             <point key="canvasLocation" x="2149.5999999999999" y="-1203.1484257871066"/>
         </scene>
-        <!--SelectLogoNavi-->
+        <!--SelectLogo-->
         <scene sceneID="lAt-x8-1ZK">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="SelectLogoNavi" storyboardName="SelectLogo" referencedIdentifier="SelectLogoNavi" id="OHR-Fs-iGG" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="SelectLogoNavi" storyboardName="SelectLogo" referencedIdentifier="SelectLogo" id="OHR-Fs-iGG" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="8dy-Ld-xat"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ebk-Ks-AtZ" userLabel="First Responder" sceneMemberID="firstResponder"/>

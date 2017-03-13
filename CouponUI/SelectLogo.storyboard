@@ -24,11 +24,11 @@
                         <viewControllerLayoutGuide type="bottom" id="43w-qZ-t5o"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="M0f-C8-bmT">
-                        <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="137" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TEA-LI-mdG">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryCell" rowHeight="137" id="Txf-kY-RDa" customClass="logoTableCell" customModule="MemebershipCoupon" customModuleProvider="target">
@@ -114,10 +114,17 @@
                                     <outlet property="delegate" destination="t2E-kZ-guc" id="GHt-lV-N77"/>
                                 </connections>
                             </tableView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ouo-M6-obw">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="XaR-Wo-SHB"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="TEA-LI-mdG" firstAttribute="top" secondItem="M0f-C8-bmT" secondAttribute="top" id="MfV-ba-XHg"/>
+                            <constraint firstItem="TEA-LI-mdG" firstAttribute="top" secondItem="M0f-C8-bmT" secondAttribute="top" constant="44" id="MfV-ba-XHg"/>
                             <constraint firstItem="TEA-LI-mdG" firstAttribute="leading" secondItem="M0f-C8-bmT" secondAttribute="leading" id="QpU-AH-E7J"/>
                             <constraint firstAttribute="bottom" secondItem="TEA-LI-mdG" secondAttribute="bottom" id="rCj-1W-2Q1"/>
                             <constraint firstAttribute="trailing" secondItem="TEA-LI-mdG" secondAttribute="trailing" id="z4v-f0-lOY"/>
@@ -133,29 +140,13 @@
                     </navigationItem>
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="naviBar" destination="ouo-M6-obw" id="KnR-rZ-I9T"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Z7-0X-wUe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5208.8000000000002" y="-1354.2728635682161"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="TxU-L9-2KM">
-            <objects>
-                <navigationController storyboardIdentifier="SelectLogoNavi" automaticallyAdjustsScrollViewInsets="NO" id="BN2-Zg-UNK" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="wKI-Ba-p4v">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="t2E-kZ-guc" kind="relationship" relationship="rootViewController" id="bb8-Rb-lo4"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SYf-ad-nJq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4269.6000000000004" y="-1354.2728635682161"/>
         </scene>
     </scenes>
 </document>

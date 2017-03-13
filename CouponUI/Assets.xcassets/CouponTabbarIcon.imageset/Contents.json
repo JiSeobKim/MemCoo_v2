@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "couponTabBar1x.png",
+      "filename" : "CouponTabbarIcon.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "couponTabBar2x.png",
+      "filename" : "CouponTabbarIcon@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "couponTabBar3x.png",
+      "filename" : "CouponTabbarIcon@3x.png",
       "scale" : "3x"
     }
   ],

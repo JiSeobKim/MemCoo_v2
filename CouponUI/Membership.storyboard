@@ -181,7 +181,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Mw-6g-QVg">
-                                <rect key="frame" x="14" y="212" width="292" height="180"/>
+                                <rect key="frame" x="14" y="212" width="292" height="94"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qv3-Se-9Tt">
@@ -344,10 +344,10 @@
             </objects>
             <point key="canvasLocation" x="2149.5999999999999" y="-1203.1484257871066"/>
         </scene>
-        <!--SelectLogoNavi-->
+        <!--SelectLogo-->
         <scene sceneID="lAt-x8-1ZK">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="SelectLogoNavi" storyboardName="SelectLogo" referencedIdentifier="SelectLogoNavi" id="OHR-Fs-iGG" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="SelectLogoNavi" storyboardName="SelectLogo" referencedIdentifier="SelectLogo" id="OHR-Fs-iGG" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="8dy-Ld-xat"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ebk-Ks-AtZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -359,6 +359,6 @@
         <image name="defaultMembership" width="227" height="201"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yGb-mq-bpU"/>
+        <segue reference="axa-gl-xNh"/>
     </inferredMetricsTieBreakers>
 </document>

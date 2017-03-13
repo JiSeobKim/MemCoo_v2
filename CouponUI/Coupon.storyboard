@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E175b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QWw-7U-fLY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E183b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QWw-7U-fLY">
     <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -52,7 +52,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기한만료" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Y3-se-gC1">
-                                                            <rect key="frame" x="232" y="53" width="48" height="22"/>
+                                                            <rect key="frame" x="232" y="53" width="45" height="22"/>
                                                             <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="13"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -495,10 +495,10 @@
             </objects>
             <point key="canvasLocation" x="3793.125" y="550.35211267605632"/>
         </scene>
-        <!--SelectLogoNavi-->
+        <!--SelectLogo-->
         <scene sceneID="NEY-Bp-A7h">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="SelectLogo" storyboardName="SelectLogo" referencedIdentifier="SelectLogoNavi" id="0cA-AV-8dh" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="SelectLogo" storyboardName="SelectLogo" referencedIdentifier="SelectLogo" id="0cA-AV-8dh" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mcP-6c-aDe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4438" y="551"/>

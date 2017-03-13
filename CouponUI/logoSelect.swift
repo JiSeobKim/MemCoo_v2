@@ -13,7 +13,7 @@
     override func viewDidLoad() {
         navigationController?.delegate = self
         addLogoAtArray()
-//        naviBar.frame = CGRect(x: 0, y: 0, width: 320, height: 60)
+        naviBar.frame = CGRect(x: 0, y: 0, width: 320, height: 60)
 //        naviBar.tintColor = UIColor.black
 //        naviBar.isTranslucent = false
 //        naviBar.isOpaque = true

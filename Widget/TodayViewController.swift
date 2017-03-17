@@ -9,15 +9,37 @@
 import UIKit
 import NotificationCenter
 
-class TodayViewController: UITabBarController {
+class TodayViewController: UIViewController, NCWidgetProviding {
+    
+    
+    @IBOutlet weak var button1: UIButton!
+    @IBOutlet weak var button2: UIButton!
+    @IBOutlet weak var button3: UIButton!
+    
+    @IBOutlet weak var imageView: UIImageView!
+    
+    
+    
+    @IBAction func buttonAction1(_ sender: Any) {
+        imageView.image = UIImage(named: "telecommunication2")
+    }
+    @IBAction func buttonAction2(_ sender: Any) {
+        imageView.image = UIImage(named: "telecommunication3")
+    }
+    @IBAction func buttonAction3(_ sender: Any) {
+        imageView.image = UIImage(named: "telecommunication4")
+    }
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBar.bounds.size.height = 20
-        self.tabBar.tintColor = UIColor.black
+        // Do any additional setup after loading the view from its nib.
         
         self.extensionContext?.widgetLargestAvailableDisplayMode = NCWidgetDisplayMode.expanded
-     
+        
+        imageView.image = UIImage(named: "defaultBarcode")
     }
     
     override func didReceiveMemoryWarning() {
@@ -36,14 +58,11 @@ class TodayViewController: UITabBarController {
     }
     
     func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
-        
-        let heightSize = 1.1*93*(UIScreen.main.bounds.height/UIScreen.main.bounds.width)
-//        let height = UIScreen.main.bounds.height
         if (activeDisplayMode == NCWidgetDisplayMode.compact) {
             self.preferredContentSize = maxSize
         }
         else {
-            self.preferredContentSize = CGSize(width: maxSize.width, height: heightSize)
+            self.preferredContentSize = CGSize(width: maxSize.width, height: 200)
         }
     }
     

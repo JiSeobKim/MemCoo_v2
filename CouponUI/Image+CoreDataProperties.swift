@@ -2,8 +2,9 @@
 //  Image+CoreDataProperties.swift
 //  MemebershipCoupon
 //
-//  Created by Joosung Kim on 08/02/2017.
-//  Copyright © 2017 mino. All rights reserved.
+//  Created by Joosung Kim on 07/12/2016.
+//  Copyright © 2016 mino. All rights reserved.
+//  This file was automatically generated and should not be edited.
 //
 
 import Foundation
@@ -17,9 +18,9 @@ extension Image {
     }
 
     @NSManaged public var image: NSObject?
+    @NSManaged public var toCoupon: Coupon?
     @NSManaged public var toBrand: Brand?
     @NSManaged public var toCategory: Category?
-    @NSManaged public var toCoupon: Coupon?
     @NSManaged public var toMembership: Membership?
 
 }

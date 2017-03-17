@@ -9,7 +9,7 @@
 import UIKit
 
 
-class AddEditMemebershipVC: UIViewController, UITextFieldDelegate {
+class AddEditMemebershipVC: UIViewController {
     
     
     
@@ -32,28 +32,10 @@ class AddEditMemebershipVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var choiceButton: UIButton!
     @IBOutlet weak var realTimeBarcode: UIImageView!
     
+    @IBOutlet weak var deleteButton: UIButton!
     
     
-    @IBOutlet weak var deleteOutlet: UIBarButtonItem!
     
-    @IBAction func deleteButton(_ sender: Any) {
-               
-        let alert = UIAlertController(title: "삭제하시겠습니까?", message: "한 번 삭제한 쿠폰은 복구할 수 없습니다!", preferredStyle: .alert)
-        let delete = UIAlertAction(title: "삭제", style: .destructive) {
-            (_) in
-            if self.membershipToEdit != nil {
-                context.delete(self.membershipToEdit!)
-                ad.saveContext()
-            }
-            _ = self.navigationController?.popToRootViewController(animated: true)
-        }
-        let cancel = UIAlertAction(title: "취소", style: .cancel)
-        alert.addAction(delete)
-        alert.addAction(cancel)
-        self.present(alert, animated: true)
-        
-    }
-
     
     //
     //viewLoad
@@ -61,56 +43,27 @@ class AddEditMemebershipVC: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         if membershipToEdit != nil {
             loadMembershipData()
             //수정 버튼을 통해 들어온 것 확인
-            self.navigationItem.title = "멤버십 수정"
+            self.navigationItem.title = "멤버십 카드 수정"
             //네비게이션 타이틀 변경
             self.navigationItem.rightBarButtonItem?.title = "수정"
         } else {
-            self.navigationItem.title = "멤버십 추가"
-            self.deleteOutlet.isEnabled = false
-            self.deleteOutlet.tintColor = UIColor.white
+            self.navigationItem.title = "멤버십 카드 추가"
+            self.deleteButton.isHidden = true
         }
         
+        //삭제 버튼 테두리
+        deleteButton.layer.cornerRadius = deleteButton.frame.height / 2
         
-        
-        //다른 곳 터치시 키보드 제거 및 프레임 원위치
-        self.hideKeyboardWhenTappedAround()
-        
-        //툴바
-        addInputAccessoryForTextFields(textFields: [paramBrand,paramBarcode],dismissable: true, previousNextable: true)
-        //네비 아이템 폰트
-        
+        //키보드 크기만큼 뷰를 위로 이동.
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
 
-        
-     
 
     }
-    
-    
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.removeObserver(self, name: Notification.Name.UIKeyboardDidHide, object: nil)
-    }
-    
-    //텍스트 필드 관련
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        UIView.animate(withDuration: 0.25, animations: {
-            self.view.frame.origin.y -= 200
-        }, completion: nil)
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        self.view.endEditing(true)
-        UIView.animate(withDuration: 0.15, animations: {
-            self.view.frame.origin.y += 200
-        }, completion: nil)
-    }
-    
-    
     
 
     
@@ -149,13 +102,6 @@ class AddEditMemebershipVC: UIViewController, UITextFieldDelegate {
             paramBarcode.layer.cornerRadius = CGFloat(7)
             paramBarcode.layer.borderColor = color.cgColor
             paramBarcode.placeholder = "입력해 주세요"
-        } else if (Double(self.paramBarcode.text!) == nil) {
-            let color = UIColor.red
-            paramBarcode.layer.borderWidth = 1
-            paramBarcode.layer.cornerRadius = CGFloat(7)
-            paramBarcode.layer.borderColor = color.cgColor
-            paramBarcode.text = ""
-            paramBarcode.placeholder = "숫자만 입력해 주세요"
         } else {
             paramBarcode.layer.borderWidth = 0
             inputCheck2 = true
@@ -196,7 +142,15 @@ class AddEditMemebershipVC: UIViewController, UITextFieldDelegate {
     //휴지통버튼을 눌렀을시 데이터베이스에서 삭제
    
     
-
+    @IBAction func deletePressed(_ sender: Any) {
+        if membershipToEdit != nil {
+            context.delete(membershipToEdit!)
+            ad.saveContext()
+        }
+        _ = navigationController?.popToRootViewController(animated: true)
+    }
+    
+    
     
     //
     //controller
@@ -214,50 +168,55 @@ class AddEditMemebershipVC: UIViewController, UITextFieldDelegate {
     //extension 부분 정상 작동을 위한 작업
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "logoSelect" {
-            
             (segue.destination as? logoSelect)?.delegate = self
         }
-        
     }
     
-    
+    //텍스트 필드가 아닌 곳을 터치했을 때 키보드 닫기.
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        paramBrand.resignFirstResponder()
+        paramBarcode.resignFirstResponder()
+    }
     
     //실시간 바코드 생성
     @IBAction func paramBarcodeButton(_ sender: UITextField) {
         realTimeBarcode.image = generateBarcodeFromString(string: paramBarcode.text!)
     }
     
+    //키보드 크기만큼 뷰를 위로 이동.
+    func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y != 0 {
+                self.view.frame.origin.y += keyboardSize.height
+            }
+        }
+    }
+
     
     
-//텍스트 필드 입력 관련
     
-
-
- 
-
-//    @IBAction func brandField(_ sender: Any) {
-//        // 프레임 이동
-//        ad.heightForKeyboard = 2
-//        self.moveFrame()
-//
-//    }
-//    
-//
-//    @IBAction func barcodeField(_ sender: Any) {
-//        //프레임 이동
-//        ad.heightForKeyboard = 1.5
-//        self.moveFrame()
-//    }
     
-
+    
+    
     
 }
 
 //extension 부분
 
     extension AddEditMemebershipVC : logoData {
+        
         func updataData(data: UIImage) {
-            //받아온 값 넘기기
+            
             paramImage.image = data
+            
         }
+        
     }

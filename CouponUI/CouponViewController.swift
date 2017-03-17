@@ -15,16 +15,14 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var segment: UISegmentedControl!
     
     var originalImage: UIImage!
-    let imagePicker = UIImagePickerController()
     
     //+버튼 눌렀을때의 액션
     @IBAction func add(_ sender: Any) {
         let alert = UIAlertController(title: "쿠폰 추가", message: "쿠폰을 추가할 방식을 선택해주세요.", preferredStyle: .actionSheet)
-        alert.view.tintColor = UIColor.black
         
         let clipboard = UIAlertAction(title: "클립보드 내용 자동 추가", style: .default) {
             (_) in
-            //액션시트의 첫 번째 버튼이 눌렸음을 다음 뷰에 전달하기 위해 앱델리게이트의 selectActionSheet 변수에 true를 저장.
+            //액션시트의 첫 번째 버튼이 눌렸음을 다음 뷰에 전달하기 위해 앱델리게이트의 selectActionSheet 변수에 1을 저장.
             ad.isClipboardActionSheet = true
             
             //다음 뷰컨트롤러로 push.
@@ -33,15 +31,22 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
             }
         }
         
-        let ocr = UIAlertAction(title: "사진에서 텍스트 추출", style: .default) {
+        let ocr = UIAlertAction(title: "사진에서 바코드만 읽어오기", style: .default) {
             (_) in            
             ad.isClipboardActionSheet = false
             
-            //이미지 선택 뷰.
-            self.imagePicker.sourceType = UIImagePickerControllerSourceType.savedPhotosAlbum    //.photoLibrary
+            //이미지 선택.
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
             //imagePicker.mediaTypes = [kUTTypeImage as String]
-            self.imagePicker.allowsEditing = false
-            self.present(self.imagePicker, animated: true, completion: nil)
+            imagePicker.allowsEditing = false
+            self.present(imagePicker, animated: true, completion: nil)
+            
+            //뷰 전환.
+            if let addVC = self.storyboard?.instantiateViewController(withIdentifier: "AddEdit") {
+                self.navigationController?.pushViewController(addVC, animated: true)
+            }
         }
         
         let custom = UIAlertAction(title: "사용자 직접 입력", style: .default) {
@@ -66,22 +71,14 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
     //사진 앱 접근을 위한 메소드.
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            self.originalImage = image
-            
-            //뷰 전환.
-            if self.originalImage != nil {
-                if let addVC = self.storyboard?.instantiateViewController(withIdentifier: "AddEdit") as? CouponAddViewController {
-                    addVC.originalImage = self.originalImage
-                    self.navigationController?.pushViewController(addVC, animated: true)
-                }
-            }
+            originalImage = image
         }
-
-        picker.dismiss(animated: true, completion: nil)
+        //        imagePicker.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     var controller: NSFetchedResultsController<Coupon>!
@@ -90,27 +87,12 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        imagePicker.delegate = self
         attemptFetch()
         
         //long press gesture를 이용한 즐겨찾기 핸들링.
         let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(self.longPress))
         self.view.addGestureRecognizer(longPressGestureRecognizer)
-        
-        //네비 컬러
-        self.navigationController?.navigationBar.tintColor = UIColor.black
-        self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationController?.navigationBar.isOpaque = true
-        self.navigationController?.navigationBar.backgroundColor = UIColor.white
-        
-        //네비 폰트
-        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "NanumSquare", size: 17)!]
-        
-        //세그먼트 폰트
-        segment.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "NanumSquare", size: 12)!], for: .normal)
     }
-    
-    //세그먼트 폰트
     
     //long press gesture를 이용한 즐겨찾기 핸들링.
     func longPress(_ longPressGestureRecognizer: UILongPressGestureRecognizer) {
@@ -122,18 +104,10 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
                     let item = objs[indexPath.row]
                     
                     if item.favorite == false {
-                        let alert = UIAlertController(title: "즐겨찾기 추가", message: "\"\(item.title!)\" 쿠폰을\n즐겨찾기에 추가하시겠습니까?", preferredStyle: .alert)
-                        alert.view.tintColor = UIColor.black
-                        
+                        let alert = UIAlertController(title: "즐겨찾기 추가", message: "\"\(item.title!)\" 쿠폰을 \n즐겨찾기에 추가하시겠습니까?", preferredStyle: .alert)
                         let add = UIAlertAction(title: "추가", style: .default) {
                             (_) in
-                            let favoriteContext = Favorite(context: context)
                             item.favorite = true
-                            
-                            favoriteContext.isCoupon = true
-                            favoriteContext.isMembership = false
-                            favoriteContext.index = 0
-                            item.toFavorite = favoriteContext
                             ad.saveContext()
                         }
                         
@@ -143,13 +117,10 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
                         self.present(alert, animated: true)
                     }
                     else {
-                        let alert = UIAlertController(title: "즐겨찾기 제거", message: "\"\(item.title!)\" 쿠폰을\n즐겨찾기에서 제거하시겠습니까?", preferredStyle: .alert)
-                        alert.view.tintColor = UIColor.black
-                        
+                        let alert = UIAlertController(title: "즐겨찾기 제거", message: "\"\(item.title!)\" 쿠폰을 \n즐겨찾기에서 제거하시겠습니까?", preferredStyle: .alert)
                         let add = UIAlertAction(title: "제거", style: .default) {
                             (_) in
                             item.favorite = false
-                            context.delete(item.toFavorite!)
                             ad.saveContext()
                         }
                         
@@ -164,6 +135,7 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
     }
  
 
+    
     //tableView를 위한 function
     //cell 재사용 정의
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -228,16 +200,10 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
             if var objs = controller.fetchedObjects, objs.count > 0{
-                let item = objs[indexPath.row]
-                
-                let alert = UIAlertController(title: "쿠폰 삭제", message: "\"\(item.title!)\" 쿠폰을\n삭제하시겠습니까?", preferredStyle: .alert)
-                alert.view.tintColor = UIColor.black
-                
+                let alert = UIAlertController(title: "삭제하시겠습니까?", message: "한 번 삭제한 쿠폰은 복구할 수 없습니다!", preferredStyle: .alert)
                 let delete = UIAlertAction(title: "삭제", style: .destructive) {
                     (_) in
-                    if item.favorite == true {
-                        context.delete(item.toFavorite!)
-                    }
+                    let item = objs[indexPath.row]
                     context.delete(item)
                     ad.saveContext()
                 }
@@ -255,18 +221,8 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
         let fetchRequest: NSFetchRequest<Coupon> = Coupon.fetchRequest()
         let dateSort = NSSortDescriptor(key: "created", ascending: false)
         fetchRequest.sortDescriptors = [dateSort]
-        
-        if segment.selectedSegmentIndex == 0 {
-            let isPredicate = NSPredicate(format: "%K == NO", "isUsed")
-            fetchRequest.predicate = isPredicate
-        }else if segment.selectedSegmentIndex == 1 {
-            let isPredicate = NSPredicate(format: "%K == YES", "isUsed")
-            fetchRequest.predicate = isPredicate
-        }else if segment.selectedSegmentIndex == 2 {
-    
-        }
-        
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        
         //save시 tableview update를 위한 델리게이트 전달
         controller.delegate = self
         self.controller = controller
@@ -278,10 +234,6 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
             print("\(error)")
         }
         
-    }
-    @IBAction func segmentChanged(_ sender: UISegmentedControl) {
-        attemptFetch()
-        tableView.reloadData()
     }
     
     //컨트롤러가 바뀔때마다 테이블뷰 업데이트

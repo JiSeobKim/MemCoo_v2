@@ -9,9 +9,19 @@
     
     var delegate : logoData?
     
+    @IBOutlet weak var naviBar: UINavigationBar!
     override func viewDidLoad() {
         navigationController?.delegate = self
         addLogoAtArray()
+        naviBar.frame = CGRect(x: 0, y: 0, width: 320, height: 60)
+//        naviBar.tintColor = UIColor.black
+//        naviBar.isTranslucent = false
+//        naviBar.isOpaque = true
+//        naviBar.backgroundColor = UIColor.white
+//        naviBar.topItem?.title = "로고 선택"
+//        naviBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "NanumSquare", size: 20)!]
+//        naviBar.topItem?.leftBarButtonItem?.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "NanumSquare", size: 18)!], for: .normal)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "NanumSquare", size: 20)!]
     }
     
     //선택된 테이블 셀 번호/그 내부에서 선택된 셀
@@ -20,20 +30,27 @@
     
     var storedOffsets = [Int: CGFloat]()
     
-    var logo : Array = ["통신사","카페","옷","화장품","포인트","편의점"]
+    var logo : Array = ["통신사","카페","화장품","포인트","라이프스타일","마트","심볼"]
     var telecommunicationLogo : [UIImage] = []
     var cafeLogo : [UIImage] = []
-    var clothLogo : [UIImage] = []
+    var lifeLogo : [UIImage] = []
     var cosmeticLogo : [UIImage] = []
     var pointLogo : [UIImage] = []
-    var convenienceLogo : [UIImage] = []
+    var martLogo : [UIImage] = []
+    var symbolLogo : [UIImage] = []
     
    
+
+    
+    @IBAction func cancelButton(_ sender: Any) {
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
  
     
     func addLogoAtArray()->(){
         //for 문을 통한 로고들 추가
-        for row in 1...10 {
+        for row in 1...11 {
             if UIImage(named:"telecommunication\(row)") != nil {
                 telecommunicationLogo.append(UIImage(named:"telecommunication\(row)")!)
             }
@@ -42,8 +59,8 @@
                 cafeLogo.append(UIImage(named:"cafe\(row)")!)
             }
             
-            if UIImage(named:"clothes\(row)") != nil {
-                clothLogo.append(UIImage(named:"clothes\(row)")!)
+            if UIImage(named:"life\(row)") != nil {
+                lifeLogo.append(UIImage(named:"life\(row)")!)
             }
             
             if UIImage(named:"cosmetic\(row)") != nil {
@@ -54,14 +71,18 @@
                 pointLogo.append(UIImage(named:"point\(row)")!)
             }
             
-            if UIImage(named:"convenience\(row)") != nil {
-                convenienceLogo.append(UIImage(named:"convenience\(row)")!)
+            if UIImage(named:"mart\(row)") != nil {
+                martLogo.append(UIImage(named:"mart\(row)")!)
+            }
+            
+            if UIImage(named:"symbol\(row)") != nil {
+                symbolLogo.append(UIImage(named:"symbol\(row)")!)
             }
         }
     }
     func allcategory(_ data:Int) ->  Array<Any>{
         //모든 카테고리들을 한 배열에 추가
-        let allcategory  = [self.telecommunicationLogo,self.cafeLogo,self.clothLogo,self.cosmeticLogo,self.pointLogo,self.convenienceLogo]
+        let allcategory  = [self.telecommunicationLogo,self.cafeLogo,self.cosmeticLogo,self.pointLogo,self.lifeLogo,self.martLogo,self.symbolLogo]
         
         
         return allcategory[data]
@@ -71,7 +92,7 @@
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //테이블뷰 프로토콜
-        return 6
+        return 7
     }
     
     
@@ -127,7 +148,7 @@
         
         let logoArray = allcategory(collectionView.tag)[indexPath.row] as! UIImage
         cell.logo.image = logoArray
-        
+        cell.brand.isHidden = true
         
         return cell
     }
@@ -142,7 +163,8 @@
         if selectedImgInfo != nil {
             let logoArray = allcategory(selectedTagInfo!)[selectedImgInfo!] as! UIImage
             self.delegate?.updataData(data: logoArray )
-            _ = self.navigationController?.popViewController(animated: true)
+//            _ = self.navigationController?.popViewController(animated: true)
+            self.presentingViewController?.dismiss(animated: true, completion: nil)
         }
 
         

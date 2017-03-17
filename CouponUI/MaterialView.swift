@@ -42,24 +42,28 @@ extension UIView {
     }
 }
 
-extension UIImageView {
-    
-    @IBInspectable var circleBoundary: Bool {
-        get{
-            return circle
-        }
-        
-        set{
-            circle = newValue
-            
-            if circle {
-                self.layer.masksToBounds = false
-                self.contentMode = UIViewContentMode.scaleAspectFill
-                self.layer.cornerRadius = self.frame.height / 2
-                self.clipsToBounds = true
-            } else {
-                
-            }
-        }
-    }
-}
+//extension UIImageView {
+//    
+//    @IBInspectable var circleBoundary: Bool {
+//        get{
+//            return circle
+//        }
+//        
+//        set{
+//            circle = newValue
+//            
+//            if circle {
+//                self.layer.masksToBounds = false
+//                self.contentMode = UIViewContentMode.scaleAspectFill
+//                self.layer.cornerRadius = self.frame.height / 2
+//                self.layer.borderColor = UIColor(red: 246/255, green: 102/255, blue: 35/255, alpha: 0.78).cgColor
+//                self.layer.borderWidth = 1
+//                self.clipsToBounds = true
+//            } else {
+//                
+//            }
+//        }
+//    }
+//}
+
+

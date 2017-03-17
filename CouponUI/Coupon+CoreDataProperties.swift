@@ -2,8 +2,8 @@
 //  Coupon+CoreDataProperties.swift
 //  MemebershipCoupon
 //
-//  Created by Joosung Kim on 07/12/2016.
-//  Copyright © 2016 mino. All rights reserved.
+//  Created by Joosung Kim on 08/02/2017.
+//  Copyright © 2017 mino. All rights reserved.
 //
 
 import Foundation
@@ -20,12 +20,14 @@ extension Coupon {
     @NSManaged public var created: NSDate?
     @NSManaged public var expireDate: NSDate?
     @NSManaged public var favorite: Bool
-    @NSManaged public var isUsed: Bool
     @NSManaged public var image: NSObject?
+    @NSManaged public var isFavorite: Bool
+    @NSManaged public var isUsed: Bool
     @NSManaged public var originalText: String?
     @NSManaged public var title: String?
     @NSManaged public var toBrand: Brand?
     @NSManaged public var toCategory: NSSet?
+    @NSManaged public var toFavorite: Favorite?
     @NSManaged public var toImage: Image?
 
 }

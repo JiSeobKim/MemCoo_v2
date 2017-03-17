@@ -59,6 +59,11 @@ class AddEditMemebershipVC: UIViewController, UITextFieldDelegate {
     //viewLoad
     //
     
+    // 복분으로 인한 문자 입력 방지 및 여백 삭제
+    @IBAction func barcodeTextField(_ sender: Any) {
+        paramBarcode.text = numParsing(paramBarcode.text!)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if membershipToEdit != nil {

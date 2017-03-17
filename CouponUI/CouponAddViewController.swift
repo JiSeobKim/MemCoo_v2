@@ -292,6 +292,13 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
             self.view.frame.origin.y += 200
         }, completion: nil)
     }
+    
+    // 복분으로 인한 문자 입력 방지 및 여백 삭제
+    @IBAction func codeTextField(_ sender: Any) {
+        barcode.text = numParsing(barcode.text!)
+    }
+    
+    
 
     /*
     // MARK: - Navigation

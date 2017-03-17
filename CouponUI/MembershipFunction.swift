@@ -37,6 +37,26 @@ func addHyphen(data:String) -> String {
     return barcode
 }
 
+//숫자 긁어오기
+
+func numParsing(_ param : String) -> String {
+    var result = ""
+    
+    let process = param.components(separatedBy:" ")
+    
+    for item in process {
+        let components = item.components(separatedBy: CharacterSet.decimalDigits.inverted).joined(separator:"")
+        
+        if let intVal = Int(components) {
+            result += String(intVal)
+        }
+    }
+    
+    return result
+
+    
+}
+
 
 //delay Function
 

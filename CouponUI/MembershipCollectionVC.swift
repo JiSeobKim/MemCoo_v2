@@ -37,6 +37,7 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
         lpgr.delaysTouchesBegan = true
         self.collectionView?.addGestureRecognizer(lpgr)
       
+        print(UIScreen.main.bounds.height)
     }
     
 

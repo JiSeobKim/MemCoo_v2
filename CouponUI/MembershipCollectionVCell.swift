@@ -26,8 +26,9 @@ class MembershipCollectionVCell : UICollectionViewCell {
     //cell 생성 cell viewcontroll에서의 정의(실질적인 셀생성정의)
     func configureCell(item: Membership) {
         
+        
         viewLogoName.text = item.toBrand?.title
-        viewLogoShow.image = item.toImage?.image as? UIImage
+        viewLogoShow.image = (item.toImage?.image as? UIImage)
         
        
         // Shadow and Radius
@@ -42,7 +43,15 @@ class MembershipCollectionVCell : UICollectionViewCell {
         
         viewLogoShow.layer.borderWidth = 1
         viewLogoShow.layer.borderColor = UIColor(netHex: 0xF66623,alpha: 0.78).cgColor
-        viewLogoShow.layer.cornerRadius = (self.frame.height-self.frame.width)*3
+//        viewLogoShow.layer.cornerRadius = (self.frame.height-self.frame.width)*2.8
+//        viewLogoShow.layer.cornerRadius = (viewLogoShow.frame.height / viewLogoShow.frame.width) * 40
+//        if UIScreen.main > 17 {
+//            
+//        }
+        viewLogoShow.layer.cornerRadius = (viewLogoShow.frame.width/2)
+        viewLogoShow.layer.masksToBounds = true
+
+//        print(UIScreen.main.frame.height)
         
         
         

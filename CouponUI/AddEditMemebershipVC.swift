@@ -174,7 +174,7 @@ class AddEditMemebershipVC: UIViewController, UITextFieldDelegate {
                 membership = membershipToEdit
             }
             //logo 담기
-            if let logoImg = paramImage.image {
+            if let logoImg = paramImage.image?.circleMask {
                 imageContext.image = logoImg
                 membership.toImage = imageContext
             }

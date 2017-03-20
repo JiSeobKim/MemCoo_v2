@@ -40,6 +40,13 @@ class MembershipCollectionVCell : UICollectionViewCell {
 //        viewLogoShow.layer.masksToBounds = false
 //        viewLogoShow.layer.cornerRadius = 10.0
         
+        viewLogoShow.layer.borderWidth = 1
+        viewLogoShow.layer.borderColor = UIColor(netHex: 0xF66623,alpha: 0.78).cgColor
+        viewLogoShow.layer.cornerRadius = (self.frame.height-self.frame.width)*3
+        
+        
+        
+        
         
         if item.favorite == true {
             favorite.isHidden = false

@@ -222,72 +222,46 @@
                                     <size key="itemSize" width="100" height="120"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="8" minY="8" maxX="8" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="viewcell" id="Pb7-vL-ZG4" customClass="MembershipCollectionVCell" customModule="MemebershipCoupon" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="8" width="100" height="120"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.78000000000000003" contentMode="center" reuseIdentifier="viewcell" id="Pb7-vL-ZG4" customClass="MembershipCollectionVCell" customModule="MemebershipCoupon" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="118" height="120"/>
+                                        <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="120"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="118" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mgn-w3-bhr">
-                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="120"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="★" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ba1-S3-Rba">
-                                                            <rect key="frame" x="84" y="0.0" width="16" height="21"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="16" id="6Fb-0j-vSg"/>
-                                                                <constraint firstAttribute="height" constant="21" id="mBj-pw-3Rk"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5v-CW-wcB">
-                                                            <rect key="frame" x="0.0" y="101" width="100" height="16"/>
-                                                            <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="14"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ET7-wg-u97">
-                                                            <rect key="frame" x="15" y="14" width="70" height="79"/>
-                                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="circleBoundary" value="NO"/>
-                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="NO"/>
-                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="logoCornerDesign" value="YES"/>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </imageView>
-                                                    </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstItem="U5v-CW-wcB" firstAttribute="top" secondItem="ET7-wg-u97" secondAttribute="bottom" constant="8" id="0LT-OH-KB1"/>
-                                                        <constraint firstAttribute="trailing" secondItem="ET7-wg-u97" secondAttribute="trailing" constant="15" id="1db-eI-wVW"/>
-                                                        <constraint firstAttribute="trailing" secondItem="ba1-S3-Rba" secondAttribute="trailing" id="2Ow-CG-jba"/>
-                                                        <constraint firstItem="ET7-wg-u97" firstAttribute="leading" secondItem="mgn-w3-bhr" secondAttribute="leading" constant="15" id="2og-uT-vPf"/>
-                                                        <constraint firstAttribute="bottom" secondItem="U5v-CW-wcB" secondAttribute="bottom" constant="3" id="CHc-Wm-0Op"/>
-                                                        <constraint firstItem="ba1-S3-Rba" firstAttribute="top" secondItem="mgn-w3-bhr" secondAttribute="top" id="NOp-mj-EwJ"/>
-                                                        <constraint firstAttribute="trailing" secondItem="U5v-CW-wcB" secondAttribute="trailing" id="XFz-yW-lf3"/>
-                                                        <constraint firstItem="ET7-wg-u97" firstAttribute="top" secondItem="mgn-w3-bhr" secondAttribute="top" constant="14" id="nbF-mL-F68"/>
-                                                        <constraint firstItem="U5v-CW-wcB" firstAttribute="leading" secondItem="mgn-w3-bhr" secondAttribute="leading" id="tVi-8a-Piv"/>
-                                                        <constraint firstAttribute="bottom" secondItem="ET7-wg-u97" secondAttribute="bottom" constant="27" id="y09-jw-Jjf"/>
-                                                    </constraints>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5v-CW-wcB">
+                                                    <rect key="frame" x="0.0" y="96" width="118" height="16"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ET7-wg-u97">
+                                                    <rect key="frame" x="24" y="14" width="70" height="70"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="circleBoundary" value="NO"/>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="NO"/>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="logoCornerDesign" value="NO"/>
                                                     </userDefinedRuntimeAttributes>
-                                                </view>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="★" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ba1-S3-Rba">
+                                                    <rect key="frame" x="94" y="8" width="16" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </view>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="mgn-w3-bhr" secondAttribute="bottom" id="2vn-gC-zb2"/>
-                                            <constraint firstItem="mgn-w3-bhr" firstAttribute="top" secondItem="Pb7-vL-ZG4" secondAttribute="top" id="qQG-8v-flc"/>
-                                            <constraint firstAttribute="trailing" secondItem="mgn-w3-bhr" secondAttribute="trailing" id="vgk-OV-2ai"/>
-                                            <constraint firstItem="mgn-w3-bhr" firstAttribute="leading" secondItem="Pb7-vL-ZG4" secondAttribute="leading" id="vqF-iw-he2"/>
-                                        </constraints>
+                                        <color key="backgroundColor" red="1" green="0.98039215690000003" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <size key="customSize" width="118" height="120"/>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="NO"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="favorite" destination="ba1-S3-Rba" id="eDY-Ot-7oh"/>
@@ -326,7 +300,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="you-A8-sXM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2149.5999999999999" y="-1203.1484257871066"/>
+            <point key="canvasLocation" x="2148.75" y="-1203.75"/>
         </scene>
         <!--SelectLogo-->
         <scene sceneID="lAt-x8-1ZK">

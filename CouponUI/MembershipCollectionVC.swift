@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, NSFetchedResultsControllerDelegate, UIGestureRecognizerDelegate{
+class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, NSFetchedResultsControllerDelegate, UIGestureRecognizerDelegate, UICollectionViewDelegateFlowLayout{
     
     
     //
@@ -36,22 +36,13 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
         lpgr.delegate = self
         lpgr.delaysTouchesBegan = true
         self.collectionView?.addGestureRecognizer(lpgr)
-        
-        
-        //Cell Size
-        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        let width = UIScreen.main.bounds.width
-        layout.sectionInset = UIEdgeInsets(top: 30, left: 30, bottom: 15, right: 30)
-        layout.itemSize = CGSize(width: width / 4, height: width / 3.6)
-        layout.minimumInteritemSpacing = 0
-        if UIScreen.main.bounds.width == 320 {
-            layout.minimumLineSpacing = 9
-        } else {
-            layout.minimumLineSpacing = 20
-        }
-        collectionView!.collectionViewLayout = layout
-        
+      
     }
+    
+
+    
+    
+
     
     
     
@@ -154,7 +145,10 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
         // 설정할 cell 선택(빨간 "viewcell"은 어트리뷰트인스펙터의 identifier)
         
         
+        cell.layer.borderWidth = 0.5
         
+        let color = UIColor(netHex: 0xF66623, alpha: 0.2)
+        cell.layer.borderColor = color.cgColor
         
         configureCell(cell: cell, indexPath: indexPath as NSIndexPath)
         //로고의 이미지/ 텍스트 값 대입
@@ -167,7 +161,8 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = UIScreen.main.bounds.width
-        return CGSize(width: (width - 10)/100, height: (width - 10)/100) // width & height are the same to make a square cell
+        let height = collectionView.frame.height
+        return CGSize(width: width/3, height: height/4) // width & height are the same to make a square cell
     }
     
     //셀 생성 정의

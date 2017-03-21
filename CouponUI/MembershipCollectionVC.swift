@@ -18,6 +18,7 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
     @IBOutlet weak var collectionView: UICollectionView!
     var controller: NSFetchedResultsController<Membership>!
     
+
     
     
     //
@@ -37,7 +38,8 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
         lpgr.delaysTouchesBegan = true
         self.collectionView?.addGestureRecognizer(lpgr)
       
-        print(UIScreen.main.bounds.height)
+      
+        
     }
     
 
@@ -122,6 +124,7 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
     
     
     
+    
     //
     //controller
     //
@@ -138,6 +141,7 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
         
         
         
+        
     }
     
     //셀 재사용을 위한 정의
@@ -146,11 +150,7 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
         // 설정할 cell 선택(빨간 "viewcell"은 어트리뷰트인스펙터의 identifier)
         
         
-        cell.layer.borderWidth = 0.5
-        
-        let color = UIColor(netHex: 0xF66623, alpha: 0.2)
-        cell.layer.borderColor = color.cgColor
-        
+                
         configureCell(cell: cell, indexPath: indexPath as NSIndexPath)
         //로고의 이미지/ 텍스트 값 대입
         

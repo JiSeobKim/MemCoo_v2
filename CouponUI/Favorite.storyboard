@@ -23,7 +23,7 @@
                         <color key="sectionIndexTrackingBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" showsReorderControl="YES" indentationWidth="10" reuseIdentifier="FavoriteCell" rowHeight="192" id="Qr5-GV-Yb4" customClass="FavoriteCell" customModule="MemebershipCoupon" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="55" width="414" height="192"/>
+                                <rect key="frame" x="0.0" y="55.333333333333336" width="414" height="192"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qr5-GV-Yb4" id="NRs-Da-RpN">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="191"/>

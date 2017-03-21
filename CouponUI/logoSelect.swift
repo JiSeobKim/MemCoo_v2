@@ -41,8 +41,9 @@
     
    
 
+
     
-    @IBAction func cancelButton(_ sender: Any) {
+    @IBAction func cancelButton(_ sender: UIBarButtonItem) {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     

@@ -23,6 +23,7 @@ extension UIImageView {
                 if logoCorner {
                     
                     self.layer.borderColor = UIColor(red: 233/255.0, green: 233/255.0, blue: 233/255.0, alpha: 1.0).cgColor
+                    self.layer.masksToBounds = true
                     if UIScreen.main.bounds.width == 320 {
                         self.layer.borderWidth = 1.5
                         if self.frame.width > 100 {

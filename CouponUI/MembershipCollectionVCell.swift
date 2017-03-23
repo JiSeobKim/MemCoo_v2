@@ -15,9 +15,10 @@ class MembershipCollectionVCell : UICollectionViewCell {
     //viewcell 이 가지고 있는 값
     @IBOutlet weak var viewLogoShow: UIImageView!
     @IBOutlet weak var viewLogoName: UILabel!
-    @IBOutlet weak var favorite: UILabel!
 
-    
+
+    @IBOutlet weak var favorite: UIView!
+
     
     //choicecell 이 가지고 있는 값
     @IBOutlet weak var choiceLogoShow: UIImageView!
@@ -25,35 +26,24 @@ class MembershipCollectionVCell : UICollectionViewCell {
     
     //cell 생성 cell viewcontroll에서의 정의(실질적인 셀생성정의)
     func configureCell(item: Membership) {
+
+      
+
+        //Favorite 뷰 다운캐스팅 및 백그라운드 클리어
+        _ = favorite as? FavoriteFlag
+        favorite.backgroundColor = UIColor.clear
         
         
         viewLogoName.text = item.toBrand?.title
         viewLogoShow.image = (item.toImage?.image as? UIImage)
-        
-       
         // Shadow and Radius
         
-//        viewLogoShow.layer.borderColor = UIColor.gray.cgColor
-//        viewLogoShow.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
-//        viewLogoShow.layer.shadowOffset = CGSize(width : 0,height: 2.0)
-//        viewLogoShow.layer.shadowOpacity = 0.5
-//        viewLogoShow.layer.shadowRadius = 0.0
-//        viewLogoShow.layer.masksToBounds = false
-//        viewLogoShow.layer.cornerRadius = 10.0
-        
+
         viewLogoShow.layer.borderWidth = 1
         viewLogoShow.layer.borderColor = UIColor(netHex: 0xF66623,alpha: 0.78).cgColor
-//        viewLogoShow.layer.cornerRadius = (self.frame.height-self.frame.width)*2.8
-//        viewLogoShow.layer.cornerRadius = (viewLogoShow.frame.height / viewLogoShow.frame.width) * 40
-//        if UIScreen.main > 17 {
-//            
-//        }
         viewLogoShow.layer.cornerRadius = (viewLogoShow.frame.width/2)
         viewLogoShow.layer.masksToBounds = true
 
-//        print(UIScreen.main.frame.height)
-        
-        
         
         
         

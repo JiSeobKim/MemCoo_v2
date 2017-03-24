@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		3E09AEF51E2009DC00D4276F /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E09AEF41E2009DC00D4276F /* SettingsTableViewCell.swift */; };
 		3E09AEF71E200AB200D4276F /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E09AEF61E200AB100D4276F /* SettingsTableViewController.swift */; };
-		3E09AEF91E201E5700D4276F /* SettingsDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E09AEF81E201E5700D4276F /* SettingsDetailTableViewController.swift */; };
-		3E09AEFB1E201E7700D4276F /* SettingsDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E09AEFA1E201E7700D4276F /* SettingsDetailTableViewCell.swift */; };
 		3E146F4D1E1B51320091C767 /* ParsingOCR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E146F4C1E1B51320091C767 /* ParsingOCR.swift */; };
 		3E36B1791DF2133000385315 /* GenerateBarcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E36B1781DF2133000385315 /* GenerateBarcode.swift */; };
 		3E37D3591DF09E4A0054C4DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E37D3581DF09E4A0054C4DA /* AppDelegate.swift */; };
@@ -119,8 +117,6 @@
 /* Begin PBXFileReference section */
 		3E09AEF41E2009DC00D4276F /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		3E09AEF61E200AB100D4276F /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
-		3E09AEF81E201E5700D4276F /* SettingsDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsDetailTableViewController.swift; sourceTree = "<group>"; };
-		3E09AEFA1E201E7700D4276F /* SettingsDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsDetailTableViewCell.swift; sourceTree = "<group>"; };
 		3E146F4C1E1B51320091C767 /* ParsingOCR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsingOCR.swift; sourceTree = "<group>"; };
 		3E36B1781DF2133000385315 /* GenerateBarcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenerateBarcode.swift; sourceTree = "<group>"; };
 		3E37D3551DF09E4A0054C4DA /* MemebershipCoupon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemebershipCoupon.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -218,8 +214,6 @@
 			children = (
 				3E09AEF61E200AB100D4276F /* SettingsTableViewController.swift */,
 				3E09AEF41E2009DC00D4276F /* SettingsTableViewCell.swift */,
-				3E09AEF81E201E5700D4276F /* SettingsDetailTableViewController.swift */,
-				3E09AEFA1E201E7700D4276F /* SettingsDetailTableViewCell.swift */,
 			);
 			name = Settings;
 			path = ..;
@@ -267,9 +261,9 @@
 				42CE8E1C1E4B5F1900603AA2 /* View */,
 				42976C1B1DF6C4C400ADB0D7 /* DatabaseModel */,
 				42976BA31DF27DFC00ADB0D7 /* Supporting Files */,
+				42976B9F1DF27D9600ADB0D7 /* Util */,
 				42976BA11DF27DC900ADB0D7 /* Favorite */,
 				42976BA01DF27DB000ADB0D7 /* Membership */,
-				42976B9F1DF27D9600ADB0D7 /* Util */,
 				3E37D3581DF09E4A0054C4DA /* AppDelegate.swift */,
 				3E36B1711DF2036100385315 /* Coupon */,
 				3E09AEF31E20091B00D4276F /* Settings */,
@@ -451,7 +445,7 @@
 				TargetAttributes = {
 					3E37D3541DF09E4A0054C4DA = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = HWY63NUUS4;
+						DevelopmentTeam = VHBSR3XVN2;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -460,7 +454,7 @@
 						};
 					};
 					A0BB53501E21D61900AF54C9 = {
-						DevelopmentTeam = HWY63NUUS4;
+						DevelopmentTeam = VHBSR3XVN2;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -585,10 +579,8 @@
 				3E09AEF71E200AB200D4276F /* SettingsTableViewController.swift in Sources */,
 				A057B36C1E4C9DA40007E388 /* logoTableCell.swift in Sources */,
 				4261B4BC1E4A1B41000A6F25 /* Brand+CoreDataProperties.swift in Sources */,
-				3E09AEF91E201E5700D4276F /* SettingsDetailTableViewController.swift in Sources */,
 				4261B4BD1E4A1B41000A6F25 /* Image+CoreDataClass.swift in Sources */,
 				A057B3701E4C9DA40007E388 /* MembershipCollectionVC.swift in Sources */,
-				3E09AEFB1E201E7700D4276F /* SettingsDetailTableViewCell.swift in Sources */,
 				3E37D3591DF09E4A0054C4DA /* AppDelegate.swift in Sources */,
 				A057B36D1E4C9DA40007E388 /* ShowMembershipVC.swift in Sources */,
 				4261B4BB1E4A1B41000A6F25 /* Brand+CoreDataClass.swift in Sources */,
@@ -784,10 +776,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MemebershipCoupon.entitlements;
-				DEVELOPMENT_TEAM = HWY63NUUS4;
+				DEVELOPMENT_TEAM = VHBSR3XVN2;
 				INFOPLIST_FILE = CouponUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.JMJ.MembershipCoupon;
+				PRODUCT_BUNDLE_IDENTIFIER = com.minos.MembershipCoupon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -800,10 +792,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MemebershipCoupon.entitlements;
-				DEVELOPMENT_TEAM = HWY63NUUS4;
+				DEVELOPMENT_TEAM = VHBSR3XVN2;
 				INFOPLIST_FILE = CouponUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.JMJ.MembershipCoupon;
+				PRODUCT_BUNDLE_IDENTIFIER = com.minos.MembershipCoupon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -813,10 +805,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Widget/Widget.entitlements;
-				DEVELOPMENT_TEAM = HWY63NUUS4;
+				DEVELOPMENT_TEAM = VHBSR3XVN2;
 				INFOPLIST_FILE = Widget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.JMJ.MembershipCoupon.Widget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.minos.MembershipCoupon.Widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -827,10 +819,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Widget/Widget.entitlements;
-				DEVELOPMENT_TEAM = HWY63NUUS4;
+				DEVELOPMENT_TEAM = VHBSR3XVN2;
 				INFOPLIST_FILE = Widget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.JMJ.MembershipCoupon.Widget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.minos.MembershipCoupon.Widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;

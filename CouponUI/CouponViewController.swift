@@ -98,7 +98,7 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
         self.view.addGestureRecognizer(longPressGestureRecognizer)
         
         //세그먼트 폰트
-        segment.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "NanumSquare", size: 12)!], for: .normal)
+//        segment.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "NanumSquare", size: 12)!], for: .normal)
     }
     
     //세그먼트 폰트

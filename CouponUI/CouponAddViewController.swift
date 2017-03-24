@@ -24,6 +24,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
     var originalImage: UIImage?
     
     @IBOutlet weak var deleteOutlet: UIBarButtonItem!
+    
     //데이터베이스에서 삭제
     @IBAction func deleteButton(_ sender: Any) {
         let alert = UIAlertController(title: "쿠폰 삭제", message: "쿠폰을 삭제하시겠습니까?", preferredStyle: .alert)

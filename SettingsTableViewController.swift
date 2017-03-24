@@ -9,24 +9,59 @@
 import UIKit
 import UserNotifications
 
-class SettingsTableViewController: UITableViewController {
+class SettingsTableViewController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     var couponToNoti: Coupon?
     var titleName: String?
     var expireDate: NSDate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        //퍼미션 요청(iOS 10 이상).
+//        let center = UNUserNotificationCenter.current()
+//        center.requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in})
+        
+        //퍼미션 요청.
+        let app = UIApplication.shared
+        let notificationSettings = UIUserNotificationSettings(types: [.alert, .sound, .badge], categories: nil)
+        app.registerUserNotificationSettings(notificationSettings)
         
         //네비 폰트
-        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "NanumSquare", size: 17)!]
+//        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "NanumSquare", size: 17)!]
+        
+        //다른 곳 터치시 키보드 제거 및 프레임 원위치
+        self.hideKeyboardWhenTappedAround()
+        
+        //날짜 피커뷰 설정.
+        let datePickerView: UIPickerView = UIPickerView()
+        datePickerView.delegate = self
+        notiDate.inputView = datePickerView
+//                datePickerView.backgroundColor = UIColor(white: 0.5, alpha: 0.8)
+//                datePickerView.setValue(UIColor.white, forKey: "textColor")
+        
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+        
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickDay.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickDay[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        notiDate.text = pickDay[row]
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         let userData = UserDefaults.standard
         let brightOnOffData = userData.object(forKey: "Bright") as? Bool
@@ -69,9 +104,32 @@ class SettingsTableViewController: UITableViewController {
         }
     }
     
-    //알림.
+    //알림 스위치 아웃렛.
     @IBOutlet weak var notiOutlet: UISwitch!
+    
+    //알림 스위치 메서드.
     @IBAction func notiSwitch(_ sender: Any) {
+        if notiOutlet.isOn == true {
+        }
+        else {
+        }
+    }
+    
+    @IBOutlet weak var notiDate: UITextField!
+    let pickDay = ["1", "2", "3", "4", "5", "6", "7"]
+    
+    @IBAction func notiSender(_ sender: Any) {
+        //로컬 알림.
+        let content = UNMutableNotificationContent()
+        //        content.title = "the 5 seconds are up!"
+        content.body = "쿠폰의 사용 기간이 \(notiDate.text!)일 남았습니다."
+        content.sound = UNNotificationSound.default()
+        content.badge = 1
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        let request = UNNotificationRequest(identifier: "timerDone", content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        
         //알림 설정 내용을 확인.
         //        let setting = UIApplication.shared.currentUserNotificationSettings
         //

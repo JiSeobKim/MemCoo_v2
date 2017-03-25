@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="CvN-aA-7jd">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E192b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="CvN-aA-7jd">
     <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -213,7 +213,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1vx-Sd-Cba">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="XQH-Ij-Bwx">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.5" minimumInteritemSpacing="0.0" id="XQH-Ij-Bwx">
                                     <size key="itemSize" width="100" height="120"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -270,10 +270,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="1vx-Sd-Cba" secondAttribute="bottom" id="2qV-4z-Aih"/>
-                            <constraint firstAttribute="trailing" secondItem="1vx-Sd-Cba" secondAttribute="trailing" id="Fbv-6f-fAI"/>
-                            <constraint firstItem="1vx-Sd-Cba" firstAttribute="top" secondItem="Y4g-LG-xWn" secondAttribute="top" id="GsP-o9-GfF"/>
-                            <constraint firstItem="1vx-Sd-Cba" firstAttribute="leading" secondItem="Y4g-LG-xWn" secondAttribute="leading" id="tVs-QB-1fT"/>
+                            <constraint firstAttribute="bottom" secondItem="1vx-Sd-Cba" secondAttribute="bottom" constant="0.5" id="2qV-4z-Aih"/>
+                            <constraint firstAttribute="trailing" secondItem="1vx-Sd-Cba" secondAttribute="trailing" constant="0.5" id="Fbv-6f-fAI"/>
+                            <constraint firstItem="1vx-Sd-Cba" firstAttribute="top" secondItem="Y4g-LG-xWn" secondAttribute="top" constant="0.5" id="GsP-o9-GfF"/>
+                            <constraint firstItem="1vx-Sd-Cba" firstAttribute="leading" secondItem="Y4g-LG-xWn" secondAttribute="leading" constant="0.5" id="tVs-QB-1fT"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="멤버십" id="KC7-Sa-qRv">
@@ -310,6 +310,6 @@
         <image name="defaultMembership" width="227" height="201"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yGb-mq-bpU"/>
+        <segue reference="axa-gl-xNh"/>
     </inferredMetricsTieBreakers>
 </document>

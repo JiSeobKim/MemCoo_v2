@@ -28,9 +28,6 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
         let notificationSettings = UIUserNotificationSettings(types: [.alert, .sound, .badge], categories: nil)
         app.registerUserNotificationSettings(notificationSettings)
         
-        //네비 폰트
-//        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "NanumSquare", size: 17)!]
-        
         //다른 곳 터치시 키보드 제거 및 프레임 원위치
         self.hideKeyboardWhenTappedAround()
         
@@ -112,6 +109,9 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
     let pickDay = ["1", "2", "3", "4", "5", "6", "7"]
     
     @IBAction func notiSender(_ sender: Any) {
+        UNUserNotificationCenter.current().removeAllDeliveredNotifications()
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        
         var titleArray: [String?] = []
         var expireDateArray: [NSDate?] = []
         
@@ -119,21 +119,44 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
             for (i, item) in objs.enumerated() {
                 titleArray.append(item.title)
                 expireDateArray.append(item.expireDate)
-                print("\(titleArray[i]), \(expireDateArray[i])")
+                print("objs[\(i)] = \(titleArray[i]), \(expireDateArray[i])")
             }
         }
         
+        let strInt = Int(notiDate.text!)
+        let timeInterval = -(strInt!)*(24*60*60)
+        var beforeDate: [NSDate] = []
         
-        //로컬 알림.
-        let content = UNMutableNotificationContent()
-        //        content.title = "the 5 seconds are up!"
-        content.body = "쿠폰의 사용 기간이 \(notiDate.text!)일 남았습니다."
-        content.sound = UNNotificationSound.default()
-        content.badge = 1
+        for (i, date1) in expireDateArray.enumerated() {
+            //let date1 = expireDateArray[i]!
+            let date2: TimeInterval = TimeInterval(timeInterval)
+            beforeDate.append(NSDate(timeInterval: date2, since: date1 as! Date))
+            print("\(beforeDate[i])")
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-        let request = UNNotificationRequest(identifier: "timerDone", content: content, trigger: trigger)
-        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+            //로컬 알림.
+            let content = UNMutableNotificationContent()
+            content.body = "\"\(titleArray[i]!)\" 쿠폰의 사용 기간이 \(notiDate.text!)일 남았습니다."
+            content.sound = UNNotificationSound.default()
+            content.badge = 0
+        
+            //테스트 코드.
+//          var dateMatching = DateComponents()
+//          dateMatching.year = 2017
+//          dateMatching.month = 4
+//          dateMatching.day = 1
+//          dateMatching.hour = 4
+//          dateMatching.minute = 54
+//          print("\(dateMatching)")
+//          let trigger = UNCalendarNotificationTrigger(dateMatching: dateMatching, repeats: false)
+        
+            //실제 코드.
+            let cal = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)
+            let dateMatching = cal?.components([.year, .month, .day, .hour, .minute], from: beforeDate[i] as Date)
+            print("\(dateMatching!)")
+            let trigger = UNCalendarNotificationTrigger(dateMatching: dateMatching!, repeats: false)
+            let request = UNNotificationRequest(identifier: "timerDone", content: content, trigger: trigger)
+            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        }
         
         //알림 설정 내용을 확인.
         //        let setting = UIApplication.shared.currentUserNotificationSettings
@@ -204,36 +227,6 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
         tableView.endUpdates()
     }
     
-//    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-//        switch (type) {
-//        case .insert:
-//            if let indexPath = newIndexPath {
-//                tableView.insertRows(at: [indexPath], with: .fade)
-//            }
-//            break
-//        case .delete:
-//            if let indexPath = indexPath {
-//                tableView.deleteRows(at: [indexPath], with: .fade)
-//            }
-//            break
-//        case .update:
-//            if let indexPath = indexPath {
-//                let cell = tableView.cellForRow(at: indexPath) as! CouponCell
-//                // update the cell data.
-//                configureCell(cell: cell, indexPath: indexPath as NSIndexPath)
-//            }
-//            break
-//        case .move:
-//            if let indexPath = indexPath {
-//                tableView.deleteRows(at: [indexPath], with: .fade)
-//                
-//            }
-//            if let indexPath = newIndexPath {
-//                tableView.insertRows(at: [indexPath], with: .fade)
-//            }
-//            break
-//        }
-//    }
     
     // MARK: - Table view data source
 

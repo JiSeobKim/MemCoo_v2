@@ -24,8 +24,8 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
         
         let clipboard = UIAlertAction(title: "클립보드 내용 자동 추가", style: .default) {
             (_) in
-            //액션시트의 첫 번째 버튼이 눌렸음을 다음 뷰에 전달하기 위해 앱델리게이트의 selectActionSheet 변수에 true를 저장.
-            ad.isClipboardActionSheet = true
+            //액션시트의 첫 번째 버튼이 눌렸음을 다음 뷰에 전달하기 위해 앱델리게이트의 selectActionSheet 변수에 1을 저장.
+            ad.clipboardActionSheet = 1
             
             //다음 뷰컨트롤러로 push.
             if let addVC = self.storyboard?.instantiateViewController(withIdentifier: "AddEdit") {
@@ -33,9 +33,9 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
             }
         }
         
-        let ocr = UIAlertAction(title: "사진에서 텍스트 추출", style: .default) {
-            (_) in            
-            ad.isClipboardActionSheet = false
+        let ocr = UIAlertAction(title: "쿠폰 이미지에서 텍스트 추출", style: .default) {
+            (_) in
+            ad.clipboardActionSheet = 2
             
             //이미지 선택 뷰.
             self.imagePicker.sourceType = UIImagePickerControllerSourceType.savedPhotosAlbum    //.photoLibrary
@@ -46,6 +46,8 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
         
         let custom = UIAlertAction(title: "사용자 직접 입력", style: .default) {
             (_) in
+            ad.clipboardActionSheet = 3
+            
             if let addVC = self.storyboard?.instantiateViewController(withIdentifier: "AddEdit") {
                 self.navigationController?.pushViewController(addVC, animated: true)
             }
@@ -68,20 +70,33 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             self.originalImage = image
             
-            //뷰 전환.
-            if self.originalImage != nil {
-                if let addVC = self.storyboard?.instantiateViewController(withIdentifier: "AddEdit") as? CouponAddViewController {
-                    addVC.originalImage = self.originalImage
-                    self.navigationController?.pushViewController(addVC, animated: true)
+            picker.dismiss(animated: true, completion: {
+                let alert = UIAlertController(title: "텍스트 추출", message: "쿠폰에서 텍스트를 추출하는 중입니다...", preferredStyle: .alert)
+                self.present(alert, animated: true, completion: nil)
+                
+                //비동기 처리.
+                DispatchQueue.main.async {
+                    alert.dismiss(animated: true, completion: {
+                        //뷰 전환.
+                        if self.originalImage != nil {
+                            if let addVC = self.storyboard?.instantiateViewController(withIdentifier: "AddEdit") as? CouponAddViewController {
+                                addVC.originalImage = self.originalImage
+                                self.navigationController?.pushViewController(addVC, animated: true)
+                            }
+                        }
+                    })
                 }
-            }
+            })
         }
-
-        picker.dismiss(animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
+    }
+    
+    //파싱 퍼센트 표시.
+    func progressImageRecognition(for tesseract: G8Tesseract!) {
+        print("Recognition Progress \(tesseract.progress)%")
     }
     
     var controller: NSFetchedResultsController<Coupon>!
@@ -100,8 +115,6 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
         //세그먼트 폰트
 //        segment.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "NanumSquare", size: 12)!], for: .normal)
     }
-    
-    //세그먼트 폰트
     
     //long press gesture를 이용한 즐겨찾기 핸들링.
     func longPress(_ longPressGestureRecognizer: UILongPressGestureRecognizer) {

@@ -248,6 +248,8 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         if let topItem = self.navigationController?.navigationBar.topItem {
             topItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
         }
+        
+        logoButton.setImage(MemcooView.imageOfLogoSelectButton(), for: .normal)
     }
     
     override func viewWillAppear(_ animated: Bool) {

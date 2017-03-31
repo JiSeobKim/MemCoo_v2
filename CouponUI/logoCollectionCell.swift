@@ -17,4 +17,5 @@ class logoCollectionCell : UICollectionViewCell {
     @IBOutlet weak var brand: UILabel!
     
     
+    
 }

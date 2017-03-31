@@ -13,15 +13,16 @@ class CouponCell: UITableViewCell {
     @IBOutlet weak var favorite: UILabel!
     @IBOutlet weak var dday: UILabel!
     @IBOutlet weak var logo: UIImageView!
+    @IBOutlet weak var favoriteFlagView: FavoriteFlag!
     
     func configureCell(item: Coupon) {
         title.text = item.title
         
         if item.favorite == true {
-            favorite.text = "★"
+            favoriteFlagView.isHidden = false
         }
         else {
-            favorite.text = ""
+            favoriteFlagView.isHidden = true
         }
         
         let dateFormatter = DateFormatter()

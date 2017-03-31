@@ -75,7 +75,8 @@ class AddEditMemebershipVC: UIViewController, UITextFieldDelegate {
         } else {
             self.navigationItem.title = "멤버십 추가"
             self.deleteOutlet.isEnabled = false
-            self.deleteOutlet.tintColor = UIColor.white
+            self.deleteOutlet.tintColor = UIColor(netHex: 0xF66623, alpha: 0)
+
         }
         
         

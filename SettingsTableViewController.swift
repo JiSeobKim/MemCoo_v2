@@ -7,15 +7,17 @@
 //
 
 import UIKit
+import CoreData
 import UserNotifications
 
-class SettingsTableViewController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate {
-    var couponToNoti: Coupon?
+class SettingsTableViewController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate, NSFetchedResultsControllerDelegate {
     var titleName: String?
     var expireDate: NSDate?
+    var controller: NSFetchedResultsController<Coupon>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        attemptFetch()
         
         //퍼미션 요청(iOS 10 이상).
 //        let center = UNUserNotificationCenter.current()
@@ -95,15 +97,6 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
         }
     }
     
-    //아이템 데이타를 로드하는 펑션
-    func loadCouponData() {
-        if let coupon = couponToNoti {
-            titleName = coupon.title
-            expireDate = coupon.expireDate
-            //expireDate = displayTheDate(theDate: coupon.expireDate as! Date)
-        }
-    }
-    
     //알림 스위치 아웃렛.
     @IBOutlet weak var notiOutlet: UISwitch!
     
@@ -119,6 +112,18 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
     let pickDay = ["1", "2", "3", "4", "5", "6", "7"]
     
     @IBAction func notiSender(_ sender: Any) {
+        var titleArray: [String?] = []
+        var expireDateArray: [NSDate?] = []
+        
+        if let objs = controller.fetchedObjects, objs.count > 0 {   //objs: Coupon 타입 배열.
+            for (i, item) in objs.enumerated() {
+                titleArray.append(item.title)
+                expireDateArray.append(item.expireDate)
+                print("\(titleArray[i]), \(expireDateArray[i])")
+            }
+        }
+        
+        
         //로컬 알림.
         let content = UNMutableNotificationContent()
         //        content.title = "the 5 seconds are up!"
@@ -168,6 +173,67 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
         //        }
 
     }
+    
+    //coreData 부분
+    //패치해오는 펑션
+    func attemptFetch() {
+        let fetchRequest: NSFetchRequest<Coupon> = Coupon.fetchRequest()
+        let dateSort = NSSortDescriptor(key: "created", ascending: false)
+        fetchRequest.sortDescriptors = [dateSort]
+        
+        let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        //save시 tableview update를 위한 델리게이트 전달
+        controller.delegate = self
+        self.controller = controller
+        
+        do {
+            try controller.performFetch()
+        } catch {
+            let error = error as NSError
+            print("\(error)")
+        }
+        
+    }
+    
+    //컨트롤러가 바뀔때마다 테이블뷰 업데이트
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.beginUpdates()
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.endUpdates()
+    }
+    
+//    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+//        switch (type) {
+//        case .insert:
+//            if let indexPath = newIndexPath {
+//                tableView.insertRows(at: [indexPath], with: .fade)
+//            }
+//            break
+//        case .delete:
+//            if let indexPath = indexPath {
+//                tableView.deleteRows(at: [indexPath], with: .fade)
+//            }
+//            break
+//        case .update:
+//            if let indexPath = indexPath {
+//                let cell = tableView.cellForRow(at: indexPath) as! CouponCell
+//                // update the cell data.
+//                configureCell(cell: cell, indexPath: indexPath as NSIndexPath)
+//            }
+//            break
+//        case .move:
+//            if let indexPath = indexPath {
+//                tableView.deleteRows(at: [indexPath], with: .fade)
+//                
+//            }
+//            if let indexPath = newIndexPath {
+//                tableView.insertRows(at: [indexPath], with: .fade)
+//            }
+//            break
+//        }
+//    }
     
     // MARK: - Table view data source
 

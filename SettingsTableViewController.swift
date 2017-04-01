@@ -7,15 +7,17 @@
 //
 
 import UIKit
+import CoreData
 import UserNotifications
 
-class SettingsTableViewController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate {
-    var couponToNoti: Coupon?
+class SettingsTableViewController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate, NSFetchedResultsControllerDelegate {
     var titleName: String?
     var expireDate: NSDate?
+    var controller: NSFetchedResultsController<Coupon>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        attemptFetch()
         
         //퍼미션 요청(iOS 10 이상).
 //        let center = UNUserNotificationCenter.current()
@@ -25,9 +27,6 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
         let app = UIApplication.shared
         let notificationSettings = UIUserNotificationSettings(types: [.alert, .sound, .badge], categories: nil)
         app.registerUserNotificationSettings(notificationSettings)
-        
-        //네비 폰트
-//        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "NanumSquare", size: 17)!]
         
         //다른 곳 터치시 키보드 제거 및 프레임 원위치
         self.hideKeyboardWhenTappedAround()
@@ -95,15 +94,6 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
         }
     }
     
-    //아이템 데이타를 로드하는 펑션
-    func loadCouponData() {
-        if let coupon = couponToNoti {
-            titleName = coupon.title
-            expireDate = coupon.expireDate
-            //expireDate = displayTheDate(theDate: coupon.expireDate as! Date)
-        }
-    }
-    
     //알림 스위치 아웃렛.
     @IBOutlet weak var notiOutlet: UISwitch!
     
@@ -119,16 +109,54 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
     let pickDay = ["1", "2", "3", "4", "5", "6", "7"]
     
     @IBAction func notiSender(_ sender: Any) {
-        //로컬 알림.
-        let content = UNMutableNotificationContent()
-        //        content.title = "the 5 seconds are up!"
-        content.body = "쿠폰의 사용 기간이 \(notiDate.text!)일 남았습니다."
-        content.sound = UNNotificationSound.default()
-        content.badge = 1
+        UNUserNotificationCenter.current().removeAllDeliveredNotifications()
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-        let request = UNNotificationRequest(identifier: "timerDone", content: content, trigger: trigger)
-        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        var titleArray: [String?] = []
+        var expireDateArray: [NSDate?] = []
+        
+        if let objs = controller.fetchedObjects, objs.count > 0 {   //objs: Coupon 타입 배열.
+            for (i, item) in objs.enumerated() {
+                titleArray.append(item.title)
+                expireDateArray.append(item.expireDate)
+                print("objs[\(i)] = \(titleArray[i]), \(expireDateArray[i])")
+            }
+        }
+        
+        let strInt = Int(notiDate.text!)
+        let timeInterval = -(strInt!)*(24*60*60)
+        var beforeDate: [NSDate] = []
+        
+        for (i, date1) in expireDateArray.enumerated() {
+            //let date1 = expireDateArray[i]!
+            let date2: TimeInterval = TimeInterval(timeInterval)
+            beforeDate.append(NSDate(timeInterval: date2, since: date1 as! Date))
+            print("\(beforeDate[i])")
+        
+            //로컬 알림.
+            let content = UNMutableNotificationContent()
+            content.body = "\"\(titleArray[i]!)\" 쿠폰의 사용 기간이 \(notiDate.text!)일 남았습니다."
+            content.sound = UNNotificationSound.default()
+            content.badge = 0
+        
+            //테스트 코드.
+//          var dateMatching = DateComponents()
+//          dateMatching.year = 2017
+//          dateMatching.month = 4
+//          dateMatching.day = 1
+//          dateMatching.hour = 4
+//          dateMatching.minute = 54
+//          print("\(dateMatching)")
+//          let trigger = UNCalendarNotificationTrigger(dateMatching: dateMatching, repeats: false)
+        
+            //실제 코드.
+            let cal = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)
+            let dateMatching = cal?.components([.year, .month, .day, .hour, .minute], from: beforeDate[i] as Date)
+            print("\(dateMatching!)")
+            let trigger = UNCalendarNotificationTrigger(dateMatching: dateMatching!, repeats: false)
+            let request = UNNotificationRequest(identifier: "timerDone", content: content, trigger: trigger)
+            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        }
         
         //알림 설정 내용을 확인.
         //        let setting = UIApplication.shared.currentUserNotificationSettings
@@ -168,6 +196,37 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
         //        }
 
     }
+    
+    //coreData 부분
+    //패치해오는 펑션
+    func attemptFetch() {
+        let fetchRequest: NSFetchRequest<Coupon> = Coupon.fetchRequest()
+        let dateSort = NSSortDescriptor(key: "created", ascending: false)
+        fetchRequest.sortDescriptors = [dateSort]
+        
+        let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        //save시 tableview update를 위한 델리게이트 전달
+        controller.delegate = self
+        self.controller = controller
+        
+        do {
+            try controller.performFetch()
+        } catch {
+            let error = error as NSError
+            print("\(error)")
+        }
+        
+    }
+    
+    //컨트롤러가 바뀔때마다 테이블뷰 업데이트
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.beginUpdates()
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.endUpdates()
+    }
+    
     
     // MARK: - Table view data source
 

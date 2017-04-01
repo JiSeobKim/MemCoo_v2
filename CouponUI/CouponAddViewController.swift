@@ -45,8 +45,6 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         
     }
 
-    //버튼 숨김 기능을 위한 버튼 아울렛.
-
     @IBOutlet weak var product: UITextField!
     @IBOutlet weak var barcode: UITextField!
     
@@ -95,36 +93,15 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         
         //입력되지 않은 부분이 있을 때에는 알림창, 모두 입력되었을 때에는 저장.
         if product.text == "" {
-            //let color = UIColor.red
-            //product.layer.borderWidth = 1
-            //product.layer.cornerRadius = CGFloat(3)
-            //product.layer.borderColor = color.cgColor
             product.attributedPlaceholder = NSAttributedString(string: "입력해 주세요.", attributes: [NSForegroundColorAttributeName: UIColor.purple])
-        }
-        else {
-            //product.layer.borderWidth = 0
         }
         
         if expiredDate.text == "" {
-            //let color = UIColor.red
-            //expiredDate.layer.borderWidth = 1
-            //expiredDate.layer.cornerRadius = CGFloat(3)
-            //expiredDate.layer.borderColor = color.cgColor
             expiredDate.attributedPlaceholder = NSAttributedString(string: "입력해 주세요.", attributes: [NSForegroundColorAttributeName: UIColor.purple])
-        }
-        else {
-            //expiredDate.layer.borderWidth = 0
         }
         
         if barcode.text == "" {
-            //let color = UIColor.red
-            //barcode.layer.borderWidth = 1
-            //barcode.layer.cornerRadius = CGFloat(3)
-            //barcode.layer.borderColor = color.cgColor
             barcode.attributedPlaceholder = NSAttributedString(string: "입력해 주세요.", attributes: [NSForegroundColorAttributeName: UIColor.purple])
-        }
-        else {
-            //barcode.layer.borderWidth = 0
         }
         
         if product.text != "" && expiredDate.text != "" && barcode.text != "" {
@@ -217,7 +194,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
             deleteOutlet.tintColor = UIColor.white
             
             //클립보드 파싱 버튼을 눌렀을 때 자동으로 텍스트필드 입력.
-            if ad.isClipboardActionSheet == true {
+            if ad.clipboardActionSheet == 1 {
                 parsingBrain = ParsingBrain()
                 
                 if let copiedString = UIPasteboard.general.strings {
@@ -229,14 +206,17 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
                 }
             }
             //OCR 버튼을 눌렀을 때 이미지 OCR 후 바코드만 입력.
-            else if ad.isClipboardActionSheet == false {
+            else if ad.clipboardActionSheet == 2 {
                 if let tesseract = G8Tesseract(language: "eng+kor") {
                     tesseract.delegate = self
-                    //tesseract.charWhitelist = "0123456789"
                     tesseract.image = originalImage?.g8_grayScale() //.g8_blackAndWhite()
                     tesseract.recognize()
                     originalText.text = tesseract.recognizedText
                 }
+            }
+            //직접 입력 시.
+            else if ad.clipboardActionSheet == 3 {
+                originalText.text = ""
             }
         }
         //수정 버튼을 눌렀을 때.
@@ -248,25 +228,8 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         if let topItem = self.navigationController?.navigationBar.topItem {
             topItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
         }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        //파싱 퍼센트 표시 알림창.
-        if ad.isAddButton == true && ad.isClipboardActionSheet == false {
-            func progressImageRecognition(for tesseract: G8Tesseract!) {
-                let progress = UIAlertController(title: "알림", message: "Recognition Progress: \(tesseract.progress)%", preferredStyle: UIAlertControllerStyle.alert)
-                self.present(progress, animated: true)
-            
-                if tesseract.progress >= 90 {
-                    self.dismiss(animated: true)
-                }
-            }
-        }
-    }
-    
-    //파싱 퍼센트 표시.
-    func progressImageRecognition(for tesseract: G8Tesseract!) {
-        print("Recognition Progress \(tesseract.progress)%")
+        
+        logoButton.setImage(MemcooView.imageOfLogoSelectButton(), for: .normal)
     }
     
     override func didReceiveMemoryWarning() {

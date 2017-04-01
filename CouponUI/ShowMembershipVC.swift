@@ -65,6 +65,7 @@ class ShowMembershipVC: UIViewController, UIGestureRecognizerDelegate {
 //        ShowLogo.layer.masksToBounds = false
 //        ShowLogo.layer.cornerRadius = 10.0
         
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -80,6 +81,12 @@ class ShowMembershipVC: UIViewController, UIGestureRecognizerDelegate {
             ad.brightSwitch = true
             UIScreen.main.brightness = 1.0
         }
+        
+    
+        if let memebership = cellData{
+            self.navigationItem.title = memebership.toBrand?.title
+        }
+        
         
         
     }

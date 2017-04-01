@@ -27,12 +27,26 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
     var bright : CGFloat?
     
     @IBAction func finishButton(_ sender: UIButton) {
+        print("isFavorite = \(self.couponToDetail?.favorite)")
+        print("isUsed = \(self.couponToDetail?.isUsed)")
+        
         if self.couponToDetail?.isUsed == false {
             let alert = UIAlertController(title: "사용 완료", message: "사용 완료하시겠습니까?", preferredStyle: .alert)
             let finish = UIAlertAction(title: "사용 완료", style: .destructive) {
                 (_) in
                 if self.couponToDetail != nil {
                     self.couponToDetail?.isUsed = true
+                    //let favoriteContext = Favorite(context: context)
+                    
+                    if self.couponToDetail?.favorite == true {
+                        self.couponToDetail?.favorite = false
+                        //favoriteContext.isCoupon = true
+                        //favoriteContext.isMembership = false
+                        //favoriteContext.index = 0
+                        //self.couponToDetail?.toFavorite = favoriteContext
+                    }
+                    print("isFavorite = \(self.couponToDetail?.favorite)")
+                    print("isUsed = \(self.couponToDetail?.isUsed)")
                     ad.saveContext()
                 }
                 _ = self.navigationController?.popToRootViewController(animated: true)
@@ -49,6 +63,8 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
                 (_) in
                 if self.couponToDetail != nil {
                     self.couponToDetail?.isUsed = false
+                    print("isFavorite = \(self.couponToDetail?.favorite)")
+                    print("isUsed = \(self.couponToDetail?.isUsed)")
                     ad.saveContext()
                 }
                 _ = self.navigationController?.popToRootViewController(animated: true)

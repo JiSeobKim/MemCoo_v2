@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FavoriteFlag: UIView {
+class FavoriteFlagForTableCell: UIView {
 
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -20,3 +20,18 @@ class FavoriteFlag: UIView {
  
 
 }
+
+class FavoriteFlagForCollectionCell: UIView {
+    
+    // Only override draw() if you perform custom drawing.
+    // An empty implementation adversely affects performance during animation.
+    override func draw(_ rect: CGRect) {
+        // Drawing code
+        
+        MemcooView.drawFavoriteFlagForCollectionCell()
+    }
+    
+    
+}
+
+

@@ -13,7 +13,7 @@ class CouponCell: UITableViewCell {
     @IBOutlet weak var favorite: UILabel!
     @IBOutlet weak var dday: UILabel!
     @IBOutlet weak var logo: UIImageView!
-    @IBOutlet weak var favoriteFlagView: FavoriteFlag!
+    @IBOutlet weak var favoriteFlagView: UIView!
     
     func configureCell(item: Coupon) {
         title.text = item.title

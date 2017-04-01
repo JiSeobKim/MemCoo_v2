@@ -16,14 +16,14 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" rowHeight="192" sectionHeaderHeight="18" sectionFooterHeight="18" id="Fna-gS-Hon">
                         <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="0.98039215690000003" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="separatorColor" red="0.96470588235294119" green="0.40000000000000002" blue="0.13725490196078433" alpha="0.78000000000000003" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexTrackingBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" showsReorderControl="YES" indentationWidth="10" reuseIdentifier="FavoriteCell" rowHeight="192" id="Qr5-GV-Yb4" customClass="FavoriteCell" customModule="MemebershipCoupon" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="56" width="414" height="192"/>
+                                <rect key="frame" x="0.0" y="55.333333333333336" width="414" height="192"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qr5-GV-Yb4" id="NRs-Da-RpN">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="191"/>
@@ -43,7 +43,7 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SNM-To-GD6" customClass="FavoriteFlag" customModule="MemebershipCoupon" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SNM-To-GD6" customClass="FavoriteFlagForTableCell" customModule="MemebershipCoupon" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
                                                     <color key="backgroundColor" red="1" green="0.98039215690000003" blue="0.89019607840000003" alpha="0.78000000000000003" colorSpace="calibratedRGB"/>
                                                     <constraints>
@@ -59,15 +59,15 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1uo-cs-pUi">
-                                                    <rect key="frame" x="132" y="14" width="274" height="63"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <rect key="frame" x="99" y="8" width="307" height="71"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                     <color key="textColor" red="0.32941176470588235" green="0.32941176470588235" blue="0.32941176470588235" alpha="0.78000000000000003" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gvs-Mp-mLw" customClass="CircleBoundary" customModule="MemebershipCoupon" customModuleProvider="target">
-                                                    <rect key="frame" x="45" y="14" width="63" height="63"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <rect key="frame" x="28" y="14" width="63" height="63"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="circleBoundary" value="YES"/>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
@@ -96,6 +96,7 @@
                                         <constraint firstAttribute="trailing" secondItem="MRc-f3-bkp" secondAttribute="trailing" id="uO6-Ym-b9m"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
                                     <outlet property="barcodeImg" destination="8tj-sS-02O" id="CA5-tD-RZa"/>
                                     <outlet property="barcodeNumber" destination="Jc3-ZF-Zt7" id="ojD-qR-iZj"/>

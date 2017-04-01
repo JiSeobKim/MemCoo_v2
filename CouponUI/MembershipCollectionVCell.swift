@@ -30,7 +30,7 @@ class MembershipCollectionVCell : UICollectionViewCell {
       
 
         //Favorite 뷰 다운캐스팅 및 백그라운드 클리어
-        _ = favorite as? FavoriteFlag
+        _ = favorite as? FavoriteFlagForCollectionCell
         favorite.backgroundColor = UIColor.clear
         
         

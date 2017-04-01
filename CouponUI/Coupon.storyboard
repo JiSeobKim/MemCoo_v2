@@ -23,18 +23,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7Hg-l6-YSv">
-                                <rect key="frame" x="0.0" y="108" width="320" height="460"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7Hg-l6-YSv">
+                                <rect key="frame" x="0.0" y="100" width="320" height="468"/>
+                                <color key="backgroundColor" red="1" green="0.98039215690000003" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="separatorColor" red="0.96470588239999999" green="0.40000000000000002" blue="0.13725490200000001" alpha="0.78000000000000003" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CouponCell" rowHeight="100" id="eXy-61-Um0" customClass="CouponCell" customModule="MemebershipCoupon" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eXy-61-Um0" id="gQF-BB-83x">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="evJ-ID-VQp" customClass="FavoriteFlag" customModule="MemebershipCoupon" customModuleProvider="target">
+                                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="evJ-ID-VQp" customClass="FavoriteFlagForTableCell" customModule="MemebershipCoupon" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -90,6 +92,7 @@
                                                 <constraint firstItem="Rlf-KP-p4g" firstAttribute="top" secondItem="gQF-BB-83x" secondAttribute="topMargin" id="xv6-k0-k8q"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="tintColor" red="0.96470588239999999" green="0.40000000000000002" blue="0.13725490200000001" alpha="0.78000000000000003" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="dday" destination="5Y3-se-gC1" id="Dx8-4b-DqU"/>
                                             <outlet property="favoriteFlagView" destination="evJ-ID-VQp" id="DlI-hi-4Z1"/>
@@ -99,28 +102,38 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Rdg-5C-pXp">
-                                <rect key="frame" x="50" y="72" width="220" height="29"/>
-                                <segments>
-                                    <segment title="사용 가능"/>
-                                    <segment title="사용 완료"/>
-                                    <segment title="전체"/>
-                                </segments>
-                                <color key="tintColor" red="0.96470588239999999" green="0.40000000000000002" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <action selector="segmentChanged:" destination="QWw-7U-fLY" eventType="valueChanged" id="Brj-vk-JOh"/>
-                                </connections>
-                            </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="atB-jj-cjo">
+                                <rect key="frame" x="0.0" y="64" width="320" height="36"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Rdg-5C-pXp">
+                                        <rect key="frame" x="50" y="4" width="220" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <segments>
+                                            <segment title="사용 가능"/>
+                                            <segment title="사용 완료"/>
+                                            <segment title="전체"/>
+                                        </segments>
+                                        <color key="tintColor" red="0.96470588239999999" green="0.40000000000000002" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="segmentChanged:" destination="QWw-7U-fLY" eventType="valueChanged" id="Brj-vk-JOh"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.98039215690000003" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="q1p-No-Jiu"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.98039215690000003" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Rdg-5C-pXp" firstAttribute="leading" secondItem="55n-MV-iKI" secondAttribute="leadingMargin" constant="34" id="5VM-Gt-fsX"/>
+                            <constraint firstItem="atB-jj-cjo" firstAttribute="top" secondItem="m9T-Ve-Om4" secondAttribute="bottom" id="10t-Bi-xqT"/>
+                            <constraint firstAttribute="trailing" secondItem="atB-jj-cjo" secondAttribute="trailing" id="2uk-mj-4VL"/>
                             <constraint firstAttribute="bottom" secondItem="7Hg-l6-YSv" secondAttribute="bottom" id="D40-OI-Xbq"/>
-                            <constraint firstItem="7Hg-l6-YSv" firstAttribute="top" secondItem="Rdg-5C-pXp" secondAttribute="bottom" constant="8" symbolic="YES" id="DV0-MF-NrF"/>
-                            <constraint firstItem="Rdg-5C-pXp" firstAttribute="top" secondItem="m9T-Ve-Om4" secondAttribute="bottom" constant="8" symbolic="YES" id="FiS-PN-C4g"/>
-                            <constraint firstItem="Rdg-5C-pXp" firstAttribute="centerX" secondItem="7Hg-l6-YSv" secondAttribute="centerX" id="HL7-q2-dP2"/>
                             <constraint firstAttribute="trailing" secondItem="7Hg-l6-YSv" secondAttribute="trailing" id="SFR-HI-SRI"/>
+                            <constraint firstItem="7Hg-l6-YSv" firstAttribute="top" secondItem="atB-jj-cjo" secondAttribute="bottom" id="fae-7U-SqD"/>
                             <constraint firstItem="7Hg-l6-YSv" firstAttribute="leading" secondItem="55n-MV-iKI" secondAttribute="leading" id="tyZ-qC-Lqd"/>
+                            <constraint firstItem="atB-jj-cjo" firstAttribute="leading" secondItem="55n-MV-iKI" secondAttribute="leading" id="ua3-Iq-1jS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="쿠폰" id="p0p-dR-pg7">
@@ -167,7 +180,7 @@
                                     <constraint firstAttribute="height" constant="20" id="vP7-6N-4ah"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.96470588239999999" green="0.40000000000000002" blue="0.13725490200000001" alpha="0.78000000000000003" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1234-4321-1234-4321" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eii-B3-8aT">
@@ -176,7 +189,7 @@
                                     <constraint firstAttribute="height" constant="20" id="cYC-Db-qHs"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.96470588239999999" green="0.40000000000000002" blue="0.13725490200000001" alpha="0.78000000000000003" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aX1-88-mjM" customClass="CircleBoundary" customModule="MemebershipCoupon" customModuleProvider="target">

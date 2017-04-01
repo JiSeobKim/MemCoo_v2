@@ -22,7 +22,7 @@ extension UINavigationBar {
             
             if _setLightTheme {
                 self.tintColor = UIColor(red: 247/255, green: 114/255, blue: 39/255, alpha: 1)
-                self.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Apple SD Gothic Neo", size: 20)!, NSForegroundColorAttributeName: UIColor(red: 247/255, green: 114/255, blue: 39/255, alpha: 1)]
+                self.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(red: 247/255, green: 114/255, blue: 39/255, alpha: 1)]
                 
                 self.isTranslucent = false
                 self.isOpaque = true

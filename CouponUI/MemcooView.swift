@@ -75,15 +75,15 @@ class MemcooView: NSObject {
         
         /// Resize to Target Frame
         context.saveGState()
-        let resizedFrame = resizing.apply(rect: CGRect(x: 0, y: 0, width: 51, height: 51), target: targetFrame)
+        let resizedFrame = resizing.apply(rect: CGRect(x: 0, y: 0, width: 45, height: 45), target: targetFrame)
         context.translateBy(x: resizedFrame.minX, y: resizedFrame.minY)
-        context.scaleBy(x: resizedFrame.width / 51, y: resizedFrame.height / 51)
+        context.scaleBy(x: resizedFrame.width / 45, y: resizedFrame.height / 45)
         
         /// Rectangle 4
         let rectangle4 = UIBezierPath()
         rectangle4.move(to: CGPoint.zero)
-        rectangle4.addLine(to: CGPoint(x: 51, y: 0))
-        rectangle4.addLine(to: CGPoint(x: 0, y: 51))
+        rectangle4.addLine(to: CGPoint(x: 45, y: 0))
+        rectangle4.addLine(to: CGPoint(x: 0, y: 45))
         rectangle4.addLine(to: CGPoint.zero)
         rectangle4.close()
         rectangle4.move(to: CGPoint.zero)

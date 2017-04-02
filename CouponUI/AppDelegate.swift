@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var brightSwitch : Bool?
     var brightEditToggle : Bool?
     var heightForKeyboard : CGFloat?
-    var nanumFont = [NSFontAttributeName: UIFont(name: "NanumSquare", size: 20)!]
+   
 
     
     //CouponViewController의 ActionSheet에서 눌린 버튼을 CouponAddViewController에 전달하기 위한 변수.
@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
 
         // Override point for customization after application launch.
-        UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont(name: "NanumSquare", size: 18)!], for: .normal)
+        
         
         return true
     }

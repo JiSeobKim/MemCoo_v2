@@ -318,7 +318,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
     @IBAction func btnBuyWater(_ sender: UIButton) {
         for product in iapProducts {
             let prodID = product.productIdentifier
-            if(prodID == "WATER_ID") {
+            if(prodID == WATER_ID) {
                 purchaseMyProduct(product: product)
             }
         }
@@ -387,27 +387,29 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
                 
                 switch trans.transactionState {
                 case .purchased:
+                    
+                    print("purchase")
                     SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
                     
                     for transaction in queue.transactions {
                         let t : SKPaymentTransaction = transaction
                         let prodID = t.payment.productIdentifier as String
                         switch prodID {
-                        case "WATER_ID" :
+                        case WATER_ID :
                             print("BuyWater")
                             productFunction(product: "water")
                             break;
-                        case "COFFEE_ID" :
+                        case COFFEE_ID :
                             print("BuyCoffee")
                             productFunction(product: "coffee")
                             break;
                             
-                        case "ALCOHOL_ID" :
+                        case ALCOHOL_ID :
                             print("BuyAlcohol")
                             productFunction(product: "alcohol")
                             break;
                             
-                        case "FOOD_ID" :
+                        case FOOD_ID :
                             print("BuyFood")
                             productFunction(product: "food")
                             break;

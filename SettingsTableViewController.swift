@@ -9,8 +9,9 @@
 import UIKit
 import CoreData
 import UserNotifications
+import StoreKit
 
-class SettingsTableViewController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate, NSFetchedResultsControllerDelegate {
+class SettingsTableViewController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate, NSFetchedResultsControllerDelegate, SKPaymentTransactionObserver, SKProductsRequestDelegate{
     var titleName: String?
     var expireDate: NSDate?
     var controller: NSFetchedResultsController<Coupon>!
@@ -43,6 +44,12 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        
+        ///// IAP Part.
+        fetchAvailableProducts()
+        
+        
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -227,57 +234,213 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
         tableView.endUpdates()
     }
     
+    //IAP Part.
+    @IBOutlet weak var outBuyWater: UILabel!
+    @IBOutlet weak var outBuyCoffee: UILabel!
+    @IBOutlet weak var outBuyAlcohol: UILabel!
+    @IBOutlet weak var outBuyFood: UILabel!
+    @IBOutlet weak var outRestore: UILabel!
     
-    // MARK: - Table view data source
-
-    /* override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    } */
-
-       /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    //제품 이름
+    let WATER_ID = "com.MemCoo.Water"
+    let COFFEE_ID = "com.MemCoo.Coffee"
+    let ALCOHOL_ID = "com.MemCoo.Alcohol"
+    let FOOD_ID = "com.MemCoo.Food"
+    
+    //변수
+    var productID = ""
+    var iapProducts = [SKProduct]()
+    
+    func fetchAvailableProducts() {
+        let productIdentifiers = NSSet(objects: WATER_ID, COFFEE_ID, ALCOHOL_ID, FOOD_ID)
+        
+        let productsRequest = SKProductsRequest(productIdentifiers: productIdentifiers as! Set<String>)
+        
+        productsRequest.delegate = self
+        productsRequest.start()
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    
+    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+        iapProducts = response.products
+        for product in iapProducts {
+            print("Product Added")
+            print(product.productIdentifier)
+            print(product.price)
+        }
     }
-    */
+    
+    func purchaseMyProduct(product: SKProduct) {
+        if SKPaymentQueue.canMakePayments() {
+            let payment = SKPayment(product: product)
+            SKPaymentQueue.default().add(self)
+            SKPaymentQueue.default().add(payment)
+            
+            print("PRODUCT TO PURCHASE : \(product.productIdentifier)")
+            productID = product.productIdentifier
+        }
+    }
+    
+    func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
+        print("transaction restored")
+        for transaction in queue.transactions {
+            let t : SKPaymentTransaction = transaction
+            let prodID = t.payment.productIdentifier as String
+            switch prodID {
+            case "WATER_ID" :
+                print("BuyWater")
+                productFunction(product: "water")
+                break;
+            case "COFFEE_ID" :
+                print("BuyCoffee")
+                productFunction(product: "coffee")
+                break;
+                
+            case "ALCOHOL_ID" :
+                print("BuyAlcohol")
+                productFunction(product: "alcohol")
+                break;
+                
+            case "FOOD_ID" :
+                print("BuyFood")
+                productFunction(product: "food")
+                break;
+                
+            default:
+                print("IAP not found")
+                break;
+                
+            }
+        }
+    }
 
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+    
+    @IBAction func btnBuyWater(_ sender: UIButton) {
+        for product in iapProducts {
+            let prodID = product.productIdentifier
+            if(prodID == "WATER_ID") {
+                purchaseMyProduct(product: product)
+            }
+        }
+        
+    }
+    @IBAction func btnBuyCoffee(_ sender: UIButton) {
+        for product in iapProducts {
+            let prodID = product.productIdentifier
+            if(prodID == "COFFEE_ID") {
+                purchaseMyProduct(product: product)
+            }
+        }
+
+        
+    }
+    @IBAction func btnBuyAlcohol(_ sender: UIButton) {
+        for product in iapProducts {
+            let prodID = product.productIdentifier
+            if(prodID == "ALCOHOL_ID") {
+                purchaseMyProduct(product: product)
+            }
+        }
 
     }
-    */
+    @IBAction func btnBuyFood(_ sender: UIButton) {
+        for product in iapProducts {
+            let prodID = product.productIdentifier
+            if(prodID == "FOOD_ID") {
+                purchaseMyProduct(product: product)
+            }
+        }
 
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
     }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func btnRestore(_ sender: UIButton) {
+        
     }
-    */
+    
+    func productFunction(product:String){
+        switch product {
+        case "water" :
+            print("Water")
+            break;
+            
+        case "coffee" :
+            print("coffee")
+            break;
 
+        case "alcohol" :
+            print("alcohol")
+            break;
+
+        case "food" :
+            print("food")
+            break;
+            
+        default:
+            break;
+
+        }
+    }
+    
+    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+        for transaction:AnyObject in transactions {
+            if let trans = transaction as? SKPaymentTransaction {
+                
+                
+                switch trans.transactionState {
+                case .purchased:
+                    SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
+                    
+                    for transaction in queue.transactions {
+                        let t : SKPaymentTransaction = transaction
+                        let prodID = t.payment.productIdentifier as String
+                        switch prodID {
+                        case "WATER_ID" :
+                            print("BuyWater")
+                            productFunction(product: "water")
+                            break;
+                        case "COFFEE_ID" :
+                            print("BuyCoffee")
+                            productFunction(product: "coffee")
+                            break;
+                            
+                        case "ALCOHOL_ID" :
+                            print("BuyAlcohol")
+                            productFunction(product: "alcohol")
+                            break;
+                            
+                        case "FOOD_ID" :
+                            print("BuyFood")
+                            productFunction(product: "food")
+                            break;
+                            
+                        default:
+                            print("IAP not found")
+                            break;
+                            
+                        }
+                    }
+                    
+                case .failed:
+                    print("fail")
+                    break;
+                    
+                default :
+                    print("Default")
+                    break
+
+                    
+                    
+                }
+            }
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

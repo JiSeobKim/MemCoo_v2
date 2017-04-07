@@ -327,7 +327,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
     @IBAction func btnBuyCoffee(_ sender: UIButton) {
         for product in iapProducts {
             let prodID = product.productIdentifier
-            if(prodID == "COFFEE_ID") {
+            if(prodID == COFFEE_ID) {
                 purchaseMyProduct(product: product)
             }
         }
@@ -337,7 +337,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
     @IBAction func btnBuyAlcohol(_ sender: UIButton) {
         for product in iapProducts {
             let prodID = product.productIdentifier
-            if(prodID == "ALCOHOL_ID") {
+            if(prodID == ALCOHOL_ID) {
                 purchaseMyProduct(product: product)
             }
         }
@@ -346,7 +346,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
     @IBAction func btnBuyFood(_ sender: UIButton) {
         for product in iapProducts {
             let prodID = product.productIdentifier
-            if(prodID == "FOOD_ID") {
+            if(prodID == FOOD_ID) {
                 purchaseMyProduct(product: product)
             }
         }

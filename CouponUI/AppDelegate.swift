@@ -33,6 +33,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Override point for customization after application launch.
         
+        //노티피케이션.
+        let pushSettings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+        UIApplication.shared.registerUserNotificationSettings(pushSettings)
+        UIApplication.shared.registerForRemoteNotifications()
+        
+        let prefs: UserDefaults = UserDefaults.standard
+        if let remoteNotification = launchOptions?[UIApplicationLaunchOptionsKey.remoteNotification] as? NSDictionary {
+            prefs.set(remoteNotification as! [AnyHashable: Any], forKey: "startUpNotif")
+            prefs.synchronize()
+        }
+        else if launchOptions?[UIApplicationLaunchOptionsKey.localNotification] != nil {
+            prefs.set("SOMESTRING", forKey: "startUpNotif")
+            prefs.synchronize()
+        }
         
         return true
     }
@@ -51,6 +65,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        
+//        let localNotification = UILocalNotification()
+//        localNotification.fireDate = Date(timeIntervalSinceNow: 5)
+//        localNotification.alertBody = "My Local Notification"
+//        localNotification.timeZone = TimeZone.current
+//        localNotification.applicationIconBadgeNumber = UIApplication.shared.applicationIconBadgeNumber + 1
+//        
+//        UIApplication.shared.scheduleLocalNotification(localNotification)
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -63,12 +85,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UIScreen.main.brightness = 1.0
         }
         
-                // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        UIApplication.shared.applicationIconBadgeNumber = UIApplication.shared.applicationIconBadgeNumber - 1
+        
+        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "myNotif"), object: nil)
+    }
+    
     // MARK: - Core Data stack
     
     lazy var persistentContainer: NSPersistentContainer = {

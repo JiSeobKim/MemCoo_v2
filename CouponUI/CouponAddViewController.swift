@@ -152,7 +152,13 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
             }
         
             ad.saveContext()
-            _ = self.navigationController?.popToRootViewController(animated: true)
+            
+            if ad.isAddButton == true {
+                _ = self.navigationController?.popToRootViewController(animated: true)
+            }
+            else {
+                _ = self.navigationController?.popViewController(animated: true)
+            }
         }
     }
     
@@ -191,7 +197,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
             
             //추가 상태일 때에는 삭제 버튼 숨김.
             deleteOutlet.isEnabled = false
-            deleteOutlet.tintColor = UIColor.white
+            deleteOutlet.tintColor = UIColor(netHex: 0xF66623, alpha: 0)
             
             //클립보드 파싱 버튼을 눌렀을 때 자동으로 텍스트필드 입력.
             if ad.clipboardActionSheet == 1 {
@@ -207,11 +213,14 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
             }
             //OCR 버튼을 눌렀을 때 이미지 OCR 후 바코드만 입력.
             else if ad.clipboardActionSheet == 2 {
-                if let tesseract = G8Tesseract(language: "eng+kor") {
-                    tesseract.delegate = self
-                    tesseract.image = originalImage?.g8_grayScale() //.g8_blackAndWhite()
-                    tesseract.recognize()
-                    originalText.text = tesseract.recognizedText
+                //비동기 처리.
+                DispatchQueue.main.async {
+                    if let tesseract = G8Tesseract(language: "eng+kor") {
+                        tesseract.delegate = self
+                        tesseract.image = self.originalImage?.g8_grayScale() //.g8_blackAndWhite()
+                        tesseract.recognize()
+                        self.originalText.text = tesseract.recognizedText
+                    }
                 }
             }
             //직접 입력 시.
@@ -230,6 +239,11 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         }
         
         logoButton.setImage(MemcooView.imageOfLogoSelectButton(), for: .normal)
+    }
+    
+    //파싱 퍼센트 표시.
+    func progressImageRecognition(for tesseract: G8Tesseract!) {
+        print("Recognition Progress \(tesseract.progress)%")
     }
     
     override func didReceiveMemoryWarning() {

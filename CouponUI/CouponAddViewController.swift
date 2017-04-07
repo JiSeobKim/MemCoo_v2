@@ -193,7 +193,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
             self.navigationItem.title = "쿠폰 추가"
             
             //상품명 텍스트 필드를 최초 응답자로 지정(스토리보드 내에서 dock을 이용해도 가능).
-            self.product.becomeFirstResponder()
+//            self.product.becomeFirstResponder()
             
             //추가 상태일 때에는 삭제 버튼 숨김.
             deleteOutlet.isEnabled = false
@@ -213,15 +213,17 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
             }
             //OCR 버튼을 눌렀을 때 이미지 OCR 후 바코드만 입력.
             else if ad.clipboardActionSheet == 2 {
-                //비동기 처리.
-                DispatchQueue.main.async {
+                let alert = UIAlertController(title: "텍스트 추출", message: "쿠폰에서 텍스트를 추출하는 중입니다...", preferredStyle: .alert)
+                self.present(alert, animated: true, completion: {
                     if let tesseract = G8Tesseract(language: "eng+kor") {
                         tesseract.delegate = self
                         tesseract.image = self.originalImage?.g8_grayScale() //.g8_blackAndWhite()
                         tesseract.recognize()
                         self.originalText.text = tesseract.recognizedText
                     }
-                }
+                    
+                    alert.dismiss(animated: true, completion: nil)
+                })
             }
             //직접 입력 시.
             else if ad.clipboardActionSheet == 3 {

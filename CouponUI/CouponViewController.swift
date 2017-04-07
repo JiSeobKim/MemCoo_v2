@@ -65,28 +65,20 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
         self.present(alert, animated: true)
     }
     
-    let alertOCR = UIAlertController(title: "텍스트 추출", message: "쿠폰에서 텍스트를 추출하는 중입니다...", preferredStyle: .alert)
-    
     //사진 앱 접근을 위한 메소드.
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             self.originalImage = image
-            
             picker.dismiss(animated: true, completion: nil)
-            self.present(self.alertOCR, animated: true, completion: {
-                //뷰 전환.
-                if self.originalImage != nil {
-                    if let addVC = self.storyboard?.instantiateViewController(withIdentifier: "AddEdit") as? CouponAddViewController {
-                        addVC.originalImage = self.originalImage
-                        self.navigationController?.pushViewController(addVC, animated: true)
-                    }
+            
+            //뷰 전환.
+            if self.originalImage != nil {
+                if let addVC = self.storyboard?.instantiateViewController(withIdentifier: "AddEdit") as? CouponAddViewController {
+                    addVC.originalImage = self.originalImage
+                    self.navigationController?.pushViewController(addVC, animated: true)
                 }
-            })
+            }
         }
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        alertOCR.dismiss(animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -105,9 +97,6 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
         //long press gesture를 이용한 즐겨찾기 핸들링.
         let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(self.longPress))
         self.view.addGestureRecognizer(longPressGestureRecognizer)
-        
-        //세그먼트 폰트
-//        segment.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "NanumSquare", size: 12)!], for: .normal)
     }
     
     override func viewWillAppear(_ animated: Bool) {

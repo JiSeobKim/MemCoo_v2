@@ -69,34 +69,20 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             self.originalImage = image
+            picker.dismiss(animated: true, completion: nil)
             
-            picker.dismiss(animated: true, completion: {
-                let alert = UIAlertController(title: "텍스트 추출", message: "쿠폰에서 텍스트를 추출하는 중입니다...", preferredStyle: .alert)
-                self.present(alert, animated: true, completion: nil)
-                
-                //비동기 처리.
-                DispatchQueue.main.async {
-                    alert.dismiss(animated: true, completion: {
-                        //뷰 전환.
-                        if self.originalImage != nil {
-                            if let addVC = self.storyboard?.instantiateViewController(withIdentifier: "AddEdit") as? CouponAddViewController {
-                                addVC.originalImage = self.originalImage
-                                self.navigationController?.pushViewController(addVC, animated: true)
-                            }
-                        }
-                    })
+            //뷰 전환.
+            if self.originalImage != nil {
+                if let addVC = self.storyboard?.instantiateViewController(withIdentifier: "AddEdit") as? CouponAddViewController {
+                    addVC.originalImage = self.originalImage
+                    self.navigationController?.pushViewController(addVC, animated: true)
                 }
-            })
+            }
         }
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
-    }
-    
-    //파싱 퍼센트 표시.
-    func progressImageRecognition(for tesseract: G8Tesseract!) {
-        print("Recognition Progress \(tesseract.progress)%")
     }
     
     var controller: NSFetchedResultsController<Coupon>!
@@ -111,9 +97,23 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
         //long press gesture를 이용한 즐겨찾기 핸들링.
         let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(self.longPress))
         self.view.addGestureRecognizer(longPressGestureRecognizer)
-        
-        //세그먼트 폰트
-//        segment.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "NanumSquare", size: 12)!], for: .normal)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //노티피케이션.
+        NotificationCenter.default.addObserver(self, selector: #selector(self.catchIt), name: NSNotification.Name(rawValue: "myNotif"), object: nil)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let prefs: UserDefaults = UserDefaults.standard
+        if prefs.value(forKey: "startUpNotif") != nil {
+            let userInfo: [AnyHashable: Any] = ["inactive": "inactive"]
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "myNotif"), object: nil, userInfo: userInfo as [AnyHashable: Any])
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
     }
     
     //long press gesture를 이용한 즐겨찾기 핸들링.
@@ -338,4 +338,15 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
     }
     */
 
+}
+
+extension UIViewController {
+    //노티피케이션.
+    func catchIt(_ userInfo: Notification) {
+        if userInfo.userInfo?["userInfo"] == nil {
+            if let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "SimpleViewController") {
+                self.navigationController?.pushViewController(detailVC, animated: true)
+            }
+        }
+    }
 }

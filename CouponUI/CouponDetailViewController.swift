@@ -81,6 +81,9 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
         ad.brightSwitch = false
         UIScreen.main.brightness = ad.bright!
         //화면이 사라질때 밝기 수정 off
+        
+        //노티피케이션.
+        NotificationCenter.default.removeObserver(self)
     }
     
     override func viewDidLoad() {
@@ -198,6 +201,9 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
             UIScreen.main.brightness = 1.0
             ad.brightSwitch = true
         }
+        
+        //노티피케이션.
+        NotificationCenter.default.addObserver(self, selector: #selector(self.catchIt), name: NSNotification.Name(rawValue: "myNotif"), object: nil)
     }
     
     /*

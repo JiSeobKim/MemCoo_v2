@@ -152,7 +152,13 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
             }
         
             ad.saveContext()
-            _ = self.navigationController?.popToRootViewController(animated: true)
+            
+            if ad.isAddButton == true {
+                _ = self.navigationController?.popToRootViewController(animated: true)
+            }
+            else {
+                _ = self.navigationController?.popViewController(animated: true)
+            }
         }
     }
     
@@ -187,11 +193,11 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
             self.navigationItem.title = "쿠폰 추가"
             
             //상품명 텍스트 필드를 최초 응답자로 지정(스토리보드 내에서 dock을 이용해도 가능).
-            self.product.becomeFirstResponder()
+//            self.product.becomeFirstResponder()
             
             //추가 상태일 때에는 삭제 버튼 숨김.
             deleteOutlet.isEnabled = false
-            deleteOutlet.tintColor = UIColor.white
+            deleteOutlet.tintColor = UIColor(netHex: 0xF66623, alpha: 0)
             
             //클립보드 파싱 버튼을 눌렀을 때 자동으로 텍스트필드 입력.
             if ad.clipboardActionSheet == 1 {
@@ -207,12 +213,17 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
             }
             //OCR 버튼을 눌렀을 때 이미지 OCR 후 바코드만 입력.
             else if ad.clipboardActionSheet == 2 {
-                if let tesseract = G8Tesseract(language: "eng+kor") {
-                    tesseract.delegate = self
-                    tesseract.image = originalImage?.g8_grayScale() //.g8_blackAndWhite()
-                    tesseract.recognize()
-                    originalText.text = tesseract.recognizedText
-                }
+                let alert = UIAlertController(title: "텍스트 추출", message: "쿠폰에서 텍스트를 추출하는 중입니다...", preferredStyle: .alert)
+                self.present(alert, animated: true, completion: {
+                    if let tesseract = G8Tesseract(language: "eng+kor") {
+                        tesseract.delegate = self
+                        tesseract.image = self.originalImage?.g8_grayScale() //.g8_blackAndWhite()
+                        tesseract.recognize()
+                        self.originalText.text = tesseract.recognizedText
+                    }
+                    
+                    alert.dismiss(animated: true, completion: nil)
+                })
             }
             //직접 입력 시.
             else if ad.clipboardActionSheet == 3 {
@@ -230,6 +241,11 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         }
         
         logoButton.setImage(MemcooView.imageOfLogoSelectButton(), for: .normal)
+    }
+    
+    //파싱 퍼센트 표시.
+    func progressImageRecognition(for tesseract: G8Tesseract!) {
+        print("Recognition Progress \(tesseract.progress)%")
     }
     
     override func didReceiveMemoryWarning() {

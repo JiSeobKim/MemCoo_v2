@@ -14,6 +14,10 @@ class CouponWidgetCell: UICollectionViewCell {
     
     func configureCell(item: Favorite) {
         logo.image = item.toCoupon?.toImage?.image as? UIImage!
+        logo.layer.borderWidth = 1.5
+        logo.layer.borderColor = UIColor(netHex: 0xF66623,alpha: 0.3).cgColor
+        logo.layer.cornerRadius = (self.frame.width/2)
+        logo.layer.masksToBounds = true
     }
     
     required init?(coder aDecoder: NSCoder) {

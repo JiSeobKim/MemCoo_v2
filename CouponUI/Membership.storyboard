@@ -234,7 +234,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1vx-Sd-Cba">
-                                <rect key="frame" x="0.0" y="0.0" width="413.66666666666669" height="622.66666666666663"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.80000000000000004" minimumInteritemSpacing="0.0" id="XQH-Ij-Bwx">
                                     <size key="itemSize" width="100" height="120"/>
@@ -244,7 +244,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.78000000000000003" contentMode="center" reuseIdentifier="viewcell" id="Pb7-vL-ZG4" customClass="MembershipCollectionVCell" customModule="MemebershipCoupon" customModuleProvider="target">
-                                        <rect key="frame" x="0.66666666666666663" y="1.6666666666666667" width="118" height="120"/>
+                                        <rect key="frame" x="1" y="2" width="118" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="118" height="120"/>
@@ -264,7 +264,7 @@
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="circleBoundary" value="NO"/>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="NO"/>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="logoCornerDesign" value="NO"/>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="logoCornerDesign" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Rd-8R-8AF" customClass="FavoriteFlagForCollectionCell" customModule="MemebershipCoupon" customModuleProvider="target">

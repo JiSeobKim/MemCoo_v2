@@ -20,7 +20,9 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
     //+버튼 눌렀을때의 액션
     @IBAction func add(_ sender: Any) {
         let alert = UIAlertController(title: "쿠폰 추가", message: "쿠폰을 추가할 방식을 선택해주세요.", preferredStyle: .actionSheet)
-        alert.view.tintColor = UIColor.black
+        
+//컬러가 바뀌어서 주석처리했습니다.
+//        alert.view.tintColor = UIColor.black
         
         let clipboard = UIAlertAction(title: "클립보드 내용 자동 추가", style: .default) {
             (_) in
@@ -127,7 +129,8 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
                     
                     if item.favorite == false {
                         let alert = UIAlertController(title: "즐겨찾기 추가", message: "\"\(item.title!)\" 쿠폰을\n즐겨찾기에 추가하시겠습니까?", preferredStyle: .alert)
-                        alert.view.tintColor = UIColor.black
+                        //테마 색 바뀌어서 우선 주석 처리하겠습니다
+//                        alert.view.tintColor = UIColor.black
                         
                         let add = UIAlertAction(title: "추가", style: .default) {
                             (_) in
@@ -148,7 +151,8 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
                     }
                     else {
                         let alert = UIAlertController(title: "즐겨찾기 제거", message: "\"\(item.title!)\" 쿠폰을\n즐겨찾기에서 제거하시겠습니까?", preferredStyle: .alert)
-                        alert.view.tintColor = UIColor.black
+                        //위와 동일
+                        //alert.view.tintColor = UIColor.black
                         
                         let add = UIAlertAction(title: "제거", style: .default) {
                             (_) in

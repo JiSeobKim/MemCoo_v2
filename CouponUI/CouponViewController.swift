@@ -127,7 +127,7 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
                 if var objs = controller.fetchedObjects, objs.count > 0 {
                     let item = objs[indexPath.row]
                     
-                    if item.favorite == false {
+                    if item.isFavorite == false {
                         let alert = UIAlertController(title: "즐겨찾기 추가", message: "\"\(item.title!)\" 쿠폰을\n즐겨찾기에 추가하시겠습니까?", preferredStyle: .alert)
                         //테마 색 바뀌어서 우선 주석 처리하겠습니다
 //                        alert.view.tintColor = UIColor.black
@@ -135,7 +135,7 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
                         let add = UIAlertAction(title: "추가", style: .default) {
                             (_) in
                             let favoriteContext = Favorite(context: context)
-                            item.favorite = true
+                            item.isFavorite = true
                             
                             favoriteContext.isCoupon = true
                             favoriteContext.isMembership = false
@@ -156,7 +156,7 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
                         
                         let add = UIAlertAction(title: "제거", style: .default) {
                             (_) in
-                            item.favorite = false
+                            item.isFavorite = false
                             context.delete(item.toFavorite!)
                             ad.saveContext()
                         }
@@ -243,7 +243,7 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
                 
                 let delete = UIAlertAction(title: "삭제", style: .destructive) {
                     (_) in
-                    if item.favorite == true {
+                    if item.isFavorite == true {
                         context.delete(item.toFavorite!)
                     }
                     context.delete(item)

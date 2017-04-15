@@ -27,7 +27,7 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
     var bright : CGFloat?
     
     @IBAction func finishButton(_ sender: UIButton) {
-        print("isFavorite = \(self.couponToDetail?.favorite)")
+        print("isFavorite = \(self.couponToDetail?.isFavorite)")
         print("isUsed = \(self.couponToDetail?.isUsed)")
         
         if self.couponToDetail?.isUsed == false {
@@ -38,14 +38,14 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
                     self.couponToDetail?.isUsed = true
                     //let favoriteContext = Favorite(context: context)
                     
-                    if self.couponToDetail?.favorite == true {
-                        self.couponToDetail?.favorite = false
+                    if self.couponToDetail?.isFavorite == true {
+                        self.couponToDetail?.isFavorite = false
                         //favoriteContext.isCoupon = true
                         //favoriteContext.isMembership = false
                         //favoriteContext.index = 0
                         //self.couponToDetail?.toFavorite = favoriteContext
                     }
-                    print("isFavorite = \(self.couponToDetail?.favorite)")
+                    print("isFavorite = \(self.couponToDetail?.isFavorite)")
                     print("isUsed = \(self.couponToDetail?.isUsed)")
                     ad.saveContext()
                 }
@@ -63,7 +63,7 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
                 (_) in
                 if self.couponToDetail != nil {
                     self.couponToDetail?.isUsed = false
-                    print("isFavorite = \(self.couponToDetail?.favorite)")
+                    print("isFavorite = \(self.couponToDetail?.isFavorite)")
                     print("isUsed = \(self.couponToDetail?.isUsed)")
                     ad.saveContext()
                 }

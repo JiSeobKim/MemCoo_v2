@@ -18,7 +18,7 @@ class CouponCell: UITableViewCell {
     func configureCell(item: Coupon) {
         title.text = item.title
         
-        if item.favorite == true {
+        if item.isFavorite == true {
             favoriteFlagView.isHidden = false
         }
         else {

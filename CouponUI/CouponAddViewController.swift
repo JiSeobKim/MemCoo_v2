@@ -109,7 +109,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
             if couponToEdit == nil {
                 coupon = Coupon(context: context)
                 coupon.isUsed = false
-                coupon.favorite = false
+                coupon.isFavorite = false
             }
             else {
                 coupon = couponToEdit

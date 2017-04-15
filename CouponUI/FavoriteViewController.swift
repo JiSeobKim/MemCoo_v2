@@ -109,7 +109,7 @@ class FavoriteViewController: UITableViewController, NSFetchedResultsControllerD
                     (_) in
                     let item = objs[indexPath.row]
                     item.toMembership?.favorite = false
-                    item.toCoupon?.favorite = false
+                    item.toCoupon?.isFavorite = false
                     context.delete(item)
                     ad.saveContext()
                 }

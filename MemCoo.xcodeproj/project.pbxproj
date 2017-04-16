@@ -120,7 +120,7 @@
 		3E09AEF61E200AB100D4276F /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		3E146F4C1E1B51320091C767 /* ParsingOCR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsingOCR.swift; sourceTree = "<group>"; };
 		3E36B1781DF2133000385315 /* GenerateBarcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenerateBarcode.swift; sourceTree = "<group>"; };
-		3E37D3551DF09E4A0054C4DA /* MemebershipCoupon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemebershipCoupon.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E37D3551DF09E4A0054C4DA /* MemCoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemCoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E37D3581DF09E4A0054C4DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E37D35A1DF09E4A0054C4DA /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		3E37D3641DF09E4A0054C4DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -251,7 +251,7 @@
 		3E37D3561DF09E4A0054C4DA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3E37D3551DF09E4A0054C4DA /* MemebershipCoupon.app */,
+				3E37D3551DF09E4A0054C4DA /* MemCoo.app */,
 				A0BB53511E21D61900AF54C9 /* Widget.appex */,
 			);
 			name = Products;
@@ -398,9 +398,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3E37D3541DF09E4A0054C4DA /* MemebershipCoupon */ = {
+		3E37D3541DF09E4A0054C4DA /* MemCoo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3E37D3691DF09E4A0054C4DA /* Build configuration list for PBXNativeTarget "MemebershipCoupon" */;
+			buildConfigurationList = 3E37D3691DF09E4A0054C4DA /* Build configuration list for PBXNativeTarget "MemCoo" */;
 			buildPhases = (
 				231EE57E76381A7B39B44312 /* [CP] Check Pods Manifest.lock */,
 				3E37D3511DF09E4A0054C4DA /* Sources */,
@@ -415,9 +415,9 @@
 			dependencies = (
 				A0BB535C1E21D61A00AF54C9 /* PBXTargetDependency */,
 			);
-			name = MemebershipCoupon;
+			name = MemCoo;
 			productName = CouponUI;
-			productReference = 3E37D3551DF09E4A0054C4DA /* MemebershipCoupon.app */;
+			productReference = 3E37D3551DF09E4A0054C4DA /* MemCoo.app */;
 			productType = "com.apple.product-type.application";
 		};
 		A0BB53501E21D61900AF54C9 /* Widget */ = {
@@ -470,7 +470,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3E37D3501DF09E490054C4DA /* Build configuration list for PBXProject "MemebershipCoupon" */;
+			buildConfigurationList = 3E37D3501DF09E490054C4DA /* Build configuration list for PBXProject "MemCoo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -483,7 +483,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3E37D3541DF09E4A0054C4DA /* MemebershipCoupon */,
+				3E37D3541DF09E4A0054C4DA /* MemCoo */,
 				A0BB53501E21D61900AF54C9 /* Widget */,
 			);
 		};
@@ -785,7 +785,7 @@
 				CODE_SIGN_ENTITLEMENTS = MemebershipCoupon.entitlements;
 				DEVELOPMENT_TEAM = 689KAW4595;
 				INFOPLIST_FILE = CouponUI/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JMJ.MemCoo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -802,7 +802,7 @@
 				CODE_SIGN_ENTITLEMENTS = MemebershipCoupon.entitlements;
 				DEVELOPMENT_TEAM = 689KAW4595;
 				INFOPLIST_FILE = CouponUI/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JMJ.MemCoo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -843,7 +843,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3E37D3501DF09E490054C4DA /* Build configuration list for PBXProject "MemebershipCoupon" */ = {
+		3E37D3501DF09E490054C4DA /* Build configuration list for PBXProject "MemCoo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3E37D3671DF09E4A0054C4DA /* Debug */,
@@ -852,7 +852,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3E37D3691DF09E4A0054C4DA /* Build configuration list for PBXNativeTarget "MemebershipCoupon" */ = {
+		3E37D3691DF09E4A0054C4DA /* Build configuration list for PBXNativeTarget "MemCoo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3E37D36A1DF09E4A0054C4DA /* Debug */,

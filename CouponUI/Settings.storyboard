@@ -13,7 +13,7 @@
         <!--설정-->
         <scene sceneID="Pq8-yS-N2i">
             <objects>
-                <tableViewController storyboardIdentifier="SettingsMain" id="WCV-oN-cdp" customClass="SettingsTableViewController" customModule="MemebershipCoupon" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SettingsMain" id="WCV-oN-cdp" customClass="SettingsTableViewController" customModule="MemCoo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="iL0-HB-YiP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,7 +21,7 @@
                         <sections>
                             <tableViewSection headerTitle="세부 설정" id="t2A-4p-KAq">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingsCell" rowHeight="47" id="ihd-Cm-oeB" customClass="SettingsTableViewCell" customModule="MemebershipCoupon" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingsCell" rowHeight="47" id="ihd-Cm-oeB" customClass="SettingsTableViewCell" customModule="MemCoo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55" width="320" height="47"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ihd-Cm-oeB" id="mVW-cq-60a">
@@ -49,7 +49,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingsCell" rowHeight="80" id="pxY-lA-FMI" customClass="SettingsTableViewCell" customModule="MemebershipCoupon" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingsCell" rowHeight="80" id="pxY-lA-FMI" customClass="SettingsTableViewCell" customModule="MemCoo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="102" width="320" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pxY-lA-FMI" id="s7K-i3-H4d">
@@ -114,7 +114,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="응원하기" id="vQq-tT-9BP">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingsCell" rowHeight="198" id="w98-sJ-Qrn" customClass="SettingsTableViewCell" customModule="MemebershipCoupon" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingsCell" rowHeight="198" id="w98-sJ-Qrn" customClass="SettingsTableViewCell" customModule="MemCoo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="238" width="320" height="198"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="w98-sJ-Qrn" id="kqH-AA-kjb">
@@ -122,7 +122,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="물 사주기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gHE-Ux-Yp4">
-                                                    <rect key="frame" x="9" y="25" width="78" height="20"/>
+                                                    <rect key="frame" x="8" y="25" width="79" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -143,7 +143,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ScR-kJ-TTf">
-                                                    <rect key="frame" x="274" y="92" width="31" height="30"/>
+                                                    <rect key="frame" x="273" y="92" width="31" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="5.99"/>
                                                     <connections>
@@ -151,7 +151,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t41-dC-72D">
-                                                    <rect key="frame" x="274" y="57" width="31" height="30"/>
+                                                    <rect key="frame" x="273" y="57" width="31" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="3.99"/>
                                                     <connections>
@@ -182,7 +182,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdI-0e-UT9">
-                                                    <rect key="frame" x="274" y="131" width="32" height="30"/>
+                                                    <rect key="frame" x="273" y="131" width="32" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="9.99"/>
                                                     <connections>
@@ -196,7 +196,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="만든이 &amp; 오류 제보" id="Gg2-G2-PH8">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingsCell" rowHeight="84" id="TqG-TZ-MOg" customClass="SettingsTableViewCell" customModule="MemebershipCoupon" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingsCell" rowHeight="84" id="TqG-TZ-MOg" customClass="SettingsTableViewCell" customModule="MemCoo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="492" width="320" height="84"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TqG-TZ-MOg" id="Nuv-1f-p4x">

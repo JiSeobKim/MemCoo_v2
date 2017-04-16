@@ -164,7 +164,7 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = UIScreen.main.bounds.width
         let height = collectionView.frame.height
-        return CGSize(width: (width/3) - 1.3, height: (height/4) - 2.4) // width & height are the same to make a square cell
+        return CGSize(width: (width/3) - 1.3, height: (height/4) - 1.3) // width & height are the same to make a square cell
     }
     
     //셀 생성 정의

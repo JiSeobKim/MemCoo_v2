@@ -22,7 +22,7 @@
                             <tableViewSection headerTitle="세부 설정" id="t2A-4p-KAq">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingsCell" rowHeight="47" id="ihd-Cm-oeB" customClass="SettingsTableViewCell" customModule="MemebershipCoupon" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="320" height="47"/>
+                                        <rect key="frame" x="0.0" y="55" width="320" height="47"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ihd-Cm-oeB" id="mVW-cq-60a">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="47"/>
@@ -50,7 +50,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingsCell" rowHeight="80" id="pxY-lA-FMI" customClass="SettingsTableViewCell" customModule="MemebershipCoupon" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="102.5" width="320" height="80"/>
+                                        <rect key="frame" x="0.0" y="102" width="320" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pxY-lA-FMI" id="s7K-i3-H4d">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
@@ -115,7 +115,7 @@
                             <tableViewSection headerTitle="응원하기" id="vQq-tT-9BP">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingsCell" rowHeight="198" id="w98-sJ-Qrn" customClass="SettingsTableViewCell" customModule="MemebershipCoupon" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="238.5" width="320" height="198"/>
+                                        <rect key="frame" x="0.0" y="238" width="320" height="198"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="w98-sJ-Qrn" id="kqH-AA-kjb">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="198"/>
@@ -197,7 +197,7 @@
                             <tableViewSection headerTitle="만든이 &amp; 오류 제보" id="Gg2-G2-PH8">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingsCell" rowHeight="84" id="TqG-TZ-MOg" customClass="SettingsTableViewCell" customModule="MemebershipCoupon" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="492.5" width="320" height="84"/>
+                                        <rect key="frame" x="0.0" y="492" width="320" height="84"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TqG-TZ-MOg" id="Nuv-1f-p4x">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="84"/>

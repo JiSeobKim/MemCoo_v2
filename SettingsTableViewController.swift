@@ -234,21 +234,28 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
         tableView.endUpdates()
     }
     
+    
+    
     //IAP Part.
-    @IBOutlet weak var outBuyWater: UILabel!
-    @IBOutlet weak var outBuyCoffee: UILabel!
-    @IBOutlet weak var outBuyAlcohol: UILabel!
-    @IBOutlet weak var outBuyFood: UILabel!
-    @IBOutlet weak var outRestore: UILabel!
+    @IBOutlet weak var labelWater: UILabel!
+    @IBOutlet weak var labelCoffee: UILabel!
+    @IBOutlet weak var labelAlcohol: UILabel!
+    @IBOutlet weak var labelFood: UILabel!
+    
+    @IBOutlet weak var btnOutWater: UIButton!
+    @IBOutlet weak var btnOutCoffee: UIButton!
+    @IBOutlet weak var btnOutAlcohol: UIButton!
+    @IBOutlet weak var btnOutFood: UIButton!
+    
+    
     
     //제품 이름
-    let WATER_ID = "com.MemCoo.Water"
+    let WATER_ID = "com.MemCoo.Water2"
     let COFFEE_ID = "com.MemCoo.Coffee"
-    let ALCOHOL_ID = "com.MemCoo.Alcohol"
-    let FOOD_ID = "com.MemCoo.Food"
+    let ALCOHOL_ID = "com.MemCoo.Alcohol2"
+    let FOOD_ID = "com.MemCoo.Food2"
     
     //변수
-    var productID = ""
     var iapProducts = [SKProduct]()
     
     func fetchAvailableProducts() {
@@ -261,6 +268,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
     }
     
     
+    //불러온 것들 표기
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         iapProducts = response.products
         for product in iapProducts {
@@ -268,6 +276,11 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
             print(product.productIdentifier)
             print(product.price)
         }
+        btnOutWater.isEnabled = true
+        btnOutCoffee.isEnabled = true
+        btnOutAlcohol.isEnabled = true
+        btnOutFood.isEnabled = true
+        
     }
     
     func purchaseMyProduct(product: SKProduct) {
@@ -277,7 +290,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
             SKPaymentQueue.default().add(payment)
             
             print("PRODUCT TO PURCHASE : \(product.productIdentifier)")
-            productID = product.productIdentifier
+            
         }
     }
     
@@ -287,34 +300,31 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
             let t : SKPaymentTransaction = transaction
             let prodID = t.payment.productIdentifier as String
             switch prodID {
-            case "WATER_ID" :
-                print("BuyWater")
+            case WATER_ID :
                 productFunction(product: "water")
                 break;
-            case "COFFEE_ID" :
-                print("BuyCoffee")
+                
+            case COFFEE_ID :
                 productFunction(product: "coffee")
                 break;
                 
-            case "ALCOHOL_ID" :
-                print("BuyAlcohol")
+            case ALCOHOL_ID:
                 productFunction(product: "alcohol")
                 break;
                 
-            case "FOOD_ID" :
-                print("BuyFood")
+            case FOOD_ID :
                 productFunction(product: "food")
                 break;
                 
             default:
-                print("IAP not found")
+                
                 break;
                 
             }
         }
     }
-
     
+    //버튼
     @IBAction func btnBuyWater(_ sender: UIButton) {
         for product in iapProducts {
             let prodID = product.productIdentifier
@@ -331,7 +341,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
                 purchaseMyProduct(product: product)
             }
         }
-
+        
         
     }
     @IBAction func btnBuyAlcohol(_ sender: UIButton) {
@@ -341,7 +351,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
                 purchaseMyProduct(product: product)
             }
         }
-
+        
     }
     @IBAction func btnBuyFood(_ sender: UIButton) {
         for product in iapProducts {
@@ -350,36 +360,59 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
                 purchaseMyProduct(product: product)
             }
         }
-
+        
     }
     @IBAction func btnRestore(_ sender: UIButton) {
+        SKPaymentQueue.default().add(self)
+        SKPaymentQueue.default().restoreCompletedTransactions()
         
     }
     
+    
+    //실제 기능
     func productFunction(product:String){
         switch product {
         case "water" :
-            print("Water")
+            createAlert(titleText: "잘 마시겠습니다!", messageText: "꿀꺽꿀꺽")
+            labelWater.text = "꿀꺽꿀꺽"
+            btnOutWater.isEnabled = false
             break;
             
         case "coffee" :
-            print("coffee")
+            createAlert(titleText: "잘 마시겠습니다!", messageText: "아메리카노!")
+            labelCoffee.text = "아메리카노!"
+            btnOutCoffee.isEnabled = false
             break;
-
+            
         case "alcohol" :
-            print("alcohol")
+            createAlert(titleText: "잘 취하겠습니다!", messageText: "크~")
+            labelAlcohol.text = "크~"
+            btnOutAlcohol.isEnabled = false
             break;
-
+            
         case "food" :
-            print("food")
+            createAlert(titleText: "잘 먹겠습니다", messageText: "냠냠")
+            labelFood.text = "냠냠"
+            btnOutFood.isEnabled = false
             break;
             
         default:
             break;
-
+            
         }
     }
     
+    //알림 펑션
+    func createAlert(titleText : String, messageText : String) {
+        let alert = UIAlertController(title: titleText, message: messageText, preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "감사합니다", style: .default, handler: {(action) in alert.dismiss(animated:true, completion: nil) }))
+        self.present(alert, animated: true,completion:  nil)
+    }
+    
+    
+    
+    //실제 구매시 처리과정
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         for transaction:AnyObject in transactions {
             if let trans = transaction as? SKPaymentTransaction {
@@ -428,7 +461,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
                 default :
                     print("Default")
                     break
-
+                    
                     
                     
                 }

@@ -8,8 +8,9 @@
 
 import UIKit
 import CoreData
+import TesseractOCR
 
-class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, NSFetchedResultsControllerDelegate, UIGestureRecognizerDelegate, UICollectionViewDelegateFlowLayout{
+class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, NSFetchedResultsControllerDelegate, UIGestureRecognizerDelegate, UICollectionViewDelegateFlowLayout, G8TesseractDelegate, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
     
     //
@@ -18,6 +19,8 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
     @IBOutlet weak var collectionView: UICollectionView!
     var controller: NSFetchedResultsController<Membership>!
     
+    var originalImage: UIImage!
+    let imagePicker = UIImagePickerController()
 
     
     
@@ -29,6 +32,7 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        imagePicker.delegate = self
         attemptFetch()
         
         //롱프레스
@@ -201,6 +205,69 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
         }
         
         
+    }
+    
+    //추가 버튼
+    
+    
+    @IBAction func btnAdd(_ sender: Any) {
+        let alert = UIAlertController(title: "멤버십 추가", message: "멤버십을 추가할 방식을 선택해주세요.", preferredStyle: .actionSheet)
+        
+        //컬러가 바뀌어서 주석처리했습니다.
+        //        alert.view.tintColor = UIColor.black
+        
+    
+        
+        let ocr = UIAlertAction(title: "바코드 이미지에서 텍스트 추출", style: .default) {
+            (_) in
+            ad.clipboardActionSheet = 2
+            
+            //이미지 선택 뷰.
+            self.imagePicker.sourceType = UIImagePickerControllerSourceType.savedPhotosAlbum    //.photoLibrary
+            //imagePicker.mediaTypes = [kUTTypeImage as String]
+            self.imagePicker.allowsEditing = false
+            self.present(self.imagePicker, animated: true, completion: nil)
+        }
+        
+        let custom = UIAlertAction(title: "사용자 직접 입력", style: .default) {
+            (_) in
+            ad.clipboardActionSheet = 3
+            
+            if let addVC = self.storyboard?.instantiateViewController(withIdentifier: "MembershipAddEditTab") {
+                self.navigationController?.pushViewController(addVC, animated: true)
+            }
+        }
+        
+        let cancel = UIAlertAction(title: "취소", style: .cancel)
+        
+        alert.addAction(ocr)
+        alert.addAction(custom)
+        alert.addAction(cancel)
+        
+        //add 버튼이 눌렸음을 다음 뷰에 전달하기 위해 isAddButton 변수에 true를 저장.
+        ad.isAddButton = true
+        self.present(alert, animated: true)
+
+    }
+    
+    //사진 앱 접근을 위한 메소드.
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            self.originalImage = image
+            picker.dismiss(animated: true, completion: nil)
+            
+            //뷰 전환.
+            if self.originalImage != nil {
+                if let addVC = self.storyboard?.instantiateViewController(withIdentifier: "MembershipAddEditTab") as? AddEditMemebershipVC {
+                    addVC.originalImage = self.originalImage
+                    self.navigationController?.pushViewController(addVC, animated: true)
+                }
+            }
+        }
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
     }
     
     

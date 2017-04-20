@@ -14,7 +14,7 @@
         <!--수정/추가-->
         <scene sceneID="zPP-O2-DnM">
             <objects>
-                <viewController storyboardIdentifier="MembershipAddEditTab" id="V9i-4b-dZ9" customClass="AddEditMemebershipVC" customModule="MemebershipCoupon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MembershipAddEditTab" id="V9i-4b-dZ9" customClass="AddEditMemebershipVC" customModule="MemCoo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="imm-eD-pAr"/>
                         <viewControllerLayoutGuide type="bottom" id="HWN-aU-qOq"/>
@@ -23,7 +23,7 @@
                         <rect key="frame" x="0.0" y="64" width="414" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultMembership" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zUP-7i-rYm" customClass="CircleBoundary" customModule="MemebershipCoupon" customModuleProvider="target">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultMembership" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zUP-7i-rYm" customClass="CircleBoundary" customModule="MemCoo" customModuleProvider="target">
                                 <rect key="frame" x="130" y="99" width="155" height="155"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="zUP-7i-rYm" secondAttribute="height" multiplier="1:1" id="1Oo-ka-oUI"/>
@@ -149,7 +149,7 @@
         <!--브랜드-->
         <scene sceneID="Sgo-T9-DTR">
             <objects>
-                <viewController id="FvN-Ct-G1V" customClass="ShowMembershipVC" customModule="MemebershipCoupon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="FvN-Ct-G1V" customClass="ShowMembershipVC" customModule="MemCoo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Glq-JL-GPa"/>
                         <viewControllerLayoutGuide type="bottom" id="lqi-T5-9Kb"/>
@@ -158,7 +158,7 @@
                         <rect key="frame" x="0.0" y="64" width="414" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cafe1" translatesAutoresizingMaskIntoConstraints="NO" id="qv3-Se-9Tt" customClass="CircleBoundary" customModule="MemebershipCoupon" customModuleProvider="target">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cafe1" translatesAutoresizingMaskIntoConstraints="NO" id="qv3-Se-9Tt" customClass="CircleBoundary" customModule="MemCoo" customModuleProvider="target">
                                 <rect key="frame" x="130" y="99" width="155" height="155"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="155" id="FCc-Ft-ewY"/>
@@ -224,7 +224,7 @@
         <!--멤버십-->
         <scene sceneID="1uA-hS-bIz">
             <objects>
-                <viewController storyboardIdentifier="MembershipMain" id="CvN-aA-7jd" customClass="MembershipCollectionVC" customModule="MemebershipCoupon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MembershipMain" id="CvN-aA-7jd" customClass="MembershipCollectionVC" customModule="MemCoo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FVO-O2-s2R"/>
                         <viewControllerLayoutGuide type="bottom" id="ar0-00-g7R"/>
@@ -243,7 +243,7 @@
                                     <inset key="sectionInset" minX="0.80000000000000004" minY="1.5" maxX="0.80000000000000004" maxY="0.80000000000000004"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.78000000000000003" contentMode="center" reuseIdentifier="viewcell" id="Pb7-vL-ZG4" customClass="MembershipCollectionVCell" customModule="MemebershipCoupon" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.78000000000000003" contentMode="center" reuseIdentifier="viewcell" id="Pb7-vL-ZG4" customClass="MembershipCollectionVCell" customModule="MemCoo" customModuleProvider="target">
                                         <rect key="frame" x="1" y="2" width="118" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -267,7 +267,7 @@
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="logoCornerDesign" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Rd-8R-8AF" customClass="FavoriteFlagForCollectionCell" customModule="MemebershipCoupon" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Rd-8R-8AF" customClass="FavoriteFlagForCollectionCell" customModule="MemCoo" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="45" id="Mov-hT-Xfz"/>
@@ -309,7 +309,7 @@
                     <navigationItem key="navigationItem" title="멤버십" id="KC7-Sa-qRv">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Bzb-Di-sM6">
                             <connections>
-                                <segue destination="V9i-4b-dZ9" kind="push" id="axa-gl-xNh"/>
+                                <action selector="btnAdd:" destination="CvN-aA-7jd" id="DX8-gS-7Pe"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -339,7 +339,4 @@
         <image name="cafe1" width="221" height="219"/>
         <image name="defaultMembership" width="227" height="201"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="axa-gl-xNh"/>
-    </inferredMetricsTieBreakers>
 </document>

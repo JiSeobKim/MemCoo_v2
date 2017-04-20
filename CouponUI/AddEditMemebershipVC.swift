@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import TesseractOCR
 
 
-class AddEditMemebershipVC: UIViewController, UITextFieldDelegate {
+class AddEditMemebershipVC: UIViewController, UITextFieldDelegate, G8TesseractDelegate, UIImagePickerControllerDelegate {
     
     
     
@@ -21,7 +22,8 @@ class AddEditMemebershipVC: UIViewController, UITextFieldDelegate {
     var membershipToEdit: Membership?
     var membership: Membership!
     var bright : CGFloat?
-    
+    //ocr용
+    var originalImage: UIImage?
     
 
     @IBOutlet weak var LabelBrand: UILabel!
@@ -79,7 +81,21 @@ class AddEditMemebershipVC: UIViewController, UITextFieldDelegate {
 
         }
         
-        
+        if ad.clipboardActionSheet == 2 {
+            let alert = UIAlertController(title: "텍스트 추출", message: "쿠폰에서 텍스트를 추출하는 중입니다...", preferredStyle: .alert)
+            self.present(alert, animated: true, completion: {
+                if let tesseract = G8Tesseract(language: "eng+kor") {
+                    tesseract.delegate = self as! G8TesseractDelegate
+                    tesseract.image = self.originalImage?.g8_grayScale() //.g8_blackAndWhite()
+                    tesseract.recognize()
+                    
+                    self.paramBarcode.text = originalParsing(a:tesseract.recognizedText)
+                }
+                
+                alert.dismiss(animated: true, completion: nil)
+            })
+
+        }
         
         //다른 곳 터치시 키보드 제거 및 프레임 원위치
         self.hideKeyboardWhenTappedAround()
@@ -259,6 +275,31 @@ class AddEditMemebershipVC: UIViewController, UITextFieldDelegate {
 
     
 }
+
+//파싱
+func originalParsing(a :String) -> String {
+    
+    var returnValue = ""
+    let Arr = a.components(separatedBy:"\n")
+    
+    for item in Arr {
+        let components = item.components(separatedBy: CharacterSet.decimalDigits.inverted).joined(separator:"")
+        
+        if let intVal = String(components) {
+            
+            if intVal.characters.count > 11 {
+                returnValue = intVal
+                
+            }
+            
+            
+        }
+    }
+    
+    return returnValue
+    
+}
+
 
 //extension 부분
 

@@ -265,6 +265,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
                     
                 } else if intVal.characters.count > 11 {
                     returnValue = returnValue + addHyphen(data: intVal) + "<<코드일 확률이 높습니다.\n"
+                    self.barcode.text = intVal
                     
                 }
                 

@@ -15,7 +15,7 @@
         <!--쿠폰-->
         <scene sceneID="PqZ-Yd-FoC">
             <objects>
-                <viewController storyboardIdentifier="CouponMain" id="QWw-7U-fLY" customClass="CouponViewController" customModule="MemebershipCoupon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CouponMain" id="QWw-7U-fLY" customClass="CouponViewController" customModule="MemCoo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="m9T-Ve-Om4"/>
                         <viewControllerLayoutGuide type="bottom" id="hxh-pk-sS5"/>
@@ -30,14 +30,14 @@
                                 <color key="separatorColor" red="0.96470588239999999" green="0.40000000000000002" blue="0.13725490200000001" alpha="0.78000000000000003" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CouponCell" rowHeight="100" id="eXy-61-Um0" customClass="CouponCell" customModule="MemebershipCoupon" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="56" width="414" height="100"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CouponCell" rowHeight="100" id="eXy-61-Um0" customClass="CouponCell" customModule="MemCoo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="55" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eXy-61-Um0" id="gQF-BB-83x">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="evJ-ID-VQp" customClass="FavoriteFlagForTableCell" customModule="MemebershipCoupon" customModuleProvider="target">
+                                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="evJ-ID-VQp" customClass="FavoriteFlagForTableCell" customModule="MemCoo" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -162,7 +162,7 @@
         <!--Detail-->
         <scene sceneID="Zdb-Y6-hFt">
             <objects>
-                <viewController storyboardIdentifier="SimpleViewController" id="haz-r9-OTI" customClass="CouponDetailViewController" customModule="MemebershipCoupon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SimpleViewController" id="haz-r9-OTI" customClass="CouponDetailViewController" customModule="MemCoo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="s20-fR-HIi"/>
                         <viewControllerLayoutGuide type="bottom" id="zJR-dQ-UdP"/>
@@ -174,7 +174,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k9o-kr-3oz">
                                 <rect key="frame" x="0.0" y="64" width="414" height="300"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aX1-88-mjM" customClass="CircleBoundary" customModule="MemebershipCoupon" customModuleProvider="target">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aX1-88-mjM" customClass="CircleBoundary" customModule="MemCoo" customModuleProvider="target">
                                         <rect key="frame" x="107" y="50" width="200" height="200"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -302,7 +302,7 @@
         <!--Coupon Raw Data View Controller-->
         <scene sceneID="bgj-zx-BDW">
             <objects>
-                <viewController storyboardIdentifier="RawDataVC" id="hnY-G2-gCQ" customClass="CouponRawDataViewController" customModule="MemebershipCoupon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RawDataVC" id="hnY-G2-gCQ" customClass="CouponRawDataViewController" customModule="MemCoo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ofr-sZ-RLd"/>
                         <viewControllerLayoutGuide type="bottom" id="P8q-C6-QTn"/>
@@ -345,7 +345,7 @@
         <!--Add / Edit-->
         <scene sceneID="gy8-aX-ZXc">
             <objects>
-                <viewController storyboardIdentifier="AddEdit" id="Unb-jy-f92" customClass="CouponAddViewController" customModule="MemebershipCoupon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddEdit" id="Unb-jy-f92" customClass="CouponAddViewController" customModule="MemCoo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="boq-eC-4EU"/>
                         <viewControllerLayoutGuide type="bottom" id="rzB-Wt-MhA"/>
@@ -444,7 +444,7 @@
                                     <action selector="expiredDateFieldPressed:" destination="Unb-jy-f92" eventType="touchUpOutside" id="btj-mh-nYx"/>
                                 </connections>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CouponTabbarIcon Copy" translatesAutoresizingMaskIntoConstraints="NO" id="Oma-dl-Rli" customClass="CircleBoundary" customModule="MemebershipCoupon" customModuleProvider="target">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CouponTabbarIcon Copy" translatesAutoresizingMaskIntoConstraints="NO" id="Oma-dl-Rli" customClass="CircleBoundary" customModule="MemCoo" customModuleProvider="target">
                                 <rect key="frame" x="7" y="92" width="115" height="115"/>
                                 <color key="backgroundColor" white="1" alpha="0.74831442636986301" colorSpace="calibratedWhite"/>
                                 <constraints>

@@ -219,7 +219,8 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
                         tesseract.delegate = self
                         tesseract.image = self.originalImage?.g8_grayScale() //.g8_blackAndWhite()
                         tesseract.recognize()
-                        self.originalText.text = tesseract.recognizedText
+                        
+                        self.originalText.text = self.originalParsing(a:tesseract.recognizedText)
                     }
                     
                     alert.dismiss(animated: true, completion: nil)
@@ -241,6 +242,38 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         }
         
         logoButton.setImage(MemcooView.imageOfLogoSelectButton(), for: .normal)
+    }
+    
+    //원본 파싱
+    func originalParsing(a :String) -> String {
+        
+        var returnValue = ""
+        let Arr = a.components(separatedBy:"\n")
+        
+        for item in Arr {
+            let components = item.components(separatedBy: CharacterSet.decimalDigits.inverted).joined(separator:"")
+            
+            if let intVal = String(components) {
+                
+                if intVal.characters.count > 4 && intVal.characters.count < 12 {
+                    let first3 = intVal.substring(to : intVal.index(intVal.startIndex, offsetBy:3))
+                    if first3 == "201" || first3 == "202" {
+                        returnValue = returnValue + "\(intVal) <<기간일 확률이 높습니다. \n"
+                    } else {
+                        returnValue = returnValue + "\(intVal) \n"
+                    }
+                    
+                } else if intVal.characters.count > 11 {
+                    returnValue = returnValue + addHyphen(data: intVal) + "<<코드일 확률이 높습니다.\n"
+                    
+                }
+                
+                
+            }
+        }
+        
+        return returnValue
+        
     }
     
     //파싱 퍼센트 표시.

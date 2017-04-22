@@ -47,7 +47,12 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
         
         
         ///// IAP Part.
+        btnOutWater.isEnabled = false
+        btnOutCoffee.isEnabled = false
+        btnOutAlcohol.isEnabled = false
+        btnOutFood.isEnabled = false
         fetchAvailableProducts()
+        
         
         
     }
@@ -251,7 +256,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
     
     //제품 이름
     let WATER_ID = "com.MemCoo.Water2"
-    let COFFEE_ID = "com.MemCoo.Coffee"
+    let COFFEE_ID = "com.MemCoo.Coffee2"
     let ALCOHOL_ID = "com.MemCoo.Alcohol2"
     let FOOD_ID = "com.MemCoo.Food2"
     

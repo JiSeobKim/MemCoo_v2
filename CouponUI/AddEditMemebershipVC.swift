@@ -25,6 +25,7 @@ class AddEditMemebershipVC: UIViewController, UITextFieldDelegate, G8TesseractDe
     //ocr용
     var originalImage: UIImage?
     
+    
 
     @IBOutlet weak var LabelBrand: UILabel!
     @IBOutlet weak var LabelBarcode: UILabel!
@@ -78,18 +79,18 @@ class AddEditMemebershipVC: UIViewController, UITextFieldDelegate, G8TesseractDe
             self.navigationItem.title = "멤버십 추가"
             self.deleteOutlet.isEnabled = false
             self.deleteOutlet.tintColor = UIColor(netHex: 0xF66623, alpha: 0)
-
+            
         }
         
         if ad.clipboardActionSheet == 2 {
             let alert = UIAlertController(title: "텍스트 추출", message: "쿠폰에서 텍스트를 추출하는 중입니다...", preferredStyle: .alert)
             self.present(alert, animated: true, completion: {
                 if let tesseract = G8Tesseract(language: "eng+kor") {
-                    tesseract.delegate = self as! G8TesseractDelegate
+                    tesseract.delegate = self as G8TesseractDelegate
                     tesseract.image = self.originalImage?.g8_grayScale() //.g8_blackAndWhite()
                     tesseract.recognize()
                     
-                    self.paramBarcode.text = originalParsing(a:tesseract.recognizedText)
+                    self.paramBarcode.text =  originalParsing(a:tesseract.recognizedText)
                 }
                 
                 alert.dismiss(animated: true, completion: nil)
@@ -126,6 +127,7 @@ class AddEditMemebershipVC: UIViewController, UITextFieldDelegate, G8TesseractDe
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
+        
         self.view.endEditing(true)
         UIView.animate(withDuration: 0.15, animations: {
             self.view.frame.origin.y += 200
@@ -147,6 +149,7 @@ class AddEditMemebershipVC: UIViewController, UITextFieldDelegate, G8TesseractDe
         
         var inputCheck1 = false
         var inputCheck2 = false
+        
         //입력 확인 변수
         
         //예외 처리

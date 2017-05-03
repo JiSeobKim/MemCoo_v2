@@ -34,7 +34,7 @@
     
     var storedOffsets = [Int: CGFloat]()
     
-    var logo : Array = ["통신사","카페","화장품","포인트","라이프스타일","마트","심볼"]
+    var logo : Array = ["통신사","카페","화장품","포인트","라이프스타일","마트 & 편의점","심볼"]
     var telecommunicationLogo : [UIImage] = []
     var cafeLogo : [UIImage] = []
     var lifeLogo : [UIImage] = []

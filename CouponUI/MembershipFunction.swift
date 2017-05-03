@@ -150,9 +150,9 @@ extension UIViewController {
                 
                 
                 //툴바에 쓸 아이템 추가
-             
-                items.append(contentsOf: [previousButton, nextButton])
-                
+                if textFields.count != 1{
+                    items.append(contentsOf: [previousButton, nextButton])
+                }
             }
             
                         //Today 버튼
@@ -196,7 +196,7 @@ extension UIViewController {
             //툴바 사이즈 및 컬러
             let toolbar: UIToolbar = UIToolbar()
             toolbar.sizeToFit()
-            toolbar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+            toolbar.tintColor = UIColor(red: 246/255, green: 102/255, blue: 35/255, alpha: 1)
             toolbar.barStyle = UIBarStyle.default
             
             //툴바에 넣을 아이템 배열

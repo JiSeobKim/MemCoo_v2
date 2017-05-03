@@ -36,7 +36,8 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
         let datePickerView: UIPickerView = UIPickerView()
         datePickerView.delegate = self
         notiDate.inputView = datePickerView
-//                datePickerView.backgroundColor = UIColor(white: 0.5, alpha: 0.8)
+        
+        addInputAccessoryForTextFields(textFields: [notiDate], dismissable: true, previousNextable: true)//                datePickerView.backgroundColor = UIColor(white: 0.5, alpha: 0.8)
 //                datePickerView.setValue(UIColor.white, forKey: "textColor")
         
         // Uncomment the following line to preserve selection between presentations
@@ -118,7 +119,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
     }
     
     @IBOutlet weak var notiDate: UITextField!
-    let pickDay = ["1", "2", "3", "4", "5", "6", "7"]
+    let pickDay = ["0","1", "2", "3", "4", "5", "6", "7"]
     
     @IBAction func notiSender(_ sender: Any) {
         UNUserNotificationCenter.current().removeAllDeliveredNotifications()
@@ -127,11 +128,15 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
         var titleArray: [String?] = []
         var expireDateArray: [NSDate?] = []
         
+        if notiDate.text == "" {
+            notiDate.text = "0"
+        }
+        
         if let objs = controller.fetchedObjects, objs.count > 0 {   //objs: Coupon 타입 배열.
             for (i, item) in objs.enumerated() {
                 titleArray.append(item.title)
                 expireDateArray.append(item.expireDate)
-                print("objs[\(i)] = \(titleArray[i]), \(expireDateArray[i])")
+                print("objs[\(i)] = \(String(describing: titleArray[i])), \(String(describing: expireDateArray[i]))")
             }
         }
         
@@ -142,25 +147,25 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
         for (i, date1) in expireDateArray.enumerated() {
             //let date1 = expireDateArray[i]!
             let date2: TimeInterval = TimeInterval(timeInterval)
-            beforeDate.append(NSDate(timeInterval: date2, since: date1 as! Date))
+            beforeDate.append(NSDate(timeInterval: date2, since: date1! as Date))
             print("\(beforeDate[i])")
-        
+            
             //로컬 알림.
             let content = UNMutableNotificationContent()
             content.body = "\"\(titleArray[i]!)\" 쿠폰의 사용 기간이 \(notiDate.text!)일 남았습니다."
             content.sound = UNNotificationSound.default()
             content.badge = 0
-        
+            
             //테스트 코드.
-//          var dateMatching = DateComponents()
-//          dateMatching.year = 2017
-//          dateMatching.month = 4
-//          dateMatching.day = 1
-//          dateMatching.hour = 4
-//          dateMatching.minute = 54
-//          print("\(dateMatching)")
-//          let trigger = UNCalendarNotificationTrigger(dateMatching: dateMatching, repeats: false)
-        
+            //          var dateMatching = DateComponents()
+            //          dateMatching.year = 2017
+            //          dateMatching.month = 4
+            //          dateMatching.day = 1
+            //          dateMatching.hour = 4
+            //          dateMatching.minute = 54
+            //          print("\(dateMatching)")
+            //          let trigger = UNCalendarNotificationTrigger(dateMatching: dateMatching, repeats: false)
+            
             //실제 코드.
             let cal = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)
             let dateMatching = cal?.components([.year, .month, .day, .hour, .minute], from: beforeDate[i] as Date)

@@ -91,18 +91,30 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         var coupon: Coupon!
         let imageContext = Image(context: context)
         
+        func borderRed(name : UITextField) {
+            let color = UIColor.red
+            name.layer.borderWidth = 1
+            name.layer.cornerRadius = CGFloat(7)
+            name.layer.borderColor = color.cgColor
+            name.placeholder = "입력해 주세요"
+
+        }
+        
         //입력되지 않은 부분이 있을 때에는 알림창, 모두 입력되었을 때에는 저장.
         if product.text == "" {
-            product.attributedPlaceholder = NSAttributedString(string: "입력해 주세요.", attributes: [NSForegroundColorAttributeName: UIColor.purple])
-        }
+            borderRed(name: product)
+//            product.attributedPlaceholder = NSAttributedString(string: "입력해 주세요.", attributes: [NSForegroundColorAttributeName: UIColor.purple])
+        } else { product.layer.borderWidth = 0 }
         
         if expiredDate.text == "" {
-            expiredDate.attributedPlaceholder = NSAttributedString(string: "입력해 주세요.", attributes: [NSForegroundColorAttributeName: UIColor.purple])
-        }
+            borderRed(name: expiredDate)
+//            expiredDate.attributedPlaceholder = NSAttributedString(string: "입력해 주세요.", attributes: [NSForegroundColorAttributeName: UIColor.purple])
+        } else { expiredDate.layer.borderWidth = 0 }
         
         if barcode.text == "" {
-            barcode.attributedPlaceholder = NSAttributedString(string: "입력해 주세요.", attributes: [NSForegroundColorAttributeName: UIColor.purple])
-        }
+            borderRed(name: barcode)
+//            barcode.attributedPlaceholder = NSAttributedString(string: "입력해 주세요.", attributes: [NSForegroundColorAttributeName: UIColor.purple])
+        } else { barcode.layer.borderWidth = 0 }
         
         if product.text != "" && expiredDate.text != "" && barcode.text != "" {
             //itemToEdit이 nil일 경우 새로운 객체를 전달해서 저장 아닐경우 그 itemToEdit으로 저장
@@ -309,6 +321,18 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
     
     // 복분으로 인한 문자 입력 방지 및 여백 삭제
     @IBAction func codeTextField(_ sender: Any) {
+        if barcode.text != "" {
+            if Double(barcode.text!)! > 10000000000000000000 {
+                barcode.text = ""
+                let color = UIColor.red
+                barcode.layer.borderWidth = 1
+                barcode.layer.cornerRadius = CGFloat(7)
+                barcode.layer.borderColor = color.cgColor
+                barcode.placeholder = "길이가 너무 깁니다."
+                
+            } else {barcode.layer.borderWidth = 0}
+        }
+
         barcode.text = numParsing(barcode.text!)
     }
     

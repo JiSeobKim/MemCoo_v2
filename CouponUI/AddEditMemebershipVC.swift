@@ -64,6 +64,17 @@ class AddEditMemebershipVC: UIViewController, UITextFieldDelegate, G8TesseractDe
     
     // 복분으로 인한 문자 입력 방지 및 여백 삭제
     @IBAction func barcodeTextField(_ sender: Any) {
+        if paramBarcode.text != "" {
+            if Double(paramBarcode.text!)! > 10000000000000000000{
+                paramBarcode.text = ""
+                let color = UIColor.red
+                paramBarcode.layer.borderWidth = 1
+                paramBarcode.layer.cornerRadius = CGFloat(7)
+                paramBarcode.layer.borderColor = color.cgColor
+                paramBarcode.placeholder = "길이가 너무 깁니다."
+
+            } else {paramBarcode.layer.borderWidth = 0}
+        }
         paramBarcode.text = numParsing(paramBarcode.text!)
     }
     

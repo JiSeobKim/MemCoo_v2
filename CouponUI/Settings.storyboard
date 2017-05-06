@@ -182,7 +182,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybv-9X-76S">
-                                                    <rect key="frame" x="105" y="164" width="111" height="30"/>
+                                                    <rect key="frame" x="105" y="165" width="111" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="복구하기"/>
                                                     <connections>
@@ -237,6 +237,7 @@ JMJ 스터디
                         <outlet property="btnOutAlcohol" destination="ScR-kJ-TTf" id="snv-xQ-kUq"/>
                         <outlet property="btnOutCoffee" destination="t41-dC-72D" id="ljy-RV-dKu"/>
                         <outlet property="btnOutFood" destination="cdI-0e-UT9" id="Hyw-1v-aHm"/>
+                        <outlet property="btnOutRestore" destination="ybv-9X-76S" id="8QG-RV-NDL"/>
                         <outlet property="btnOutWater" destination="1sQ-d5-0Sm" id="HNw-WL-jfF"/>
                         <outlet property="labelAlcohol" destination="D6l-Xb-7Qe" id="Iiy-NC-bNS"/>
                         <outlet property="labelCoffee" destination="OFa-mF-RSU" id="Tij-lI-8px"/>

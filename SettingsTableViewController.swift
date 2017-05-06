@@ -52,6 +52,8 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
         btnOutCoffee.isEnabled = false
         btnOutAlcohol.isEnabled = false
         btnOutFood.isEnabled = false
+        btnOutRestore.isEnabled = false
+        
         fetchAvailableProducts()
         
         
@@ -251,11 +253,13 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
     @IBOutlet weak var labelCoffee: UILabel!
     @IBOutlet weak var labelAlcohol: UILabel!
     @IBOutlet weak var labelFood: UILabel!
+
     
     @IBOutlet weak var btnOutWater: UIButton!
     @IBOutlet weak var btnOutCoffee: UIButton!
     @IBOutlet weak var btnOutAlcohol: UIButton!
     @IBOutlet weak var btnOutFood: UIButton!
+    @IBOutlet weak var btnOutRestore: UIButton!
     
     
     
@@ -290,6 +294,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
         btnOutCoffee.isEnabled = true
         btnOutAlcohol.isEnabled = true
         btnOutFood.isEnabled = true
+        btnOutRestore.isEnabled = true
         
     }
     
@@ -384,26 +389,22 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
         switch product {
         case "water" :
             createAlert(titleText: "잘 마시겠습니다!", messageText: "꿀꺽꿀꺽")
-            labelWater.text = "꿀꺽꿀꺽"
-            btnOutWater.isEnabled = false
+            labelWater.text = "(구매 완료)꿀꺽꿀꺽"
             break;
             
         case "coffee" :
             createAlert(titleText: "잘 마시겠습니다!", messageText: "아메리카노!")
-            labelCoffee.text = "아메리카노!"
-            btnOutCoffee.isEnabled = false
+            labelCoffee.text = "(구매 완료)아메리카노!"
             break;
             
         case "alcohol" :
             createAlert(titleText: "잘 취하겠습니다!", messageText: "크~")
-            labelAlcohol.text = "크~"
-            btnOutAlcohol.isEnabled = false
+            labelAlcohol.text = "(구매 완료)크~"
             break;
             
         case "food" :
             createAlert(titleText: "잘 먹겠습니다", messageText: "냠냠")
-            labelFood.text = "냠냠"
-            btnOutFood.isEnabled = false
+            labelFood.text = "(구매 완료)냠냠"
             break;
             
         default:

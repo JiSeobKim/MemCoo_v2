@@ -389,22 +389,18 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
         switch product {
         case "water" :
             createAlert(titleText: "잘 마시겠습니다!", messageText: "꿀꺽꿀꺽")
-            labelWater.text = "(구매 완료)꿀꺽꿀꺽"
             break;
             
         case "coffee" :
             createAlert(titleText: "잘 마시겠습니다!", messageText: "아메리카노!")
-            labelCoffee.text = "(구매 완료)아메리카노!"
             break;
             
         case "alcohol" :
             createAlert(titleText: "잘 취하겠습니다!", messageText: "크~")
-            labelAlcohol.text = "(구매 완료)크~"
             break;
             
         case "food" :
             createAlert(titleText: "잘 먹겠습니다", messageText: "냠냠")
-            labelFood.text = "(구매 완료)냠냠"
             break;
             
         default:

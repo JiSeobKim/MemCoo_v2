@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var brightSwitch : Bool?
     var brightEditToggle : Bool?
     var heightForKeyboard : CGFloat?
-    
+    var brightOffData = false
     
 
     

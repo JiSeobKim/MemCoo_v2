@@ -20,18 +20,14 @@ class ShowMembershipVC: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var ShowLogo: UIImageView!
     @IBOutlet weak var barcodeLabel: UILabel!
     @IBOutlet weak var ShowBarcode: UIImageView!
-    var brightOffData = false
+    
     
     
     
     //
     //viewLoad
     //
-    override func viewWillDisappear(_ animated: Bool) {
-        ad.brightSwitch = false
-        UIScreen.main.brightness = ad.bright!
-        //화면이 사라질때 밝기 수정 off
-    }
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -57,10 +53,8 @@ class ShowMembershipVC: UIViewController, UIGestureRecognizerDelegate {
             }
         
         //밝기
-        let userData2 = UserDefaults.standard
-        if (userData2.object(forKey: "BrightOff") as? Bool)! {
-            self.brightOffData = true
-        }
+        AutoBrightCheck()
+        
         
         //하단에 그림자 추가
 //        ShowLogo.layer.borderColor = UIColor.gray.cgColor
@@ -73,28 +67,20 @@ class ShowMembershipVC: UIViewController, UIGestureRecognizerDelegate {
         
         
     }
+    override func viewWillDisappear(_ animated: Bool) {
+        BrightReturn()
+        //화면이 사라질때 밝기 수정 off
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         if cellData != nil {
             loadMembershipData()
         }
         //현재 페이지에선 밝기 수정 on
-        
-        
-        
-
-        
-        if brightOffData == false {
-            ad.brightSwitch = true
-            UIScreen.main.brightness = 1.0
-        }
-        
-    
+        BrightApply()
         if let memebership = cellData{
             self.navigationItem.title = memebership.toBrand?.title
         }
-        
-        
         
     }
     

@@ -70,6 +70,7 @@
 		A038310F1DFC1BE5002C0314 /* Favorite.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A038310E1DFC1BE5002C0314 /* Favorite.storyboard */; };
 		A03831151DFC1CB8002C0314 /* Coupon.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A03831141DFC1CB8002C0314 /* Coupon.storyboard */; };
 		A03831191DFC1CED002C0314 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A03831181DFC1CED002C0314 /* Settings.storyboard */; };
+		A03DAC1C1ECE91D7008312E9 /* Bright.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03DAC1B1ECE91D7008312E9 /* Bright.swift */; };
 		A04DFF331E6A98FA0079DA24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A04DFF321E6A98FA0079DA24 /* Assets.xcassets */; };
 		A04DFF341E6A98FA0079DA24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A04DFF321E6A98FA0079DA24 /* Assets.xcassets */; };
 		A057B3601E4C9D980007E388 /* Membership.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A057B35F1E4C9D980007E388 /* Membership.storyboard */; };
@@ -166,6 +167,7 @@
 		A038310E1DFC1BE5002C0314 /* Favorite.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Favorite.storyboard; sourceTree = "<group>"; };
 		A03831141DFC1CB8002C0314 /* Coupon.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Coupon.storyboard; sourceTree = "<group>"; };
 		A03831181DFC1CED002C0314 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		A03DAC1B1ECE91D7008312E9 /* Bright.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bright.swift; sourceTree = "<group>"; };
 		A04DFF321E6A98FA0079DA24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A057B35F1E4C9D980007E388 /* Membership.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Membership.storyboard; sourceTree = "<group>"; };
 		A057B3611E4C9DA40007E388 /* AddEditMemebershipVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEditMemebershipVC.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 		3E37D3571DF09E4A0054C4DA /* MembershipCoupon */ = {
 			isa = PBXGroup;
 			children = (
+				A03DAC1A1ECE91BC008312E9 /* Function */,
 				42CE8E1C1E4B5F1900603AA2 /* View */,
 				42976C1B1DF6C4C400ADB0D7 /* DatabaseModel */,
 				42976BA31DF27DFC00ADB0D7 /* Supporting Files */,
@@ -299,7 +302,6 @@
 				A057B3641E4C9DA40007E388 /* logoTableCell.swift */,
 				A057B3651E4C9DA40007E388 /* ShowMembershipVC.swift */,
 				A057B3631E4C9DA40007E388 /* logoSelect.swift */,
-				A057B3661E4C9DA40007E388 /* MembershipFunction.swift */,
 				A057B3671E4C9DA40007E388 /* MembershipCollectionVCell.swift */,
 				A057B3681E4C9DA40007E388 /* MembershipCollectionVC.swift */,
 			);
@@ -358,6 +360,15 @@
 				427152C61E76E3D60009E3A5 /* FavoriteFlag.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		A03DAC1A1ECE91BC008312E9 /* Function */ = {
+			isa = PBXGroup;
+			children = (
+				A057B3661E4C9DA40007E388 /* MembershipFunction.swift */,
+				A03DAC1B1ECE91D7008312E9 /* Bright.swift */,
+			);
+			name = Function;
 			sourceTree = "<group>";
 		};
 		A0BB53541E21D61A00AF54C9 /* Widget */ = {
@@ -573,6 +584,7 @@
 			files = (
 				427152C31E76A6B90009E3A5 /* CircleBoundary.swift in Sources */,
 				4261B4BA1E4A1B41000A6F25 /* Membership+CoreDataProperties.swift in Sources */,
+				A03DAC1C1ECE91D7008312E9 /* Bright.swift in Sources */,
 				3E5E9D9F1E57674500C577A1 /* CouponRawDataViewController.swift in Sources */,
 				4261B4C11E4A1B41000A6F25 /* Coupon+CoreDataClass.swift in Sources */,
 				4261B4C21E4A1B41000A6F25 /* Coupon+CoreDataProperties.swift in Sources */,

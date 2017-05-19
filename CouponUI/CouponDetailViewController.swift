@@ -78,8 +78,7 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
     }
 
     override func viewWillDisappear(_ animated: Bool) {
-        ad.brightSwitch = false
-        UIScreen.main.brightness = ad.bright!
+        BrightReturn()
         //화면이 사라질때 밝기 수정 off
         
         //노티피케이션.
@@ -108,6 +107,9 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
         finishButtonOutlet.layer.borderWidth = 1
         finishButtonOutlet.layer.borderColor = UIColor(red: 222/255.0, green: 222/255.0, blue: 222/255.0, alpha: 1.0).cgColor
         finishButtonOutlet.layer.cornerRadius = 10
+        
+        //최대밝기 적용 확인
+        AutoBrightCheck()
     }
     
     //밝기 제스쳐
@@ -194,13 +196,7 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
         }
 
         //자동 밝기 최대
-        let userData = UserDefaults.standard
-        let brightOnOffData = userData.object(forKey: "Bright") as? Bool
-        
-        if brightOnOffData == true {
-            UIScreen.main.brightness = 1.0
-            ad.brightSwitch = true
-        }
+        BrightApply()
         
         //노티피케이션.
         NotificationCenter.default.addObserver(self, selector: #selector(self.catchIt), name: NSNotification.Name(rawValue: "myNotif"), object: nil)

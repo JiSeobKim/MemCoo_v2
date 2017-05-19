@@ -296,9 +296,9 @@
 			children = (
 				A057B3611E4C9DA40007E388 /* AddEditMemebershipVC.swift */,
 				A057B3621E4C9DA40007E388 /* logoCollectionCell.swift */,
-				A057B3631E4C9DA40007E388 /* logoSelect.swift */,
 				A057B3641E4C9DA40007E388 /* logoTableCell.swift */,
 				A057B3651E4C9DA40007E388 /* ShowMembershipVC.swift */,
+				A057B3631E4C9DA40007E388 /* logoSelect.swift */,
 				A057B3661E4C9DA40007E388 /* MembershipFunction.swift */,
 				A057B3671E4C9DA40007E388 /* MembershipCollectionVCell.swift */,
 				A057B3681E4C9DA40007E388 /* MembershipCollectionVC.swift */,
@@ -462,6 +462,7 @@
 					};
 					A0BB53501E21D61900AF54C9 = {
 						DevelopmentTeam = 689KAW4595;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -814,12 +815,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Widget/Widget.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 689KAW4595;
 				INFOPLIST_FILE = Widget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JMJ.MemCoo.Widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
@@ -829,12 +833,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Widget/Widget.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 689KAW4595;
 				INFOPLIST_FILE = Widget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JMJ.MemCoo.Widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};

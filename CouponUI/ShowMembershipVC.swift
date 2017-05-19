@@ -20,7 +20,7 @@ class ShowMembershipVC: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var ShowLogo: UIImageView!
     @IBOutlet weak var barcodeLabel: UILabel!
     @IBOutlet weak var ShowBarcode: UIImageView!
-    
+    var brightOffData = false
     
     
     
@@ -56,6 +56,12 @@ class ShowMembershipVC: UIViewController, UIGestureRecognizerDelegate {
             self.navigationItem.title = memebership.toBrand?.title
             }
         
+        //밝기
+        let userData2 = UserDefaults.standard
+        if (userData2.object(forKey: "BrightOff") as? Bool)! {
+            self.brightOffData = true
+        }
+        
         //하단에 그림자 추가
 //        ShowLogo.layer.borderColor = UIColor.gray.cgColor
 //        ShowLogo.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -74,10 +80,11 @@ class ShowMembershipVC: UIViewController, UIGestureRecognizerDelegate {
         }
         //현재 페이지에선 밝기 수정 on
         
-        let userData = UserDefaults.standard
-        let brightOnOffData = userData.object(forKey: "Bright") as? Bool
+        
+        
 
-        if brightOnOffData == true {
+        
+        if brightOffData == false {
             ad.brightSwitch = true
             UIScreen.main.brightness = 1.0
         }

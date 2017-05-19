@@ -228,7 +228,7 @@ class AddEditMemebershipVC: UIViewController, UITextFieldDelegate, G8TesseractDe
 
     }
 
-    //휴지통버튼을 눌렀을시 데이터베이스에서 삭제
+    
    
     
 
@@ -262,28 +262,6 @@ class AddEditMemebershipVC: UIViewController, UITextFieldDelegate, G8TesseractDe
     @IBAction func paramBarcodeButton(_ sender: UITextField) {
         realTimeBarcode.image = generateBarcodeFromString(string: paramBarcode.text!)
     }
-    
-    
-    
-//텍스트 필드 입력 관련
-    
-
-
- 
-
-//    @IBAction func brandField(_ sender: Any) {
-//        // 프레임 이동
-//        ad.heightForKeyboard = 2
-//        self.moveFrame()
-//
-//    }
-//    
-//
-//    @IBAction func barcodeField(_ sender: Any) {
-//        //프레임 이동
-//        ad.heightForKeyboard = 1.5
-//        self.moveFrame()
-//    }
     
 
     

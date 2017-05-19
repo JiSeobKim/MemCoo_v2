@@ -78,12 +78,12 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
 
     override func viewWillAppear(_ animated: Bool) {
         let userData = UserDefaults.standard
-        let brightOnOffData = userData.object(forKey: "Bright") as? Bool
+        let brightOnOffData = userData.object(forKey: "BrightOff") as? Bool
         if brightOnOffData != nil {
             if brightOnOffData == true {
-                brightOutlet.setOn(true, animated: false)
-            } else {
                 brightOutlet.setOn(false, animated: false)
+            } else {
+                brightOutlet.setOn(true, animated: false)
             }
         }
     }
@@ -97,15 +97,16 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
     }
 
     //자동 밝기
+    let brightdata = UserDefaults.standard
     @IBOutlet weak var brightOutlet: UISwitch!
     @IBAction func brightSwitch(_ sender: UISwitch) {
-        let brightdata = UserDefaults.standard
+        
         if brightOutlet.isOn {
-            brightdata.set(true, forKey: "Bright")
-            print("saveTrue")
+            brightdata.set(false, forKey: "BrightOff")
+            
         } else {
-            brightdata.set(false, forKey: "Bright")
-            print("saveFalse")
+            brightdata.set(true, forKey: "BrightOff")
+            
         }
     }
     
@@ -416,7 +417,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
         alert.addAction(UIAlertAction(title: "감사합니다", style: .default, handler: {(action) in alert.dismiss(animated:true, completion: nil) }))
         self.present(alert, animated: true,completion:  nil)
     }
-    
+
     
     
     //실제 구매시 처리과정

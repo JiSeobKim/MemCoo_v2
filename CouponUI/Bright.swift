@@ -11,10 +11,12 @@ import UIKit
 
 func AutoBrightCheck() {
     let userData2 = UserDefaults.standard
-    if (userData2.object(forKey: "BrightOff") as? Bool)! {
-        ad.brightOffData = true
-    } else {
-        ad.brightOffData = false
+    if (userData2.object(forKey: "BrightOff") as? Bool) != nil  {
+        if (userData2.object(forKey: "BrightOff") as? Bool)! {
+            ad.brightOffData = true
+        } else {
+            ad.brightOffData = false
+        }
     }
 }
 

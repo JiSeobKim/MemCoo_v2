@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1DC963561844DCE3204318BC /* Pods_MemCoo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FEF8FDD58BE6AB58317A85E /* Pods_MemCoo.framework */; };
 		3E09AEF51E2009DC00D4276F /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E09AEF41E2009DC00D4276F /* SettingsTableViewCell.swift */; };
 		3E09AEF71E200AB200D4276F /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E09AEF61E200AB100D4276F /* SettingsTableViewController.swift */; };
 		3E146F4D1E1B51320091C767 /* ParsingOCR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E146F4C1E1B51320091C767 /* ParsingOCR.swift */; };
@@ -66,7 +67,6 @@
 		42A657631E1F383B009BB240 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A657621E1F383B009BB240 /* FavoriteCell.swift */; };
 		42C910401E5D73E500A04984 /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4251CD971E288D6900671A3F /* MaterialView.swift */; };
 		42FAB62B1E04E18E00671E32 /* ParsingBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FAB62A1E04E18E00671E32 /* ParsingBrain.swift */; };
-		887E07EA7384948C6E757A75 /* Pods_MemebershipCoupon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF6C7AE377C9282F67BD1A11 /* Pods_MemebershipCoupon.framework */; };
 		A038310F1DFC1BE5002C0314 /* Favorite.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A038310E1DFC1BE5002C0314 /* Favorite.storyboard */; };
 		A03831151DFC1CB8002C0314 /* Coupon.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A03831141DFC1CB8002C0314 /* Coupon.storyboard */; };
 		A03831191DFC1CED002C0314 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A03831181DFC1CED002C0314 /* Settings.storyboard */; };
@@ -129,6 +129,7 @@
 		3E5E9D9E1E57674500C577A1 /* CouponRawDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponRawDataViewController.swift; sourceTree = "<group>"; };
 		3E8B136C7DF5B1B29AF5A828 /* Pods-MemebershipCoupon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemebershipCoupon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MemebershipCoupon/Pods-MemebershipCoupon.debug.xcconfig"; sourceTree = "<group>"; };
 		3ECCE3A21E041CF400AE739B /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
+		3FEF8FDD58BE6AB58317A85E /* Pods_MemCoo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemCoo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		423503E41E7571DE00D4E5C9 /* TabBarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		423503E61E7575B600D4E5C9 /* NavigationSettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationSettingView.swift; sourceTree = "<group>"; };
 		4251CD971E288D6900671A3F /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
@@ -164,6 +165,7 @@
 		42A657621E1F383B009BB240 /* FavoriteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		42E93B0C1E5040D2002B9D7A /* Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Widget.entitlements; sourceTree = "<group>"; };
 		42FAB62A1E04E18E00671E32 /* ParsingBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsingBrain.swift; sourceTree = "<group>"; };
+		94161D82880F1DDECECAD5F5 /* Pods-MemCoo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemCoo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MemCoo/Pods-MemCoo.release.xcconfig"; sourceTree = "<group>"; };
 		A038310E1DFC1BE5002C0314 /* Favorite.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Favorite.storyboard; sourceTree = "<group>"; };
 		A03831141DFC1CB8002C0314 /* Coupon.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Coupon.storyboard; sourceTree = "<group>"; };
 		A03831181DFC1CED002C0314 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 		A0BB535A1E21D61A00AF54C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0FB04801E0BEE0D007FEA21 /* SelectLogo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SelectLogo.storyboard; sourceTree = "<group>"; };
 		AAAC10A62EA3E05F85630D72 /* Pods-MemebershipCoupon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemebershipCoupon.release.xcconfig"; path = "Pods/Target Support Files/Pods-MemebershipCoupon/Pods-MemebershipCoupon.release.xcconfig"; sourceTree = "<group>"; };
+		C28FF5AE9A546B4F22D42E81 /* Pods-MemCoo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemCoo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MemCoo/Pods-MemCoo.debug.xcconfig"; sourceTree = "<group>"; };
 		FF6C7AE377C9282F67BD1A11 /* Pods_MemebershipCoupon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemebershipCoupon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -198,8 +201,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				887E07EA7384948C6E757A75 /* Pods_MemebershipCoupon.framework in Frameworks */,
 				A0A1CB3F1E97068B000D0737 /* StoreKit.framework in Frameworks */,
+				1DC963561844DCE3204318BC /* Pods_MemCoo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +396,7 @@
 				A0A1CB3E1E97068B000D0737 /* StoreKit.framework */,
 				FF6C7AE377C9282F67BD1A11 /* Pods_MemebershipCoupon.framework */,
 				A0BB53521E21D61900AF54C9 /* NotificationCenter.framework */,
+				3FEF8FDD58BE6AB58317A85E /* Pods_MemCoo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -402,6 +406,8 @@
 			children = (
 				3E8B136C7DF5B1B29AF5A828 /* Pods-MemebershipCoupon.debug.xcconfig */,
 				AAAC10A62EA3E05F85630D72 /* Pods-MemebershipCoupon.release.xcconfig */,
+				C28FF5AE9A546B4F22D42E81 /* Pods-MemCoo.debug.xcconfig */,
+				94161D82880F1DDECECAD5F5 /* Pods-MemCoo.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -418,7 +424,6 @@
 				3E37D3521DF09E4A0054C4DA /* Frameworks */,
 				3E37D3531DF09E4A0054C4DA /* Resources */,
 				13D46D102D47D7DD2AF0A3EB /* [CP] Embed Pods Frameworks */,
-				A3E449E21CEDBA0FA9097746 /* [CP] Copy Pods Resources */,
 				A0BB53611E21D61A00AF54C9 /* Embed App Extensions */,
 			);
 			buildRules = (
@@ -536,13 +541,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MemCoo/Pods-MemCoo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/TesseractOCRiOS/TesseractOCR.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TesseractOCR.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MemebershipCoupon/Pods-MemebershipCoupon-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MemCoo/Pods-MemCoo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		231EE57E76381A7B39B44312 /* [CP] Check Pods Manifest.lock */ = {
@@ -551,28 +559,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MemCoo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		A3E449E21CEDBA0FA9097746 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MemebershipCoupon/Pods-MemebershipCoupon-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -791,7 +787,7 @@
 		};
 		3E37D36A1DF09E4A0054C4DA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3E8B136C7DF5B1B29AF5A828 /* Pods-MemebershipCoupon.debug.xcconfig */;
+			baseConfigurationReference = C28FF5AE9A546B4F22D42E81 /* Pods-MemCoo.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -808,7 +804,7 @@
 		};
 		3E37D36B1DF09E4A0054C4DA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AAAC10A62EA3E05F85630D72 /* Pods-MemebershipCoupon.release.xcconfig */;
+			baseConfigurationReference = 94161D82880F1DDECECAD5F5 /* Pods-MemCoo.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;

@@ -36,7 +36,6 @@
         <!--Navigation Controller-->
         <scene sceneID="eA4-MF-RaY">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xco-Dj-0F6" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZkG-7U-JPn" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="leN-bb-QVD"/>
                     <toolbarItems/>
@@ -61,13 +60,13 @@
                         <segue destination="nhg-Jg-xHi" kind="relationship" relationship="rootViewController" id="T5I-Qj-qDN"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xco-Dj-0F6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1540" y="-734"/>
         </scene>
         <!--멤버십 카드-->
         <scene sceneID="ReK-QO-g05">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="e1a-9r-Ygk" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KZY-G8-lUU" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="멤버십 카드" image="membershipTabbar" selectedImage="membershipTabbar" id="pep-7c-ymX"/>
                     <toolbarItems/>
@@ -89,6 +88,7 @@
                         <segue destination="5ie-Yq-3h8" kind="relationship" relationship="rootViewController" id="XTY-uT-3AV"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e1a-9r-Ygk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1540" y="143"/>
         </scene>

@@ -134,7 +134,7 @@ class CouponDetailViewController: UIViewController, UINavigationControllerDelega
     //아이템 데이타를 로드하는 펑션
     func loadCouponData() {
         if let coupon = couponToDetail {
-            barcode.text = addHyphen(data: coupon.barcode!)
+            barcode.text = coupon.barcode?.addHyphen()
             barcodeImg.image = generateBarcodeFromString(string: coupon.barcode)
             expireDate.text = displayTheDate(theDate: coupon.expireDate as! Date)
             logoImage.image = coupon.toImage?.image as! UIImage?

@@ -267,7 +267,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
             
             if let intVal = String(components) {
                 
-                if intVal.characters.count > 4 && intVal.characters.count < 12 {
+                if intVal.count > 4 && intVal.count < 12 {
                     let first3 = intVal.substring(to : intVal.index(intVal.startIndex, offsetBy:3))
                     if first3 == "201" || first3 == "202" {
                         returnValue = returnValue + "\(intVal) <<기간일 확률이 높습니다. \n"
@@ -275,8 +275,8 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
                         returnValue = returnValue + "\(intVal) \n"
                     }
                     
-                } else if intVal.characters.count > 11 {
-                    returnValue = returnValue + addHyphen(data: intVal) + "<<코드일 확률이 높습니다.\n"
+                } else if intVal.count > 11 {
+                    returnValue = returnValue + intVal.addHyphen() + "<<코드일 확률이 높습니다.\n"
                     self.barcode.text = intVal
                     
                 }

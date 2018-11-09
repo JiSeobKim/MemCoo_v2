@@ -22,7 +22,8 @@ class CustomNavi: UINavigationBar {
 //        super.init(coder: aDecoder)
 //    }
     
-    
+    let searchController = UISearchController(searchResultsController: nil)
+    let refreshControl = UIRefreshControl()
 
     
 //     Only override draw() if you perform custom drawing.

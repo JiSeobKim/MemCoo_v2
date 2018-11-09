@@ -68,6 +68,7 @@
 		42C910401E5D73E500A04984 /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4251CD971E288D6900671A3F /* MaterialView.swift */; };
 		42FAB62B1E04E18E00671E32 /* ParsingBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FAB62A1E04E18E00671E32 /* ParsingBrain.swift */; };
 		6BEE59472195501B000E1E35 /* CustomNavi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEE59462195501B000E1E35 /* CustomNavi.swift */; };
+		6BEE594921956363000E1E35 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEE594821956363000E1E35 /* Extensions.swift */; };
 		A038310F1DFC1BE5002C0314 /* Favorite.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A038310E1DFC1BE5002C0314 /* Favorite.storyboard */; };
 		A03831151DFC1CB8002C0314 /* Coupon.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A03831141DFC1CB8002C0314 /* Coupon.storyboard */; };
 		A03831191DFC1CED002C0314 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A03831181DFC1CED002C0314 /* Settings.storyboard */; };
@@ -166,6 +167,7 @@
 		42E93B0C1E5040D2002B9D7A /* Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Widget.entitlements; sourceTree = "<group>"; };
 		42FAB62A1E04E18E00671E32 /* ParsingBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsingBrain.swift; sourceTree = "<group>"; };
 		6BEE59462195501B000E1E35 /* CustomNavi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavi.swift; sourceTree = "<group>"; };
+		6BEE594821956363000E1E35 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		94161D82880F1DDECECAD5F5 /* Pods-MemCoo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemCoo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MemCoo/Pods-MemCoo.release.xcconfig"; sourceTree = "<group>"; };
 		A038310E1DFC1BE5002C0314 /* Favorite.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Favorite.storyboard; sourceTree = "<group>"; };
 		A03831141DFC1CB8002C0314 /* Coupon.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Coupon.storyboard; sourceTree = "<group>"; };
@@ -359,6 +361,7 @@
 				42992DDE1E75325700EB73AA /* MemcooView.swift */,
 				6BEE59462195501B000E1E35 /* CustomNavi.swift */,
 				423503E61E7575B600D4E5C9 /* NavigationSettingView.swift */,
+				6BEE594821956363000E1E35 /* Extensions.swift */,
 				427152C21E76A6B90009E3A5 /* CircleBoundary.swift */,
 				427152C61E76E3D60009E3A5 /* FavoriteFlag.swift */,
 			);
@@ -615,6 +618,7 @@
 				3E37D35B1DF09E4A0054C4DA /* FavoriteViewController.swift in Sources */,
 				427D91801E50BE6100B26230 /* PersistentContainer.swift in Sources */,
 				A057B36B1E4C9DA40007E388 /* logoSelect.swift in Sources */,
+				6BEE594921956363000E1E35 /* Extensions.swift in Sources */,
 				4261B4C41E4A1B41000A6F25 /* Favorite+CoreDataProperties.swift in Sources */,
 				4261B4BF1E4A1B41000A6F25 /* Category+CoreDataClass.swift in Sources */,
 				42976BDE1DF6B38100ADB0D7 /* CouponAddViewController.swift in Sources */,

@@ -45,6 +45,20 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
         self.collectionView?.addGestureRecognizer(lpgr)
       
         
+        
+        if #available(iOS 11.0, *) {
+//            self.navigationController?.navigationItem.searchController = searchController
+            searchController.hidesNavigationBarDuringPresentation = false
+            searchController.searchBar
+            .searchBarStyle
+             = .minimal
+            
+            self.navigationItem.searchController = searchController
+        }
+        
+        
+        
+        
         self.parent?.view.backgroundColor = .white
       
         
@@ -163,30 +177,10 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
     
     //셀 재사용을 위한 정의
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "viewcell", for: indexPath) as! MembershipCollectionVCell
         // 설정할 cell 선택(빨간 "viewcell"은 어트리뷰트인스펙터의 identifier)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "viewcell", for: indexPath) as! MembershipCollectionVCell
         
-        
-                
         configureCell(cell: cell, indexPath: indexPath)
-        //로고의 이미지/ 텍스트 값 대입
-        cell.layer.borderWidth = 1
-        cell.layer.borderColor = UIColor(netHex: 0xF66623,alpha: 0.3).cgColor
-        cell.layer.cornerRadius = 15
-        cell.contentView.layer.cornerRadius = 15
-        cell.contentView.layer.masksToBounds = true
-        
-        
-        
-        cell.layer.shadowColor = UIColor.black.cgColor
-        cell.layer.shadowOffset = CGSize(width: 0, height: 2.0)
-        cell.layer.shadowRadius = 2.0
-        cell.layer.shadowOpacity = 0.5
-        cell.layer.masksToBounds = false
-//        cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
-        
-        
-        
         
         return cell
         
@@ -200,6 +194,11 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
     
     //셀 생성 정의
     func configureCell(cell: MembershipCollectionVCell, indexPath: IndexPath) {
+
+        
+        let innerView = cell.contentView.viewWithTag(1)
+        innerView?.layer.applyCellBolderLayout()
+        cell.layer.applyCellShadowLayout()
         
         //update cell
         

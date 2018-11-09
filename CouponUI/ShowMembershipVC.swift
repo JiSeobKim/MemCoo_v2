@@ -113,7 +113,7 @@ class ShowMembershipVC: UIViewController, UIGestureRecognizerDelegate {
         if let membership = cellData {
             ShowLogo.image = membership.toImage?.image as? UIImage
             ShowBarcode.image = generateBarcodeFromString(string: membership.barcode)
-            barcodeLabel.text = addHyphen(data: membership.barcode!)
+            barcodeLabel.text = membership.barcode?.addHyphen()
             
             
           

@@ -26,9 +26,6 @@ extension UINavigationBar {
                 
                 self.isTranslucent = false
                 self.isOpaque = true
-    
-                
-                
                 
             }
             

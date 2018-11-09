@@ -67,6 +67,7 @@
 		42A657631E1F383B009BB240 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A657621E1F383B009BB240 /* FavoriteCell.swift */; };
 		42C910401E5D73E500A04984 /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4251CD971E288D6900671A3F /* MaterialView.swift */; };
 		42FAB62B1E04E18E00671E32 /* ParsingBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FAB62A1E04E18E00671E32 /* ParsingBrain.swift */; };
+		6BEE59472195501B000E1E35 /* CustomNavi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEE59462195501B000E1E35 /* CustomNavi.swift */; };
 		A038310F1DFC1BE5002C0314 /* Favorite.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A038310E1DFC1BE5002C0314 /* Favorite.storyboard */; };
 		A03831151DFC1CB8002C0314 /* Coupon.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A03831141DFC1CB8002C0314 /* Coupon.storyboard */; };
 		A03831191DFC1CED002C0314 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A03831181DFC1CED002C0314 /* Settings.storyboard */; };
@@ -164,6 +165,7 @@
 		42A657621E1F383B009BB240 /* FavoriteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		42E93B0C1E5040D2002B9D7A /* Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Widget.entitlements; sourceTree = "<group>"; };
 		42FAB62A1E04E18E00671E32 /* ParsingBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsingBrain.swift; sourceTree = "<group>"; };
+		6BEE59462195501B000E1E35 /* CustomNavi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavi.swift; sourceTree = "<group>"; };
 		94161D82880F1DDECECAD5F5 /* Pods-MemCoo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemCoo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MemCoo/Pods-MemCoo.release.xcconfig"; sourceTree = "<group>"; };
 		A038310E1DFC1BE5002C0314 /* Favorite.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Favorite.storyboard; sourceTree = "<group>"; };
 		A03831141DFC1CB8002C0314 /* Coupon.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Coupon.storyboard; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 				A099881F1E4B5C12008EBDE6 /* LogoCorner.swift */,
 				4251CD971E288D6900671A3F /* MaterialView.swift */,
 				42992DDE1E75325700EB73AA /* MemcooView.swift */,
+				6BEE59462195501B000E1E35 /* CustomNavi.swift */,
 				423503E61E7575B600D4E5C9 /* NavigationSettingView.swift */,
 				427152C21E76A6B90009E3A5 /* CircleBoundary.swift */,
 				427152C61E76E3D60009E3A5 /* FavoriteFlag.swift */,
@@ -606,6 +609,7 @@
 				423503E51E7571DE00D4E5C9 /* TabBarVC.swift in Sources */,
 				42976C0A1DF6C23800ADB0D7 /* Model.xcdatamodeld in Sources */,
 				4261B4BE1E4A1B41000A6F25 /* Image+CoreDataProperties.swift in Sources */,
+				6BEE59472195501B000E1E35 /* CustomNavi.swift in Sources */,
 				42976BE01DF6B39200ADB0D7 /* DBUtil.swift in Sources */,
 				3E09AEF51E2009DC00D4276F /* SettingsTableViewCell.swift in Sources */,
 				3E37D35B1DF09E4A0054C4DA /* FavoriteViewController.swift in Sources */,

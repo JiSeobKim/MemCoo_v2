@@ -23,6 +23,8 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
     let imagePicker = UIImagePickerController()
 
     
+    let searchController = UISearchController(searchResultsController: nil)
+    let refreshControl = UIRefreshControl()
     
     //
     //viewLoad
@@ -42,23 +44,34 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
         lpgr.delaysTouchesBegan = true
         self.collectionView?.addGestureRecognizer(lpgr)
       
+        
+        self.parent?.view.backgroundColor = .white
       
         
     }
     
-
-    
-    
-
-    
     
     
     override func viewWillAppear(_ animated: Bool) {
-        // 뷰2->뷰1는 viewDidLoad로 못함
-        
         
         attemptFetch()
         self.collectionView.reloadData()
+        
+        
+        
+        
+        
+        
+        self.tabBarController?.tabBar.layer.masksToBounds = false
+        self.tabBarController?.tabBar.layer.shadowColor = UIColor.lightGray.cgColor
+        self.tabBarController?.tabBar.layer.shadowOpacity = 1
+        self.tabBarController?.tabBar.layer.shadowOffset = CGSize(width: 0, height: 2)
+        self.tabBarController?.tabBar.layer.shadowRadius = 2
+        self.tabBarController?.tabBar.layer.borderColor = UIColor.gray.withAlphaComponent(0.5).cgColor
+        self.tabBarController?.tabBar.layer.borderWidth = 0.5
+        self.tabBarController?.tabBar.clipsToBounds = true
+        
+        
         
         
     }
@@ -155,10 +168,24 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
         
         
                 
-        configureCell(cell: cell, indexPath: indexPath as NSIndexPath)
+        configureCell(cell: cell, indexPath: indexPath)
         //로고의 이미지/ 텍스트 값 대입
         cell.layer.borderWidth = 1
         cell.layer.borderColor = UIColor(netHex: 0xF66623,alpha: 0.3).cgColor
+        cell.layer.cornerRadius = 15
+        cell.contentView.layer.cornerRadius = 15
+        cell.contentView.layer.masksToBounds = true
+        
+        
+        
+        cell.layer.shadowColor = UIColor.black.cgColor
+        cell.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+        cell.layer.shadowRadius = 2.0
+        cell.layer.shadowOpacity = 0.5
+        cell.layer.masksToBounds = false
+//        cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
+        
+        
         
         
         return cell
@@ -167,16 +194,16 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = UIScreen.main.bounds.width
-        let height = collectionView.frame.height
-        return CGSize(width: (width/3) - 1.3, height: (height/4) - 1.3) // width & height are the same to make a square cell
+        let calcurate = (width - 80) / 3
+        return CGSize(width: calcurate, height: calcurate) // width & height are the same to make a square cell
     }
     
     //셀 생성 정의
-    func configureCell(cell: MembershipCollectionVCell, indexPath: NSIndexPath) {
+    func configureCell(cell: MembershipCollectionVCell, indexPath: IndexPath) {
         
         //update cell
         
-        let item = controller.object(at: indexPath as IndexPath)
+        let item = controller.object(at: indexPath)
         cell.configureCell(item: item)
     }
     

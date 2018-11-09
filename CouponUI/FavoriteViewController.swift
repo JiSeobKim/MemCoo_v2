@@ -22,7 +22,7 @@ class FavoriteViewController: UITableViewController, NSFetchedResultsControllerD
 //        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "NanumSquare", size: 24)!]
         
 
-        
+        self.parent?.view.backgroundColor = .white
     }
     
     override func viewWillAppear(_ animated: Bool) {

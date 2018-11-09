@@ -20,6 +20,8 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
         super.viewDidLoad()
         attemptFetch()
         
+        self.parent?.view.backgroundColor = .white
+        
         //퍼미션 요청(iOS 10 이상).
 //        let center = UNUserNotificationCenter.current()
 //        center.requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in})

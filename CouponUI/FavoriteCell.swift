@@ -20,6 +20,7 @@ class FavoriteCell: UITableViewCell {
     
     func configureCell(item: Favorite) {
         
+        logo.layer.applyLogoShadowLayout()
         
 
             if item.isCoupon == true {

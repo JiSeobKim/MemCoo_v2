@@ -28,4 +28,13 @@ extension CALayer {
         self.masksToBounds = true
         
     }
+    
+    func applyLogoShadowLayout() {
+        self.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5).cgColor
+        self.shadowOffset = CGSize(width : 0,height: 1.0)
+        self.shadowOpacity = 0.5
+        self.shadowRadius = 0.0
+        self.masksToBounds = false
+        self.shadowRadius = self.bounds.height * 0.04
+    }
 }

@@ -44,7 +44,7 @@ class MembershipCollectionVCell : UICollectionViewCell {
         viewLogoShow.layer.cornerRadius = (viewLogoShow.frame.width/2)
         viewLogoShow.layer.masksToBounds = true
 
-        
+        viewLogoShow.layer.applyLogoShadowLayout()
         
         
         if item.favorite == true {

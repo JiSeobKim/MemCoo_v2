@@ -118,6 +118,10 @@ class AddEditMemebershipVC: UIViewController, UITextFieldDelegate, G8TesseractDe
         
 
         choiceButton.setImage(MemcooView.imageOfLogoSelectButton(), for: .normal)
+        
+        
+        
+        paramImage.layer.applyLogoShadowLayout()
      
 
     }

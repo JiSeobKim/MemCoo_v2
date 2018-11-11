@@ -64,7 +64,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1uo-cs-pUi">
-                                                            <rect key="frame" x="99" y="34" width="267" height="24"/>
+                                                            <rect key="frame" x="99" y="34.666666666666664" width="267" height="24"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                             <color key="textColor" red="0.32941176470588235" green="0.32941176470588235" blue="0.32941176470588235" alpha="0.78000000000000003" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -142,7 +142,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="즐겨찾기" id="67l-fp-m2C">
-                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="edit" id="l2e-5v-5W4">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="edit" id="l2e-5v-5W4">
                             <color key="tintColor" red="0.96470588235294119" green="0.40000000000000002" blue="0.13725490196078433" alpha="0.78000000000000003" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="startEditing:" destination="N2a-fE-9r6" id="bD1-zp-VDZ"/>

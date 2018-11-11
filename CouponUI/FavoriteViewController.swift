@@ -17,7 +17,7 @@ class FavoriteViewController: UITableViewController, NSFetchedResultsControllerD
     override func viewDidLoad() {
         super.viewDidLoad()
 //        setNavigationBarColor()
-       self.navigationItem.leftBarButtonItem = self.editButtonItem
+       self.navigationItem.rightBarButtonItem = self.editButtonItem
         //네비 폰트
 //        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "NanumSquare", size: 24)!]
         
@@ -262,7 +262,7 @@ class FavoriteViewController: UITableViewController, NSFetchedResultsControllerD
     }
     
     func setNavigationBarColor()  {
-        self.navigationItem.leftBarButtonItem = self.editButtonItem
+//        self.navigationItem.leftBarButtonItem = self.editButtonItem
 //        self.navigationController?.navigationBar.tintColor = UIColor.black
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.isOpaque = true

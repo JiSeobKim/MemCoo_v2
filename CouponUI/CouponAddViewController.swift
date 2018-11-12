@@ -128,7 +128,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
             }
         
             //logo 담기!
-            if let logoImg = logo.image {
+            if let logoImg = logo.image?.circleMask {
                 imageContext.image = logoImg
                 coupon.toImage = imageContext
             }

@@ -77,21 +77,21 @@ extension UIViewController {
         view.addGestureRecognizer(tap)
      
     }
-    func dismissKeyboard() {
+    @objc func dismissKeyboard() {
         view.endEditing(true)
     }
     func moveFrame(){
-        NotificationCenter.default.addObserver(self, selector: #selector(UIViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(UIViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(UIViewController.keyboardWillHide), name: Notification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(UIViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     //프레임 위로이동
-    func keyboardWillShow(notification: Notification) {
+    @objc func keyboardWillShow(notification: Notification) {
         
      
         if ad.heightForKeyboard != nil {
             
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             
             if self.view.frame.origin.y == 64 {
                 self.view.frame.origin.y -= keyboardSize.height / ad.heightForKeyboard!
@@ -102,7 +102,7 @@ extension UIViewController {
         }
     }
     //프레임 원위치
-    func keyboardWillHide(notification: Notification) {
+    @objc func keyboardWillHide(notification: Notification) {
         self.view.frame = CGRect(x: 0, y: 64, width: self.view.frame.width, height: self.view.frame.height)
         ad.heightForKeyboard = 2
     }
@@ -183,7 +183,7 @@ extension UIViewController {
         
         
     }
-    func datePickerTodayButton(_ a : UIBarButtonItem) {
+    @objc func datePickerTodayButton(_ a : UIBarButtonItem) {
         let vc = self as? CouponAddViewController
         let todaysDate = Date()
         let dateFormatter = DateFormatter()
@@ -235,7 +235,7 @@ extension UIImage {
     var circleMask: UIImage {
         let square = size.width < size.height ? CGSize(width: size.width, height: size.width) : CGSize(width: size.height, height: size.height)
         let imageView = UIImageView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: square))
-        imageView.contentMode = UIViewContentMode.scaleAspectFill
+        imageView.contentMode = UIView.ContentMode.scaleAspectFill
         imageView.image = self
         imageView.layer.cornerRadius = square.width/2
         imageView.layer.borderColor = UIColor(netHex: 0xF66623, alpha: 0.78).cgColor

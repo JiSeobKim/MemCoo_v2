@@ -129,8 +129,8 @@ class AddEditMemebershipVC: UIViewController, UITextFieldDelegate, G8TesseractDe
     
     
     override func viewDidDisappear(_ animated: Bool) {
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.removeObserver(self, name: Notification.Name.UIKeyboardDidHide, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardDidHideNotification, object: nil)
     }
     
     //텍스트 필드 관련
@@ -280,13 +280,8 @@ func originalParsing(a :String) -> String {
     for item in Arr {
         let components = item.components(separatedBy: CharacterSet.decimalDigits.inverted).joined(separator:"")
         
-        if let intVal = String(components) {
-            
-            if intVal.characters.count > 11 {
-                returnValue = intVal
-                
-            }
-            
+        if components.count > 11 {
+            returnValue = components
             
         }
     }

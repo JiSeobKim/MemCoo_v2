@@ -91,7 +91,7 @@ class FavoriteViewController: UITableViewController, NSFetchedResultsControllerD
     }
     
     //tableview editing style
-    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         if tableView.isEditing {
             return .delete
         }
@@ -100,8 +100,8 @@ class FavoriteViewController: UITableViewController, NSFetchedResultsControllerD
     }
     
     //editing commit action
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == UITableViewCellEditingStyle.delete {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
             
             if var objs = favoriteController.fetchedObjects, objs.count > 0{
                 let alert = UIAlertController(title: "즐겨찾기 삭제", message: "멤버십카드, 쿠폰 데이터는 삭제되지 않습니다.", preferredStyle: .alert)

@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //CouponViewController의 add 버튼과 CouponDetailViewController의 edit 버튼 중 눌린 버튼을 CouponAddViewController에 전달하기 위한 변수.
     var isAddButton: Bool?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         // 네비게이션 경계 제거
 //        UINavigationBar.appearance().shadowImage = UIImage()
@@ -41,11 +41,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.shared.registerForRemoteNotifications()
         
         let prefs: UserDefaults = UserDefaults.standard
-        if let remoteNotification = launchOptions?[UIApplicationLaunchOptionsKey.remoteNotification] as? NSDictionary {
+        if let remoteNotification = launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] as? NSDictionary {
             prefs.set(remoteNotification as! [AnyHashable: Any], forKey: "startUpNotif")
             prefs.synchronize()
         }
-        else if launchOptions?[UIApplicationLaunchOptionsKey.localNotification] != nil {
+        else if launchOptions?[UIApplication.LaunchOptionsKey.localNotification] != nil {
             prefs.set("SOMESTRING", forKey: "startUpNotif")
             prefs.synchronize()
         }

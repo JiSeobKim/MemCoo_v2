@@ -26,7 +26,7 @@ class FavoriteCell: UITableViewCell {
             if item.isCoupon == true {
                 titleLbl.text = item.toCoupon?.title
                 let barcodeNo = String(item.toCoupon?.barcode ?? "")
-                barcodeNumber.text = barcodeNo?.addHyphen()
+                barcodeNumber.text = barcodeNo.addHyphen()
                 barcodeImg.image = generateBarcodeFromString(string: barcodeNo)
                 logo.image = item.toCoupon?.toImage?.image as! UIImage?
             } else if item.isMembership == true {

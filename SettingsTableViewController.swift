@@ -158,7 +158,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDataSource
             //로컬 알림.
             let content = UNMutableNotificationContent()
             content.body = "\"\(titleArray[i]!)\" 쿠폰의 사용 기간이 \(notiDate.text!)일 남았습니다."
-            content.sound = UNNotificationSound.default()
+            content.sound = UNNotificationSound.default
             content.badge = 0
             
             //테스트 코드.

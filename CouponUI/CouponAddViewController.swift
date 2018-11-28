@@ -63,7 +63,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         datePicker.setValue(UIColor.white, forKey: "textColor")
         datePicker.datePickerMode = .date
         sender.inputView = datePicker
-        datePicker.addTarget(self, action: #selector(CouponAddViewController.datePickerValueChanged), for: UIControlEvents.valueChanged)
+        datePicker.addTarget(self, action: #selector(CouponAddViewController.datePickerValueChanged), for: UIControl.Event.valueChanged)
     }
     
     @IBAction func expiredDateFieldEnd(_ sender: UITextField) {
@@ -78,7 +78,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
     }
     
     //타겟시 데이트피커의 값을 텍스트 필드에 넣어주기 위한 펑션
-    func datePickerValueChanged(sender: UIDatePicker) {
+    @objc func datePickerValueChanged(sender: UIDatePicker) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         expiredDate.text = dateFormatter.string(from: sender.date)
@@ -250,7 +250,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         }
         
         if let topItem = self.navigationController?.navigationBar.topItem {
-            topItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
+            topItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItem.Style.plain, target: nil, action: nil)
         }
         
         logoButton.setImage(MemcooView.imageOfLogoSelectButton(), for: .normal)
@@ -264,25 +264,22 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
         
         for item in Arr {
             let components = item.components(separatedBy: CharacterSet.decimalDigits.inverted).joined(separator:"")
-            
-            if let intVal = String(components) {
-                
-                if intVal.count > 4 && intVal.count < 12 {
-                    let first3 = intVal.substring(to : intVal.index(intVal.startIndex, offsetBy:3))
-                    if first3 == "201" || first3 == "202" {
-                        returnValue = returnValue + "\(intVal) <<기간일 확률이 높습니다. \n"
-                    } else {
-                        returnValue = returnValue + "\(intVal) \n"
-                    }
-                    
-                } else if intVal.count > 11 {
-                    returnValue = returnValue + intVal.addHyphen() + "<<코드일 확률이 높습니다.\n"
-                    self.barcode.text = intVal
-                    
+
+            if components.count > 4 && components.count < 12 {
+                let first3 = components.prefix(3)
+                if first3 == "201" || first3 == "202" {
+                    returnValue = returnValue + "\(components) <<기간일 확률이 높습니다. \n"
+                } else {
+                    returnValue = returnValue + "\(components) \n"
                 }
                 
+            } else if components.count > 11 {
+                returnValue = returnValue + components.addHyphen() + "<<코드일 확률이 높습니다.\n"
+                self.barcode.text = components
                 
             }
+            
+
         }
         
         return returnValue

@@ -1,16 +1,29 @@
 PODS:
+  - RxAtomic (4.4.0)
+  - RxCocoa (4.4.0):
+    - RxSwift (~> 4.0)
+  - RxSwift (4.4.0):
+    - RxAtomic (~> 4.4)
   - TesseractOCRiOS (4.0.0)
 
 DEPENDENCIES:
+  - RxCocoa
+  - RxSwift
   - TesseractOCRiOS
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - RxAtomic
+    - RxCocoa
+    - RxSwift
     - TesseractOCRiOS
 
 SPEC CHECKSUMS:
+  RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
+  RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
+  RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
   TesseractOCRiOS: 90638afbe43d082433f2e76b384c7901d23956df
 
-PODFILE CHECKSUM: 2866d2039c9a6a96742bea483bef54488831ebb7
+PODFILE CHECKSUM: 3474b36ed19fd91774b3de3111b9a100ba44e1c6
 
 COCOAPODS: 1.5.3

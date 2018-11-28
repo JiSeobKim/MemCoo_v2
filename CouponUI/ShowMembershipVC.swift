@@ -44,7 +44,7 @@ class ShowMembershipVC: UIViewController, UIGestureRecognizerDelegate {
         }
         
         if let topItem = self.navigationController?.navigationBar.topItem {
-            topItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
+            topItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItem.Style.plain, target: nil, action: nil)
         }
         
         //타이틀 명 변경
@@ -80,8 +80,8 @@ class ShowMembershipVC: UIViewController, UIGestureRecognizerDelegate {
     
     
     //밝기 제스쳐
-    func pan(recognizer:UIPanGestureRecognizer){
-        if recognizer.state == UIGestureRecognizerState.changed || recognizer.state == UIGestureRecognizerState.ended {
+    @objc func pan(recognizer:UIPanGestureRecognizer){
+        if recognizer.state == UIGestureRecognizer.State.changed || recognizer.state == UIGestureRecognizer.State.ended {
             let velocity:CGPoint = recognizer.velocity(in: self.view)
             
             if velocity.y > 0{

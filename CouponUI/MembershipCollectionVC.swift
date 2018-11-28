@@ -9,8 +9,10 @@
 import UIKit
 import CoreData
 import TesseractOCR
+import RxCocoa
+import RxSwift
 
-class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, NSFetchedResultsControllerDelegate, UIGestureRecognizerDelegate, UICollectionViewDelegateFlowLayout, G8TesseractDelegate, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, NSFetchedResultsControllerDelegate, UIGestureRecognizerDelegate, UICollectionViewDelegateFlowLayout, G8TesseractDelegate, UIImagePickerControllerDelegate,UINavigationControllerDelegate, UISearchBarDelegate {
     
     
     //
@@ -18,6 +20,7 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
     //
     @IBOutlet weak var collectionView: UICollectionView!
     var controller: NSFetchedResultsController<Membership>!
+    var listData : [String] = []
     
     var originalImage: UIImage!
     let imagePicker = UIImagePickerController()
@@ -53,15 +56,11 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
             .searchBarStyle
              = .minimal
             
+            
             self.navigationItem.searchController = searchController
         }
         
-        
-        
-        
         self.parent?.view.backgroundColor = .white
-      
-        
     }
     
     
@@ -90,8 +89,8 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
         
     }
     
-    func handleLongPress(_ gestureReconizer: UILongPressGestureRecognizer) {
-        if gestureReconizer.state != UIGestureRecognizerState.began {
+    @objc func handleLongPress(_ gestureReconizer: UILongPressGestureRecognizer) {
+        if gestureReconizer.state != UIGestureRecognizer.State.began {
             return
         }
         
@@ -194,14 +193,13 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
     
     //셀 생성 정의
     func configureCell(cell: MembershipCollectionVCell, indexPath: IndexPath) {
-
         
         let innerView = cell.contentView.viewWithTag(1)
         innerView?.layer.applyCellBolderLayout()
         cell.layer.applyCellShadowLayout()
         
         //update cell
-        
+        let it = controller
         let item = controller.object(at: indexPath)
         cell.configureCell(item: item)
     }
@@ -249,7 +247,7 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
             ad.clipboardActionSheet = 2
             
             //이미지 선택 뷰.
-            self.imagePicker.sourceType = UIImagePickerControllerSourceType.savedPhotosAlbum    //.photoLibrary
+            self.imagePicker.sourceType = UIImagePickerController.SourceType.savedPhotosAlbum    //.photoLibrary
             //imagePicker.mediaTypes = [kUTTypeImage as String]
             self.imagePicker.allowsEditing = false
             self.present(self.imagePicker, animated: true, completion: nil)
@@ -277,8 +275,11 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     //사진 앱 접근을 위한 메소드.
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
-        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+// Local variable inserted by Swift 4.2 migrator.
+let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+
+        if let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage {
             self.originalImage = image
             picker.dismiss(animated: true, completion: nil)
             
@@ -329,3 +330,13 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
     
 }
 
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
+	return input.rawValue
+}

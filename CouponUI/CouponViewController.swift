@@ -40,7 +40,7 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
             ad.clipboardActionSheet = 2
             
             //이미지 선택 뷰.
-            self.imagePicker.sourceType = UIImagePickerControllerSourceType.savedPhotosAlbum    //.photoLibrary
+            self.imagePicker.sourceType = UIImagePickerController.SourceType.savedPhotosAlbum    //.photoLibrary
             //imagePicker.mediaTypes = [kUTTypeImage as String]
             self.imagePicker.allowsEditing = false
             self.present(self.imagePicker, animated: true, completion: nil)
@@ -68,8 +68,11 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     //사진 앱 접근을 위한 메소드.
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
-        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+// Local variable inserted by Swift 4.2 migrator.
+let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+
+        if let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage {
             self.originalImage = image
             picker.dismiss(animated: true, completion: nil)
             
@@ -122,8 +125,8 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     //long press gesture를 이용한 즐겨찾기 핸들링.
-    func longPress(_ longPressGestureRecognizer: UILongPressGestureRecognizer) {
-        if longPressGestureRecognizer.state == UIGestureRecognizerState.began {
+    @objc func longPress(_ longPressGestureRecognizer: UILongPressGestureRecognizer) {
+        if longPressGestureRecognizer.state == UIGestureRecognizer.State.began {
             let touchPoint = longPressGestureRecognizer.location(in: self.tableView)
             
             if let indexPath = tableView.indexPathForRow(at: touchPoint) {
@@ -236,8 +239,8 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     //swipe 시 delete 버튼이 작동하는 메소드.
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == UITableViewCellEditingStyle.delete {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
             if var objs = controller.fetchedObjects, objs.count > 0{
                 let item = objs[indexPath.row]
                 
@@ -349,11 +352,21 @@ class CouponViewController: UIViewController, UITableViewDataSource, UITableView
 
 extension UIViewController {
     //노티피케이션.
-    func catchIt(_ userInfo: Notification) {
+    @objc func catchIt(_ userInfo: Notification) {
         if userInfo.userInfo?["userInfo"] == nil {
             if let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "SimpleViewController") {
                 self.navigationController?.pushViewController(detailVC, animated: true)
             }
         }
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
+	return input.rawValue
 }

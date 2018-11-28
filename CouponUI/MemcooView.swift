@@ -91,13 +91,13 @@ class MemcooView: NSObject {
             
             /// edit
             let edit = NSMutableAttributedString(string: "edit")
-            edit.addAttribute(NSFontAttributeName, value: UIFont(name: ".AppleSDGothicNeoI-SemiBold", size: 13)!, range: NSRange(location: 0, length: edit.length))
-            edit.addAttribute(NSForegroundColorAttributeName, value: UIColor(hue: 0.06, saturation: 0.842, brightness: 0.969, alpha: 0.78), range: NSRange(location: 0, length: edit.length))
-            edit.addAttribute(NSKernAttributeName, value: -0.31, range: NSRange(location: 0, length: edit.length))
+            edit.addAttribute(NSAttributedString.Key.font, value: UIFont(name: ".AppleSDGothicNeoI-SemiBold", size: 13)!, range: NSRange(location: 0, length: edit.length))
+            edit.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(hue: 0.06, saturation: 0.842, brightness: 0.969, alpha: 0.78), range: NSRange(location: 0, length: edit.length))
+            edit.addAttribute(NSAttributedString.Key.kern, value: -0.31, range: NSRange(location: 0, length: edit.length))
             do {
                 let paragraphStyle = NSMutableParagraphStyle()
                 paragraphStyle.alignment = .right
-                edit.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSRange(location: 0, length: edit.length))
+                edit.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: edit.length))
             }
             context.saveGState()
             edit.draw(in: CGRect(x: 124.96, y: 134.57, width: 25.23, height: 15))

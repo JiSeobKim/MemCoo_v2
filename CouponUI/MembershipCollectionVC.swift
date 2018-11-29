@@ -12,7 +12,7 @@ import TesseractOCR
 import RxCocoa
 import RxSwift
 
-class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, NSFetchedResultsControllerDelegate, UIGestureRecognizerDelegate, UICollectionViewDelegateFlowLayout, G8TesseractDelegate, UIImagePickerControllerDelegate,UINavigationControllerDelegate, UISearchBarDelegate {
+class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, NSFetchedResultsControllerDelegate, UIGestureRecognizerDelegate, UICollectionViewDelegateFlowLayout, G8TesseractDelegate, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
     
     //
@@ -59,12 +59,10 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
       
         
         
+        
         if #available(iOS 11.0, *) {
-//            self.navigationController?.navigationItem.searchController = searchController
-            searchController.hidesNavigationBarDuringPresentation = false
-            searchController.searchBar
-            .searchBarStyle
-             = .minimal
+            searchController.obscuresBackgroundDuringPresentation = false
+            definesPresentationContext = true
             
             self.navigationItem.searchController = searchController
         }
@@ -95,20 +93,11 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
         attemptFetch()
         self.collectionView.reloadData()
         
-        self.tabBarController?.tabBar.layer.masksToBounds = false
-        self.tabBarController?.tabBar.layer.shadowColor = UIColor.lightGray.cgColor
-        self.tabBarController?.tabBar.layer.shadowOpacity = 1
-        self.tabBarController?.tabBar.layer.shadowOffset = CGSize(width: 0, height: 2)
-        self.tabBarController?.tabBar.layer.shadowRadius = 2
-        self.tabBarController?.tabBar.layer.borderColor = UIColor.gray.withAlphaComponent(0.5).cgColor
-        self.tabBarController?.tabBar.layer.borderWidth = 0.5
-        self.tabBarController?.tabBar.clipsToBounds = true
+        
         
     }
     
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
-    }
+   
     
     @objc func handleLongPress(_ gestureReconizer: UILongPressGestureRecognizer) {
         if gestureReconizer.state != UIGestureRecognizer.State.began {
@@ -350,4 +339,21 @@ fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [U
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
 	return input.rawValue
+}
+
+
+
+extension MembershipCollectionVC: UISearchBarDelegate {
+    
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+//        searchController.isActive = false
+        //        let temp = searchBar.text
+        //        searchBar.endEditing(true)
+        //        searchBar.showsCancelButton = false
+        //
+        //        searchBar.text = temp
+    }
+    
+    
 }

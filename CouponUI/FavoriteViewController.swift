@@ -23,6 +23,15 @@ class FavoriteViewController: UITableViewController, NSFetchedResultsControllerD
         
 
         self.parent?.view.backgroundColor = .white
+        
+        self.tabBarController?.tabBar.layer.masksToBounds = false
+        self.tabBarController?.tabBar.layer.shadowColor = UIColor.lightGray.cgColor
+        self.tabBarController?.tabBar.layer.shadowOpacity = 1
+        self.tabBarController?.tabBar.layer.shadowOffset = CGSize(width: 0, height: 2)
+        self.tabBarController?.tabBar.layer.shadowRadius = 2
+        self.tabBarController?.tabBar.layer.borderColor = UIColor.gray.withAlphaComponent(0.5).cgColor
+        self.tabBarController?.tabBar.layer.borderWidth = 0.5
+        self.tabBarController?.tabBar.clipsToBounds = true
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -13,9 +13,47 @@ import TesseractOCR
 class CouponViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, NSFetchedResultsControllerDelegate, G8TesseractDelegate {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var segment: UISegmentedControl!
+    @IBOutlet weak var viewSegment: UIView!
     
     var originalImage: UIImage!
     let imagePicker = UIImagePickerController()
+    
+    var controller: NSFetchedResultsController<Coupon>!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
+        imagePicker.delegate = self
+        attemptFetch()
+        
+        
+        self.tableView.tableHeaderView = viewSegment
+        
+        //long press gesture를 이용한 즐겨찾기 핸들링.
+        let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(self.longPress))
+        self.view.addGestureRecognizer(longPressGestureRecognizer)
+        
+        
+        self.parent?.view.backgroundColor = .white
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //노티피케이션.
+        NotificationCenter.default.addObserver(self, selector: #selector(self.catchIt), name: NSNotification.Name(rawValue: "myNotif"), object: nil)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let prefs: UserDefaults = UserDefaults.standard
+        if prefs.value(forKey: "startUpNotif") != nil {
+            let userInfo: [AnyHashable: Any] = ["inactive": "inactive"]
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "myNotif"), object: nil, userInfo: userInfo as [AnyHashable: Any])
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
+    }
     
     //+버튼 눌렀을때의 액션
     @IBAction func add(_ sender: Any) {
@@ -90,39 +128,7 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
         picker.dismiss(animated: true, completion: nil)
     }
     
-    var controller: NSFetchedResultsController<Coupon>!
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
-        imagePicker.delegate = self
-        attemptFetch()
-        
-        //long press gesture를 이용한 즐겨찾기 핸들링.
-        let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(self.longPress))
-        self.view.addGestureRecognizer(longPressGestureRecognizer)
-        
-        
-        self.parent?.view.backgroundColor = .white
-    }
     
-    override func viewWillAppear(_ animated: Bool) {
-        //노티피케이션.
-        NotificationCenter.default.addObserver(self, selector: #selector(self.catchIt), name: NSNotification.Name(rawValue: "myNotif"), object: nil)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        let prefs: UserDefaults = UserDefaults.standard
-        if prefs.value(forKey: "startUpNotif") != nil {
-            let userInfo: [AnyHashable: Any] = ["inactive": "inactive"]
-            NotificationCenter.default.post(name: Notification.Name(rawValue: "myNotif"), object: nil, userInfo: userInfo as [AnyHashable: Any])
-        }
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        NotificationCenter.default.removeObserver(self)
-    }
     
     //long press gesture를 이용한 즐겨찾기 핸들링.
     @objc func longPress(_ longPressGestureRecognizer: UILongPressGestureRecognizer) {
@@ -230,7 +236,7 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
     
     //cell의 높이 정의
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 92
     }
     
     //swipe 시 edit 기능 가능하게 하는 메소드.

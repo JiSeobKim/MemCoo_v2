@@ -12,6 +12,26 @@
         <!--쿠폰-->
         <scene sceneID="PqZ-Yd-FoC">
             <objects>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="atB-jj-cjo">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                    <subviews>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Rdg-5C-pXp">
+                            <rect key="frame" x="65" y="8" width="284" height="29"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="사용 가능"/>
+                                <segment title="사용 완료"/>
+                                <segment title="전체"/>
+                            </segments>
+                            <color key="tintColor" red="0.96470588239999999" green="0.40000000000000002" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="segmentChanged:" destination="QWw-7U-fLY" eventType="valueChanged" id="Brj-vk-JOh"/>
+                            </connections>
+                        </segmentedControl>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RQG-nT-GJf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="CouponMain" id="QWw-7U-fLY" customClass="CouponViewController" customModule="MemCoo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="m9T-Ve-Om4"/>
@@ -21,21 +41,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="100" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="7Hg-l6-YSv">
-                                <rect key="frame" x="0.0" y="65" width="414" height="671"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="92" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7Hg-l6-YSv">
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" red="0.96470588239999999" green="0.40000000000000002" blue="0.13725490200000001" alpha="0.78000000000000003" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CouponCell" rowHeight="100" id="eXy-61-Um0" customClass="CouponCell" customModule="MemCoo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.333333333333343" width="414" height="100"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CouponCell" rowHeight="92" id="eXy-61-Um0" customClass="CouponCell" customModule="MemCoo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="92"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eXy-61-Um0" id="gQF-BB-83x">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="92"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aOR-j7-wsO">
-                                                    <rect key="frame" x="20" y="8" width="374" height="84"/>
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="84"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rlf-KP-p4g">
                                                             <rect key="frame" x="0.0" y="0.0" width="374" height="84"/>
@@ -60,7 +80,7 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.78000000000000003" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기한만료" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Y3-se-gC1">
-                                                                    <rect key="frame" x="321" y="57.666666666666671" width="45" height="16"/>
+                                                                    <rect key="frame" x="321" y="57.666666666666657" width="45" height="16"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
                                                                     <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -98,7 +118,7 @@
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="aOR-j7-wsO" firstAttribute="top" secondItem="gQF-BB-83x" secondAttribute="top" constant="8" id="GxC-4a-9sT"/>
+                                                <constraint firstItem="aOR-j7-wsO" firstAttribute="top" secondItem="gQF-BB-83x" secondAttribute="top" id="GxC-4a-9sT"/>
                                                 <constraint firstAttribute="trailing" secondItem="aOR-j7-wsO" secondAttribute="trailing" constant="20" id="kms-yq-4q3"/>
                                                 <constraint firstItem="aOR-j7-wsO" firstAttribute="leading" secondItem="gQF-BB-83x" secondAttribute="leading" constant="20" id="lPT-vc-xD8"/>
                                                 <constraint firstAttribute="bottom" secondItem="aOR-j7-wsO" secondAttribute="bottom" constant="8" id="nvm-iG-dJQ"/>
@@ -116,38 +136,13 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="atB-jj-cjo">
-                                <rect key="frame" x="0.0" y="64" width="414" height="36"/>
-                                <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Rdg-5C-pXp">
-                                        <rect key="frame" x="65" y="4" width="284" height="29"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <segments>
-                                            <segment title="사용 가능"/>
-                                            <segment title="사용 완료"/>
-                                            <segment title="전체"/>
-                                        </segments>
-                                        <color key="tintColor" red="0.96470588239999999" green="0.40000000000000002" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <connections>
-                                            <action selector="segmentChanged:" destination="QWw-7U-fLY" eventType="valueChanged" id="Brj-vk-JOh"/>
-                                        </connections>
-                                    </segmentedControl>
-                                </subviews>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="q1p-No-Jiu"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="atB-jj-cjo" firstAttribute="top" secondItem="m9T-Ve-Om4" secondAttribute="bottom" id="10t-Bi-xqT"/>
-                            <constraint firstAttribute="trailing" secondItem="atB-jj-cjo" secondAttribute="trailing" id="2uk-mj-4VL"/>
-                            <constraint firstAttribute="bottom" secondItem="7Hg-l6-YSv" secondAttribute="bottom" id="D40-OI-Xbq"/>
-                            <constraint firstAttribute="trailing" secondItem="7Hg-l6-YSv" secondAttribute="trailing" id="SFR-HI-SRI"/>
-                            <constraint firstItem="7Hg-l6-YSv" firstAttribute="top" secondItem="m9T-Ve-Om4" secondAttribute="bottom" constant="1" id="bbg-xb-PdR"/>
-                            <constraint firstItem="7Hg-l6-YSv" firstAttribute="leading" secondItem="55n-MV-iKI" secondAttribute="leading" id="tyZ-qC-Lqd"/>
-                            <constraint firstItem="atB-jj-cjo" firstAttribute="leading" secondItem="55n-MV-iKI" secondAttribute="leading" id="ua3-Iq-1jS"/>
+                            <constraint firstAttribute="bottom" secondItem="7Hg-l6-YSv" secondAttribute="bottom" id="Whn-at-AJi"/>
+                            <constraint firstItem="7Hg-l6-YSv" firstAttribute="top" secondItem="m9T-Ve-Om4" secondAttribute="bottom" id="bbg-xb-PdR"/>
+                            <constraint firstAttribute="trailing" secondItem="7Hg-l6-YSv" secondAttribute="trailing" id="rnC-jg-GfT"/>
+                            <constraint firstItem="7Hg-l6-YSv" firstAttribute="leading" secondItem="55n-MV-iKI" secondAttribute="leading" id="vSa-vn-XYo"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="쿠폰" id="p0p-dR-pg7">
@@ -163,10 +158,10 @@
                     <connections>
                         <outlet property="segment" destination="Rdg-5C-pXp" id="C8g-nT-f8f"/>
                         <outlet property="tableView" destination="7Hg-l6-YSv" id="jUI-IH-B54"/>
+                        <outlet property="viewSegment" destination="atB-jj-cjo" id="NsF-Tr-VYg"/>
                         <segue destination="haz-r9-OTI" kind="show" identifier="CouponDetailsVC" id="5I5-S9-rFe"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RQG-nT-GJf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2664.375" y="875.70422535211264"/>
         </scene>
@@ -561,8 +556,8 @@
         <!--SelectLogo-->
         <scene sceneID="NEY-Bp-A7h">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="SelectLogo" storyboardName="SelectLogo" referencedIdentifier="SelectLogo" id="0cA-AV-8dh" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mcP-6c-aDe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardIdentifier="SelectLogo" storyboardName="SelectLogo" referencedIdentifier="SelectLogo" id="0cA-AV-8dh" sceneMemberID="viewController"/>
             </objects>
             <point key="canvasLocation" x="4438" y="551"/>
         </scene>

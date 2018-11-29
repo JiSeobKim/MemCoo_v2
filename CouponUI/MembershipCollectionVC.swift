@@ -20,7 +20,13 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
     //
     @IBOutlet weak var collectionView: UICollectionView!
     var controller: NSFetchedResultsController<Membership>!
-    var listData : [String] = []
+    var fetchData : [Membership]? = [] {
+        didSet {
+            showData = fetchData
+            self.collectionView.reloadData()
+        }
+    }
+    var showData : [Membership]? = []
     
     var originalImage: UIImage!
     let imagePicker = UIImagePickerController()
@@ -28,6 +34,10 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
     
     let searchController = UISearchController(searchResultsController: nil)
     let refreshControl = UIRefreshControl()
+    
+    let dispose = DisposeBag()
+    
+    var predicate: NSPredicate?
     
     //
     //viewLoad
@@ -56,24 +66,34 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
             .searchBarStyle
              = .minimal
             
-            
             self.navigationItem.searchController = searchController
         }
         
+        
+        searchController.searchBar.rx.text.orEmpty.subscribe(onNext: {[unowned self] query in
+            guard self.fetchData?.count != 0 else { return }
+
+            let convertedQuery = query.lowercased()
+
+            self.showData = self.fetchData?.filter {
+                let compare = $0.toBrand?.title?.lowercased()
+                return (compare?.hasPrefix(convertedQuery) ?? false)
+            }
+            self.collectionView.reloadData()
+        }).disposed(by: dispose)
+        
+        
+        
+        
+        
+        
         self.parent?.view.backgroundColor = .white
     }
-    
-    
     
     override func viewWillAppear(_ animated: Bool) {
         
         attemptFetch()
         self.collectionView.reloadData()
-        
-        
-        
-        
-        
         
         self.tabBarController?.tabBar.layer.masksToBounds = false
         self.tabBarController?.tabBar.layer.shadowColor = UIColor.lightGray.cgColor
@@ -84,9 +104,10 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
         self.tabBarController?.tabBar.layer.borderWidth = 0.5
         self.tabBarController?.tabBar.clipsToBounds = true
         
-        
-        
-        
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
     }
     
     @objc func handleLongPress(_ gestureReconizer: UILongPressGestureRecognizer) {
@@ -104,8 +125,7 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
             
             
             
-            if let objs = controller.fetchedObjects, objs.count > 0 {
-                let item = objs[(indexPath?.item)!]
+            if let item = showData?[index.row] {
                 print(item.favorite)
                 
                 if item.favorite == false {
@@ -162,16 +182,7 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
     //컬렉션 뷰 셀 갯수 생성
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        if let sections = controller.sections {
-            let sectionInfo = sections[section]
-            
-            return sectionInfo.numberOfObjects
-        }
-        return 0
-        
-        
-        
-        
+        return showData?.count ?? 0
     }
     
     //셀 재사용을 위한 정의
@@ -199,17 +210,14 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
         cell.layer.applyCellShadowLayout()
         
         //update cell
-        let it = controller
-        let item = controller.object(at: indexPath)
+        guard let item = showData?[indexPath.row] else { return }
         cell.configureCell(item: item)
     }
     
     //선택된 셀을 사용하기위한 정의
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let objs = controller.fetchedObjects, objs.count > 0 {
-            let item = objs[indexPath.item]
-            performSegue(withIdentifier: "showCollection", sender: item)
-        }
+        guard let item = showData?[indexPath.row] else { return }
+        performSegue(withIdentifier: "showCollection", sender: item)
     }
     
     
@@ -317,10 +325,13 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
         
         controller.delegate = self
         
+        
         self.controller = controller
+        
         
         do {
             try controller.performFetch()
+            self.fetchData = controller.fetchedObjects
         } catch {
             let error = error as NSError
             print("\(error)")

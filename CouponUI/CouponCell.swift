@@ -38,13 +38,12 @@ class CouponCell: UITableViewCell {
         
         mainView.layer.applyCellBolderLayout()
         outView.layer.applyCellShadowLayout()
-        logo.layer.cornerRadius = logo.bounds.height / 2
         
         logo.layer.shadowRadius = 5
         
         logo.layer.borderWidth = 1
         logo.layer.borderColor = UIColor(netHex: 0xF66623,alpha: 0.78).cgColor
-        logo.layer.cornerRadius = (logo.frame.width/2)
+        logo.layer.cornerRadius = (logo.bounds.height/2)
         logo.layer.masksToBounds = true
         
         logo.layer.applyLogoShadowLayout()

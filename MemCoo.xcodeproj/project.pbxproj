@@ -67,6 +67,10 @@
 		42A657631E1F383B009BB240 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A657621E1F383B009BB240 /* FavoriteCell.swift */; };
 		42C910401E5D73E500A04984 /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4251CD971E288D6900671A3F /* MaterialView.swift */; };
 		42FAB62B1E04E18E00671E32 /* ParsingBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FAB62A1E04E18E00671E32 /* ParsingBrain.swift */; };
+		6B46D24B21D31FC6004B44B6 /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B46D24A21D31FC6004B44B6 /* TesseractOCR.framework */; };
+		6B46D24F21D32C8D004B44B6 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B46D24D21D32C8C004B44B6 /* RxCocoa.framework */; };
+		6B46D25021D32C8D004B44B6 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B46D24E21D32C8C004B44B6 /* RxSwift.framework */; };
+		6B46D25221D32CDC004B44B6 /* RxAtomic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B46D25121D32CDC004B44B6 /* RxAtomic.framework */; };
 		6BEE59472195501B000E1E35 /* CustomNavi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEE59462195501B000E1E35 /* CustomNavi.swift */; };
 		6BEE594921956363000E1E35 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEE594821956363000E1E35 /* Extensions.swift */; };
 		A038310F1DFC1BE5002C0314 /* Favorite.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A038310E1DFC1BE5002C0314 /* Favorite.storyboard */; };
@@ -166,6 +170,10 @@
 		42A657621E1F383B009BB240 /* FavoriteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		42E93B0C1E5040D2002B9D7A /* Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Widget.entitlements; sourceTree = "<group>"; };
 		42FAB62A1E04E18E00671E32 /* ParsingBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsingBrain.swift; sourceTree = "<group>"; };
+		6B46D24A21D31FC6004B44B6 /* TesseractOCR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TesseractOCR.framework; path = Carthage/Build/iOS/Static/TesseractOCR.framework; sourceTree = "<group>"; };
+		6B46D24D21D32C8C004B44B6 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		6B46D24E21D32C8C004B44B6 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		6B46D25121D32CDC004B44B6 /* RxAtomic.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxAtomic.framework; path = Carthage/Build/iOS/RxAtomic.framework; sourceTree = "<group>"; };
 		6BEE59462195501B000E1E35 /* CustomNavi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavi.swift; sourceTree = "<group>"; };
 		6BEE594821956363000E1E35 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		94161D82880F1DDECECAD5F5 /* Pods-MemCoo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemCoo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MemCoo/Pods-MemCoo.release.xcconfig"; sourceTree = "<group>"; };
@@ -202,7 +210,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B46D24B21D31FC6004B44B6 /* TesseractOCR.framework in Frameworks */,
 				A0A1CB3F1E97068B000D0737 /* StoreKit.framework in Frameworks */,
+				6B46D24F21D32C8D004B44B6 /* RxCocoa.framework in Frameworks */,
+				6B46D25221D32CDC004B44B6 /* RxAtomic.framework in Frameworks */,
+				6B46D25021D32C8D004B44B6 /* RxSwift.framework in Frameworks */,
 				1DC963561844DCE3204318BC /* Pods_MemCoo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,6 +408,10 @@
 		A3CE639472778979DD65B6D7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6B46D25121D32CDC004B44B6 /* RxAtomic.framework */,
+				6B46D24D21D32C8C004B44B6 /* RxCocoa.framework */,
+				6B46D24E21D32C8C004B44B6 /* RxSwift.framework */,
+				6B46D24A21D31FC6004B44B6 /* TesseractOCR.framework */,
 				A0A1CB3E1E97068B000D0737 /* StoreKit.framework */,
 				A0BB53521E21D61900AF54C9 /* NotificationCenter.framework */,
 				3FEF8FDD58BE6AB58317A85E /* Pods_MemCoo.framework */,
@@ -423,8 +439,8 @@
 				3E37D3511DF09E4A0054C4DA /* Sources */,
 				3E37D3521DF09E4A0054C4DA /* Frameworks */,
 				3E37D3531DF09E4A0054C4DA /* Resources */,
-				13D46D102D47D7DD2AF0A3EB /* [CP] Embed Pods Frameworks */,
 				A0BB53611E21D61A00AF54C9 /* Embed App Extensions */,
+				6B46D24C21D31FCD004B44B6 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -460,7 +476,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = mino;
 				TargetAttributes = {
 					3E37D3541DF09E4A0054C4DA = {
@@ -537,30 +553,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		13D46D102D47D7DD2AF0A3EB /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MemCoo/Pods-MemCoo-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/TesseractOCRiOS/TesseractOCR.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TesseractOCR.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MemCoo/Pods-MemCoo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		231EE57E76381A7B39B44312 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -578,6 +570,27 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		6B46D24C21D31FCD004B44B6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Static/TesseractOCR.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxAtomic.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -708,15 +721,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
@@ -760,15 +781,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
@@ -804,9 +833,26 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 689KAW4595;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS/Static",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CouponUI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"RxAtomic\"",
+					"-framework",
+					"\"RxCocoa\"",
+					"-framework",
+					"\"RxSwift\"",
+					"-ObjC",
+					"/usr/lib/libstdc++.6.0.9.dylib",
+					"-lstdc++",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.JMJ.MemCoo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -824,9 +870,26 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 689KAW4595;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS/Static",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CouponUI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"RxAtomic\"",
+					"-framework",
+					"\"RxCocoa\"",
+					"-framework",
+					"\"RxSwift\"",
+					"-ObjC",
+					"/usr/lib/libstdc++.6.0.9.dylib",
+					"-lstdc++",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.JMJ.MemCoo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

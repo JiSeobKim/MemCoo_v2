@@ -229,7 +229,7 @@ class CouponAddViewController: UIViewController, UIImagePickerControllerDelegate
                 self.present(alert, animated: true, completion: {
                     if let tesseract = G8Tesseract(language: "eng+kor") {
                         tesseract.delegate = self
-                        tesseract.image = self.originalImage?.g8_grayScale() //.g8_blackAndWhite()
+                        tesseract.image = self.originalImage?.noir //.g8_blackAndWhite()
                         tesseract.recognize()
                         
                         self.originalText.text = self.originalParsing(a:tesseract.recognizedText)

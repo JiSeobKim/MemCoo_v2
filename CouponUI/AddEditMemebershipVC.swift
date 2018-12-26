@@ -94,7 +94,7 @@ class AddEditMemebershipVC: UIViewController, UITextFieldDelegate, G8TesseractDe
         }
         
         if ad.clipboardActionSheet == 2 {
-            let alert = UIAlertController(title: "텍스트 추출", message: "쿠폰에서 텍스트를 추출하는 중입니다...", preferredStyle: .alert)
+            let alert = UIAlertController(title: "텍스트 추출", message: "이미지에서 텍스트를 추출하는 중입니다...", preferredStyle: .alert)
             self.present(alert, animated: true, completion: {
                 if let tesseract = G8Tesseract(language: "eng+kor") {
                     tesseract.delegate = self as G8TesseractDelegate

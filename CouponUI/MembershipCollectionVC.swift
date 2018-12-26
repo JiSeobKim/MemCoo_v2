@@ -12,9 +12,7 @@ import TesseractOCR
 import RxCocoa
 import RxSwift
 
-class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, NSFetchedResultsControllerDelegate, UIGestureRecognizerDelegate, UICollectionViewDelegateFlowLayout, G8TesseractDelegate, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
-    
-    
+class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, NSFetchedResultsControllerDelegate, UIGestureRecognizerDelegate, UICollectionViewDelegateFlowLayout, G8TesseractDelegate, UIImagePickerControllerDelegate,UINavigationControllerDelegate, UISearchBarDelegate {
     //
     //model
     //
@@ -30,7 +28,6 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
     
     var originalImage: UIImage!
     let imagePicker = UIImagePickerController()
-
     
     let searchController = UISearchController(searchResultsController: nil)
     let refreshControl = UIRefreshControl()
@@ -38,7 +35,6 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
     let dispose = DisposeBag()
     
     var predicate: NSPredicate?
-    
     //
     //viewLoad
     //
@@ -56,9 +52,6 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
         lpgr.delegate = self
         lpgr.delaysTouchesBegan = true
         self.collectionView?.addGestureRecognizer(lpgr)
-      
-        
-        
         
         if #available(iOS 11.0, *) {
             searchController.obscuresBackgroundDuringPresentation = false
@@ -66,7 +59,6 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
             
             self.navigationItem.searchController = searchController
         }
-        
         
         searchController.searchBar.rx.text.orEmpty.subscribe(onNext: {[unowned self] query in
             guard self.fetchData?.count != 0 else { return }
@@ -80,11 +72,6 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
             self.collectionView.reloadData()
         }).disposed(by: dispose)
         
-        
-        
-        
-        
-        
         self.parent?.view.backgroundColor = .white
     }
     
@@ -92,9 +79,6 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
         
         attemptFetch()
         self.collectionView.reloadData()
-        
-        
-        
     }
     
    
@@ -224,21 +208,14 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
                 }
             }
         }
-        
-        
     }
     
     //추가 버튼
-    
-    
     @IBAction func btnAdd(_ sender: Any) {
         let alert = UIAlertController(title: "멤버십 추가", message: "멤버십을 추가할 방식을 선택해주세요.", preferredStyle: .actionSheet)
         
         //컬러가 바뀌어서 주석처리했습니다.
         //        alert.view.tintColor = UIColor.black
-        
-    
-        
         let ocr = UIAlertAction(title: "바코드 이미지에서 텍스트 추출", style: .default) {
             (_) in
             ad.clipboardActionSheet = 2
@@ -268,7 +245,6 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
         //add 버튼이 눌렸음을 다음 뷰에 전달하기 위해 isAddButton 변수에 true를 저장.
         ad.isAddButton = true
         self.present(alert, animated: true)
-
     }
     
     //사진 앱 접근을 위한 메소드.
@@ -342,18 +318,3 @@ fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePicke
 }
 
 
-
-extension MembershipCollectionVC: UISearchBarDelegate {
-    
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-//        searchController.isActive = false
-        //        let temp = searchBar.text
-        //        searchBar.endEditing(true)
-        //        searchBar.showsCancelButton = false
-        //
-        //        searchBar.text = temp
-    }
-    
-    
-}

@@ -8,6 +8,7 @@
 
 import UIKit
 import TesseractOCR
+import RxSwift
 
 
 class AddEditMemebershipVC: UIViewController, UITextFieldDelegate, G8TesseractDelegate, UIImagePickerControllerDelegate {
@@ -25,6 +26,9 @@ class AddEditMemebershipVC: UIViewController, UITextFieldDelegate, G8TesseractDe
     //ocr용
     var originalImage: UIImage?
     
+    let disposeBag = DisposeBag()
+    
+    @IBOutlet weak var barBtnSave: UIBarButtonItem!
     
 
     @IBOutlet weak var LabelBrand: UILabel!
@@ -114,15 +118,27 @@ class AddEditMemebershipVC: UIViewController, UITextFieldDelegate, G8TesseractDe
         
         //툴바
         addInputAccessoryForTextFields(textFields: [paramBrand,paramBarcode],dismissable: true, previousNextable: true)
-        //네비 아이템 폰트
-        
 
         choiceButton.setImage(MemcooView.imageOfLogoSelectButton(), for: .normal)
         
+        // 텍스트 필드 옵저버
+        let brandValidation = paramBrand.rx
+            .text
+            .orEmpty
+            .map {$0.count > 0}
+            .share(replay: 1)
+        
+        let barcodeValidation = paramBarcode.rx.text.orEmpty.map{$0.count>0}.share(replay:1)
+        
+        let allValidation = Observable
+            .combineLatest(brandValidation, barcodeValidation){ $0 && $1}
+            .share(replay: 1)
         
         
-        paramImage.layer.applyLogoShadowLayout()
-     
+        allValidation.bind(to: barBtnSave.rx.isEnabled).disposed(by: disposeBag)
+        
+        
+        
 
     }
     

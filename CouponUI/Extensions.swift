@@ -34,6 +34,7 @@ extension CALayer {
         self.shadowOffset = CGSize(width : 0,height: 1.0)
         self.shadowOpacity = 0.5
         self.masksToBounds = false
+        self.cornerRadius = self.frame.height / 2
         self.shadowRadius = self.bounds.height * 0.04
     }
 }

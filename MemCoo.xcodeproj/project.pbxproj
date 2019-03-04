@@ -73,6 +73,18 @@
 		6E9BC5BE21DB881D00EFD7B4 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E9BC5BB21DB881D00EFD7B4 /* RxSwift.framework */; };
 		6E9BC5BF21DB881D00EFD7B4 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E9BC5BC21DB881D00EFD7B4 /* RxCocoa.framework */; };
 		6E9BC5C021DB881D00EFD7B4 /* RxAtomic.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = 6E9BC5BD21DB881D00EFD7B4 /* RxAtomic.framework.dSYM */; };
+		6EF4AA15222D5693004E2F92 /* Lottie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EF4AA14222D5692004E2F92 /* Lottie.framework */; };
+		6EF4AA19222D593B004E2F92 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF4AA18222D593B004E2F92 /* Utility.swift */; };
+		6EF4AA1B222D5B8B004E2F92 /* LottieStar.json in Resources */ = {isa = PBXBuildFile; fileRef = 6EF4AA1A222D5B8A004E2F92 /* LottieStar.json */; };
+		6EF4AA1F222D5F3E004E2F92 /* LottieBrokenHart.json in Resources */ = {isa = PBXBuildFile; fileRef = 6EF4AA1D222D5F3E004E2F92 /* LottieBrokenHart.json */; };
+		6EF4AA20222D5F3E004E2F92 /* LottieHart.json in Resources */ = {isa = PBXBuildFile; fileRef = 6EF4AA1E222D5F3E004E2F92 /* LottieHart.json */; };
+		6EF4AA22222D602A004E2F92 /* LottieCrying.json in Resources */ = {isa = PBXBuildFile; fileRef = 6EF4AA21222D602A004E2F92 /* LottieCrying.json */; };
+		6EF4AA24222D6085004E2F92 /* LottieBlast.json in Resources */ = {isa = PBXBuildFile; fileRef = 6EF4AA23222D6085004E2F92 /* LottieBlast.json */; };
+		6EF4AA26222D6189004E2F92 /* LottieDeer.json in Resources */ = {isa = PBXBuildFile; fileRef = 6EF4AA25222D6189004E2F92 /* LottieDeer.json */; };
+		6EF4AA28222D632E004E2F92 /* LottieBrokenStar.json in Resources */ = {isa = PBXBuildFile; fileRef = 6EF4AA27222D632E004E2F92 /* LottieBrokenStar.json */; };
+		6EF4AA2A222D654A004E2F92 /* LottieCheck.json in Resources */ = {isa = PBXBuildFile; fileRef = 6EF4AA29222D654A004E2F92 /* LottieCheck.json */; };
+		6EF4AA30222D6794004E2F92 /* LottieDone.json in Resources */ = {isa = PBXBuildFile; fileRef = 6EF4AA2F222D6794004E2F92 /* LottieDone.json */; };
+		6EF4AA32222D6868004E2F92 /* LottieDisLike.json in Resources */ = {isa = PBXBuildFile; fileRef = 6EF4AA31222D6868004E2F92 /* LottieDisLike.json */; };
 		A038310F1DFC1BE5002C0314 /* Favorite.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A038310E1DFC1BE5002C0314 /* Favorite.storyboard */; };
 		A03831151DFC1CB8002C0314 /* Coupon.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A03831141DFC1CB8002C0314 /* Coupon.storyboard */; };
 		A03831191DFC1CED002C0314 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A03831181DFC1CED002C0314 /* Settings.storyboard */; };
@@ -176,6 +188,18 @@
 		6E9BC5BB21DB881D00EFD7B4 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		6E9BC5BC21DB881D00EFD7B4 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		6E9BC5BD21DB881D00EFD7B4 /* RxAtomic.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = RxAtomic.framework.dSYM; path = Carthage/Build/iOS/RxAtomic.framework.dSYM; sourceTree = "<group>"; };
+		6EF4AA14222D5692004E2F92 /* Lottie.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Lottie.framework; path = Carthage/Build/iOS/Lottie.framework; sourceTree = "<group>"; };
+		6EF4AA18222D593B004E2F92 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		6EF4AA1A222D5B8A004E2F92 /* LottieStar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LottieStar.json; sourceTree = "<group>"; };
+		6EF4AA1D222D5F3E004E2F92 /* LottieBrokenHart.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LottieBrokenHart.json; sourceTree = "<group>"; };
+		6EF4AA1E222D5F3E004E2F92 /* LottieHart.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LottieHart.json; sourceTree = "<group>"; };
+		6EF4AA21222D602A004E2F92 /* LottieCrying.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LottieCrying.json; sourceTree = "<group>"; };
+		6EF4AA23222D6085004E2F92 /* LottieBlast.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LottieBlast.json; sourceTree = "<group>"; };
+		6EF4AA25222D6189004E2F92 /* LottieDeer.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LottieDeer.json; sourceTree = "<group>"; };
+		6EF4AA27222D632E004E2F92 /* LottieBrokenStar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LottieBrokenStar.json; sourceTree = "<group>"; };
+		6EF4AA29222D654A004E2F92 /* LottieCheck.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LottieCheck.json; sourceTree = "<group>"; };
+		6EF4AA2F222D6794004E2F92 /* LottieDone.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LottieDone.json; sourceTree = "<group>"; };
+		6EF4AA31222D6868004E2F92 /* LottieDisLike.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LottieDisLike.json; sourceTree = "<group>"; };
 		94161D82880F1DDECECAD5F5 /* Pods-MemCoo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemCoo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MemCoo/Pods-MemCoo.release.xcconfig"; sourceTree = "<group>"; };
 		A038310E1DFC1BE5002C0314 /* Favorite.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Favorite.storyboard; sourceTree = "<group>"; };
 		A03831141DFC1CB8002C0314 /* Coupon.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Coupon.storyboard; sourceTree = "<group>"; };
@@ -211,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E9BC5BE21DB881D00EFD7B4 /* RxSwift.framework in Frameworks */,
+				6EF4AA15222D5693004E2F92 /* Lottie.framework in Frameworks */,
 				A0A1CB3F1E97068B000D0737 /* StoreKit.framework in Frameworks */,
 				6E9BC5BA21DB880D00EFD7B4 /* TesseractOCR.framework in Frameworks */,
 				6E9BC5BF21DB881D00EFD7B4 /* RxCocoa.framework in Frameworks */,
@@ -335,6 +360,7 @@
 		42976BA31DF27DFC00ADB0D7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6EF4AA1C222D5B8E004E2F92 /* LottieFile */,
 				A04DFF321E6A98FA0079DA24 /* Assets.xcassets */,
 				3E37D3661DF09E4A0054C4DA /* Info.plist */,
 				3E37D3631DF09E4A0054C4DA /* LaunchScreen.storyboard */,
@@ -379,11 +405,29 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		6EF4AA1C222D5B8E004E2F92 /* LottieFile */ = {
+			isa = PBXGroup;
+			children = (
+				6EF4AA31222D6868004E2F92 /* LottieDisLike.json */,
+				6EF4AA2F222D6794004E2F92 /* LottieDone.json */,
+				6EF4AA27222D632E004E2F92 /* LottieBrokenStar.json */,
+				6EF4AA23222D6085004E2F92 /* LottieBlast.json */,
+				6EF4AA21222D602A004E2F92 /* LottieCrying.json */,
+				6EF4AA1D222D5F3E004E2F92 /* LottieBrokenHart.json */,
+				6EF4AA1E222D5F3E004E2F92 /* LottieHart.json */,
+				6EF4AA25222D6189004E2F92 /* LottieDeer.json */,
+				6EF4AA1A222D5B8A004E2F92 /* LottieStar.json */,
+				6EF4AA29222D654A004E2F92 /* LottieCheck.json */,
+			);
+			name = LottieFile;
+			sourceTree = "<group>";
+		};
 		A03DAC1A1ECE91BC008312E9 /* Function */ = {
 			isa = PBXGroup;
 			children = (
 				A057B3661E4C9DA40007E388 /* MembershipFunction.swift */,
 				A03DAC1B1ECE91D7008312E9 /* Bright.swift */,
+				6EF4AA18222D593B004E2F92 /* Utility.swift */,
 			);
 			name = Function;
 			sourceTree = "<group>";
@@ -407,6 +451,7 @@
 		A3CE639472778979DD65B6D7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6EF4AA14222D5692004E2F92 /* Lottie.framework */,
 				6E9BC5BD21DB881D00EFD7B4 /* RxAtomic.framework.dSYM */,
 				6E9BC5BC21DB881D00EFD7B4 /* RxCocoa.framework */,
 				6E9BC5BB21DB881D00EFD7B4 /* RxSwift.framework */,
@@ -528,12 +573,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EF4AA32222D6868004E2F92 /* LottieDisLike.json in Resources */,
 				3E37D3651DF09E4A0054C4DA /* LaunchScreen.storyboard in Resources */,
 				3ECCE3A31E041CF400AE739B /* tessdata in Resources */,
+				6EF4AA1F222D5F3E004E2F92 /* LottieBrokenHart.json in Resources */,
+				6EF4AA20222D5F3E004E2F92 /* LottieHart.json in Resources */,
+				6EF4AA28222D632E004E2F92 /* LottieBrokenStar.json in Resources */,
+				6EF4AA30222D6794004E2F92 /* LottieDone.json in Resources */,
+				6EF4AA22222D602A004E2F92 /* LottieCrying.json in Resources */,
+				6EF4AA1B222D5B8B004E2F92 /* LottieStar.json in Resources */,
+				6EF4AA24222D6085004E2F92 /* LottieBlast.json in Resources */,
 				A038310F1DFC1BE5002C0314 /* Favorite.storyboard in Resources */,
+				6EF4AA26222D6189004E2F92 /* LottieDeer.json in Resources */,
 				A04DFF331E6A98FA0079DA24 /* Assets.xcassets in Resources */,
 				A03831191DFC1CED002C0314 /* Settings.storyboard in Resources */,
 				A0FB04811E0BEE0D007FEA21 /* SelectLogo.storyboard in Resources */,
+				6EF4AA2A222D654A004E2F92 /* LottieCheck.json in Resources */,
 				A03831151DFC1CB8002C0314 /* Coupon.storyboard in Resources */,
 				A057B3601E4C9D980007E388 /* Membership.storyboard in Resources */,
 				42976BF71DF6B48100ADB0D7 /* Main.storyboard in Resources */,
@@ -583,6 +638,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxAtomic.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Lottie.framework",
 			);
 			outputFileListPaths = (
 			);
@@ -612,6 +668,7 @@
 				A057B36F1E4C9DA40007E388 /* MembershipCollectionVCell.swift in Sources */,
 				42976BDC1DF6B38100ADB0D7 /* CouponViewController.swift in Sources */,
 				3E146F4D1E1B51320091C767 /* ParsingOCR.swift in Sources */,
+				6EF4AA19222D593B004E2F92 /* Utility.swift in Sources */,
 				3E09AEF71E200AB200D4276F /* SettingsTableViewController.swift in Sources */,
 				A057B36C1E4C9DA40007E388 /* logoTableCell.swift in Sources */,
 				4261B4BC1E4A1B41000A6F25 /* Brand+CoreDataProperties.swift in Sources */,

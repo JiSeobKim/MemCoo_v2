@@ -148,6 +148,7 @@
         <!--브랜드-->
         <scene sceneID="Sgo-T9-DTR">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jg9-AZ-ZLc" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="FvN-Ct-G1V" customClass="ShowMembershipVC" customModule="MemCoo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Glq-JL-GPa"/>
@@ -216,7 +217,6 @@
                         <outlet property="barcodeLabel" destination="Re2-UO-qWb" id="UR1-zn-l6T"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Jg9-AZ-ZLc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3265" y="-1203"/>
         </scene>

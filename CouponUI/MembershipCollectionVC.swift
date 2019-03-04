@@ -79,6 +79,9 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
         
         attemptFetch()
         self.collectionView.reloadData()
+        
+        
+        Utility.startPopAnimation(type: .disLike)
     }
     
    
@@ -114,6 +117,8 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
                         item.toFavorite = favoriteContext
                         ad.saveContext()
                         self.collectionView.reloadData()
+                        
+                        Utility.startPopAnimation(type: .favorite)
                     }
                     
                     let cancel = UIAlertAction(title: "취소", style: .cancel)
@@ -131,6 +136,8 @@ class MembershipCollectionVC: UIViewController, UICollectionViewDelegate, UIColl
                         
                         ad.saveContext()
                         self.collectionView.reloadData()
+                        
+                        Utility.startPopAnimation(type: .brokenStar)
                     }
                     
                     let cancel = UIAlertAction(title: "취소", style: .cancel)

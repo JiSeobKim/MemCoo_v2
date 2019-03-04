@@ -9,6 +9,7 @@
 import UIKit
 import TesseractOCR
 import RxSwift
+import RxCocoa
 
 
 class AddEditMemebershipVC: UIViewController, UITextFieldDelegate, G8TesseractDelegate, UIImagePickerControllerDelegate {
@@ -133,6 +134,8 @@ class AddEditMemebershipVC: UIViewController, UITextFieldDelegate, G8TesseractDe
         let allValidation = Observable
             .combineLatest(brandValidation, barcodeValidation){ $0 && $1}
             .share(replay: 1)
+        
+        
         
         
         allValidation.bind(to: barBtnSave.rx.isEnabled).disposed(by: disposeBag)

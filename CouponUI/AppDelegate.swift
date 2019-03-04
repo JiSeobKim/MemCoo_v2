@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Lottie
 
 @available(iOS 10.0, *)
 @UIApplicationMain
@@ -20,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var heightForKeyboard : CGFloat?
     var brightOffData = false
     
+    // Animation
+    var aniFavorite: LOTAnimationView?
 
     
     //CouponViewController의 ActionSheet에서 눌린 버튼을 CouponAddViewController에 전달하기 위한 변수.
@@ -146,6 +149,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+    
+    
+    
 }
 
 

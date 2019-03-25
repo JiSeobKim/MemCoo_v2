@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var brightOffData = false
     
     // Animation
-    var aniFavorite: LOTAnimationView?
+    var aniFavorite: AnimationView?
 
     
     //CouponViewController의 ActionSheet에서 눌린 버튼을 CouponAddViewController에 전달하기 위한 변수.

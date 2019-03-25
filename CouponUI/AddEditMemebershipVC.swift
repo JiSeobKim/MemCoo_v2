@@ -102,8 +102,8 @@ class AddEditMemebershipVC: UIViewController, UITextFieldDelegate, G8TesseractDe
             let alert = UIAlertController(title: "텍스트 추출", message: "이미지에서 텍스트를 추출하는 중입니다...", preferredStyle: .alert)
             self.present(alert, animated: true, completion: {
                 if let tesseract = G8Tesseract(language: "eng+kor") {
-                    tesseract.delegate = self as G8TesseractDelegate
-                    tesseract.image = self.originalImage?.g8_grayScale() //.g8_blackAndWhite()
+                    tesseract.delegate = self
+                    tesseract.image = self.originalImage?.noir //.g8_blackAndWhite()
                     tesseract.recognize()
                     
                     self.paramBarcode.text =  originalParsing(a:tesseract.recognizedText)
@@ -112,6 +112,10 @@ class AddEditMemebershipVC: UIViewController, UITextFieldDelegate, G8TesseractDe
                 alert.dismiss(animated: true, completion: nil)
             })
 
+        }
+        
+        func progressImageRecognition(for tesseract: G8Tesseract!) {
+            print("Recognition Progress \(tesseract.progress)%")
         }
         
         //다른 곳 터치시 키보드 제거 및 프레임 원위치

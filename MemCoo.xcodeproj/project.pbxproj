@@ -72,7 +72,6 @@
 		6E9BC5BA21DB880D00EFD7B4 /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E9BC5B921DB880D00EFD7B4 /* TesseractOCR.framework */; };
 		6E9BC5BE21DB881D00EFD7B4 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E9BC5BB21DB881D00EFD7B4 /* RxSwift.framework */; };
 		6E9BC5BF21DB881D00EFD7B4 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E9BC5BC21DB881D00EFD7B4 /* RxCocoa.framework */; };
-		6E9BC5C021DB881D00EFD7B4 /* RxAtomic.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = 6E9BC5BD21DB881D00EFD7B4 /* RxAtomic.framework.dSYM */; };
 		6EF4AA15222D5693004E2F92 /* Lottie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EF4AA14222D5692004E2F92 /* Lottie.framework */; };
 		6EF4AA19222D593B004E2F92 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF4AA18222D593B004E2F92 /* Utility.swift */; };
 		6EF4AA1B222D5B8B004E2F92 /* LottieStar.json in Resources */ = {isa = PBXBuildFile; fileRef = 6EF4AA1A222D5B8A004E2F92 /* LottieStar.json */; };
@@ -592,7 +591,6 @@
 				A03831151DFC1CB8002C0314 /* Coupon.storyboard in Resources */,
 				A057B3601E4C9D980007E388 /* Membership.storyboard in Resources */,
 				42976BF71DF6B48100ADB0D7 /* Main.storyboard in Resources */,
-				6E9BC5C021DB881D00EFD7B4 /* RxAtomic.framework.dSYM in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -634,7 +632,6 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Static/TesseractOCR.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxAtomic.framework",

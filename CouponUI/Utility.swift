@@ -17,7 +17,7 @@ class Utility {
     class func startPopAnimation(type: LottieList) {
         
         
-        let popView = LOTAnimationView(name: type.rawValue)
+        let popView = AnimationView(name: type.rawValue)
         
         switch type {
         case .favorite, .hart, .brokenStar, .disLike:
